@@ -1,4 +1,7 @@
+import { JEE } from "./data/Jee";
+import { NEETUG } from "./data/NeetUg";
 import React from "react";
+import { SpokenEnglish } from "./data/SpokenEnglish";
 
 export const WhatsAppNo = +918237815800;
 export const COURSES_GRADES = () => {
@@ -269,3 +272,9 @@ export const cityPaths = [
   { params: { city: "margao" } },
 
 ];
+
+export const getCourseDataResult = {
+  "jee-mains-and-advanced(mh-cet-&-gcet)": JEE,
+  "neet-ug":NEETUG,
+  "spoken-english": SpokenEnglish
+};

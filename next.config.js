@@ -3,5 +3,6 @@ module.exports = {
     layoutRaw: true,
     unoptimized: true,
   },
+  assetPrefix:"./"
   // Rest of the config
 };

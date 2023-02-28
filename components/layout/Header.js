@@ -5,9 +5,9 @@ import Link from "next/link";
 import Logo from "./partials/Logo";
 import MyImage from "../elements/MyImage";
 import PropTypes from "prop-types";
+import Router from "next/router";
 import avatar from "./../../assets/images/avatar.svg";
 import classNames from "classnames";
-import { useRouter as useHistory } from "next/router";
 import { verifyIsUserAuthenticated } from "../../utils/AppConstant";
 
 const propTypes = {
@@ -37,8 +37,8 @@ const Header = ({
   ...props
 }) => {
   const [isActive, setIsactive] = useState(false);
-  const history = useHistory();
   const nav = useRef(null);
+  const history = Router;
   const hamburger = useRef(null);
   const [showUserInfo, setshowUserInfo] = useState(false);
   const loginArea = () => {
@@ -48,12 +48,12 @@ const Header = ({
           <Button
             onClick={() => {
               //document.querySelector("#howedoit").scrollIntoView();
-              history.push("/sign-in");
+              // history.push("/sign-in");
               closeMenu();
             }}
             className="loginButton"
           >
-            Login
+            <Link href="/sign-in">Login</Link>
           </Button>
         </div>
       ) : (
@@ -68,12 +68,11 @@ const Header = ({
             <div className="userInfo avatar">
               <Button
                 onClick={(e) => {
-                  history.push("/profile");
                   closeMenu();
                   e.preventDefault();
                 }}
               >
-                User Dashboard
+                <Link href="/profile">User Dashboard</Link>
               </Button>
               <Button
                 onClick={() => {
@@ -81,12 +80,12 @@ const Header = ({
                   localStorage.removeItem("auth-token");
                   localStorage.removeItem("username");
                   localStorage.removeItem("mobile");
-                  history.push("/sign-in");
+                  //history.push("/sign-in");
                   closeMenu();
                 }}
                 className="loginButton"
               >
-                Log Out
+                <Link href="/sign-in">Log Out</Link>
               </Button>
             </div>
           )}

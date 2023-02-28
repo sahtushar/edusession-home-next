@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { coursesPaths, getCourseData } from "./../../utils/AppConstant";
+import { coursesPaths, getCourseData, getCourseDataResult } from "./../../utils/AppConstant";
 
 import CoursesPage from "../../views/Courses";
 import { callCourseData } from "../../services/authroutes";
@@ -23,15 +23,15 @@ const Course = (props) => {
   return <CoursesPage course={activeCourse} {...props} />;
 };
 
-// export async function getStaticPaths() {
+export async function getStaticPaths() {
 
-//   return {
-//     paths: coursesPaths,
-//     fallback: false, // can also be true or 'blocking'
-//   }
-// }
+  return {
+    paths: coursesPaths,
+    fallback: false, // can also be true or 'blocking'
+  }
+}
 
-export async function getServerSideProps (context) {
+export async function getStaticProps(context) {
   const { course } = context.params;
   // const setIsLoading = props.setIsLoading;
   if (course) {
@@ -40,9 +40,9 @@ export async function getServerSideProps (context) {
     };
     //setIsLoading(true);
 
-    let res = await callCourseData(body);
+    let data = getCourseDataResult[course];
     //setIsLoading(false);
-    return { props: { courseData: res?.data?.courseData?.data } };
+    return { props: { courseData: data } };
   }
 }
 

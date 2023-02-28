@@ -1,11 +1,10 @@
 export const JEE = {
-  header:
-    "Online Live One to One Personalized Session for JEE (Mains and Advance)",
-  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NEET (UG and PG) preparation.
-    Doubt clearance is now easy with focused one on one classes.`,
-  title: "JEE Classes: Key Features",
+  header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Session for <span  style="color:#5658dd">JEE Mains and Advanced(MH-CET & GCET)</span></span>`,
+  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for JEE Mains and Advanced(MH-CET & GCET) preparation.
+  <p>Doubt clearance is now easy with focused one on one classes.</p>`,
+  title: "JEE Mains and Advanced(MH-CET & GCET) Classes: Key Features",
   description:
-    "JEE classes provide their students with comprehensive study material that is designed to cover the entire syllabus in a structured manner. The material is prepared by experienced faculty members who have a thorough understanding of the JEE exam pattern and the type of questions that are asked. This study material is updated regularly to keep up with any changes in the exam pattern.",
+    "JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to study engineering in the top institutes of India. The online classes cover topics like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. The classes also focus on enhancing problem-solving skills, time management, and exam strategies to help students excel in the competitive exams.",
   sections: [
     {
       title: "Comprehensive Study Material",
@@ -140,3 +139,4 @@ export const JEE = {
     ],
   },
 };
+

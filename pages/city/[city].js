@@ -13,14 +13,14 @@ const City = () => {
 
   return <Home city={capitalize(city)} />;
 };
-// export async function getStaticPaths() {
-//   return {
-//     paths: cityPaths,
-//     fallback: false, // can also be true or 'blocking'
-//   };
-// }
+export async function getStaticPaths() {
+  return {
+    paths: cityPaths,
+    fallback: false, // can also be true or 'blocking'
+  };
+}
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { city } = context.params;
 
   // const setIsLoading = props.setIsLoading;

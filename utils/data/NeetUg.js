@@ -1,7 +1,7 @@
 export const NEETUG = {
-  header: "Online Live One to One Personalized Session for NEET (UG)",
-  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NEET (UG and PG) preparation.
-    Doubt clearance is now easy with focused one on one classes.`,
+  header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Session for <span  style="color:#5658dd">NEET UG</span></span>`,
+  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NEET UG preparation.
+  <p>Doubt clearance is now easy with focused one on one classes.</p>`,
   title: "Neet UG Classes: Key Features",
   description:
     "NEET UG classes are coaching classes that are specifically designed to help students prepare for the NEET exam. In this article, we will take a detailed look at the key features of NEET UG classes and how they can help students achieve their dream of becoming a doctor.",
@@ -19,6 +19,11 @@ export const NEETUG = {
     {
       title: "Key Features of NEET UG Classes",
       subsections: [
+        {
+          title:
+            "NEET UG Online Exam Format",
+          description:"Before we delve into the NEET UG online subjects and topics, it is essential to understand the exam format. NEET UG is a three-hour long exam consisting of 180 multiple-choice questions (MCQs). The exam is divided into three sections - Physics, Chemistry, and Biology. Each section has 45 questions, and each question carries four marks. For every incorrect answer, one mark is deducted."
+        },
         {
           title: "Experienced and Knowledgeable Faculty Members",
           content:
@@ -43,6 +48,31 @@ export const NEETUG = {
           title: "Online Classes and Study Material",
           content:
             "NEET UG classes offer online classes and study material for students who cannot attend regular classroom sessions. This allows students to study from the comfort of their homes and attend classes at their own pace and convenience.",
+        },
+        {
+          title: "NEET UG Subjects",
+          content: `
+          <div>    
+            <p>
+                <span style="font-weight:800">Physics</span>: Physics is one of the important subjects in the NEET-UG exam, and it covers topics such as Mechanics, 
+                Thermodynamics, Electromagnetism, Optics, and Modern Physics. 
+                The questions are based on fundamental concepts, numerical problems, 
+                and practical applications.
+              </p>
+    
+              <p>
+              <span style="font-weight:800">Chemistry</span>: Chemistry is another important subject in the NEET-UG exam, and it covers topics such as Physical Chemistry, 
+              Inorganic Chemistry, and Organic Chemistry. The questions are based on fundamental 
+              concepts, reactions, equations, and practical applications.
+              </p>
+    
+              <p>
+                <span style="font-weight:800">Biology</span>: Biology is a major subject in the NEET-UG exam, and it covers topics such as Botany 
+                and Zoology. The questions are based on fundamental concepts, classifications, diagrams, 
+                and practical applications.
+              </p>
+              </div>
+              `,
         },
       ],
     },
