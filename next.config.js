@@ -1,7 +1,8 @@
 module.exports = {
     experimental: {
         images: {
-            layoutRaw: true
+            layoutRaw: true,
+            unoptimized: true
         }
     }
     // Rest of the config
