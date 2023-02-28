@@ -1,0 +1,110 @@
+//courseIntro wrapper
+.courseIntroWrapper {
+  max-width: 100% !important;
+  .container {
+    max-width: 90% !important;
+  }
+  .section-inner {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .introSectionDiv {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
+    padding: 1rem;
+  }
+}
+.courseIntroWrapper .courseIntro {
+  max-width: 90% !important;
+}
+.courseIntroWrapper .introsection {
+  background-color: white;
+  padding: 10px;
+  h2 {
+    font-size: 30px;
+    line-height: 30px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: rgb(41, 23, 23);
+    font-size: 35px;
+  }
+  h3 {
+    color: rgb(41, 23, 23);
+    line-height: 30px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  li {
+    color: black;
+  }
+  p {
+    color: black;
+  }
+}
+//faq section
+.faqWrapper {
+  .section-inner {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .faqarticle {
+    h3 {
+      margin-top: 0px;
+    }
+    p{
+      color: dimgrey;
+    }
+    
+  }
+}
+@media (min-width: 0px) and (max-width: 720px) {
+  .courseIntroWrapper {
+    .container {
+      max-width: 100% !important;
+    }
+    .courseIntro {
+      p {
+        font-size: 16px;
+      }
+    }
+    .introsection {
+      padding: 10px;
+      h2 {
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      
+      h2:nth-child(1) {
+        font-size: 20px;
+      }
+      p {
+        font-size: 15px;
+      }
+      li {
+        font-size: 15px;
+      }
+    }
+  }
+  //faq section
+  .faqWrapper {
+    .faqarticle {
+      p {
+        font-size: 15px;
+      }
+      h3 {
+        button {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

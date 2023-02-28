@@ -1,0 +1,91 @@
+.profilePage {
+  .section-inner {
+    .container {
+      border: 1px solid lightgray;
+    }
+  }
+  .detailsHeader {
+    color: #5658dd;
+  }
+  .requestedclass {
+    h3 {
+      color: black;
+      margin-top: 10px;
+    }
+  }
+  .callMsg{
+    color: black;
+    font-size: 14px;
+  }
+  h1 {
+    text-align: left;
+    color: black;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #5658dd;
+  }
+  h4 {
+    color: #5658dd;
+  }
+  .card{
+    border-bottom: 1px solid lightgray !important;
+  }
+
+  .profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+  }
+
+  .profile-button:hover {
+    background: #5658dd;
+  }
+
+  .profile-button:focus {
+    background: #5658dd;
+    box-shadow: none;
+  }
+
+  .profile-button:active {
+    background: #5658dd;
+    box-shadow: none;
+  }
+
+  .back:hover {
+    color: #5658dd;
+    cursor: pointer;
+  }
+
+  .labels {
+    font-size: 11px;
+  }
+
+  .add-experience:hover {
+    background: #5658dd;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #5658dd;
+  }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .requestedclass {
+      h3 {
+        font-size: 23px;
+      }
+      li {
+        font-size: 15px;
+      }
+      th {
+        font-size: 13px;
+      }
+      td {
+        font-size: 13px;
+      }
+    }
+  }
+}
