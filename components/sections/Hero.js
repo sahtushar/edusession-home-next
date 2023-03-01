@@ -59,7 +59,7 @@ const Hero = ({
 
   const bookAClass = () => {
     if (verifyIsUserAuthenticated()) {
-      if (course) history.push(`/book-form?course={course}`);
+      if (course) history.push(`/book-form?course=${course}`);
       else history.push(`/book-form`);
     } else {
       history.push("/sign-in");
