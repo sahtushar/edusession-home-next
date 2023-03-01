@@ -111,4 +111,16 @@ export const SpokenEnglish = {
       },
     ],
   },
+  structuredData: {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    url: "https://edusession.live/courses?course=spoken-english",
+    name: "Spoken English",
+    description: "Online Live one to one Spoken English Class",
+    provider: {
+      "@type": "Organization",
+      name: "Edusession",
+      sameAs: "https://edusession.live/",
+    },
+  },
 };

@@ -37,6 +37,7 @@ export default function MyApp(props) {
           rel="shortcut icon"
           href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
         />
+        <script type="application/ld+json"></script>
         <link
           rel="icon"
           href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"

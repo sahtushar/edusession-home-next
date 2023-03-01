@@ -20,9 +20,9 @@ export const NEETUG = {
       title: "Key Features of NEET UG Classes",
       subsections: [
         {
-          title:
-            "NEET UG Online Exam Format",
-          description:"Before we delve into the NEET UG online subjects and topics, it is essential to understand the exam format. NEET UG is a three-hour long exam consisting of 180 multiple-choice questions (MCQs). The exam is divided into three sections - Physics, Chemistry, and Biology. Each section has 45 questions, and each question carries four marks. For every incorrect answer, one mark is deducted."
+          title: "NEET UG Online Exam Format",
+          description:
+            "Before we delve into the NEET UG online subjects and topics, it is essential to understand the exam format. NEET UG is a three-hour long exam consisting of 180 multiple-choice questions (MCQs). The exam is divided into three sections - Physics, Chemistry, and Biology. Each section has 45 questions, and each question carries four marks. For every incorrect answer, one mark is deducted.",
         },
         {
           title: "Experienced and Knowledgeable Faculty Members",
@@ -108,6 +108,80 @@ export const NEETUG = {
       },
     ],
   },
+  structuredData: {
+    "@type": "Course",
+    url: "https://edusession.live/courses?course=neet-ug",
+    name: "NEET UG",
+    description: "Online Live one to one NEET UG",
+    provider: {
+      "@type": "Organization",
+      name: "Edusession",
+      sameAs: "https://edusession.live/",
+    },
+  },
+  structuredData: {
+    "@type": "Course",
+    url: "https://edusession.live/courses?course=neet-ug",
+    name: "NEET UG",
+    description: "Online Live one to one NEET UG Class",
+    provider: {
+      "@type": "Organization",
+      name: "Edusession",
+      sameAs: "https://edusession.live/",
+    },
+  },
   conclusion:
     "NEET UG classes are a great option for students who want to prepare for the NEET exam in an organized and structured way.",
 };
+
+// {
+//   "@context": "https://schema.org",
+//   "@type": "ItemList",
+//   "itemListElement": [
+//     {
+//       "@type": "ListItem",
+//       "position": "1",
+//       "item": {
+//         "@type": "Course",
+//         "url": "https://edusession.live/courses?course=spoken-english",
+//         "name": "Spoken English",
+//         "description": "Online Live one to one Spoken English Class",
+//         "provider": {
+//           "@type": "Organization",
+//           "name": "Edusession",
+//           "sameAs": "https://edusession.live/"
+//         }
+//       }
+//     },
+//     {
+//       "@type": "ListItem",
+//       "position": "2",
+//       "item": {
+//         "@type": "Course",
+//         "url": "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+//         "name": "JEE Mains and Advanced (MH-CET and GCET) ",
+//         "description": "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) ",
+//         "provider": {
+//           "@type": "Organization",
+//           "name": "Edusession",
+//           "sameAs": "https://edusession.live/"
+//         }
+//       }
+//     },
+//     {
+//       "@type": "ListItem",
+//       "position": "3",
+//       "item": {
+//         "@type": "Course",
+//         "url": "https://edusession.live/courses?course=neet-ug",
+//         "name": "NEET UG",
+//         "description": "Online Live one to one NEET UG",
+//         "provider": {
+//           "@type": "Organization",
+//           "name": "Edusession",
+//           "sameAs": "https://edusession.live/"
+//         }
+//       }
+//     }
+//   ]
+// }

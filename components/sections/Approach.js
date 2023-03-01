@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardBody,
@@ -11,15 +10,16 @@ import {
   ToastBody,
   ToastHeader,
 } from "reactstrap";
-import classNames from "classnames";
-import SectionHeader from "./partials/SectionHeader";
 
+import MyImage from "../elements/MyImage";
+import React from "react";
+import SectionHeader from "./partials/SectionHeader";
+import classNames from "classnames";
 import pic1 from "./../../assets/images/1-2-e1668683404793.png";
 import pic2 from "./../../assets/images/6-1-e1668683422908.png";
 import pic3 from "./../../assets/images/4-1-e1668683484397.png";
 import pic4 from "./../../assets/images/3-1-e1668683505601.png";
 import pic5 from "./../../assets/images/2-1-e1668683523226.png";
-import MyImage from "../elements/MyImage";
 
 const Approach = ({
   className,
@@ -109,7 +109,7 @@ const Approach = ({
                   {/* <img src={item.img} top /> */}
                   <article>
                     <MyImage alt="approach" src={item.img} />
-                    <CardHeader tag="h2" className="mt-0 mb-16">
+                    <CardHeader tag="h3" className="mt-0 mb-16">
                       {item.main}
                     </CardHeader>
                     <CardBody>

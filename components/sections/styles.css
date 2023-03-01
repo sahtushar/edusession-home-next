@@ -171,7 +171,7 @@ section.courses {
 .approachHeader p {
   font-size: 20px;
 }
-.coursesDetails h5.card-title {
+.coursesDetails h5.cardh3-title {
   color: #5658dd !important;
   margin-top: 0px;
 }
@@ -182,7 +182,7 @@ section.courses {
 .approach .my-2 {
   width: 100%;
 }
-.approach h2.card-header {
+.approach h3.card-header {
   color: rgb(41, 23, 23) !important;
   font-size: 2rem;
   text-align: center;
@@ -278,7 +278,7 @@ section.courses {
   /* .coursesDetails .card-body{
         padding: 3px;
     } */
-  .approachWrapper h2.card-header {
+  .approachWrapper h3.card-header {
     font-size: 1.5rem;
     margin-bottom: 3px;
   }

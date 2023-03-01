@@ -278,3 +278,55 @@ export const getCourseDataResult = {
   "neet-ug":NEETUG,
   "spoken-english": SpokenEnglish
 };
+
+export const homepagestructuredata= {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": "1",
+      "item": {
+        "@type": "Course",
+        "url": "https://edusession.live/courses?course=spoken-english",
+        "name": "Spoken English",
+        "description": "Online Live one to one Spoken English Class",
+        "provider": {
+          "@type": "Organization",
+          "name": "Edusession",
+          "sameAs": "https://edusession.live/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": "2",
+      "item": {
+        "@type": "Course",
+        "url": "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+        "name": "JEE Mains and Advanced (MH-CET and GCET) ",
+        "description": "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) ",
+        "provider": {
+          "@type": "Organization",
+          "name": "Edusession",
+          "sameAs": "https://edusession.live/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": "3",
+      "item": {
+        "@type": "Course",
+        "url": "https://edusession.live/courses?course=neet-ug",
+        "name": "NEET UG",
+        "description": "Online Live one to one NEET UG",
+        "provider": {
+          "@type": "Organization",
+          "name": "Edusession",
+          "sameAs": "https://edusession.live/"
+        }
+      }
+    }
+  ]
+}

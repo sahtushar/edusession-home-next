@@ -138,4 +138,16 @@ export const JEE = {
       },
     ],
   },
+  structuredData: {
+    "@type": "Course",
+    url: "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+    name: "JEE Mains and Advanced (MH-CET and GCET) ",
+    description:
+      "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) Class",
+    provider: {
+      "@type": "Organization",
+      name: "Edusession",
+      sameAs: "https://edusession.live/",
+    },
+  },
 };

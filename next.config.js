@@ -5,7 +5,7 @@ module.exports = {
   },
   pageExtensions: ["html", "jsx", "js", "tsx", "ts"],
   compiler: {
-    styledComponents: {
+    styledComponents: true | {
       minify: true,
     },
   },

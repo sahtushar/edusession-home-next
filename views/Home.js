@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { activeCities, canonicalPath, capitalize } from "../utils/AppConstant";
+import {
+  activeCities,
+  canonicalPath,
+  capitalize,
+  homepagestructuredata,
+} from "../utils/AppConstant";
 
 import Approach from "../components/sections/Approach";
 import Courses from "../components/sections/CoursesOverview";
@@ -10,6 +15,7 @@ import Head from "next/head";
 import Header from "../components/layout/Header";
 import Hero from "../components/sections/Hero";
 import MyImage from "../components/elements/MyImage";
+import StructuredData from "../components/elements/StructuredData";
 import Testimonial from "../components/sections/Testimonial";
 import homepageicon from "./../assets/images/homepageicon.png";
 import icon from "./../assets/images/icon.png";
@@ -50,6 +56,7 @@ const Home = ({ city }) => {
   };
   return (
     <>
+      <StructuredData data={homepagestructuredata} />
       <Head>
         <meta charSet="utf-8" />
         <title>{getHelmetData().title}</title>
