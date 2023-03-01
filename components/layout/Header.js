@@ -97,21 +97,21 @@ const Header = ({
     {
       label: <span className="highlightedCourse">JEE</span>,
       onClick: (e) => {
-        history.push("/courses/jee-mains-and-advanced(mh-cet-&-gcet)");
+        history.push("/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)");
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">NEET</span>,
       onClick: (e) => {
-        history.push("/courses/neet-ug");
+        history.push("/courses?course=neet-ug");
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">Spoken English</span>,
       onClick: (e) => {
-        history.push("/courses/spoken-english");
+        history.push("/courses?course=spoken-english");
         closeMenu();
       },
     },

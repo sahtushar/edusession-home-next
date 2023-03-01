@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { canonicalPath, getCourseData } from "../utils/AppConstant";
+import {
+  canonicalPath,
+  getCourseData,
+  getCourseDataResult,
+} from "../utils/AppConstant";
 
 import Approach from "../components/sections/Approach";
 import CourseIntro from "../components/sections/CourseIntroSection";
@@ -18,10 +22,13 @@ import { useRouter as useHistory } from "next/router";
 const CoursesPage = (props) => {
   const history = useHistory();
   const [dashUrl, setdashUrl] = useState(props.course);
-  const [courseData, setCourseData] = useState(props.courseData);
-  const { course } = history.query;
+  const [courseData, setCourseData] = useState([]);
+  const course = props.course;
   let header = getCourseData[course];
-  const setIsLoading = props.setIsLoading;
+
+  useEffect(() => {
+    setCourseData(getCourseDataResult[props.course] || []);
+  }, [props.course]);
 
   const getHelmetData = () => {
     return {

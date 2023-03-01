@@ -16,7 +16,7 @@ JEE Foundation,
 CA Foundation and Intermediate,
 IELTS (UKVI - Academic - General),
 Spoken English,
-JEE Mains and Advanced(MH-CET & GCET),
+JEE Mains and Advanced(MH-CET and GCET),
 NEET UG`;
   let arr = courses.split(",");
   let res = [];
@@ -153,7 +153,7 @@ export const SUBJECTS = (course) => {
         "Conversation Practice",
       ],
     },
-    "JEE Mains and Advanced(MH-CET & GCET)": {
+    "JEE Mains and Advanced(MH-CET and GCET)": {
       Subjects: ["Mathematics", "Physics", "Chemistry"],
     },
     "NEET UG": {
@@ -244,8 +244,8 @@ export const activeCities = {
 };
 
 export const getCourseData = {
-  "jee-mains-and-advanced(mh-cet-&-gcet)":
-    "JEE Mains and Advanced(MH-CET & GCET)",
+  "jee-mains-and-advanced(mh-cet-and-gcet)":
+    "JEE Mains and Advanced(MH-CET and GCET)",
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
 };
@@ -256,7 +256,7 @@ export const canonicalPath = (path) => {
 };
 export const coursesPaths = [
   { params: { course: "neet-ug" } },
-  { params: { course: "jee-mains-and-advanced(mh-cet-&-gcet)" } },
+  { params: { course: "jee-mains-and-advanced(mh-cet-and-gcet)" } },
   { params: { course: "spoken-english" } },
 ];
 
@@ -274,7 +274,7 @@ export const cityPaths = [
 ];
 
 export const getCourseDataResult = {
-  "jee-mains-and-advanced(mh-cet-&-gcet)": JEE,
+  "jee-mains-and-advanced(mh-cet-and-gcet)": JEE,
   "neet-ug":NEETUG,
   "spoken-english": SpokenEnglish
 };

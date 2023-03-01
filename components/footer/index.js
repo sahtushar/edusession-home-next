@@ -1,14 +1,12 @@
 import React from "react";
-
 import { removeSpacesAndReplaceSymbols } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
-
 
 const Footer = ({ city }) => {
   let competitveExam = [
     { text: "CA Foundation and Intermediate" },
     { text: "IELTS (UKVI - Academic - General)" },
-    { text: "JEE Mains and Advanced(MH-CET & GCET)" },
+    { text: "JEE Mains and Advanced(MH-CET and GCET)" },
     { text: "NEET UG" },
   ];
   let spokenEnglish = [
@@ -120,7 +118,7 @@ const Footer = ({ city }) => {
                   <li
                     onClick={() => {
                       history.push(
-                        `/book-form/${removeSpacesAndReplaceSymbols(item.text)}`
+                        `/book-form?course=${removeSpacesAndReplaceSymbols(item.text)}`
                       );
                     }}
                   >
@@ -137,7 +135,7 @@ const Footer = ({ city }) => {
                 return (
                   <li
                     onClick={() => {
-                      history.push(`/book-form/Spoken English`);
+                      history.push(`/book-form?course=spoken-english`);
                     }}
                   >
                     {item.text.trim()}
@@ -154,7 +152,7 @@ const Footer = ({ city }) => {
                   <li
                     onClick={() => {
                       history.push(
-                        `/book-form/${removeSpacesAndReplaceSymbols(
+                        `/book-form?course=${removeSpacesAndReplaceSymbols(
                           item.text
                         )}`
                       );

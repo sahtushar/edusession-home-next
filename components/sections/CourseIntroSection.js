@@ -1,8 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { SectionProps } from "../../utils/SectionProps";
+import React from "react";
 import SectionHeader from "./partials/SectionHeader";
+import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
@@ -58,7 +58,7 @@ const CourseIntro = ({
           />
           <div className="container">
             <article className="introsection">
-              {data?.sections.map((item) => {
+              {data?.sections?.map((item) => {
                 return (
                   <>
                     <h2>{item.title}</h2>

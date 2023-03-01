@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { coursesPaths, getCourseData, getCourseDataResult } from "./../../utils/AppConstant";
+import { coursesPaths, getCourseData, getCourseDataResult } from "../../utils/AppConstant";
 
 import CoursesPage from "../../views/Courses";
 import { callCourseData } from "../../services/authroutes";

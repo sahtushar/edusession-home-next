@@ -1,6 +1,3 @@
-import React from "react";
-import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
 import {
   Card,
   CardBody,
@@ -11,15 +8,18 @@ import {
   ToastBody,
   ToastHeader,
 } from "reactstrap";
-
-import classNames from "classnames";
-import SectionHeader from "./partials/SectionHeader";
-import { iteratee } from "lodash";
-import { useRouter as useHistory } from "next/router";
 import {
   getCourseData,
   removeSpacesAndReplaceSymbols,
 } from "../../utils/AppConstant";
+
+import Button from "../elements/Button";
+import ButtonGroup from "../elements/ButtonGroup";
+import React from "react";
+import SectionHeader from "./partials/SectionHeader";
+import classNames from "classnames";
+import { iteratee } from "lodash";
+import { useRouter as useHistory } from "next/router";
 
 const Courses = ({
   className,
@@ -72,7 +72,7 @@ const Courses = ({
           color="primary"
           wideMobile
           onClick={() => {
-            history.push(`/book-form/${removeSpacesAndReplaceSymbols(link)}`);
+            history.push(`/book-form?course=${removeSpacesAndReplaceSymbols(link)}`);
           }}
         >
           Book Class
@@ -83,7 +83,7 @@ const Courses = ({
             color="primary"
             wideMobile
             onClick={() => {
-              history.push(`/courses/${removeSpacesAndReplaceSymbols(link)}`);
+              history.push(`/courses?course=${removeSpacesAndReplaceSymbols(link)}`);
             }}
           >
             Learn More
@@ -122,7 +122,7 @@ const Courses = ({
 
     "Spoken English":
       "Spoken English online courses are designed to help students improve their oral communication skills in English. The courses cover topics such as pronunciation, intonation, grammar, and vocabulary. In addition to the basics, students also learn how to participate in group discussions, presentations, and job interviews. The courses include interactive sessions with teachers, personalized feedback, and practical exercises to help students build their confidence in spoken English.",
-    "JEE Mains and Advanced(MH-CET & GCET)": `JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to 
+    "JEE Mains and Advanced(MH-CET and GCET)": `JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to 
       study engineering in the top institutes of India. The online classes cover topics 
       like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. 
       The classes also focus on enhancing problem-solving skills, 
