@@ -18,14 +18,31 @@ class MyDocument extends Document {
 
       gtag("config", "G-VY9DX3NXC5");
     </script> */}
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-VY9DX3NXC5"
+          />
+              
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VY9DX3NXC5');
+        `,
+            }}
+          />
           <meta charset="utf-8" />
           <link
             rel="shortcut icon"
-            href="https://edusession.live/static/media/icon.2daf5c74.png"
+            href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
           />
           <link
             rel="icon"
-            href="https://edusession.live/static/media/icon.2daf5c74.png"
+            href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
             sizes="32x32"
           />
           <link
@@ -55,9 +72,8 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://edusession.live/static/media/logo-no-background.ec43c0b2.png"
+            content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
           />
-
           <meta
             itemprop="name"
             content="One to One Online Classes for IGCSE, CBSE, ICSE, JEE, NEET, Spoken English etc"
@@ -68,20 +84,20 @@ class MyDocument extends Document {
           />
           <meta
             itemprop="image"
-            content="https://edusession.live/static/media/logo-no-background.ec43c0b2.png"
+            content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
           />
           <link
             rel="icon"
-            href="https://edusession.live/static/media/logo-no-background.ec43c0b2.png"
+            href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
             sizes="192x192"
           />
           <link
             rel="apple-touch-icon"
-            href="https://edusession.live/static/media/logo-no-background.ec43c0b2.png"
+            href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
           />
           <meta
             name="msapplication-TileImage"
-            content="https://edusession.live/static/media/logo-no-background.ec43c0b2.png"
+            content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
           />
         </Head>
         <body>
