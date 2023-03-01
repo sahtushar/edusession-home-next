@@ -26,7 +26,7 @@ const Legal = (props) => {
         <meta name="description" content={getHelmetData().desc} />
         <link rel="canonical" href={canonicalPath(history.asPath)} />
       </Head>
-      <Header navPosition="right" page="profile-page" />
+      <Header navPosition="right" page="legal" />
       <main className="site-content">
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} /> */}
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} />

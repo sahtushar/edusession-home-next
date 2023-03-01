@@ -139,6 +139,7 @@ const Header = ({
     "sign-up": [...highlightedCourseList, loginArea()],
     "book-form": [...highlightedCourseList, loginArea()],
     "profile-page": [...highlightedCourseList, loginArea()],
+    "legal": [...highlightedCourseList, loginArea()],
     course: [...highlightedCourseList, loginArea()],
   };
   useEffect(() => {

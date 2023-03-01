@@ -133,7 +133,7 @@ const BookForm = ({
         const res = await callBookForm(body);
         setIsLoading(false);
         if (res.status == 200 || res.data.status == 200) {
-          history.push("/profile-page");
+          history.push("/profile");
         }
       } catch (e) {
         setIsLoading(false);
