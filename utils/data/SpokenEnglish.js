@@ -1,7 +1,7 @@
 export const SpokenEnglish = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Spoken English</span></span>`,
-  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred tutors for Spoken English preparation.
-    <p>Doubt clearance is now easy with focused one on one classes.</p>`,
+  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Spoken English preparation.
+  <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
   title: "Spoken English: Key Features",
   description:
     "At Edusession, we offer a comprehensive online Spoken English course designed to help learners improve their language proficiency from the comfort of their homes. Our course covers all aspects of spoken English, including grammar, vocabulary, pronunciation, and conversation skills. In this article, we will provide a detailed overview of our Spoken English course, highlighting its features, benefits, and how it compares to other online courses available in the market.",
