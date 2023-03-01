@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import classNames from "classnames";
-import { SectionProps } from "../../utils/SectionProps";
-import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
-import Image from "../elements/Image";
-import Modal from "../elements/Modal";
-import homepageicon from "./../../assets/images/homepageicon.png";
 
+import Button from "../elements/Button";
+import ButtonGroup from "../elements/ButtonGroup";
+import Image from "../elements/Image";
 import ImageHover from "../3dhoverimage";
-import { verifyIsUserAuthenticated } from "../../utils/AppConstant";
+import Modal from "../elements/Modal";
+import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
+import homepageicon from "./../../assets/images/homepageicon.png";
 import { useRouter as useHistory } from "next/router";
+import { verifyIsUserAuthenticated } from "../../utils/AppConstant";
 
 const propTypes = {
   ...SectionProps.types,
@@ -59,12 +59,10 @@ const Hero = ({
 
   const bookAClass = () => {
     if (verifyIsUserAuthenticated()) {
-      if(course)
-      history.push(`/book-form/${course}`);
+      if (course) history.push(`/book-form/${course}`);
       else history.push(`/book-form`);
-    }
-    else{
-      history.push("/sign-in")
+    } else {
+      history.push("/sign-in");
     }
   };
 
@@ -81,17 +79,14 @@ const Hero = ({
               >
                 {/* {data?.header} */}
               </h1>
-              <p
-                className="m-0 mb-32"
+              <h2
+                className="m-0 mb-32 subheader"
                 data-reveal-delay="400"
                 dangerouslySetInnerHTML={{ __html: data?.subheader }}
               >
                 {/* {data?.subheader} */}
-              </p>
-              <div
-                className="ctaHomepage"
-                data-reveal-delay="600"
-              >
+              </h2>
+              <div className="ctaHomepage" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button
                     tag="a"

@@ -28,14 +28,13 @@ const Home = ({ city }) => {
       : `<span>
         Online Live <span style="color:#5658dd">One to One</span>
         Personalized Class`,
-    subheader: `
-          Get the best interactive personalized One-on-one sessions at your time
+    subheader: `<span>Get the best interactive personalized One-on-one sessions at your time
           and comfort with your preferred faculties for
           <span style="color:#5658dd">
             CBSE, ICSE, IB, State Board and Competitive examination
           </span>
           preparation.
-          <p>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</p>`,
+          <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span><span>`,
     rightImg: homepageicon,
   };
   const getHelmetData = () => {

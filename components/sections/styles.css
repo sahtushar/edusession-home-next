@@ -1,4 +1,4 @@
-.mb-32{
+.mb-32 {
   margin-bottom: 32px !important;
 }
 .hero-content2 h1 {
@@ -7,6 +7,12 @@
 .container-xs p {
   color: black;
   font-size: 24px;
+}
+.hero-content2 .subheader {
+  font-size: 22px;
+  line-height: 35px;
+  color: black;
+  font-weight: 400;
 }
 .site-header .container {
   max-width: 90% !important;
@@ -131,7 +137,7 @@ section.testimonialPage {
   background-attachment: fixed;
 }
 .hero-figure {
-  padding-top: 2.0rem;
+  padding-top: 2rem;
 }
 .hero-content {
   text-align: left;
@@ -312,16 +318,20 @@ div:nth-child(2)
   }
 }
 @media screen and (max-width: 480px) {
-    .hero-figure img {
-      width: auto;
-      height: 340px;
-      margin-bottom: 20px;
-    }
-    .reflection-container .reflection-content {
-      width: 340px;
-      height: 340px;
-    }
+  .hero-figure img {
+    width: auto;
+    height: 340px;
+    margin-bottom: 20px;
   }
+  .reflection-container .reflection-content {
+    width: 340px;
+    height: 340px;
+  }
+  .hero-content2 .subheader {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
 @media (min-width: 0px) and (max-width: 641px) {
   .split-item-image img {
     margin-left: auto !important;
