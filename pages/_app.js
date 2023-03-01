@@ -31,23 +31,19 @@ export default function MyApp(props) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
-        <Script
-            strategy="afterInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=G-VY9DX3NXC5"
-          />
-              
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-VY9DX3NXC5');
-        `,
-            }}
-          />
+          <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VY9DX3NXC5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "G-VY9DX3NXC5")
+    </script>
           <meta charset="utf-8" />
           <link
             rel="shortcut icon"
