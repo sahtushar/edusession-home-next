@@ -88,6 +88,7 @@ const Footer = ({ city }) => {
                 <a
                   href="https://www.facebook.com/profile.php?id=100088054445822"
                   target={"_blank"}
+                  rel="noreferrer"
                 >
                   <i className="fa fa-facebook-square"></i>
                 </a>
@@ -96,6 +97,7 @@ const Footer = ({ city }) => {
                 <a
                   href="https://www.instagram.com/edusession_official/"
                   target={"_blank"}
+                  rel="noreferrer"
                 >
                   <i className="fa fa-instagram"></i>
                 </a>
@@ -104,6 +106,7 @@ const Footer = ({ city }) => {
                 <a
                   href="https://www.youtube.com/channel/UCWUuKRZJIvnQx-pHDR58CNg"
                   target={"_blank"}
+                  rel="noreferrer"
                 >
                   <i className="fa fa-youtube-play"></i>
                 </a>
