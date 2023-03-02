@@ -208,7 +208,7 @@ const Header = ({
   );
 
   return (
-    <div {...props} className={classes}>
+    <header {...props} className={classes}>
       <div className="container">
         <div
           className={classNames(
@@ -262,7 +262,7 @@ const Header = ({
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
