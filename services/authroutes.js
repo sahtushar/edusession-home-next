@@ -1,4 +1,5 @@
 import {
+  ALLBOOKEDCLASSES,
   ALLFORMS,
   BOOKFORM,
   GETCOURSEDATA,
@@ -81,6 +82,23 @@ export const callRequestedForms = async (body) => {
 
   return result;
 };
+
+export const callAllBookedClasses = async (body) => {
+  var data = qs.stringify(body);
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: ALLBOOKEDCLASSES,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "x-access-token": localStorage.getItem("auth-token"),
+    },
+    data: data,
+  };
+  let result = await axios(config);
+
+  return result;
+}
 
 export const callCourseData = async (body) => {
   var data = qs.stringify(body);

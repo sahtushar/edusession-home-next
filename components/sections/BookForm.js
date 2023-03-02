@@ -113,6 +113,8 @@ const BookForm = ({
     let body = {
       username: localStorage.getItem("username"),
       email: localStorage.getItem("username"),
+      name:localStorage.getItem("name"),
+      mobile:localStorage.getItem("mobile"),
       subject: subject.value,
       course: course.value,
       specialRequirement: specialrequest,

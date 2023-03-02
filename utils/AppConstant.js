@@ -226,21 +226,21 @@ export const activeCities = {
   margao: {
     state: "Goa",
   },
-  mumbai:{
+  mumbai: {
     state: "Maharashtra",
   },
-  delhi:{
+  delhi: {
     state: "Delhi",
   },
-  kolhapur:{
+  kolhapur: {
     state: "Maharashtra",
   },
-  nashik:{
+  nashik: {
     state: "Maharashtra",
   },
-  belgaum:{
-    state:"Karnataka"
-  }
+  belgaum: {
+    state: "Karnataka",
+  },
 };
 
 export const getCourseData = {
@@ -270,63 +270,71 @@ export const cityPaths = [
   { params: { city: "belgaum" } },
   { params: { city: "panaji" } },
   { params: { city: "margao" } },
-
 ];
 
 export const getCourseDataResult = {
   "jee-mains-and-advanced(mh-cet-and-gcet)": JEE,
-  "neet-ug":NEETUG,
-  "spoken-english": SpokenEnglish
+  "neet-ug": NEETUG,
+  "spoken-english": SpokenEnglish,
 };
 
-export const homepagestructuredata= {
+export const adminCreds = [
+  {
+    username: "admin@edusession.live",
+  },
+];
+export const isAdminCred = (username) => {
+  return adminCreds.find((item) => item.username == username);
+};
+export const homepagestructuredata = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "itemListElement": [
+  itemListElement: [
     {
       "@type": "ListItem",
-      "position": "1",
-      "item": {
+      position: "1",
+      item: {
         "@type": "Course",
-        "url": "https://edusession.live/courses?course=spoken-english",
-        "name": "Spoken English",
-        "description": "Online Live one to one Spoken English Class",
-        "provider": {
+        url: "https://edusession.live/courses?course=spoken-english",
+        name: "Spoken English",
+        description: "Online Live one to one Spoken English Class",
+        provider: {
           "@type": "Organization",
-          "name": "Edusession",
-          "sameAs": "https://edusession.live/"
-        }
-      }
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
     },
     {
       "@type": "ListItem",
-      "position": "2",
-      "item": {
+      position: "2",
+      item: {
         "@type": "Course",
-        "url": "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
-        "name": "JEE Mains and Advanced (MH-CET and GCET) ",
-        "description": "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) ",
-        "provider": {
+        url: "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+        name: "JEE Mains and Advanced (MH-CET and GCET) ",
+        description:
+          "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) ",
+        provider: {
           "@type": "Organization",
-          "name": "Edusession",
-          "sameAs": "https://edusession.live/"
-        }
-      }
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
     },
     {
       "@type": "ListItem",
-      "position": "3",
-      "item": {
+      position: "3",
+      item: {
         "@type": "Course",
-        "url": "https://edusession.live/courses?course=neet-ug",
-        "name": "NEET UG",
-        "description": "Online Live one to one NEET UG",
-        "provider": {
+        url: "https://edusession.live/courses?course=neet-ug",
+        name: "NEET UG",
+        description: "Online Live one to one NEET UG",
+        provider: {
           "@type": "Organization",
-          "name": "Edusession",
-          "sameAs": "https://edusession.live/"
-        }
-      }
-    }
-  ]
-}
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
+    },
+  ],
+};

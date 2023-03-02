@@ -1,4 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import {
+  getLoginItems,
+  isAdminCred,
+  verifyIsUserAuthenticated,
+} from "../../utils/AppConstant";
 
 import { Button } from "reactstrap";
 import Link from "next/link";
@@ -8,7 +13,6 @@ import PropTypes from "prop-types";
 import Router from "next/router";
 import avatar from "./../../assets/images/avatar.svg";
 import classNames from "classnames";
-import { verifyIsUserAuthenticated } from "../../utils/AppConstant";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -41,6 +45,12 @@ const Header = ({
   const history = Router;
   const hamburger = useRef(null);
   const [showUserInfo, setshowUserInfo] = useState(false);
+  const [username, setUserName] = useState("");
+
+  useEffect(() => {
+    setUserName(getLoginItems(window)?.email);
+  }, []);
+
   const loginArea = () => {
     return {
       label: !verifyIsUserAuthenticated() ? (
@@ -115,6 +125,17 @@ const Header = ({
         closeMenu();
       },
     },
+    {
+      ...(isAdminCred(username)
+        ? {
+            label: <span className="highlightedCourse">Admin Panel</span>,
+            onClick: (e) => {
+              history.push("/booked-classes");
+              closeMenu();
+            },
+          }
+        : {}),
+    },
   ];
   const headerMapper = {
     home: [
@@ -139,7 +160,7 @@ const Header = ({
     "sign-up": [...highlightedCourseList, loginArea()],
     "book-form": [...highlightedCourseList, loginArea()],
     "profile-page": [...highlightedCourseList, loginArea()],
-    "legal": [...highlightedCourseList, loginArea()],
+    legal: [...highlightedCourseList, loginArea()],
     course: [...highlightedCourseList, loginArea()],
   };
   useEffect(() => {

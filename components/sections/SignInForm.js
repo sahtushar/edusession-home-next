@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { isAdminCred, setLoginItems } from "../../utils/AppConstant";
 
 import { Loader } from "../loader";
 import PropTypes from "prop-types";
 import { SectionProps } from "../../utils/SectionProps";
 import { callSignIn } from "../../services/authroutes";
 import classNames from "classnames";
-import { setLoginItems } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
 
 const propTypes = {
@@ -68,7 +68,9 @@ const SignInForm = ({
         setError(false);
         setIsLoading(false);
         setLoginItems(res, window, localStorage);
-        history.push("/book-form");
+        if (isAdminCred(email)) {
+          history.push("/booked-classes");
+        } else history.push("/book-form");
       }
     } catch (e) {
       setError(true);
