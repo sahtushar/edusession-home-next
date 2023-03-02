@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { removeSpacesAndReplaceSymbols } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
@@ -119,15 +120,21 @@ const Footer = ({ city }) => {
               {competitveExam.map((item) => {
                 return (
                   <li
-                    onClick={() => {
-                      history.push(
-                        `/book-form?course=${removeSpacesAndReplaceSymbols(
-                          item.text
-                        )}`
-                      );
-                    }}
+                  // onClick={() => {
+                  //   history.push(
+                  //     `/book-form?course=${removeSpacesAndReplaceSymbols(
+                  //       item.text
+                  //     )}`
+                  //   );
+                  // }}
                   >
-                    {item.text.trim()}
+                    <Link
+                      href={`/book-form?course=${removeSpacesAndReplaceSymbols(
+                        item.text
+                      )}`}
+                    >
+                      {item.text.trim()}
+                    </Link>
                   </li>
                 );
               })}
@@ -139,11 +146,13 @@ const Footer = ({ city }) => {
               {spokenEnglish.map((item) => {
                 return (
                   <li
-                    onClick={() => {
-                      history.push(`/book-form?course=spoken-english`);
-                    }}
+                  // onClick={() => {
+                  //   history.push(`/book-form?course=spoken-english`);
+                  // }}
                   >
-                    {item.text.trim()}
+                    <Link href={`/book-form?course=spoken-english`}>
+                      {item.text.trim()}
+                    </Link>
                   </li>
                 );
               })}
@@ -155,15 +164,21 @@ const Footer = ({ city }) => {
               {classes.map((item) => {
                 return (
                   <li
-                    onClick={() => {
-                      history.push(
-                        `/book-form?course=${removeSpacesAndReplaceSymbols(
-                          item.text
-                        )}`
-                      );
-                    }}
+                  // onClick={() => {
+                  //   history.push(
+                  //     `/book-form?course=${removeSpacesAndReplaceSymbols(
+                  //       item.text
+                  //     )}`
+                  //   );
+                  // }}
                   >
-                    {item.text.trim()}
+                    <Link
+                      href={`/book-form?course=${removeSpacesAndReplaceSymbols(
+                        item.text
+                      )}`}
+                    >
+                      {item.text.trim()}
+                    </Link>
                   </li>
                 );
               })}
@@ -197,7 +212,10 @@ const Footer = ({ city }) => {
           </div>
         </div>
         <div class="copyrightText">
-          <p>Copyright © 2023 Edusession. All Rights Reserved. For any query, Contact us at +91 82378 15800</p>
+          <p>
+            Copyright © 2023 Edusession. All Rights Reserved. For any query,
+            Contact us at +91 82378 15800
+          </p>
         </div>
       </footer>
     </>

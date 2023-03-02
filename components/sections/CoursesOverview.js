@@ -15,6 +15,7 @@ import {
 
 import Button from "../elements/Button";
 import ButtonGroup from "../elements/ButtonGroup";
+import Link from "next/link";
 import React from "react";
 import SectionHeader from "./partials/SectionHeader";
 import classNames from "classnames";
@@ -68,25 +69,33 @@ const Courses = ({
     return (
       <ButtonGroup>
         <Button
-          tag="a"
           color="primary"
-          wideMobile
-          onClick={() => {
-            history.push(`/book-form?course=${removeSpacesAndReplaceSymbols(link)}`);
-          }}
+          // onClick={() => {
+          //   history.push(
+          //     `/book-form?course=${removeSpacesAndReplaceSymbols(link)}`
+          //   );
+          // }}
         >
-          Book Class
+          <Link
+            href={`/book-form?course=${removeSpacesAndReplaceSymbols(link)}`}
+          >
+            Book Class
+          </Link>
         </Button>
         {getCourseData[removeSpacesAndReplaceSymbols(link)] && (
           <Button
-            tag="a"
             color="primary"
-            wideMobile
-            onClick={() => {
-              history.push(`/courses?course=${removeSpacesAndReplaceSymbols(link)}`);
-            }}
+            // onClick={() => {
+            //   history.push(
+            //     `/courses?course=${removeSpacesAndReplaceSymbols(link)}`
+            //   );
+            // }}
           >
-            Learn More
+            <Link
+              href={`/courses?course=${removeSpacesAndReplaceSymbols(link)}`}
+            >
+              Learn More
+            </Link>
           </Button>
         )}
       </ButtonGroup>

@@ -114,21 +114,27 @@ div.avatar {
   }
   .header-nav-toggle {
     display: block;
-
+   
     // Header navigation when the hamburger is a previous sibling
     + .header-nav {
       flex-direction: column;
       position: absolute;
       left: 0;
       right: 0;
-      top: 100%;
+      top: 110%;
       z-index: 9999;
-      background: color-bg(menu-mobile);
       max-height: 0;
       opacity: 0;
+      background: white;
+      border: 1px solid lightgray;
+      margin: 7px;
+      box-shadow: lightgrey 2px 2px 2px;
+      max-height: 343px;
 
       transition: max-height 0.25s ease-in-out, opacity 0.15s;
-
+      li a{
+        color: black !important;
+      }
       &.is-active {
         opacity: 1;
       }
