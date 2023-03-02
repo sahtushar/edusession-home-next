@@ -13,21 +13,21 @@ import { useRouter as useHistory } from "next/router";
 const Course = (props) => {
   const history = useHistory();
   const { course } = history.query;
-  //   const setIsLoading = props.setIsLoading;
-
-  const [activeCourse, setActivecourse] = useState("");
+  const [courseData, setCourseData] = useState(props.courseData);
+  // const setIsLoading = props.setIsLoading;
 
   useEffect(() => {
     if (course) {
       if (getCourseData[course]) {
-        setActivecourse(course);
+        setCourseData(getCourseDataResult[course]);
       } else history.push("/");
     }
-  }, []);
+  }, [course]);
 
   return (
     <CoursesPage
       course={course}
+      courseData={courseData}
       {...props}
     />
   );

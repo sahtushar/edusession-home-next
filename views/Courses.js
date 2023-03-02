@@ -23,13 +23,11 @@ import { useRouter as useHistory } from "next/router";
 const CoursesPage = (props) => {
   const history = useHistory();
   const [dashUrl, setdashUrl] = useState(props.course);
-  const [courseData, setCourseData] = useState([]);
+  const courseData = props.courseData;
   const [header, setHeader] = useState("");
   const course = props.course;
-  // let header = getCourseData[course];
 
   useEffect(() => {
-    setCourseData(getCourseDataResult[props.course] || []);
     setHeader(getCourseData[course]);
   }, [props.course]);
 
@@ -50,7 +48,7 @@ const CoursesPage = (props) => {
           <link rel="canonical" href={canonicalPath(history.asPath)} />
         </Head>
       )}
-      <StructuredData data={courseData.structuredData} />
+      <StructuredData data={courseData?.structuredData} />
       <Header navPosition="right" page="course" />
       <main className="site-content">
         <Hero
