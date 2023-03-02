@@ -65,6 +65,7 @@ const BookedClassesSection = ({
             from="adminPanel"
           />
           <div className="table-responsive">
+            <h2 style={{ color: "#5658dd", margin:"0" }}>Booked Classes</h2>
             <table className="table">
               <thead>
                 <tr>
