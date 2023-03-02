@@ -6,7 +6,7 @@ const isProd = () => {
     return false;
   }
 };
-let BASEURL = `https://edusession-server.onrender.com`;
+let BASEURL = `https://edusession.info`;
 if (!isProd()) {
   BASEURL = `http://localhost:8080`;
 }
