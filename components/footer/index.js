@@ -214,7 +214,7 @@ const Footer = ({ city }) => {
         <div class="copyrightText">
           <p>
             Copyright © 2023 Edusession. All Rights Reserved. For any query,
-            Contact us at +91 82378 15800
+            Contact us at <span>+91 82378 15800</span>
           </p>
         </div>
       </footer>

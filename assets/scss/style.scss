@@ -234,6 +234,9 @@
     padding-top: 20px;
     text-align: center;
     color: #fff;
+    span {
+      font-weight: 800;
+    }
   }
 
   @media (max-width: 991px) {
@@ -242,7 +245,11 @@
       grid-template-columns: repeat(2, 1fr);
     }
     .copyrightText {
-      padding: 8px 40px;
+      font-size: 14px;
+      padding: 10px;
+      p {
+        margin-bottom: 0px;
+      }
     }
   }
   @media (max-width: 768px) {
