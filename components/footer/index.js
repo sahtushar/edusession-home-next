@@ -20,19 +20,19 @@ const Footer = ({ city }) => {
   const history = useHistory();
   const getFooterDesc = () => {
     if (city) {
-      return `Edusession is an online one-to-one personalized platform that
-      offers live courses for students from grades 6 to 12, as well as
-      JEE, NEET, English proficiency, CA, graduation, and more with great 
+      return `Edusession is an online one to one personalized platform that
+      offers live online one on one tuitions for students from Class 6 to 12, as well as
+      JEE, NEET, Spoken English, CA, graduation, and more with great 
       presence in ${city} and around with
-      live courses taught by experienced educators and flexible
+      live courses taught by experienced tutors and flexible
       scheduling, Edusession empowers learners to achieve their academic
-      goals and excel in their chosen fields.{" "}`;
+      goals and excel in their chosen fields by attending our classes.`;
     } else {
-      return `Edusession is an online one-to-one personalized platform that 
-      offers live courses for students from grades 6 to 12, as well as JEE, NEET, 
-      English proficiency, CA, graduation, and more. With live courses taught by 
-      experienced educators and flexible scheduling, Edusession empowers learners to 
-      achieve their academic goals and excel in their chosen fields.`;
+      return `Edusession is an online one to one live personalized platform based out of Goa and functional all over India, we 
+      offers live online one on one tuitions for students from Class 6 to 12, as well as JEE, NEET, 
+      Spoken English, CA, graduation, and more. With live courses taught by 
+      experienced tutors and flexible scheduling, Edusession empowers learners to 
+      achieve their academic goals and excel in their chosen fields by attending our classes.`;
     }
   };
   // let competitveExam=[
@@ -77,8 +77,8 @@ const Footer = ({ city }) => {
   };
 
   return (
-    <div className="footerWrapper">
-      <footer>
+    <>
+      <footer className="footer">
         <div className="container">
           <div className="sec aboutus">
             <h4>About Us</h4>
@@ -121,7 +121,9 @@ const Footer = ({ city }) => {
                   <li
                     onClick={() => {
                       history.push(
-                        `/book-form?course=${removeSpacesAndReplaceSymbols(item.text)}`
+                        `/book-form?course=${removeSpacesAndReplaceSymbols(
+                          item.text
+                        )}`
                       );
                     }}
                   >
@@ -194,11 +196,11 @@ const Footer = ({ city }) => {
             </ul>
           </div>
         </div>
+        <div class="copyrightText">
+          <p>Copyright © 2023 Edusession. All Rights Reserved. For any query, Contact us at +91 82378 15800</p>
+        </div>
       </footer>
-      <div class="copyrightText">
-        <p>Copyright © 2023 Edusession. All Rights Reserved.</p>
-      </div>
-    </div>
+    </>
   );
 };
 export default Footer;

@@ -129,14 +129,12 @@
 # Footer
 --------------------------------------------------------------*/
 
-.footerWrapper {
-  footer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    // padding: 50px 100px;
-    background: #009e76;
-  }
+.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  // padding: 50px 100px;
+  background: #009e76;
   li {
     color: white;
     &:hover {
@@ -146,7 +144,7 @@
   li.pointer {
     cursor: crosshair;
   }
-  footer .container {
+  .container {
     width: 100%;
     display: grid;
     /* grid-template-columns: 2fr 1fr 1fr 1fr; */
@@ -154,14 +152,14 @@
     grid-gap: 50px;
   }
 
-  footer .container .sec h4 {
+  .container .sec h4 {
     position: relative;
     color: #fff;
     font-weight: 500;
     margin-bottom: 15px;
   }
 
-  footer .container .sec h4::before {
+  .container .sec h4::before {
     content: "";
     position: absolute;
     bottom: -5px;
@@ -171,7 +169,7 @@
     background: #ffeb3b;
   }
 
-  footer .container .sec p {
+  .container .sec p {
     color: #fff;
     font-size: 16px;
   }
@@ -239,10 +237,8 @@
   }
 
   @media (max-width: 991px) {
-    footer {
-      padding: 40px;
-    }
-    footer .container {
+    padding: 40px;
+    .container {
       grid-template-columns: repeat(2, 1fr);
     }
     .copyrightText {
@@ -250,7 +246,7 @@
     }
   }
   @media (max-width: 768px) {
-    footer .container {
+    .container {
       grid-template-columns: repeat(1, 1fr);
     }
   }
