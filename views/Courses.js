@@ -40,12 +40,12 @@ const CoursesPage = (props) => {
 
   return (
     <>
-      <Head>
+      {header && <Head>
         <meta charSet="utf-8" />
         <title>{getHelmetData().title}</title>
         <meta name="description" content={getHelmetData().desc} />
         <link rel="canonical" href={canonicalPath(history.asPath)} />
-      </Head>
+      </Head>}
       <StructuredData data={courseData.structuredData} />
       <Header navPosition="right" page="course" />
       <main className="site-content">
