@@ -24,11 +24,13 @@ const CoursesPage = (props) => {
   const history = useHistory();
   const [dashUrl, setdashUrl] = useState(props.course);
   const [courseData, setCourseData] = useState([]);
+  const [header, setHeader] = useState("");
   const course = props.course;
-  let header = getCourseData[course];
+  // let header = getCourseData[course];
 
   useEffect(() => {
     setCourseData(getCourseDataResult[props.course] || []);
+    setHeader(getCourseData[course]);
   }, [props.course]);
 
   const getHelmetData = () => {
@@ -40,12 +42,14 @@ const CoursesPage = (props) => {
 
   return (
     <>
-      {header && <Head>
-        <meta charSet="utf-8" />
-        <title>{getHelmetData().title}</title>
-        <meta name="description" content={getHelmetData().desc} />
-        <link rel="canonical" href={canonicalPath(history.asPath)} />
-      </Head>}
+      {header && (
+        <Head>
+          <meta charSet="utf-8" />
+          <title>{getHelmetData().title}</title>
+          <meta name="description" content={getHelmetData().desc} />
+          <link rel="canonical" href={canonicalPath(history.asPath)} />
+        </Head>
+      )}
       <StructuredData data={courseData.structuredData} />
       <Header navPosition="right" page="course" />
       <main className="site-content">

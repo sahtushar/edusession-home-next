@@ -153,7 +153,7 @@ const BookForm = ({
             <div>
               <div className="card p-5">
                 <h1 className="heading">
-                  Book a <span>One-on-One</span> Class
+                  Book a <span>One-on-One</span> Class with <span>Edusession</span>
                 </h1>
                 <p className="book-msg">
                   <i class="fa fa-laptop my-float"> </i> At your time and

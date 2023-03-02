@@ -245,7 +245,7 @@ export const activeCities = {
 
 export const getCourseData = {
   "jee-mains-and-advanced(mh-cet-and-gcet)":
-    "JEE Mains and Advanced(MH-CET and GCET)",
+    "JEE Mains and Advanced (MH-CET and GCET)",
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
 };
