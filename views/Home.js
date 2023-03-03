@@ -80,10 +80,10 @@ const Home = ({ city }) => {
         />
         {/*
          */}
-        <Testimonial topDivider city={city} />
+        <Testimonial topDivider city={city}  className="illustration-section-01"/>
         {/* <Cta split /> */}
         <Courses city={city} className="illustration-section-01" />
-        <Approach />
+        <Approach className="illustration-section-02"/>
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>
       <Footer city={city} />
