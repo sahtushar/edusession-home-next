@@ -12,6 +12,7 @@ import Footer from "../components/footer";
 import Head from "next/head";
 import Header from "../components/layout/Header";
 import Hero from "../components/sections/Hero";
+import MoreCourses from "../components/elements/MoreCourses";
 import StructuredData from "../components/elements/StructuredData";
 import Testimonial from "../components/sections/Testimonial";
 import { callCourseData } from "../services/authroutes";
@@ -62,7 +63,9 @@ const CoursesPage = (props) => {
           courseIdentifier={dashUrl}
           setIsLoading={props.setIsLoading}
         />
+
         <FAQ data={courseData} />
+        <MoreCourses />
         <Testimonial data={courseData} />
         {/* <Cta split /> */}
         {/* <Courses /> */}

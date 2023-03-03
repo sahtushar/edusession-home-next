@@ -5,6 +5,7 @@ import ButtonGroup from "../elements/ButtonGroup";
 import Image from "../elements/Image";
 import ImageHover from "../3dhoverimage";
 import Modal from "../elements/Modal";
+import MoreCourses from "../elements/MoreCourses";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import homepageicon from "./../../assets/images/homepageicon.png";
@@ -86,7 +87,7 @@ const Hero = ({
               >
                 {/* {data?.subheader} */}
               </h2>
-              <div className="ctaHomepage" data-reveal-delay="600">
+              <div className="ctaHomepage">
                 <ButtonGroup>
                   <Button
                     tag="a"

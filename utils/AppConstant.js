@@ -1,3 +1,4 @@
+import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
 import { NEETUG } from "./data/NeetUg";
 import React from "react";
@@ -148,9 +149,11 @@ export const SUBJECTS = (course) => {
     "Spoken English": {
       Subjects: [
         "Basic Grammar",
-        "Vocabulary Building",
         "Pronunciation",
-        "Conversation Practice",
+        "Personality Development",
+        "Mock interviews",
+        "Vocabulary",
+        "Professional Development",
       ],
     },
     "JEE Mains and Advanced(MH-CET and GCET)": {
@@ -248,6 +251,7 @@ export const getCourseData = {
     "JEE Mains and Advanced (MH-CET and GCET)",
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
+  "ielts-(ukvi---academic---general)": "IELTS (UKVI - Academic - General)",
 };
 
 export const URL = "https://edusession.live/";
@@ -276,6 +280,7 @@ export const getCourseDataResult = {
   "jee-mains-and-advanced(mh-cet-and-gcet)": JEE,
   "neet-ug": NEETUG,
   "spoken-english": SpokenEnglish,
+  "ielts-(ukvi---academic---general)": IELTS,
 };
 
 export const adminCreds = [
@@ -336,5 +341,73 @@ export const homepagestructuredata = {
         },
       },
     },
+    {
+      "@type": "ListItem",
+      position: "3",
+      item: {
+        "@type": "Course",
+        url: "https://edusession.live/courses?course=neet-ug",
+        name: "NEET UG",
+        description: "Online Live one to one NEET UG",
+        provider: {
+          "@type": "Organization",
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
+    },
   ],
+};
+
+export const highlightedCourseList = [
+  {
+    label: <span className="highlightedCourse">JEE</span>,
+    onClick: (e) => {
+      history.push("/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)");
+      closeMenu();
+    },
+    link: "/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+    identifier: "jee-mains-and-advanced(mh-cet-and-gcet)",
+  },
+  {
+    label: <span className="highlightedCourse">NEET</span>,
+    onClick: (e) => {
+      history.push("/courses?course=neet-ug");
+      closeMenu();
+    },
+    link: "/courses?course=neet-ug",
+    identifier: "neet-ug",
+  },
+  {
+    label: <span className="highlightedCourse">Spoken English</span>,
+    onClick: (e) => {
+      history.push("/courses?course=spoken-english");
+      closeMenu();
+    },
+    link: "/courses?course=spoken-english",
+    identifier: "spoken-english",
+  },
+  {
+    label: (
+      <span className="highlightedCourse">
+        IELTS (UKVI - Academic - General)
+      </span>
+    ),
+    onClick: (e) => {
+      history.push("/courses?course=ielts-(ukvi---academic---general)");
+      closeMenu();
+    },
+    link: "/courses?course=ielts-(ukvi---academic---general)",
+    identifier: "ielts-(ukvi---academic---general)",
+  },
+];
+export const checkauthfailed = (err, setIsLoading, history) => {
+  if (`${err?.response?.status}`?.match(/40/)) {
+    if (history) history.push("/sign-in");
+    localStorage.removeItem("auth-token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("mobile");
+    setIsLoading(false);
+    return true;
+  }
 };

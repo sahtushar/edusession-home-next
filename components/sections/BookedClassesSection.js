@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import SectionHeader from "./partials/SectionHeader";
 import { callAllBookedClasses } from "../../services/authroutes";
+import { checkauthfailed } from "../../utils/AppConstant";
 import classNames from "classnames";
 import { useRouter as useHistory } from "next/router";
 
@@ -31,7 +32,10 @@ const BookedClassesSection = ({
         setdata(res.data.forms || []);
         setIsLoading(false);
       })
-      .catch((e) => {
+      .catch((err) => {
+        if (checkauthfailed(err, setIsLoading, history)) {
+          return;
+        }
         setIsLoading(false);
         history.push("/");
       });
@@ -65,7 +69,7 @@ const BookedClassesSection = ({
             from="adminPanel"
           />
           <div className="table-responsive">
-            <h2 style={{ color: "#5658dd", margin:"0" }}>Booked Classes</h2>
+            <h2 style={{ color: "#5658dd", margin: "0" }}>Booked Classes</h2>
             <table className="table">
               <thead>
                 <tr>

@@ -1,13 +1,14 @@
-import React from "react";
-import classNames from "classnames";
-import { SectionTilesProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
+import MoreCourses from "../elements/MoreCourses";
+import MyImage from "../elements/MyImage";
+import React from "react";
+import SectionHeader from "./partials/SectionHeader";
+import { SectionTilesProps } from "../../utils/SectionProps";
+import bank from "./../../assets/images/bank.webp";
+import classNames from "classnames";
+import government from "./../../assets/images/government.webp";
 import note from "./../../assets/images/note.webp";
 import rail from "./../../assets/images/rail.webp";
-import government from "./../../assets/images/government.webp";
-import bank from "./../../assets/images/bank.webp";
-import MyImage from "../elements/MyImage";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -62,17 +63,17 @@ const FeaturesTiles = ({
     {
       header: "71%",
       text: "Rise In Productively and Consistency",
-      icon: bank
+      icon: bank,
     },
     {
       header: "83%",
       text: "Increase in Concept Clarity",
-      icon: rail
+      icon: rail,
     },
     {
       header: "100%",
       text: "Support in Career Guidance & Exposure to Extracurriculars",
-      icon: government
+      icon: government,
     },
   ];
 
@@ -80,6 +81,14 @@ const FeaturesTiles = ({
     <section {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
+          <MoreCourses
+            header={
+              <>
+                Courses by{" "}
+                <span style={{ color: "#5658dd" }}>Edusession</span>
+              </>
+            }
+          />
           <SectionHeader
             data={sectionHeader}
             className="center-content"

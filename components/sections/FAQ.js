@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { SectionProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
 import {
   Accordion,
   AccordionBody,
   AccordionHeader,
   AccordionItem,
 } from "reactstrap";
+import React, { useState } from "react";
+
+import PropTypes from "prop-types";
+import SectionHeader from "./partials/SectionHeader";
+import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
@@ -74,12 +75,12 @@ const FAQ = ({
               <Accordion open={open} toggle={toggle}>
                 {data?.faq?.data?.map((item, index) => {
                   return (
-                    <AccordionItem>
+                    <AccordionItem key={item.question || item.Question}>
                       <AccordionHeader tag="h3" targetId={`${index + 1}`}>
-                        {item.question}
+                        {item.question || item.Question}
                       </AccordionHeader>
                       <AccordionBody tag="p" accordionId={`${index + 1}`}>
-                        {item.answer}
+                        {item.answer || item.Answer}
                       </AccordionBody>
                     </AccordionItem>
                   );

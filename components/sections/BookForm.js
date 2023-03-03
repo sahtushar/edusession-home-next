@@ -1,12 +1,16 @@
 import {
   COURSES_GRADES,
   SUBJECTS,
+  checkauth,
+  checkauthfailed,
+  highlightedCourseList,
   removeSpacesAndReplaceSymbols,
   verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
 import React, { useEffect, useState } from "react";
 
 import { Button } from "reactstrap";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { SectionProps } from "../../utils/SectionProps";
 import Select from "react-select";
@@ -113,8 +117,8 @@ const BookForm = ({
     let body = {
       username: localStorage.getItem("username"),
       email: localStorage.getItem("username"),
-      name:localStorage.getItem("name"),
-      mobile:localStorage.getItem("mobile"),
+      name: localStorage.getItem("name"),
+      mobile: localStorage.getItem("mobile"),
       subject: subject.value,
       course: course.value,
       specialRequirement: specialrequest,
@@ -137,14 +141,24 @@ const BookForm = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/profile");
         }
-      } catch (e) {
+      } catch (err) {
+        if (checkauthfailed(err,setIsLoading,history)){
+          return;
+        }
         setIsLoading(false);
         alert("Server error. Try again");
-        console.log(e.message);
+        console.log(err.message);
       }
     } else {
       history.push("/sign-in");
     }
+  };
+
+  const getLink = () => {
+    let obj = highlightedCourseList.find(
+      (item) => item.identifier == removeSpacesAndReplaceSymbols(course.label)
+    );
+    return obj?.link;
   };
 
   return (
@@ -155,7 +169,8 @@ const BookForm = ({
             <div>
               <div className="card p-5">
                 <h1 className="heading">
-                  Book a <span>One-on-One</span> Class with <span>Edusession</span>
+                  Book a <span>One-on-One</span> Class with{" "}
+                  <span>Edusession</span>
                 </h1>
                 <p className="book-msg">
                   <i class="fa fa-laptop my-float"> </i> At your time and
@@ -163,6 +178,20 @@ const BookForm = ({
                   <span>CBSE, ICSE, IB, State Board</span> and{" "}
                   <span>Competitive Examination</span> preparation.
                 </p>
+                <div className="moreCourseInfo">
+                  {getLink() && (
+                    <Link href={getLink()}>
+                      <a>
+                        <i className="fa fa-external-link"></i> Click Here for{" "}
+                        <span style={{ fontWeight: "600" }}>
+                          {course.label}
+                        </span>{" "}
+                        Course Info
+                      </a>
+                    </Link>
+                  )}
+                </div>
+
                 <div className="m-2">
                   <label htmlFor={"courses"}>Select Course/Grade</label>
                   <Select

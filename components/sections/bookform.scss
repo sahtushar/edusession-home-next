@@ -6,6 +6,9 @@
       color: #5658dd;
     }
   }
+  .moreCourseInfo a{
+    color: #5658dd !important;
+  }
   .optionlabelArea{
     font-size: 17px;
     color: black;
@@ -197,6 +200,9 @@
     }
     footer .container {
       grid-template-columns: repeat(1, 1fr);
+    }
+    .moreCourseInfo a{
+      font-size: 15px;
     }
   }
 }
