@@ -9,12 +9,14 @@ const MoreCourses = ({ header }) => {
     <div className="container moreCourses">
       {!header && (
         <h2>
-          More Courses by <span style={{ color: "#5658dd" }}>Edusession</span>
+          <i className="fa fa-book"></i> More Courses by{" "}
+          <span style={{ color: "#5658dd" }}>Edusession</span>
         </h2>
       )}
       {header && (
         <h2>
-          {header}
+          {" "}
+          <i className="fa fa-book"></i> {header}
         </h2>
       )}
       <ListGroup>
