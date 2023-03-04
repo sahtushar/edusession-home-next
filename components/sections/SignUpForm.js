@@ -122,7 +122,8 @@ const SignUp = ({
           <div className="sign-upWrapper">
             <div class="form-box sign-up-box">
               <h1>
-                Sign Up For <span style={{ color: "#5658dd" }}>Edusession</span>
+                <i className="fa fa-user-plus"></i> Sign Up For{" "}
+                <span style={{ color: "#5658dd" }}>Edusession</span>
               </h1>
 
               <div className="mb-3">
@@ -199,7 +200,6 @@ const SignUp = ({
                 <p style={{ color: "red", marginTop: "5px" }}>{error}</p>
               )}
               <p class="text-1">
-                
                 Already a member?{" "}
                 <span
                   onClick={() => {
@@ -210,7 +210,10 @@ const SignUp = ({
                   Sign in
                 </span>
               </p>
-              <p class="text-1">By Signing Up you agree to all our Policy, Disclaimer,  Terms and conditions.</p>
+              <p class="text-1">
+                By Signing Up you agree to all our Policy, Disclaimer, Terms and
+                conditions.
+              </p>
             </div>
           </div>
         </div>

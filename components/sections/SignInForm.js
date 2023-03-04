@@ -99,7 +99,7 @@ const SignInForm = ({
         <div className={innerClasses}>
           <div className="form">
             <h1>
-              Sign In For <span style={{ color: "#5658dd" }}>Edusession</span>
+            <i className="fa fa-sign-in"></i>{" "}Sign In For <span style={{ color: "#5658dd" }}>Edusession</span>
             </h1>
             {isAccountCreated ? (
               <p className="accountCreated">

@@ -1,7 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import React from "react";
 import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
@@ -45,7 +45,7 @@ const signup = ({
         <div className={innerClasses}>
             <div className="sign-upWrapper">
             <div class="form-box sign-up-box">
-            <h2>Sign up</h2>
+            <h2><i className="fa fa-user-plus"></i>{" "}Sign up</h2>
             <div class="login-options">
                 <div class="other-logins">
                     <a href=""><img src="C:/Users/laksh/Downloads/search.png" alt=""/></a>
