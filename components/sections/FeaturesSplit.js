@@ -54,7 +54,7 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: <><i className="fa fa-child"></i>{" "}Why Choose Us?"</>,
+    title: <><i className="fa fa-child"></i>{" "}Why Choose Us?</>,
     paragraph:
       "In this modern era of digitalization, we help your child to grow with a team of experts who create high-quality, engaging, and up-to-date educational content. We understand and respect that everyone has their own way and speed of learning so at Edusession we promote one to one learning concept. Our platform provides interactive learning experiences through quizzes, group discussions and other interactive activities that keep learners engaged and help them retain information better. ",
   };
