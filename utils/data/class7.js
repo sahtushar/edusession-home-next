@@ -45,20 +45,7 @@ export const Class7 = {
       title: "Flexible Learning Options",
       content:
         "Edusession offers flexible learning options that allow students to learn from the comfort of their own homes at their own pace and convenience. We provide one-to-one personalized learning sessions that are tailored to each student's unique needs and preferences.",
-    },
-    // {
-    //   title: "Class 7 Course Syllabus",
-    //   subsections: [
-    //     {
-    //       title: "ICSE Class 7 Syllabus (All Subjects)",
-    //       content:"Here's the detailed Syllabus"
-    //     },
-    //     {
-    //         title:"English",
-    //         content:""
-    //     }
-    //   ],
-    // },
+    }
   ],
   faq: {
     title: "FAQs for Class 7",

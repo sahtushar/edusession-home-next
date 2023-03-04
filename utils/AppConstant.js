@@ -6,9 +6,17 @@ import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
 
 export const WhatsAppNo = +918237815800;
+// export const getCourseDataUrl = {
+//   "JEE Mains and Advanced (MH-CET and GCET)":
+//     "jee-mains-advanced-mhcet-gcet",
+//   "NEET UG": "neet-ug",
+//   "Spoken English": "spoken-english",
+//   "IELTS (UKVI - Academic - General)": "ielts-ukvi-academic-general",
+//   "Class 7 (CBSE / ICSE / State Boards)": "class-7",
+// };
 export const COURSES_GRADES = () => {
   const courses = `Class 6,
-Class 7,
+  Class 7 (CBSE / ICSE / State Boards),
 Class 8,
 Class 9,
 Class 10,
@@ -18,7 +26,7 @@ JEE Foundation,
 CA Foundation and Intermediate,
 IELTS (UKVI - Academic - General),
 Spoken English,
-JEE Mains and Advanced(MH-CET and GCET),
+JEE Mains and Advanced (MH-CET and GCET),
 NEET UG`;
   let arr = courses.split(",");
   let res = [];
@@ -248,12 +256,27 @@ export const activeCities = {
 };
 
 export const getCourseData = {
-  "jee-mains-and-advanced(mh-cet-and-gcet)":
-    "JEE Mains and Advanced (MH-CET and GCET)",
+  "jee-mains-advanced-mhcet-gcet": "JEE Mains and Advanced (MH-CET and GCET)",
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
-  "ielts-(ukvi---academic---general)": "IELTS (UKVI - Academic - General)",
-  "class-7": "Class 7 (CBSE / ICSE)"
+  "ielts-ukvi-academic-general": "IELTS (UKVI - Academic - General)",
+  "class-7": "Class 7 (CBSE / ICSE)",
+};
+
+export const getCourseDataResult = {
+  "jee-mains-advanced-mhcet-gcet": JEE,
+  "neet-ug": NEETUG,
+  "spoken-english": SpokenEnglish,
+  "ielts-ukvi-academic-general": IELTS,
+  "class-7": Class7,
+};
+
+export const getCourseDataUrl = {
+  "JEE Mains and Advanced (MH-CET and GCET)": "jee-mains-advanced-mhcet-gcet",
+  "NEET UG": "neet-ug",
+  "Spoken English": "spoken-english",
+  "IELTS (UKVI - Academic - General)": "ielts-ukvi-academic-general",
+  "Class 7 (CBSE / ICSE / State Boards)": "class-7",
 };
 
 export const URL = "https://edusession.live/";
@@ -277,15 +300,6 @@ export const cityPaths = [
   { params: { city: "panaji" } },
   { params: { city: "margao" } },
 ];
-
-export const getCourseDataResult = {
-  "jee-mains-and-advanced(mh-cet-and-gcet)": JEE,
-  "neet-ug": NEETUG,
-  "spoken-english": SpokenEnglish,
-  "ielts-(ukvi---academic---general)": IELTS,
-  "class-7":Class7
-};
-
 
 export const adminCreds = [
   {
@@ -366,30 +380,18 @@ export const homepagestructuredata = {
 export const highlightedCourseList = [
   {
     label: <span className="highlightedCourse">JEE</span>,
-    onClick: (e) => {
-      history.push("/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)");
-      closeMenu();
-    },
-    link: "/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
-    identifier: "jee-mains-and-advanced(mh-cet-and-gcet)",
+    link: `/courses?course=${getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]}`,
+    identifier: getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"],
   },
   {
     label: <span className="highlightedCourse">NEET</span>,
-    onClick: (e) => {
-      history.push("/courses?course=neet-ug");
-      closeMenu();
-    },
-    link: "/courses?course=neet-ug",
-    identifier: "neet-ug",
+    link: `/courses?course=${getCourseDataUrl["NEET UG"]}`,
+    identifier: getCourseDataUrl["NEET UG"],
   },
   {
     label: <span className="highlightedCourse">Spoken English</span>,
-    onClick: (e) => {
-      history.push("/courses?course=spoken-english");
-      closeMenu();
-    },
-    link: "/courses?course=spoken-english",
-    identifier: "spoken-english",
+    link: `/courses?course=${getCourseDataUrl["Spoken English"]}`,
+    identifier: getCourseDataUrl["Spoken English"],
   },
   {
     label: (
@@ -397,25 +399,13 @@ export const highlightedCourseList = [
         IELTS (UKVI - Academic - General)
       </span>
     ),
-    onClick: (e) => {
-      history.push("/courses?course=ielts-(ukvi---academic---general)");
-      closeMenu();
-    },
-    link: "/courses?course=ielts-(ukvi---academic---general)",
-    identifier: "ielts-(ukvi---academic---general)",
+    link: `/courses?course=${getCourseDataUrl["IELTS (UKVI - Academic - General)"]}`,
+    identifier: getCourseDataUrl["IELTS (UKVI - Academic - General)"],
   },
   {
-    label: (
-      <span className="highlightedCourse">
-        Class 7
-      </span>
-    ),
-    onClick: (e) => {
-      history.push("/courses?course=class-7");
-      closeMenu();
-    },
-    link: "/courses?course=class-7",
-    identifier: "class-7",
+    label: <span className="highlightedCourse">Class 7</span>,
+    link: `/courses?course=${getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"]}`,
+    identifier: getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"],
   },
 ];
 export const checkauthfailed = (err, setIsLoading, history) => {

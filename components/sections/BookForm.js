@@ -3,8 +3,10 @@ import {
   SUBJECTS,
   checkauth,
   checkauthfailed,
+  getCourseData,
+  getCourseDataResult,
+  getCourseDataUrl,
   highlightedCourseList,
-  removeSpacesAndReplaceSymbols,
   verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
 import React, { useEffect, useState } from "react";
@@ -46,15 +48,13 @@ const BookForm = ({
   const [course, setCourse] = useState({});
   const history = useHistory();
   const [error, setError] = useState(false);
-  
+
   useEffect(() => {
     if (props.course) {
       let selectedcourse = mapper["courses"].find(
-        (item) =>
-          removeSpacesAndReplaceSymbols(item.value) ==
-          removeSpacesAndReplaceSymbols(props.course)
+        (item) => item.value == getCourseData[props.course]
       );
-
+      debugger;
       if (selectedcourse) {
         handleChange(selectedcourse, "course");
       }
@@ -119,7 +119,7 @@ const BookForm = ({
           history.push("/profile");
         }
       } catch (err) {
-        if (checkauthfailed(err,setIsLoading,history)){
+        if (checkauthfailed(err, setIsLoading, history)) {
           return;
         }
         setIsLoading(false);
@@ -133,7 +133,7 @@ const BookForm = ({
 
   const getLink = () => {
     let obj = highlightedCourseList.find(
-      (item) => item.identifier == removeSpacesAndReplaceSymbols(course.label)
+      (item) => item.identifier == getCourseDataUrl[course.label]
     );
     return obj?.link;
   };

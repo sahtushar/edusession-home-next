@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
+  getCourseDataUrl,
   getLoginItems,
   isAdminCred,
   verifyIsUserAuthenticated,
@@ -107,21 +108,21 @@ const Header = ({
     {
       label: <span className="highlightedCourse">JEE</span>,
       onClick: (e) => {
-        history.push("/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)");
+        history.push(`/courses?course=${getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]}`);
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">NEET</span>,
       onClick: (e) => {
-        history.push("/courses?course=neet-ug");
+        history.push(`/courses?course=${getCourseDataUrl["NEET UG"]}`);
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">Spoken English</span>,
       onClick: (e) => {
-        history.push("/courses?course=spoken-english");
+        history.push(`/courses?course=${getCourseDataUrl["Spoken English"]}`);
         closeMenu();
       },
     },

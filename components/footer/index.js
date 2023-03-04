@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
-import { removeSpacesAndReplaceSymbols } from "../../utils/AppConstant";
+import { getCourseDataUrl } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
 
 const Footer = ({ city }) => {
   let competitveExam = [
     { text: "CA Foundation and Intermediate" },
     { text: "IELTS (UKVI - Academic - General)" },
-    { text: "JEE Mains and Advanced(MH-CET and GCET)" },
+    { text: "JEE Mains and Advanced (MH-CET and GCET)" },
     { text: "NEET UG" },
   ];
   let spokenEnglish = [
@@ -119,19 +119,11 @@ const Footer = ({ city }) => {
             <ul>
               {competitveExam.map((item) => {
                 return (
-                  <li
-                  // onClick={() => {
-                  //   history.push(
-                  //     `/book-form?course=${removeSpacesAndReplaceSymbols(
-                  //       item.text
-                  //     )}`
-                  //   );
-                  // }}
-                  >
+                  <li>
                     <Link
-                      href={`/book-form?course=${removeSpacesAndReplaceSymbols(
+                      href={`/book-form?course=${getCourseDataUrl[
                         item.text
-                      )}`}
+                      ]}`}
                     >
                       {item.text.trim()}
                     </Link>
@@ -145,11 +137,7 @@ const Footer = ({ city }) => {
             <ul>
               {spokenEnglish.map((item) => {
                 return (
-                  <li
-                  // onClick={() => {
-                  //   history.push(`/book-form?course=spoken-english`);
-                  // }}
-                  >
+                  <li>
                     <Link href={`/book-form?course=spoken-english`}>
                       {item.text.trim()}
                     </Link>
@@ -163,19 +151,11 @@ const Footer = ({ city }) => {
             <ul>
               {classes.map((item) => {
                 return (
-                  <li
-                  // onClick={() => {
-                  //   history.push(
-                  //     `/book-form?course=${removeSpacesAndReplaceSymbols(
-                  //       item.text
-                  //     )}`
-                  //   );
-                  // }}
-                  >
+                  <li>
                     <Link
-                      href={`/book-form?course=${removeSpacesAndReplaceSymbols(
+                      href={`/book-form?course=${getCourseDataUrl[
                         item.text
-                      )}`}
+                      ]}`}
                     >
                       {item.text.trim()}
                     </Link>

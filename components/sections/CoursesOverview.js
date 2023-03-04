@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import {
   getCourseData,
+  getCourseDataUrl,
   removeSpacesAndReplaceSymbols,
 } from "../../utils/AppConstant";
 
@@ -73,32 +74,14 @@ const Courses = ({
   const getButton = (link) => {
     return (
       <ButtonGroup>
-        <Button
-          color="primary"
-          // onClick={() => {
-          //   history.push(
-          //     `/book-form?course=${removeSpacesAndReplaceSymbols(link)}`
-          //   );
-          // }}
-        >
-          <Link
-            href={`/book-form?course=${removeSpacesAndReplaceSymbols(link)}`}
-          >
+        <Button color="primary">
+          <Link href={`/book-form?course=${getCourseDataUrl[link]}`}>
             Book Class
           </Link>
         </Button>
-        {getCourseData[removeSpacesAndReplaceSymbols(link)] && (
-          <Button
-            color="primary"
-            // onClick={() => {
-            //   history.push(
-            //     `/courses?course=${removeSpacesAndReplaceSymbols(link)}`
-            //   );
-            // }}
-          >
-            <Link
-              href={`/courses?course=${removeSpacesAndReplaceSymbols(link)}`}
-            >
+        {getCourseData?.[getCourseDataUrl?.[link]] && (
+          <Button color="primary">
+            <Link href={`/courses?course=${getCourseDataUrl[link]}`}>
               Learn More
             </Link>
           </Button>
@@ -110,7 +93,7 @@ const Courses = ({
     "Class 6":
       "Class 6 online courses cover a wide range of subjects, including Mathematics, Science, Social Studies, and English. The Mathematics topics include basic operations, geometry, and algebra. The Science topics cover topics such as matter, energy, and living organisms. In Social Studies, students learn about history, geography, and civics. In English, students develop their reading, writing, and communication skills. Students in Class 6 are also introduced to basic computer skills, such as typing, internet usage, and coding.",
 
-    "Class 7":
+    "Class 7 (CBSE / ICSE / State Boards)":
       "Class 7 online courses cover advanced topics in Mathematics, Science, Social Studies, and English. The Mathematics topics include integers, fractions, and algebraic expressions. The Science topics cover topics such as force and motion, light and sound, and basic chemistry. In Social Studies, students learn about the world, ancient civilizations, and contemporary issues. In English, students develop their reading, writing, and critical thinking skills. Additionally, students in Class 7 are introduced to basic programming concepts and computer applications.",
 
     "Class 8":
@@ -136,7 +119,7 @@ const Courses = ({
 
     "Spoken English":
       "Spoken English online courses are designed to help students improve their oral communication skills in English. The courses cover topics such as pronunciation, intonation, grammar, and vocabulary. In addition to the basics, students also learn how to participate in group discussions, presentations, and job interviews. The courses include interactive sessions with teachers, personalized feedback, and practical exercises to help students build their confidence in spoken English.",
-    "JEE Mains and Advanced(MH-CET and GCET)": `JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to 
+    "JEE Mains and Advanced (MH-CET and GCET)": `JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to 
       study engineering in the top institutes of India. The online classes cover topics 
       like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. 
       The classes also focus on enhancing problem-solving skills, 
@@ -170,7 +153,6 @@ const Courses = ({
                       {item}
                     </CardHeader>
                     <CardBody>
-                      {/* <CardTitle tag="h5">{coursesHomePage[item]}</CardTitle> */}
                       <CardText className="m-0">
                         {coursesHomePage[item]}{" "}
                       </CardText>
@@ -181,23 +163,6 @@ const Courses = ({
               );
             })}
           </div>
-          {/* <div className="p-3 bg-warning my-2 rounded">
-              <Toast>
-                <ToastHeader>Reactstrap</ToastHeader>
-                <ToastBody>
-                  This is a toast on a warning background — check it out!
-                </ToastBody>
-              </Toast>
-            </div>
-            <div className="p-3 bg-info my-2 rounded">
-              <Toast>
-                <ToastHeader>Reactstrap</ToastHeader>
-                <ToastBody>
-                  This is a toast on an info background — check it out!
-                </ToastBody>
-              </Toast>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
