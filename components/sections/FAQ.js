@@ -58,7 +58,7 @@ const FAQ = ({
   );
 
   const sectionHeader = {
-    title: data?.faq?.title,
+    title: <><i class="fa fa-question-circle"></i>{" "}{data?.faq?.title}</>
   };
 
   return (

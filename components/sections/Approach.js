@@ -58,7 +58,11 @@ const Approach = ({
   );
 
   const sectionHeader = {
-    title: "How we Do it?",
+    title: (
+      <>
+        <i class="fa fa-cogs"></i>{" "}How we Do it?
+      </>
+    ),
     paragraph: `Phone’s addiction can be turned into a fruitful method of learning by Edu session.  We use technology to personalize the learning experience for each learner based on their strengths, weaknesses, and learning style. Our application provides well researched study material including textbooks, model test papers and other learning material.  Our perfect combination of practical and theoretical learning material doesn’t allow students to get bored of learning. 
       Our application is not only benefits students but also to the parents as they can check the progress of their wards. We analyse the strength and weakness of child and work accordingly to provide better results.      
       `,

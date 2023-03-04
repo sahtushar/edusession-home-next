@@ -60,7 +60,12 @@ const Courses = ({
   );
 
   const sectionHeader = {
-    title: `Courses We Provide ${city ? `in ${city}` : ""}`,
+    title: (
+      <>
+        <i class="fa fa-copy"></i>{" "}
+        {`Courses We Provide ${city ? `in ${city}` : ""}`}
+      </>
+    ),
     paragraph: "",
   };
 

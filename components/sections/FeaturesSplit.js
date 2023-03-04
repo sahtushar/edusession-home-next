@@ -1,14 +1,13 @@
-import React from "react";
-import classNames from "classnames";
-import { SectionSplitProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
+import MyImage from "../elements/MyImage";
+import React from "react";
+import SectionHeader from "./partials/SectionHeader";
+import { SectionSplitProps } from "../../utils/SectionProps";
+import classNames from "classnames";
 import { map } from "lodash";
-
 import pic1 from "./../../assets/images/19-1.png";
 import pic2 from "./../../assets/images/20-1.png";
 import pic3 from "./../../assets/images/18-1.png";
-import MyImage from "../elements/MyImage";
 
 const propTypes = {
   ...SectionSplitProps.types,
@@ -55,7 +54,7 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: "Why Choose Us?",
+    title: <><i className="fa fa-child"></i>{" "}Why Choose Us?"</>,
     paragraph:
       "In this modern era of digitalization, we help your child to grow with a team of experts who create high-quality, engaging, and up-to-date educational content. We understand and respect that everyone has their own way and speed of learning so at Edusession we promote one to one learning concept. Our platform provides interactive learning experiences through quizzes, group discussions and other interactive activities that keep learners engaged and help them retain information better. ",
   };

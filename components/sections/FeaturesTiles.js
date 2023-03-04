@@ -49,7 +49,11 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: "9000+ Sessions Conducted",
+    title: (
+      <>
+        <i className="fa fa-bar-chart"></i>{" "}9000+ Sessions Conducted
+      </>
+    ),
     paragraph:
       "Our live online one-to-one educational institute offers personalized, real-time learning experiences with expert instructors",
   };
@@ -84,8 +88,7 @@ const FeaturesTiles = ({
           <MoreCourses
             header={
               <>
-                Courses by{" "}
-                <span style={{ color: "#5658dd" }}>Edusession</span>
+                Courses by <span style={{ color: "#5658dd" }}>Edusession</span>
               </>
             }
           />
