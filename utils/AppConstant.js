@@ -333,7 +333,7 @@ export const homepagestructuredata = {
       position: "2",
       item: {
         "@type": "Course",
-        url: "https://edusession.live/courses?course=jee-mains-and-advanced(mh-cet-and-gcet)",
+        url: "https://edusession.live/courses?course=jee-mains-advanced-mhcet-gcet",
         name: "JEE Mains and Advanced (MH-CET and GCET) ",
         description:
           "Online Live one to one JEE Mains and Advanced (MH-CET and GCET) ",
