@@ -1,3 +1,4 @@
+import { Class7 } from "./data/class7";
 import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
 import { NEETUG } from "./data/NeetUg";
@@ -252,6 +253,7 @@ export const getCourseData = {
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
   "ielts-(ukvi---academic---general)": "IELTS (UKVI - Academic - General)",
+  "class-7": "Class 7 (CBSE / ICSE)"
 };
 
 export const URL = "https://edusession.live/";
@@ -281,7 +283,9 @@ export const getCourseDataResult = {
   "neet-ug": NEETUG,
   "spoken-english": SpokenEnglish,
   "ielts-(ukvi---academic---general)": IELTS,
+  "class-7":Class7
 };
+
 
 export const adminCreds = [
   {
@@ -399,6 +403,19 @@ export const highlightedCourseList = [
     },
     link: "/courses?course=ielts-(ukvi---academic---general)",
     identifier: "ielts-(ukvi---academic---general)",
+  },
+  {
+    label: (
+      <span className="highlightedCourse">
+        Class 7
+      </span>
+    ),
+    onClick: (e) => {
+      history.push("/courses?course=class-7");
+      closeMenu();
+    },
+    link: "/courses?course=class-7",
+    identifier: "class-7",
   },
 ];
 export const checkauthfailed = (err, setIsLoading, history) => {

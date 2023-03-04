@@ -46,17 +46,7 @@ const BookForm = ({
   const [course, setCourse] = useState({});
   const history = useHistory();
   const [error, setError] = useState(false);
-
-  // useEffect(() => {
-  //   console.log(props.course.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
-  //   let selectedcourse = mapper["courses"].find((item) =>
-  //     item.value.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').match(props.course.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, ''))
-  //   );
-  //   if (selectedcourse) {
-  //     handleChange(selectedcourse, "course");
-  //   }
-  // }, [props.course]);
-
+  
   useEffect(() => {
     if (props.course) {
       let selectedcourse = mapper["courses"].find(
@@ -106,14 +96,6 @@ const BookForm = ({
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // if (!email || !password) {
-    //   setError("Please fill all the relevant information.");
-    //   return;
-    // } else if (password !== confirmpassword) {
-    //   setError("Entererd passwords are not matching.");
-    //   return;
-    // }
-    // setError(false);
     let body = {
       username: localStorage.getItem("username"),
       email: localStorage.getItem("username"),
@@ -128,11 +110,6 @@ const BookForm = ({
       setError("Please fill all the relevant info");
       return;
     }
-    // username: req.body.username,
-    // email: req.body.email,
-    // course: req.body.course,
-    // subject: req.body.subject,
-    // specialRequirement: req.body.specialRequirement,
     if (verifyIsUserAuthenticated()) {
       try {
         setIsLoading(true);
