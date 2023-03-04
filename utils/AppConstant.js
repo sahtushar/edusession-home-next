@@ -1,6 +1,8 @@
+import { CA } from "./data/CA";
 import { Class7 } from "./data/class7";
 import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
+import { JEEFoundation } from "./data/JEEFoundation";
 import { NEETUG } from "./data/NeetUg";
 import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
@@ -261,6 +263,8 @@ export const getCourseData = {
   "spoken-english": "Spoken English",
   "ielts-ukvi-academic-general": "IELTS (UKVI - Academic - General)",
   "class-7": "Class 7 (CBSE / ICSE)",
+  "ca-foundation-intermediate": "CA Foundation and Intermediate",
+  "jee-foundation": "JEE Foundation",
 };
 
 export const getCourseDataResult = {
@@ -269,6 +273,8 @@ export const getCourseDataResult = {
   "spoken-english": SpokenEnglish,
   "ielts-ukvi-academic-general": IELTS,
   "class-7": Class7,
+  "ca-foundation-intermediate": CA,
+  "jee-foundation": JEEFoundation,
 };
 
 export const getCourseDataUrl = {
@@ -277,6 +283,8 @@ export const getCourseDataUrl = {
   "Spoken English": "spoken-english",
   "IELTS (UKVI - Academic - General)": "ielts-ukvi-academic-general",
   "Class 7 (CBSE / ICSE / State Boards)": "class-7",
+  "CA Foundation and Intermediate": "ca-foundation-intermediate",
+  "JEE Foundation": "jee-foundation",
 };
 
 export const URL = "https://edusession.live/";
@@ -361,12 +369,44 @@ export const homepagestructuredata = {
     },
     {
       "@type": "ListItem",
-      position: "3",
+      position: "4",
       item: {
         "@type": "Course",
-        url: "https://edusession.live/courses?course=neet-ug",
+        url: "https://edusession.live/courses?course=jee-foundation",
         name: "NEET UG",
-        description: "Online Live one to one NEET UG",
+        description: "Online Live one to one JEE Foundation Classes",
+        provider: {
+          "@type": "Organization",
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: "5",
+      item: {
+        "@type": "Course",
+        url: "https://edusession.live/courses?course=ca-foundation-intermediate",
+        name: "NEET UG",
+        description:
+          "Online Live one to one CA Foundation and Intermediate Classes",
+        provider: {
+          "@type": "Organization",
+          name: "Edusession",
+          sameAs: "https://edusession.live/",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: "6",
+      item: {
+        "@type": "Course",
+        url: "https://edusession.live/courses?course=ielts-ukvi-academic-general",
+        name: "IELTS (UKVI - Academic - General)",
+        description:
+          "Online Live one to one IELTS (UKVI - Academic - General) Class",
         provider: {
           "@type": "Organization",
           name: "Edusession",
@@ -394,11 +434,7 @@ export const highlightedCourseList = [
     identifier: getCourseDataUrl["Spoken English"],
   },
   {
-    label: (
-      <span className="highlightedCourse">
-        IELTS (UKVI - Academic - General)
-      </span>
-    ),
+    label: <span className="highlightedCourse">IELTS</span>,
     link: `/courses?course=${getCourseDataUrl["IELTS (UKVI - Academic - General)"]}`,
     identifier: getCourseDataUrl["IELTS (UKVI - Academic - General)"],
   },
@@ -406,6 +442,16 @@ export const highlightedCourseList = [
     label: <span className="highlightedCourse">Class 7</span>,
     link: `/courses?course=${getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"]}`,
     identifier: getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"],
+  },
+  {
+    label: <span className="highlightedCourse">CA</span>,
+    link: `/courses?course=${getCourseDataUrl["CA Foundation and Intermediate"]}`,
+    identifier: getCourseDataUrl["CA Foundation and Intermediate"],
+  },
+  {
+    label: <span className="highlightedCourse">JEE Foundation</span>,
+    link: `/courses?course=${getCourseDataUrl["JEE Foundation"]}`,
+    identifier: getCourseDataUrl["JEE Foundation"],
   },
 ];
 export const checkauthfailed = (err, setIsLoading, history) => {

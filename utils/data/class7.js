@@ -7,7 +7,7 @@ export const Class7 = {
     "Edusession provides comprehensive study material for all subjects in 7th grade, including Math, Science, Social Studies, English, and more. Our study material is designed to cover the entire syllabus and includes detailed explanations of each topic along with examples, diagrams, and illustrations to aid learning.",
   sections: [
     {
-      title: "Experienced Faculty for 7th Grade on Edusession",
+      title: "Experienced Faculty for 7th Grade on Edusession Live",
       content:
         "Our faculty members are highly experienced and trained professionals who have a strong command of their respective subjects. They use a variety of teaching methods and techniques to help students understand and retain concepts effectively.",
     },
@@ -51,22 +51,22 @@ export const Class7 = {
     title: "FAQs for Class 7",
     data: [
       {
-        question: "What is Edusession?",
+        question: "What is Edusession Live?",
         answer:
-          "Edusession is an online one-to-one personalized learning platform that offers academic support and guidance to students.",
+          "Edusession Live is an online one-to-one personalized learning platform that offers academic support and guidance to students.",
       },
       {
-        question: "Is Edusession suitable for 7th-grade students?",
+        question: "Is Edusession suitable for Class 7 students?",
         answer:
           "Yes, Edusession offers academic support to students from grades 6 to 12, including 7th-grade students.",
       },
       {
         question: "What type of services does Edusession provide?",
         answer:
-          "Edusession provides personalized one-to-one online tutoring sessions, comprehensive study material, regular mock tests, doubt clearance sessions, access to study resources, and motivational sessions.",
+          "Edusession Live provides personalized one-to-one online tutoring sessions, comprehensive study material, regular mock tests, doubt clearance sessions, access to study resources, and motivational sessions.",
       },
       {
-        question: "What subjects can 7th-grade students receive tutoring for?",
+        question: "What subjects can Class 7 students receive tutoring for?",
         answer:
           "Edusession offers tutoring services for a range of subjects including Math, Science, Social Studies, English, and more.",
       },
@@ -84,7 +84,7 @@ export const Class7 = {
         question:
           "Is there any flexibility in terms of scheduling tutoring sessions?",
         answer:
-          "Yes, Edusession offers flexible learning options, allowing students to schedule their sessions at a time convenient for them.",
+          "Yes, Edusession Live offers flexible learning options, allowing students to schedule their sessions at a time convenient for them.",
       },
     ],
   },

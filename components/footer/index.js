@@ -21,7 +21,7 @@ const Footer = ({ city }) => {
   const history = useHistory();
   const getFooterDesc = () => {
     if (city) {
-      return `Edusession is an online one to one personalized platform that
+      return `Edusession Live is an online one to one personalized platform that
       offers live online one on one tuitions for students from Class 6 to 12, as well as
       JEE, NEET, Spoken English, CA, graduation, and more with great 
       presence in ${city} and around with
@@ -29,7 +29,7 @@ const Footer = ({ city }) => {
       scheduling, Edusession empowers learners to achieve their academic
       goals and excel in their chosen fields by attending our classes.`;
     } else {
-      return `Edusession is an online one to one live personalized platform based out of Goa and functional all over India, we 
+      return `Edusession Live is an online one to one live personalized platform based out of Goa and functional all over India, we 
       offers live online one on one tuitions for students from Class 6 to 12, as well as JEE, NEET, 
       Spoken English, CA, graduation, and more. With live courses taught by 
       experienced tutors and flexible scheduling, Edusession empowers learners to 

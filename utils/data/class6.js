@@ -56,19 +56,19 @@ export const Class8 = {
             "Edusession is an online one-to-one personalized learning platform that offers academic support and guidance to students.",
         },
         {
-          question: "Is Edusession suitable for 7th-grade students?",
+          question: "Is Edusession suitable for Class 7 students?",
           answer:
-            "Yes, Edusession offers academic support to students from grades 6 to 12, including 7th-grade students.",
+            "Yes, We offer academic support to students from grades 6 to 12, including 7th-grade students.",
         },
         {
-          question: "What type of services does Edusession provide?",
+          question: "What type of services does Edusession Live provide?",
           answer:
-            "Edusession provides personalized one-to-one online tutoring sessions, comprehensive study material, regular mock tests, doubt clearance sessions, access to study resources, and motivational sessions.",
+            "We provides personalized one-to-one online tutoring sessions, comprehensive study material, regular mock tests, doubt clearance sessions, access to study resources, and motivational sessions.",
         },
         {
           question: "What subjects can 7th-grade students receive tutoring for?",
           answer:
-            "Edusession offers tutoring services for a range of subjects including Math, Science, Social Studies, English, and more.",
+            "We offer tutoring services for a range of subjects including Math, Science, Social Studies, English, and more.",
         },
         {
           question: "Are the tutors experienced and qualified?",

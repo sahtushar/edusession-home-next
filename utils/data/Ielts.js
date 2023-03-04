@@ -4,7 +4,7 @@ export const IELTS = {
     <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
   title: "IELTS (UKVI - Academic - General) Classes: Key Features",
   description:
-    "In today's globalized world, English has become the most spoken language, with over 1.5 billion people using it as their primary or secondary language. Therefore, the demand for English language courses has been increasing exponentially, and the International English Language Testing System (IELTS) is one of the most sought-after courses worldwide. IELTS is a globally recognized English language proficiency test that assesses a candidate's ability to communicate in English for academic or general purposes. This article provides an overview of IELTS (UKVI - Academic - General) online course of Edusession.",
+    "In today's globalized world, English has become the most spoken language, with over 1.5 billion people using it as their primary or secondary language. Therefore, the demand for English language courses has been increasing exponentially, and the International English Language Testing System (IELTS) is one of the most sought-after courses worldwide. IELTS is a globally recognized English language proficiency test that assesses a candidate's ability to communicate in English for academic or general purposes. This article provides an overview of IELTS (UKVI - Academic - General) online course of Edusession Live",
   sections: [
     {
       title: "What is IELTS?",

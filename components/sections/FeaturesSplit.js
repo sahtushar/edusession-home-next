@@ -56,13 +56,13 @@ const FeaturesSplit = ({
   const sectionHeader = {
     title: <><i className="fa fa-child"></i>{" "}Why Choose Us?</>,
     paragraph:
-      "In this modern era of digitalization, we help your child to grow with a team of experts who create high-quality, engaging, and up-to-date educational content. We understand and respect that everyone has their own way and speed of learning so at Edusession we promote one to one learning concept. Our platform provides interactive learning experiences through quizzes, group discussions and other interactive activities that keep learners engaged and help them retain information better. ",
+      "In this modern era of digitalization, we help your child to grow with a team of experts who create high-quality, engaging, and up-to-date educational content. We understand and respect that everyone has their own way and speed of learning so at Edusession Live we promote one to one learning concept. Our platform provides interactive learning experiences through quizzes, group discussions and other interactive activities that keep learners engaged and help them retain information better. ",
   };
   let mapper = [
     {
       icon: pic1,
       text: "Online Live One-to-one Classroom with Top Faculty",
-      para: "EduSession believes in and respects the individualism of each student. To let the student study at their pace and savor the knowledge we provide one-to-one virtual classrooms. This environment allows the student to have personalized attention and interaction with their mentors. ",
+      para: "EduSession Live believes in and respects the individualism of each student. To let the student study at their pace and savor the knowledge we provide one-to-one virtual classrooms. This environment allows the student to have personalized attention and interaction with their mentors. ",
     },
     {
       text: "Comprehensive Study Material for All Exams",

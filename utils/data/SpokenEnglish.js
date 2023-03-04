@@ -4,7 +4,7 @@ export const SpokenEnglish = {
   <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
   title: "Spoken English: Key Features",
   description:
-    "At Edusession, we offer a comprehensive online Spoken English course designed to help learners improve their language proficiency from the comfort of their homes. Our course covers all aspects of spoken English, including grammar, vocabulary, pronunciation, and conversation skills. In this article, we will provide a detailed overview of our Spoken English course, highlighting its features, benefits, and how it compares to other online courses available in the market.",
+    "At Edusession Live, we offer a comprehensive online Spoken English course designed to help learners improve their language proficiency from the comfort of their homes. Our course covers all aspects of spoken English, including grammar, vocabulary, pronunciation, and conversation skills. In this article, we will provide a detailed overview of our Spoken English course, highlighting its features, benefits, and how it compares to other online courses available in the market.",
   sections: [
     {
       title: "Course Features",
