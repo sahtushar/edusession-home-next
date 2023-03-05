@@ -3,12 +3,12 @@ import {
   coursesPaths,
   getCourseData,
   getCourseDataResult,
-} from "./../utils/AppConstant";
+} from "./../../utils/AppConstant";
 
-import CoursesPage from "./../views/Courses";
+import CoursesPage from "./../../views/Courses";
 import { useRouter as useHistory } from "next/router";
 
-// import { callCourseData } from "../../services/authroutes";
+// import { callCourseData } from "../../../services/authroutes";
 
 const Course = (props) => {
   const history = useHistory();
