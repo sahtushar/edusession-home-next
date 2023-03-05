@@ -48,7 +48,7 @@ const Testimonial = ({
   const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
 
   const sectionHeader = {
-    title: <><i class="fa fa-users"></i>{" "}Students testimonials</>,
+    title: <><i className="fa fa-users"></i>{" "}Students testimonials</>,
     paragraph: city
       ? `We Provide Our Students in ${city} with the best Possible Guidance`
       : `We Provide Our Students with the best Possible Guidance`,

@@ -63,7 +63,7 @@ const Courses = ({
   const sectionHeader = {
     title: (
       <>
-        <i class="fa fa-copy"></i>{" "}
+        <i className="fa fa-copy"></i>{" "}
         {`Courses We Provide ${city ? `in ${city}` : ""}`}
       </>
     ),

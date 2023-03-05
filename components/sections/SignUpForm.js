@@ -120,7 +120,7 @@ const SignUp = ({
       <div className="container">
         <div className={innerClasses}>
           <div className="sign-upWrapper">
-            <div class="form-box sign-up-box">
+            <div className="form-box sign-up-box">
               <h1>
                 <i className="fa fa-user-plus"></i> Sign Up For{" "}
                 <span style={{ color: "#5658dd" }}>Edusession</span>
@@ -189,7 +189,7 @@ const SignUp = ({
               </div>
 
               <input
-                class="submit-btn"
+                className="submit-btn"
                 type="submit"
                 onClick={(e) => {
                   onSubmit(e);
@@ -199,18 +199,18 @@ const SignUp = ({
               {error && (
                 <p style={{ color: "red", marginTop: "5px" }}>{error}</p>
               )}
-              <p class="text-1">
+              <p className="text-1">
                 Already a member?{" "}
                 <span
                   onClick={() => {
                     history.push("/sign-in");
                   }}
-                  class="sign-in-btn"
+                  className="sign-in-btn"
                 >
                   Sign in
                 </span>
               </p>
-              <p class="text-1">
+              <p className="text-1">
                 By Signing Up you agree to all our Policy, Disclaimer, Terms and
                 conditions.
               </p>

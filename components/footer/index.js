@@ -191,7 +191,7 @@ const Footer = ({ city }) => {
             </ul>
           </div>
         </div>
-        <div class="copyrightText">
+        <div className="copyrightText">
           <p>
             Copyright © 2023 Edusession. All Rights Reserved. For any query,
             Contact us at <span>+91 82378 15800</span>

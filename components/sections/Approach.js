@@ -60,7 +60,7 @@ const Approach = ({
   const sectionHeader = {
     title: (
       <>
-        <i class="fa fa-cogs"></i>{" "}How we Do it?
+        <i className="fa fa-cogs"></i>{" "}How we Do it?
       </>
     ),
     paragraph: `Phone’s addiction can be turned into a fruitful method of learning by Edu session.  We use technology to personalize the learning experience for each learner based on their strengths, weaknesses, and learning style. Our application provides well researched study material including textbooks, model test papers and other learning material.  Our perfect combination of practical and theoretical learning material doesn’t allow students to get bored of learning. 

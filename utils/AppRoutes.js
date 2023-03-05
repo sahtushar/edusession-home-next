@@ -17,3 +17,4 @@ export const BOOKFORM = `${BASEURL}/api/bookForm`;
 export const ALLFORMS = `${BASEURL}/api/bookedClass`;
 export const ALLBOOKEDCLASSES = `${BASEURL}/api/getBookedClasses`;
 export const GETCOURSEDATA = `${BASEURL}/api/getCourseData`;
+export const TRACKLOCATION= `${BASEURL}/api/trackLocation`;

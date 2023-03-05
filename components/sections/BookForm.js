@@ -146,11 +146,11 @@ const BookForm = ({
             <div>
               <div className="card p-5">
                 <h1 className="heading">
-                  <i class="fa fa-exchange"></i>{" "}Book a <span>One-on-One</span> Class with{" "}
+                  <i className="fa fa-exchange"></i>{" "}Book a <span>One-on-One</span> Class with{" "}
                   <span>Edusession Live</span>
                 </h1>
                 <p className="book-msg">
-                  <i class="fa fa-laptop my-float"> </i> At your time and
+                  <i className="fa fa-laptop my-float"> </i> At your time and
                   comfort with your preferred faculties for{" "}
                   <span>CBSE, ICSE, IB, State Board</span> and{" "}
                   <span>Competitive Examination</span> preparation.
@@ -240,7 +240,7 @@ const BookForm = ({
                 <div className="m-2">
                   <p className="callMessage">
                     {" "}
-                    <i class="fa fa-phone my-float"></i> Need help in anything?
+                    <i className="fa fa-phone my-float"></i> Need help in anything?
                     Call us at <span>+91 82378 15800</span>
                   </p>
                 </div>

@@ -117,3 +117,30 @@ export const callCourseData = async (body) => {
   let result = await axios(config);
   return result;
 };
+
+export const trackHomepge = async (page) => {
+  const res = await axios.get("https://geolocation-db.com/json/");
+  window?.dataLayer?.push({
+    event: "pageview",
+    ...res.data,
+  });
+  return res.data;
+};
+
+export const callTrackHomepage = async (body) => {
+  var data = qs.stringify(body);
+  var config = {
+    method: "POST",
+    maxBodyLength: Infinity,
+    url: GETCOURSEDATA,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+    },
+    data: data,
+  };
+
+  let result = await axios(config);
+  return result;
+};

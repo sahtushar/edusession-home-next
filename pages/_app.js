@@ -18,12 +18,52 @@ import { Loader } from "../components/loader";
 import PropTypes from "prop-types";
 import Script from "next/script";
 import WhatsApp from "../components/elements/Whatsapp";
+import { trackHomepge } from "../services/authroutes";
+import { useRouter as useHistory } from "next/router";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+  const history = useHistory();
   const [loading, setIsLoading] = React.useState(false);
+
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  function success(pos) {
+    var crd = pos.coords;
+
+    console.log("Your current position is:");
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`More or less ${crd.accuracy} meters.`);
+  }
+
+  React.useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then(function (result) {
+          if (result.state === "granted") {
+            console.log(result.state);
+            //If granted then you can directly call your function here
+            navigator.geolocation.getCurrentPosition(success);
+          } else if (result.state === "prompt") {
+            navigator.geolocation.getCurrentPosition(success, errors, options);
+          } else if (result.state === "denied") {
+            //If denied then you have to show instructions to enable location
+          }
+          result.onchange = function () {
+            console.log(result.state);
+          };
+        });
+    } else {
+      alert("Sorry Not available!");
+    }
+  }, [history.asPath]);
 
   return (
     <>
