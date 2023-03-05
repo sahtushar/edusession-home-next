@@ -5,6 +5,7 @@ import {
   GETCOURSEDATA,
   SIGNIN,
   SIGNUP,
+  TRACKLOCATION,
 } from "../utils/AppRoutes";
 
 import axios from "axios";
@@ -98,7 +99,7 @@ export const callAllBookedClasses = async (body) => {
   let result = await axios(config);
 
   return result;
-}
+};
 
 export const callCourseData = async (body) => {
   var data = qs.stringify(body);
@@ -132,11 +133,12 @@ export const callTrackHomepage = async (body) => {
   var config = {
     method: "POST",
     maxBodyLength: Infinity,
-    url: GETCOURSEDATA,
+    url: TRACKLOCATION,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": true,
+      "x-access-token": localStorage.getItem("auth-token"),
     },
     data: data,
   };

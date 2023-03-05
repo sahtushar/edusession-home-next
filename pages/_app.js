@@ -13,12 +13,13 @@ import "./../components/elements/whatsapp.scss";
 
 import * as React from "react";
 
+import { callTrackHomepage, trackHomepge } from "../services/authroutes";
+
 import Head from "next/head";
 import { Loader } from "../components/loader";
 import PropTypes from "prop-types";
 import Script from "next/script";
 import WhatsApp from "../components/elements/Whatsapp";
-import { trackHomepge } from "../services/authroutes";
 import { useRouter as useHistory } from "next/router";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -40,6 +41,9 @@ export default function MyApp(props) {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
+    callTrackHomepage({ lat: crd.latitude, lon: crd.longitude }).then((res) => {
+      console.log(res);
+    });
   }
 
   React.useEffect(() => {
@@ -64,6 +68,15 @@ export default function MyApp(props) {
       alert("Sorry Not available!");
     }
   }, [history.asPath]);
+
+  // React.useEffect(() => {
+  //   trackHomepge().then((res) => {
+  //     console.log(res);
+  //     callTrackHomepage(res).then((res2) => {
+  //       console.log(res2);
+  //     });
+  //   });
+  // }, [history.asPath]);
 
   return (
     <>
