@@ -73,8 +73,8 @@ const CourseIntro = ({
                         dangerouslySetInnerHTML={{
                           __html: makeBold(
                             item.content,
-                            getCourseKeywords[course]
-                              .courseContentWords
+                            getCourseKeywords?.[course]
+                              ?.courseContentWords
                           ),
                         }}
                       />
@@ -83,7 +83,7 @@ const CourseIntro = ({
                         dangerouslySetInnerHTML={{
                           __html: makeBold(
                             item.content,
-                            getCourseKeywords[courseIdentifier].courseContentWords
+                            getCourseKeywords?.[courseIdentifier]?.courseContentWords
                           ),
                         }}
                       />
@@ -99,8 +99,8 @@ const CourseIntro = ({
                                 dangerouslySetInnerHTML={{
                                   __html: makeBold(
                                     item2.content,
-                                    getCourseKeywords[courseIdentifier]
-                                      .courseContentWords
+                                    getCourseKeywords?.[courseIdentifier]
+                                      ?.courseContentWords
                                   ),
                                 }}
                               />
@@ -109,8 +109,8 @@ const CourseIntro = ({
                                 dangerouslySetInnerHTML={{
                                   __html: makeBold(
                                     item2.content,
-                                    getCourseKeywords[courseIdentifier]
-                                      .courseContentWords
+                                    getCourseKeywords?.[courseIdentifier]
+                                      ?.courseContentWords
                                   ),
                                 }}
                               />
