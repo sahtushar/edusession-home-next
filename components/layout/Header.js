@@ -241,9 +241,9 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )} ${!isActive ? "displaynone" : ""}`}
                   >
-                    {headerMapper?.[page]?.map((item) => {
+                    {headerMapper?.[page]?.map((item,index) => {
                       return (
-                        <li key={`${item.label}`}>
+                        <li key={`header_${index}`}>
                           <a
                             onClick={() => {
                               if (item.onClick) {

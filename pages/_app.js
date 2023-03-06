@@ -41,9 +41,17 @@ export default function MyApp(props) {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
-    callTrackHomepage({ lat: crd.latitude, lon: crd.longitude }).then((res) => {
+    callTrackHomepage({
+      lat: crd.latitude,
+      lon: crd.longitude,
+      path: history.asPath,
+    }).then((res) => {
       console.log(res);
     });
+  }
+
+  function errors(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
   React.useEffect(() => {
@@ -58,7 +66,7 @@ export default function MyApp(props) {
           } else if (result.state === "prompt") {
             navigator.geolocation.getCurrentPosition(success, errors, options);
           } else if (result.state === "denied") {
-            //If denied then you have to show instructions to enable location
+            alert("Please enable location for best Experience!")
           }
           result.onchange = function () {
             console.log(result.state);
