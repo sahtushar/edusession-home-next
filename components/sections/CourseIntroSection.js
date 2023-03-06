@@ -1,3 +1,9 @@
+import {
+  capitalize,
+  getCourseKeywords,
+  makeBold,
+} from "../../utils/AppConstant";
+
 import PropTypes from "prop-types";
 import React from "react";
 import SectionHeader from "./partials/SectionHeader";
@@ -63,9 +69,24 @@ const CourseIntro = ({
                   <>
                     <h3>{item.title}</h3>
                     {item?.content?.match(/<div>/) ? (
-                      <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: makeBold(
+                            item.content,
+                            getCourseKeywords[course]
+                              .courseContentWords
+                          ),
+                        }}
+                      />
                     ) : (
-                      <p>{item?.content}</p>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: makeBold(
+                            item.content,
+                            getCourseKeywords[courseIdentifier].courseContentWords
+                          ),
+                        }}
+                      />
                     )}
 
                     <div style={{ marginLeft: "10px" }}>
@@ -76,11 +97,23 @@ const CourseIntro = ({
                             {item2?.content?.match(/<div>/) ? (
                               <div
                                 dangerouslySetInnerHTML={{
-                                  __html: item2.content,
+                                  __html: makeBold(
+                                    item2.content,
+                                    getCourseKeywords[courseIdentifier]
+                                      .courseContentWords
+                                  ),
                                 }}
                               />
                             ) : (
-                              <p>{item2?.content}</p>
+                              <p
+                                dangerouslySetInnerHTML={{
+                                  __html: makeBold(
+                                    item2.content,
+                                    getCourseKeywords[courseIdentifier]
+                                      .courseContentWords
+                                  ),
+                                }}
+                              />
                             )}
                           </>
                         );

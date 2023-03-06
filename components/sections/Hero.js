@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import {
+  getCourseKeywords,
+  makeBold,
+  verifyIsUserAuthenticated,
+} from "../../utils/AppConstant";
 
 import Button from "../elements/Button";
 import ButtonGroup from "../elements/ButtonGroup";
@@ -10,7 +15,6 @@ import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import homepageicon from "./../../assets/images/homepageicon.png";
 import { useRouter as useHistory } from "next/router";
-import { verifyIsUserAuthenticated } from "../../utils/AppConstant";
 
 const propTypes = {
   ...SectionProps.types,
@@ -30,6 +34,7 @@ const Hero = ({
   invertColor,
   data,
   course,
+  courseIdentifier,
   rightImg,
   ...props
 }) => {
@@ -66,7 +71,6 @@ const Hero = ({
       history.push("/sign-in");
     }
   };
-
   return (
     <section {...props} className={`${outerClasses} homepagesection`}>
       <div className="container-sm">
@@ -80,11 +84,16 @@ const Hero = ({
               >
                 {/* {data?.header} */}
               </h1>
-              {data?.subheadertag =="h2" ? (
+              {data?.subheadertag == "h2" ? (
                 <h2
                   className="m-0 mb-32 subheader"
                   data-reveal-delay="400"
-                  dangerouslySetInnerHTML={{ __html: data?.subheader }}
+                  dangerouslySetInnerHTML={{
+                    __html: makeBold(
+                      data?.subheader,
+                      getCourseKeywords?.[courseIdentifier]?.subheaderWords
+                    ),
+                  }}
                 >
                   {/* {data?.subheader} */}
                 </h2>
@@ -92,7 +101,12 @@ const Hero = ({
                 <p
                   className="m-0 mb-32 subheader"
                   data-reveal-delay="400"
-                  dangerouslySetInnerHTML={{ __html: data?.subheader }}
+                  dangerouslySetInnerHTML={{
+                    __html: makeBold(
+                      data?.subheader,
+                      getCourseKeywords?.[courseIdentifier]?.subheaderWords
+                    ),
+                  }}
                 >
                   {/* {data?.subheader} */}
                 </p>

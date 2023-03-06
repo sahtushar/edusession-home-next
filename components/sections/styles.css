@@ -214,11 +214,14 @@ section.courses {
 .coursesDetails .card-text {
   color: rgb(41, 23, 23);
 }
-.coursesDetails h2{
+.coursesDetails h2 {
   color: rgb(41, 23, 23) !important;
   font-size: 1.5rem;
 }
-
+.faqIntro h3 {
+  color: rgb(41, 23, 23) !important;
+  font-size: 2rem;
+}
 .approach .my-2 {
   width: 100%;
 }
@@ -402,6 +405,9 @@ div:nth-child(2)
   .moreCourses .list-group {
     display: flex;
     flex-direction: column;
+  }
+  .faqIntro h3 {
+    font-size: 1.5rem;
   }
   .moreCourses .list-group .list-group-item {
     height: 40px;

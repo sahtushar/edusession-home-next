@@ -55,7 +55,7 @@ export default function MyApp(props) {
   }
 
   React.useEffect(() => {
-    if (navigator.geolocation) {
+    if (navigator.geolocation && process.env.NODE_ENV == "production") {
       navigator.permissions
         .query({ name: "geolocation" })
         .then(function (result) {
@@ -73,7 +73,7 @@ export default function MyApp(props) {
           };
         });
     } else {
-      alert("Sorry Not available!");
+      console.log("Sorry Not available!");
     }
   }, [history.asPath]);
 

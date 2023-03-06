@@ -37,12 +37,12 @@ const Home = ({ city }) => {
     subheader: `<span>Get the best interactive personalized One-on-one sessions at your time
           and comfort with your preferred faculties for
           <span style="color:#5658dd">
-            CBSE, ICSE, IB, State Board and Competitive examination
+            CBSE, ICSE, JEE, NEET, State Board, Spoken English and Competitive examination
           </span>
           preparation.
-          <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span><span>`,
+          <span>Doubt clearance is now easy with focused 1-on-1 tuiton by best Online Tutors.</span><span>`,
     rightImg: homepageicon,
-    subheadertag:"h2"
+    subheadertag: "h2",
   };
   const getHelmetData = () => {
     return {
@@ -70,6 +70,7 @@ const Home = ({ city }) => {
           className="illustration-section-01"
           data={HeroData}
           rightImg={homepageicon}
+          courseIdentifier="homepage"
         />
         <FeaturesTiles className="illustration-section-01" />
 
@@ -81,10 +82,14 @@ const Home = ({ city }) => {
         />
         {/*
          */}
-        <Testimonial topDivider city={city}  className="illustration-section-01"/>
+        <Testimonial
+          topDivider
+          city={city}
+          className="illustration-section-01"
+        />
         {/* <Cta split /> */}
         <Courses city={city} className="illustration-section-01" />
-        <Approach className="illustration-section-02"/>
+        <Approach className="illustration-section-02" />
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>
       <Footer city={city} />

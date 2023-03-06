@@ -55,12 +55,12 @@ const CoursesPage = (props) => {
         <Hero
           className="illustration-section-01"
           data={courseData}
-          course={dashUrl}
+          courseIdentifier={props.course}
           rightImg={homepageicon}
         />
         <CourseIntro
           data={courseData}
-          courseIdentifier={dashUrl}
+          courseIdentifier={props.course}
           setIsLoading={props.setIsLoading}
         />
 

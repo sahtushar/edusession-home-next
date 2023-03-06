@@ -1,13 +1,13 @@
 export const SpokenEnglish = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Spoken English</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Spoken English preparation.
-  <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
-  title: "Spoken English: Key Features",
+  <span>Doubt clearance is now easy with focused 1-on-1 tuiton by best Online Tutors.</span></span>`,
+  title: "Online Spoken English 1-on-1 Class",
   description:
     "At Edusession Live, we offer a comprehensive online Spoken English course designed to help learners improve their language proficiency from the comfort of their homes. Our course covers all aspects of spoken English, including grammar, vocabulary, pronunciation, and conversation skills. In this article, we will provide a detailed overview of our Spoken English course, highlighting its features, benefits, and how it compares to other online courses available in the market.",
   sections: [
     {
-      title: "Course Features",
+      title: "One-to-One Live Class - Course Features",
       content:
         "Our courses are designed to be comprehensive and include a range of features that are designed to help learners achieve fluency in English. Some of the features of our courses include interactive lessons with native English speakers, practice exercises, personalized feedback, access to online resources, and flexible learning options.",
     },
@@ -29,7 +29,7 @@ export const SpokenEnglish = {
     {
       title: "Course Content",
       content:
-        "Our course is divided into several modules, each of which focuses on a different aspect of spoken English. The modules are as follows:",
+        "Our online one-on-one course is divided into several modules, each of which focuses on a different aspect of spoken English. The modules are as follows:",
       subsections: [
         {
           title: "Pronunciation",

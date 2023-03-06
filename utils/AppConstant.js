@@ -283,6 +283,38 @@ export const getCourseDataResult = {
   "jee-foundation": JEEFoundation,
 };
 
+export const makeBold = (item, keyword) => {
+  let res = item;
+  keyword?.map((word) => {
+    var re = new RegExp(word, "gi");
+    res = res?.replace(re, "<strong>" + capitalize(word) + "</strong>");
+  });
+  return res;
+};
+
+export const getCourseKeywords = {
+  // "jee-mains-advanced-mhcet-gcet": JEE,
+  // "neet-ug": NEETUG,
+  "spoken-english": {
+    courseContentWords: [
+      "Spoken English",
+      "Grammar",
+      "Online",
+      "Vocabulary",
+      "one-on-one",
+      "classroom",
+    ],
+    subheaderWords: ["Spoken English", "one-on-one", "1-on-1", "online tutors"],
+  },
+  homepage: {
+    subheaderWords: ["Spoken English", "one-on-one", "1-on-1", "online tutors","CBSE","ICSE","JEE","NEET"],
+  },
+  // "ielts-ukvi-academic-general": IELTS,
+  // "class-7": Class7,
+  // "ca-foundation-intermediate": CA,
+  // "jee-foundation": JEEFoundation,
+};
+
 export const getCourseDataUrl = {
   "JEE Mains and Advanced (MH-CET and GCET)": "jee-mains-advanced-mhcet-gcet",
   "NEET UG": "neet-ug",
