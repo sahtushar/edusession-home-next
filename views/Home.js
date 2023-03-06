@@ -42,6 +42,7 @@ const Home = ({ city }) => {
           preparation.
           <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span><span>`,
     rightImg: homepageicon,
+    subheadertag:"h2"
   };
   const getHelmetData = () => {
     return {

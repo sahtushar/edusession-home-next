@@ -80,13 +80,24 @@ const Hero = ({
               >
                 {/* {data?.header} */}
               </h1>
-              <p
-                className="m-0 mb-32 subheader"
-                data-reveal-delay="400"
-                dangerouslySetInnerHTML={{ __html: data?.subheader }}
-              >
-                {/* {data?.subheader} */}
-              </p>
+              {data?.subheadertag =="h2" ? (
+                <h2
+                  className="m-0 mb-32 subheader"
+                  data-reveal-delay="400"
+                  dangerouslySetInnerHTML={{ __html: data?.subheader }}
+                >
+                  {/* {data?.subheader} */}
+                </h2>
+              ) : (
+                <p
+                  className="m-0 mb-32 subheader"
+                  data-reveal-delay="400"
+                  dangerouslySetInnerHTML={{ __html: data?.subheader }}
+                >
+                  {/* {data?.subheader} */}
+                </p>
+              )}
+
               <div className="ctaHomepage">
                 <ButtonGroup>
                   <Button
