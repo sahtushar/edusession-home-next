@@ -66,7 +66,7 @@ export default function MyApp(props) {
           } else if (result.state === "prompt") {
             navigator.geolocation.getCurrentPosition(success, errors, options);
           } else if (result.state === "denied") {
-            alert("Please enable location for best Experience!")
+            // alert("Please enable location for best Experience!")
           }
           result.onchange = function () {
             console.log(result.state);
