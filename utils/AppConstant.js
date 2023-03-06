@@ -265,6 +265,12 @@ export const getCourseData = {
   "class-7": "Class 7 (CBSE / ICSE)",
   "ca-foundation-intermediate": "CA Foundation and Intermediate",
   "jee-foundation": "JEE Foundation",
+  "class-6": "Class 6",
+  "class-8": "Class 8",
+  "class-9": "Class 9",
+  "class-10": "Class 10",
+  "class-11": "Class 11",
+  "class-12": "Class 12",
 };
 
 export const getCourseDataResult = {
@@ -285,6 +291,12 @@ export const getCourseDataUrl = {
   "Class 7 (CBSE / ICSE / State Boards)": "class-7",
   "CA Foundation and Intermediate": "ca-foundation-intermediate",
   "JEE Foundation": "jee-foundation",
+  "Class 6": "class-6",
+  "Class 8": "class-8",
+  "Class 9": "class-9",
+  "Class 10": "class-10",
+  "Class 11": "class-11",
+  "Class 12": "class-12",
 };
 
 export const URL = "https://edusession.live/";

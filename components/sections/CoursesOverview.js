@@ -150,7 +150,7 @@ const Courses = ({
               return (
                 <Card className="my-2" color="light" inverse>
                   <article>
-                    <CardHeader tag="h3" className="mt-0 mb-16">
+                    <CardHeader tag="h2" className="mt-0 mb-16">
                       {item}
                     </CardHeader>
                     <CardBody>

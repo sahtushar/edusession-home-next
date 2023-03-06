@@ -101,6 +101,9 @@ section.testimonialPage {
 .testimonialPage p {
   color: rgb(41, 23, 23);
 }
+.testimonialPage h3 {
+  color: rgb(41, 23, 23);
+}
 .testimonialPage .section-inner {
   padding-top: 40px !important;
   padding-bottom: 40px !important;
@@ -210,6 +213,10 @@ section.courses {
 }
 .coursesDetails .card-text {
   color: rgb(41, 23, 23);
+}
+.coursesDetails h2{
+  color: rgb(41, 23, 23) !important;
+  font-size: 1.5rem;
 }
 
 .approach .my-2 {
@@ -376,6 +383,10 @@ div:nth-child(2)
   }
   .moreCourses .list-group li {
     margin-bottom: 0px;
+  }
+  .testimonialPage p {
+    color: rgb(41, 23, 23);
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 640px) {

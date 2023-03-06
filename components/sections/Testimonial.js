@@ -48,7 +48,11 @@ const Testimonial = ({
   const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
 
   const sectionHeader = {
-    title: <><i className="fa fa-users"></i>{" "}Students testimonials</>,
+    title: (
+      <>
+        <i className="fa fa-users"></i> Students testimonials
+      </>
+    ),
     paragraph: city
       ? `We Provide Our Students in ${city} with the best Possible Guidance`
       : `We Provide Our Students with the best Possible Guidance`,
@@ -121,10 +125,7 @@ const Testimonial = ({
     mapper.map((item) => {
       res.push({
         element: (
-          <div
-            className={`tiles-item`}
-            data-reveal-delay="200"
-          >
+          <div className={`tiles-item`} data-reveal-delay="200">
             <div className="tiles-item-inner">
               <div className="testimonial-item-content">
                 <p className="text-sm mb-0">— {item.review}</p>
@@ -167,6 +168,7 @@ const Testimonial = ({
             data={sectionHeader}
             className="center-content"
             from="testimonialPage"
+            tag="h3"
           />
           <div className={tilesClasses}>
             {generateSlides().map((item) => {
