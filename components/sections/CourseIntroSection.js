@@ -61,7 +61,7 @@ const CourseIntro = ({
               {data?.sections?.map((item) => {
                 return (
                   <>
-                    <h2>{item.title}</h2>
+                    <h3>{item.title}</h3>
                     {item?.content?.match(/<div>/) ? (
                       <div dangerouslySetInnerHTML={{ __html: item.content }} />
                     ) : (
@@ -72,7 +72,7 @@ const CourseIntro = ({
                       {item?.subsections?.map((item2) => {
                         return (
                           <>
-                            <h3>{item2.title}</h3>
+                            <h4>{item2.title}</h4>
                             {item2?.content?.match(/<div>/) ? (
                               <div
                                 dangerouslySetInnerHTML={{

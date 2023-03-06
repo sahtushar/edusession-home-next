@@ -28,7 +28,7 @@
   border-radius: 10px;
   font-size: 18px;
 }
-.split-item-content h3 {
+.split-item-content h4 {
   color: black;
 }
 .featureTag img {
@@ -40,7 +40,7 @@
   color: dimgrey !important;
   text-align: left;
 }
-.split-item-content h3 {
+.split-item-content h4 {
   text-align: left;
 }
 .split-item {
@@ -48,6 +48,8 @@
   border-radius: 20px;
   padding: 20px;
   padding-top: 5px !important;
+  padding-bottom: 0px !important;
+  border-bottom: 1px solid lightgray;
   /* background-color: white; */
 }
 .split-item-image img {
@@ -106,11 +108,17 @@ section.testimonialPage {
 .splitSection p {
   color: dimgrey;
 }
+.splitSection h3 {
+  color: rgb(41, 23, 23);
+}
 .featureTiles p {
   color: dimgrey;
 }
 .featureTiles {
   padding-top: 35px;
+}
+.featureTiles h3 {
+  color: rgb(41, 23, 23);
 }
 .testimonial-item-content p {
   color: white !important;
@@ -150,6 +158,9 @@ section.testimonialPage {
   display: flex !important;
   flex-wrap: nowrap !important;
 }
+.features-tiles-item-content h5 {
+  color: rgb(41, 23, 23);
+}
 .split-wrap {
   border: 1px dotted #5658dd;
   box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 51%);
@@ -161,15 +172,37 @@ section.testimonialPage {
 section.courses {
   background-color: white;
 }
-.coursesDetails h2.card-header {
+.coursesDetails h3.card-header {
   color: rgb(41, 23, 23) !important;
   font-size: 2rem;
 }
+/* .coursesDetails h3 {
+  font-size: 16px;
+  color: rgb(41, 23, 23) !important;
+} */
 .coursesDetailsHeader p {
   font-size: 20px;
 }
+.coursesDetailsHeader h3 {
+  font-size: 2rem;
+  color: rgb(41, 23, 23) !important;
+}
+.approachHeader h3 {
+  color: rgb(41, 23, 23);
+  font-size: 2rem;
+}
 .approachHeader p {
   font-size: 20px;
+}
+.approachWrapper h4 {
+  color: rgb(41, 23, 23);
+  text-align: center;
+}
+.approachWrapper p {
+  color: #5658dd !important;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .coursesDetails h5.cardh3-title {
   color: #5658dd !important;
@@ -272,7 +305,21 @@ section.courses {
   .coursesDetailsHeader p {
     font-size: 16px;
   }
+  .coursesDetails h3.card-header {
+    color: rgb(41, 23, 23) !important;
+    font-size: 1rem;
+  }
+  .coursesDetailsHeader h3 {
+    font-size: 1.5rem;
+    color: rgb(41, 23, 23) !important;
+  }
   .approachHeader p {
+    font-size: 16px;
+  }
+  .approachHeader h3 {
+    font-size: 1.5rem;
+  }
+  .approachWrapper p {
     font-size: 16px;
   }
   /* .coursesDetails .card-body{
@@ -301,7 +348,7 @@ div:nth-child(2)
   display: flex;
   justify-content: flex-end;
 }
-.moreCourses h2 {
+.moreCourses h3 {
   color: black;
   text-align: center;
 }

@@ -8,16 +8,16 @@ const MoreCourses = ({ header }) => {
   return (
     <div className="container moreCourses">
       {!header && (
-        <h2>
+        <h3>
           <i className="fa fa-book"></i> More Courses by{" "}
           <span style={{ color: "#5658dd" }}>Edusession</span>
-        </h2>
+        </h3>
       )}
       {header && (
-        <h2>
+        <h3>
           {" "}
           <i className="fa fa-book"></i> {header}
-        </h2>
+        </h3>
       )}
       <ListGroup>
         {highlightedCourseList.map((item) => {

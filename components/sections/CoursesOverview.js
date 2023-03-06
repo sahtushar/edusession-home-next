@@ -143,17 +143,18 @@ const Courses = ({
             data={sectionHeader}
             className="center-content"
             from="coursesDetailsHeader"
+            tag="h3"
           />
           <div className="coursesDetails">
             {Object.keys(coursesHomePage).map((item) => {
               return (
                 <Card className="my-2" color="light" inverse>
                   <article>
-                    <CardHeader tag="h2" className="mt-0 mb-16">
+                    <CardHeader tag="h3" className="mt-0 mb-16">
                       {item}
                     </CardHeader>
                     <CardBody>
-                      <CardText className="m-0">
+                      <CardText className="m-0" tag="p">
                         {coursesHomePage[item]}{" "}
                       </CardText>
                     </CardBody>

@@ -60,7 +60,7 @@ const Approach = ({
   const sectionHeader = {
     title: (
       <>
-        <i className="fa fa-cogs"></i>{" "}How we Do it?
+        <i className="fa fa-cogs"></i> How we Do it?
       </>
     ),
     paragraph: `Phone’s addiction can be turned into a fruitful method of learning by Edu session.  We use technology to personalize the learning experience for each learner based on their strengths, weaknesses, and learning style. Our application provides well researched study material including textbooks, model test papers and other learning material.  Our perfect combination of practical and theoretical learning material doesn’t allow students to get bored of learning. 
@@ -105,6 +105,7 @@ const Approach = ({
             data={sectionHeader}
             className="center-content"
             from="approachHeader"
+            tag="h3"
           />
           <div className="approachWrapper">
             {mapper.map((item) => {
@@ -113,11 +114,11 @@ const Approach = ({
                   {/* <img src={item.img} top /> */}
                   <article>
                     <MyImage alt="approach" src={item.img} />
-                    <CardHeader tag="h3" className="mt-0 mb-16">
+                    <CardHeader tag="h4" className="mt-0">
                       {item.main}
                     </CardHeader>
                     <CardBody>
-                      <CardTitle tag="h5">{item.subtext}</CardTitle>
+                      <CardTitle tag="p">{item.subtext}</CardTitle>
                       {/* <CardText className="m-0">
                         With supporting text below as a natural lead-in to
                         additional content.

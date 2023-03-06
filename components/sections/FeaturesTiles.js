@@ -51,7 +51,7 @@ const FeaturesTiles = ({
   const sectionHeader = {
     title: (
       <>
-        <i className="fa fa-bar-chart"></i>{" "}9000+ Sessions Conducted
+        <i className="fa fa-bar-chart"></i> 9000+ Sessions Conducted
       </>
     ),
     paragraph:
@@ -96,6 +96,7 @@ const FeaturesTiles = ({
             data={sectionHeader}
             className="center-content"
             from="featureTiles"
+            tag="h3"
           />
           <div className={`${tilesClasses} featureListings`}>
             {mapper.map((item) => {
@@ -113,7 +114,7 @@ const FeaturesTiles = ({
                       </div>
                     </div>
                     <div className="features-tiles-item-content">
-                      <h4 className="mt-0 mb-8">{item.header}</h4>
+                      <h5 className="mt-0 mb-8">{item.header}</h5>
                       <p className="m-0 text-sm">{item.text}</p>
                     </div>
                   </div>

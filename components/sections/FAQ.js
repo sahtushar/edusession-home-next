@@ -58,7 +58,11 @@ const FAQ = ({
   );
 
   const sectionHeader = {
-    title: <><i className="fa fa-question-circle"></i>{" "}{data?.faq?.title}</>
+    title: (
+      <>
+        <i className="fa fa-question-circle"></i> {data?.faq?.title}
+      </>
+    ),
   };
 
   return (
@@ -69,6 +73,7 @@ const FAQ = ({
             data={sectionHeader}
             className="center-content"
             from="faqIntro"
+            tag="h3"
           />
           <div className="container">
             <article className="faqarticle">

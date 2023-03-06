@@ -54,7 +54,11 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: <><i className="fa fa-child"></i>{" "}Why Choose Us?</>,
+    title: (
+      <>
+        <i className="fa fa-child"></i> Why Choose Us?
+      </>
+    ),
     paragraph:
       "In this modern era of digitalization, we help your child to grow with a team of experts who create high-quality, engaging, and up-to-date educational content. We understand and respect that everyone has their own way and speed of learning so at Edusession Live we promote one to one learning concept. Our platform provides interactive learning experiences through quizzes, group discussions and other interactive activities that keep learners engaged and help them retain information better. ",
   };
@@ -89,7 +93,7 @@ const FeaturesSplit = ({
               {/* <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
           Lightning fast workflow
         </div> */}
-              <h3 className="mt-0 mb-12">{item.text}</h3>
+              <h4 className="mt-0 mb-12">{item.text}</h4>
               <p className="m-0">{item.para}</p>
             </div>
             <div
@@ -118,6 +122,7 @@ const FeaturesSplit = ({
             data={sectionHeader}
             className="center-content"
             from="splitSection"
+            tag="h3"
           />
           <div className={splitClasses}>
             {/* <Slider items={generateSlides()} /> */}
