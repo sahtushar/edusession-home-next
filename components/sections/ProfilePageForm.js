@@ -60,6 +60,7 @@ const ProfilePage = ({
       username: localStorage.getItem("username"),
     };
     setIsLoading(true);
+
     callRequestedForms(body)
       .then((res) => {
         setclasses(res.data.forms || []);

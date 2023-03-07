@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://edusession.live",
   "dependencies": {
+    "apexcharts": "^3.37.1",
     "axios": "^1.3.3",
     "bootstrap": "^5.2.3",
     "classnames": "^2.2.6",
@@ -15,6 +16,7 @@
     "prop-types": "15.7.2",
     "qs": "^6.11.0",
     "react": "17.0.2",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "17.0.2",
     "react-highlight-words": "^0.20.0",
     "react-select": "^5.7.0",

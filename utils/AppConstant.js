@@ -183,7 +183,7 @@ export const SUBJECTS = (course) => {
   ];
 
   subjectsData[course] &&
-    subjectsData[course].Subjects.map((item, index) => {
+    subjectsData[course]?.Subjects?.map((item, index) => {
       res.push({
         label: item.trim(),
         value: item.trim(),

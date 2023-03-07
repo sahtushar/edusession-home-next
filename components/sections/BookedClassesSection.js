@@ -1,13 +1,20 @@
 // import './table.css';
 
 import React, { useEffect, useState } from "react";
+import {
+  callAllBookedClasses,
+  callAllLocationsData,
+} from "../../services/authroutes";
 
 import SectionHeader from "./partials/SectionHeader";
-import { callAllBookedClasses } from "../../services/authroutes";
 import { checkauthfailed } from "../../utils/AppConstant";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useRouter as useHistory } from "next/router";
 
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+
+// import Chart from "react-apexcharts";
 const BookedClassesSection = ({
   className,
   children,
@@ -20,13 +27,94 @@ const BookedClassesSection = ({
   ...props
 }) => {
   const [data, setdata] = useState([]);
+  const [locationData, setLocationData] = useState({});
   const history = useHistory();
+  const [chartComp, setChartComp] = useState(null);
   const setIsLoading = props.setIsLoading;
   useEffect(() => {
     let body = {
       username: localStorage.getItem("username"),
     };
     setIsLoading(true);
+    callAllLocationsData(body).then((res) => {
+      const uniqueCities = [
+        ...new Set(res.data.forms.databycity.map((item) => item.city)),
+      ];
+      const uniqueCounts = [
+        ...new Set(res.data.forms.databycity.map((item) => item.count)),
+      ];
+
+      const uniquePath = [
+        ...new Set(res.data.forms.databypath.map((item) => item.path)),
+      ];
+      const uniquePathCounts = [
+        ...new Set(res.data.forms.databypath.map((item) => item.count)),
+      ];
+
+      let chartconfig1 = {
+        options: {
+          chart: {
+            id: "city-chart",
+          },
+          xaxis: {
+            categories: uniqueCities,
+          },
+        },
+        series: [
+          {
+            name: "City Count",
+            data: uniqueCounts,
+          },
+        ],
+      };
+
+      let chartconfig2 = {
+        options: {
+          chart: {
+            id: "path-chart",
+          },
+          xaxis: {
+            categories: uniquePath,
+          },
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            barHeight: "50%",
+            rangeBarGroupRows: true,
+          },
+        },
+        series: [
+          {
+            name: "Path Count",
+            data: uniquePathCounts,
+          },
+        ],
+      };
+
+      setChartComp(
+        <div className="container">
+          <div className="chartAreaCity mb-16 mt-16">
+            <p>By City</p>
+            <Chart
+              options={chartconfig1.options}
+              series={chartconfig1.series}
+              type="bar"
+              height={400}
+            />
+          </div>
+          <div className="chartAreaPath mb-16">
+            <p>By Path</p>
+            <Chart
+              options={chartconfig2.options}
+              series={chartconfig2.series}
+              type="bar"
+              height={400}
+            />
+          </div>
+        </div>
+      );
+    });
     callAllBookedClasses(body)
       .then((res) => {
         setdata(res.data.forms || []);
@@ -94,6 +182,14 @@ const BookedClassesSection = ({
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="table-responsive">
+            <h2 style={{ color: "#5658dd", margin: "0" }}>Location Data</h2>
+            <p style={{ color: "#5658dd", margin: "0" }}>
+              *This data is only valid for those users who have given permission
+              to access location on their device.
+            </p>
+            {chartComp}
           </div>
         </div>
       </div>
