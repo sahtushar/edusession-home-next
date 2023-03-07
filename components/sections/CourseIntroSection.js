@@ -73,7 +73,7 @@ const CourseIntro = ({
                         dangerouslySetInnerHTML={{
                           __html: makeBold(
                             item.content,
-                            getCourseKeywords?.[course]
+                            getCourseKeywords?.[courseIdentifier]
                               ?.courseContentWords
                           ),
                         }}
