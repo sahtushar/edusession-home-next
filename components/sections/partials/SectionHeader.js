@@ -37,7 +37,14 @@ const SectionHeader = ({ className, data, children, tag, from, ...props }) => {
                 {data.title}
               </Component>
             )}
-            {data.paragraph && <p className="m-0">{data.paragraph}</p>}
+            {data.paragraph && (
+              <p
+                className="m-0"
+                dangerouslySetInnerHTML={{
+                  __html: data.paragraph,
+                }}
+              />
+            )}
           </div>
         </div>
       )}

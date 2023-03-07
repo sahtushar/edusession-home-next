@@ -50,7 +50,7 @@ const CourseIntro = ({
   );
   const sectionHeader = {
     title: data?.title,
-    paragraph: data?.description,
+    paragraph: makeBold(data?.description, getCourseKeywords?.[courseIdentifier]?.sectionHeaderDesc),
   };
 
   return (
