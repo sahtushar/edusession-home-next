@@ -36,6 +36,7 @@ const Hero = ({
   course,
   courseIdentifier,
   rightImg,
+  cityData,
   ...props
 }) => {
   const [videoModalActive, setVideomodalactive] = useState(false);
@@ -80,7 +81,15 @@ const Hero = ({
               <h1
                 className="mt-0 mb-16"
                 data-reveal-delay="200"
-                dangerouslySetInnerHTML={{ __html: data?.header }}
+                dangerouslySetInnerHTML={{
+                  __html: `<span>${data?.header}${
+                    cityData?.cityData
+                      ? ` in <strong>${
+                          cityData?.cityData?.display || ""
+                        }</strong>`
+                      : ""
+                  }</span>`,
+                }}
               >
                 {/* {data?.header} */}
               </h1>
@@ -90,7 +99,13 @@ const Hero = ({
                   data-reveal-delay="400"
                   dangerouslySetInnerHTML={{
                     __html: makeBold(
-                      data?.subheader,
+                      `<span>${data?.subheader}${
+                        cityData?.cityData
+                          ? ` in <strong>${
+                              cityData?.cityData?.display || ""
+                            }.</strong>`
+                          : ""
+                      }</span>`,
                       getCourseKeywords?.[courseIdentifier]?.subheaderWords
                     ),
                   }}
@@ -103,7 +118,13 @@ const Hero = ({
                   data-reveal-delay="400"
                   dangerouslySetInnerHTML={{
                     __html: makeBold(
-                      data?.subheader,
+                      `<span>${data?.subheader}${
+                        cityData?.cityData
+                          ? ` in <strong>${
+                              cityData?.cityData?.display || ""
+                            }</strong>`
+                          : ""
+                      }.</span>`,
                       getCourseKeywords?.[courseIdentifier]?.subheaderWords
                     ),
                   }}

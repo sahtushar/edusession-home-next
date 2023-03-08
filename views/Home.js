@@ -21,7 +21,7 @@ import homepageicon from "./../assets/images/homepageicon.png";
 import icon from "./../assets/images/icon.png";
 import { useRouter as useHistory } from "next/router";
 
-const Home = ({ city }) => {
+const Home = ({ city, cityData }) => {
   // const [city, setcity] = useState(city);
   const history = useHistory();
 
@@ -29,7 +29,7 @@ const Home = ({ city }) => {
     header: city
       ? `<span>
           Online Live <span style="color:#5658dd">One to One</span>
-          Personalized Class around <span>${city}</span>
+          Personalized Class</span>
         </span>`
       : `<span>
         Online Live <span style="color:#5658dd">One to One</span>
@@ -40,7 +40,7 @@ const Home = ({ city }) => {
             CBSE, ICSE, JEE, NEET, State Board, Spoken English and Competitive examination
           </span>
           preparation.
-          <span>Doubt clearance is now easy with focused 1-on-1 tuiton by best Online Tutors.</span><span>`,
+          <span>Doubt clearance is now easy with focused 1-on-1 tuiton by best Online Tutors</span><span>`,
     rightImg: homepageicon,
     subheadertag: "h2",
   };
@@ -64,15 +64,19 @@ const Home = ({ city }) => {
         <meta name="description" content={getHelmetData().desc} />
         <link rel="canonical" href={canonicalPath(history.asPath)} />
       </Head>
-      <Header navPosition="right" page="home" />
+      <Header navPosition="right" page="home" cityData={cityData} />
       <main className="site-content">
         <Hero
           className="illustration-section-01"
           data={HeroData}
+          cityData={cityData}
           rightImg={homepageicon}
           courseIdentifier="homepage"
         />
-        <FeaturesTiles className="illustration-section-01" />
+        <FeaturesTiles
+          className="illustration-section-01"
+          cityData={cityData}
+        />
 
         <FeaturesSplit
           invertMobile
@@ -88,7 +92,11 @@ const Home = ({ city }) => {
           className="illustration-section-01"
         />
         {/* <Cta split /> */}
-        <Courses city={city} className="illustration-section-01" />
+        <Courses
+          city={city}
+          className="illustration-section-01"
+          cityData={cityData}
+        />
         <Approach className="illustration-section-02" />
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>

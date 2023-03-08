@@ -39,6 +39,7 @@ const Header = ({
   bottomOuterDivider,
   bottomDivider,
   page,
+  cityData,
   ...props
 }) => {
   const [isActive, setIsactive] = useState(false);
@@ -83,7 +84,13 @@ const Header = ({
                   e.preventDefault();
                 }}
               >
-                <Link href="/profile">User Dashboard</Link>
+                <Link
+                  href={`/profile${
+                    cityData?.cityData ? `?city=${cityData.city}` : ""
+                  }`}
+                >
+                  User Dashboard
+                </Link>
               </Button>
               <Button
                 onClick={() => {
@@ -108,21 +115,33 @@ const Header = ({
     {
       label: <span className="highlightedCourse">JEE</span>,
       onClick: (e) => {
-        history.push(`/courses?course=${getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]}`);
+        history.push(
+          `/courses?course=${
+            getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]
+          }${cityData?.cityData ? `&city=${cityData.city}` : ""}`
+        );
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">NEET</span>,
       onClick: (e) => {
-        history.push(`/courses?course=${getCourseDataUrl["NEET UG"]}`);
+        history.push(
+          `/courses?course=${getCourseDataUrl["NEET UG"]}${
+            cityData?.cityData ? `&city=${cityData.city}` : ""
+          }`
+        );
         closeMenu();
       },
     },
     {
       label: <span className="highlightedCourse">Spoken English</span>,
       onClick: (e) => {
-        history.push(`/courses?course=${getCourseDataUrl["Spoken English"]}`);
+        history.push(
+          `/courses?course=${getCourseDataUrl["Spoken English"]}${
+            cityData?.cityData ? `&city=${cityData.city}` : ""
+          }`
+        );
         closeMenu();
       },
     },
@@ -217,7 +236,7 @@ const Header = ({
             bottomDivider && "has-bottom-divider"
           )}
         >
-          <Logo />
+          <Logo cityData={cityData} />
           {!hideNav && (
             <>
               <button
@@ -241,7 +260,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )} ${!isActive ? "displaynone" : ""}`}
                   >
-                    {headerMapper?.[page]?.map((item,index) => {
+                    {headerMapper?.[page]?.map((item, index) => {
                       return (
                         <li key={`header_${index}`}>
                           <a

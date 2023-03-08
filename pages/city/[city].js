@@ -11,7 +11,12 @@ const City = () => {
     if (!activeCities?.[city]) history.push("/");
   }, [city]);
 
-  return <Home city={capitalize(city)} />;
+  return (
+    <Home
+      city={capitalize(activeCities?.[city]?.display)}
+      cityData={{ cityData: activeCities?.[city], city: city }}
+    />
+  );
 };
 export async function getStaticPaths() {
   return {

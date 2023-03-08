@@ -26,6 +26,7 @@ const FeaturesTiles = ({
   hasBgColor,
   invertColor,
   pushLeft,
+  cityData,
   ...props
 }) => {
   const outerClasses = classNames(
@@ -89,8 +90,10 @@ const FeaturesTiles = ({
             header={
               <>
                 Courses by <span style={{ color: "#5658dd" }}>Edusession</span>
+                {cityData?.cityData ? ` in ${cityData?.cityData?.display}` : ""}
               </>
             }
+            cityData={cityData}
           />
           <SectionHeader
             data={sectionHeader}

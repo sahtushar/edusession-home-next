@@ -9,7 +9,7 @@ import logo from "./../../../assets/images/logo-no-background.png";
 
 //import Image from "../../elements/Image";
 
-const Logo = ({ className, ...props }) => {
+const Logo = ({ className, cityData, ...props }) => {
   const classes = classNames("brand", className);
   const history = useHistory();
   return (
@@ -17,7 +17,7 @@ const Logo = ({ className, ...props }) => {
       <h3 className="mt-5">
         <a
           onClick={() => {
-            history.push("/");
+            history.push(`/${cityData?.cityData ? `/city/${cityData?.city}` : ""}`);
           }}
         >
           <MyImage src={logo} alt="Open" width="210" layout="raw" />

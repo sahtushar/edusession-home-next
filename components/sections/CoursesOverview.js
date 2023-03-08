@@ -36,6 +36,7 @@ const Courses = ({
   alignTop,
   imageFill,
   city,
+  cityData,
   ...props
 }) => {
   const outerClasses = classNames(
@@ -75,13 +76,21 @@ const Courses = ({
     return (
       <ButtonGroup>
         <Button color="primary">
-          <Link href={`/book-form?course=${getCourseDataUrl[link]}`}>
+          <Link
+            href={`/book-form?course=${getCourseDataUrl[link]}${
+              cityData?.cityData ? `&city=${cityData.city}` : ""
+            }`}
+          >
             Book Class
           </Link>
         </Button>
         {getCourseData?.[getCourseDataUrl?.[link]] && (
           <Button color="primary">
-            <Link href={`/courses?course=${getCourseDataUrl[link]}`}>
+            <Link
+              href={`/courses?course=${getCourseDataUrl[link]}${
+                cityData?.cityData ? `&city=${cityData.city}` : ""
+              }`}
+            >
               Learn More
             </Link>
           </Button>

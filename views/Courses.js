@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   canonicalPath,
+  capitalize,
   getCourseData,
   getCourseDataResult,
 } from "../utils/AppConstant";
@@ -27,6 +28,7 @@ const CoursesPage = (props) => {
   const courseData = props.courseData;
   const [header, setHeader] = useState("");
   const course = props.course;
+  const cityData = props.cityData;
 
   useEffect(() => {
     setHeader(getCourseData[course]);
@@ -34,8 +36,12 @@ const CoursesPage = (props) => {
 
   const getHelmetData = () => {
     return {
-      title: `${header} Online One to One Class | Edusession`,
-      desc: `Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for ${header}`,
+      title: `${header} Online One to One Class ${
+        cityData?.cityData ? `in ${cityData?.cityData?.display}` : ""
+      } | Edusession`,
+      desc: `Get One to One Online Tuitions from the best Instructors ${
+        cityData?.cityData ? `in ${cityData?.cityData?.display}` : ""
+      }. Sign up now to get classes from highly qualified tutors for ${header}`,
     };
   };
 
@@ -50,13 +56,14 @@ const CoursesPage = (props) => {
         </Head>
       )}
       <StructuredData data={courseData?.structuredData} />
-      <Header navPosition="right" page="course" />
+      <Header navPosition="right" page="course" cityData={cityData} />
       <main className="site-content">
         <Hero
           className="illustration-section-01"
           data={courseData}
           courseIdentifier={props.course}
           rightImg={homepageicon}
+          cityData={cityData}
         />
         <CourseIntro
           data={courseData}
@@ -65,13 +72,16 @@ const CoursesPage = (props) => {
         />
 
         <FAQ data={courseData} />
-        <MoreCourses />
-        <Testimonial data={courseData} />
+        <MoreCourses
+          header={`More Courses by Edusession in ${cityData?.cityData?.display}`}
+          cityData={cityData}
+        />
+        <Testimonial data={courseData} city={cityData?.cityData?.display} />
         {/* <Cta split /> */}
         {/* <Courses /> */}
         <Approach />
       </main>
-      <Footer />
+      <Footer city={cityData?.cityData?.display} />
     </>
   );
 };

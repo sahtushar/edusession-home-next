@@ -59,7 +59,7 @@ export const SUBJECTS = (course) => {
         "Sanskrit",
       ],
     },
-    "Class 7": {
+    "Class 7 (CBSE / ICSE / State Boards)": {
       Subjects: [
         "English",
         "Mathematics",
@@ -167,7 +167,7 @@ export const SUBJECTS = (course) => {
         "Professional Development",
       ],
     },
-    "JEE Mains and Advanced(MH-CET and GCET)": {
+    "JEE Mains and Advanced (MH-CET and GCET)": {
       Subjects: ["Mathematics", "Physics", "Chemistry"],
     },
     "NEET UG": {
@@ -227,36 +227,6 @@ export function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
-export const activeCities = {
-  goa: {
-    state: "Goa",
-  },
-  pune: {
-    state: "Maharashtra",
-  },
-  panaji: {
-    state: "Goa",
-  },
-  margao: {
-    state: "Goa",
-  },
-  mumbai: {
-    state: "Maharashtra",
-  },
-  delhi: {
-    state: "Delhi",
-  },
-  kolhapur: {
-    state: "Maharashtra",
-  },
-  nashik: {
-    state: "Maharashtra",
-  },
-  belgaum: {
-    state: "Karnataka",
-  },
-};
-
 export const getCourseData = {
   "jee-mains-advanced-mhcet-gcet": "JEE Mains and Advanced (MH-CET and GCET)",
   "neet-ug": "NEET UG",
@@ -308,9 +278,15 @@ export const getCourseKeywords = {
       "english",
       "pronunciation",
       "Edusession",
-      "live"
+      "live",
     ],
-    subheaderWords: ["Spoken English", "one-on-one", "1-on-1", "online tutors","Edusession"],
+    subheaderWords: [
+      "Spoken English",
+      "one-on-one",
+      "1-on-1",
+      "online tutors",
+      "Edusession",
+    ],
     sectionHeaderDesc: [
       "Spoken English",
       "one-on-one",
@@ -320,7 +296,7 @@ export const getCourseKeywords = {
       "Vocabulary",
       "pronunciation",
       "Edusession",
-      "live"
+      "live",
     ],
   },
   homepage: {
@@ -367,6 +343,61 @@ export const coursesPaths = [
   { params: { course: "spoken-english" } },
 ];
 
+export const activeCities = {
+  goa: {
+    state: "Goa",
+    display: "Goa",
+  },
+  pune: {
+    state: "Maharashtra",
+    display: "Pune",
+  },
+  mumbai: {
+    state: "Maharashtra",
+    display: "Mumbai",
+  },
+  delhi: {
+    state: "Delhi",
+    display: "Delhi",
+  },
+  kolhapur: {
+    state: "Maharashtra",
+    display: "Kolhapur",
+  },
+  nashik: {
+    state: "Maharashtra",
+    display: "Nashik",
+  },
+  belgaum: {
+    state: "Karnataka",
+    display: "Belgaum",
+  },
+  panaji: {
+    state: "Goa",
+    display: "Panajim - Goa",
+  },
+  margao: {
+    state: "Goa",
+    display: "Margao - Goa",
+  },
+  morjim: {
+    state: "Goa",
+    display: "Morjim - Goa",
+  },
+  mormugao: {
+    state: "Goa",
+    display: "Mormugao - Goa",
+  },
+  mapusa: {
+    state: "Goa",
+    display: "Mapusa - Goa",
+  },
+  bhubaneswar: {
+    state: "Orissa",
+    display: "Bhubaneswar",
+  },
+};
+
 export const cityPaths = [
   { params: { city: "goa" } },
   { params: { city: "pune" } },
@@ -377,6 +408,10 @@ export const cityPaths = [
   { params: { city: "belgaum" } },
   { params: { city: "panaji" } },
   { params: { city: "margao" } },
+  { params: { city: "morjim" } },
+  { params: { city: "mapusa" } },
+  { params: { city: "mormugao" } },
+  { params: { city: "bhubaneswar" } },
 ];
 
 export const adminCreds = [

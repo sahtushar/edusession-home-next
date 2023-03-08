@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  activeCities,
   coursesPaths,
   getCourseData,
   getCourseDataResult,
@@ -12,7 +13,8 @@ import { useRouter as useHistory } from "next/router";
 
 const Course = (props) => {
   const history = useHistory();
-  const { course } = history.query;
+  const { course, city } = history.query;
+  debugger;
   const [courseData, setCourseData] = useState(props.courseData);
   // const setIsLoading = props.setIsLoading;
 
@@ -28,6 +30,7 @@ const Course = (props) => {
     <CoursesPage
       course={course}
       courseData={courseData}
+      cityData={{ cityData: activeCities?.[city], city: city }}
       {...props}
     />
   );

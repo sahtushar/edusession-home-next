@@ -11,7 +11,7 @@ import { useRouter as useHistory } from "next/router";
 
 const Profile = (props) => {
   const history = useHistory();
-
+  const cityData = props.cityData;
   const getHelmetData = () => {
     return {
       title: `Book Online One to One Class | Edusession Dashboard`,
@@ -28,7 +28,7 @@ const Profile = (props) => {
         <link rel="canonical" href={canonicalPath(history.asPath)} />
       </Head>
 
-      <Header navPosition="right" page="profile-page" />
+      <Header navPosition="right" page="profile-page" cityData={cityData} />
       <main className="site-content">
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} /> */}
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} />
@@ -38,7 +38,7 @@ const Profile = (props) => {
         {/* <Cta split /> */}
         {/* <Courses /> */}
         {/* <Approach /> */}
-        <ProfilePage setIsLoading={props.setIsLoading} />
+        <ProfilePage setIsLoading={props.setIsLoading} cityData={cityData}/>
       </main>
       <Footer />
     </>

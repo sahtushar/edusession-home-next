@@ -1,7 +1,7 @@
 export const Class7 = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Class 7 (ICSE / CBSE / State Boards)</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Class 7 (ICSE / CBSE) preparation.
-      <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
+      <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "Class 7 (ICSE / CBSE / State Boards) Classes: Key Features",
   description:
     "Edusession provides comprehensive study material for all subjects in 7th grade, including Math, Science, Social Studies, English, and more. Our study material is designed to cover the entire syllabus and includes detailed explanations of each topic along with examples, diagrams, and illustrations to aid learning.",

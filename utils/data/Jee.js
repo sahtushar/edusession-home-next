@@ -1,7 +1,7 @@
 export const JEE = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">JEE Mains and Advanced (MH-CET & GCET)</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for JEE Mains and Advanced (MH-CET & GCET) preparation.
-  <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
+  <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "JEE Mains and Advanced (MH-CET & GCET) Classes: Key Features",
   description:
     "JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to study engineering in the top institutes of India. The online classes cover topics like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. The classes also focus on enhancing problem-solving skills, time management, and exam strategies to help students excel in the competitive exams.",

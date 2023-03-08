@@ -1,7 +1,7 @@
 export const IELTS = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">IELTS (UKVI - Academic - General)</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for IELTS (UKVI - Academic - General) preparation.
-    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
+    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "IELTS (UKVI - Academic - General) Classes: Key Features",
   description:
     "In today's globalized world, English has become the most spoken language, with over 1.5 billion people using it as their primary or secondary language. Therefore, the demand for English language courses has been increasing exponentially, and the International English Language Testing System (IELTS) is one of the most sought-after courses worldwide. IELTS is a globally recognized English language proficiency test that assesses a candidate's ability to communicate in English for academic or general purposes. This article provides an overview of IELTS (UKVI - Academic - General) online course of Edusession Live",

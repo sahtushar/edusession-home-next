@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { highlightedCourseList } from "../../utils/AppConstant";
 
-const MoreCourses = ({ header }) => {
+const MoreCourses = ({ header, cityData }) => {
   return (
     <div className="container moreCourses">
       {!header && (
@@ -23,7 +23,9 @@ const MoreCourses = ({ header }) => {
         {highlightedCourseList.map((item) => {
           return (
             <ListGroupItem>
-              <Link href={item.link}>
+              <Link
+                href={`${item.link}${cityData?.cityData ? `&city=${cityData.city}` : ""}`}
+              >
                 <a>{item.label}</a>
               </Link>
             </ListGroupItem>
