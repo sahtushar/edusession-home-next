@@ -73,7 +73,9 @@ const CoursesPage = (props) => {
 
         <FAQ data={courseData} />
         <MoreCourses
-          header={`More Courses by Edusession in ${cityData?.cityData?.display}`}
+          header={`More Courses by Edusession ${
+            cityData?.cityData ? ` in ${cityData?.cityData?.display}` : ""
+          }`}
           cityData={cityData}
         />
         <Testimonial data={courseData} city={cityData?.cityData?.display} />
