@@ -1,6 +1,7 @@
+import { activeCities, getCourseDataUrl } from "../../utils/AppConstant";
+
 import Link from "next/link";
 import React from "react";
-import { getCourseDataUrl } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
 
 const Footer = ({ city }) => {
@@ -121,9 +122,7 @@ const Footer = ({ city }) => {
                 return (
                   <li>
                     <Link
-                      href={`/book-form?course=${getCourseDataUrl[
-                        item.text
-                      ]}`}
+                      href={`/book-form?course=${getCourseDataUrl[item.text]}`}
                     >
                       {item.text.trim()}
                     </Link>
@@ -153,9 +152,7 @@ const Footer = ({ city }) => {
                 return (
                   <li>
                     <Link
-                      href={`/book-form?course=${getCourseDataUrl[
-                        item.text
-                      ]}`}
+                      href={`/book-form?course=${getCourseDataUrl[item.text]}`}
                     >
                       {item.text.trim()}
                     </Link>
@@ -192,6 +189,43 @@ const Footer = ({ city }) => {
           </div>
         </div>
         <div className="copyrightText">
+          <div className="sec quicklinks cities">
+            {/* <h4>Cities and state we operate</h4> */}
+            <ul>
+              {Object.keys(activeCities).map((item) => {
+                return (
+                  <li>
+                    <Link href={`/city/${item}`}>
+                      {activeCities[item].display}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {/* <ul>
+              <li
+                onClick={() => {
+                  onClick();
+                }}
+              >
+                Disclaimer
+              </li>
+              <li
+                onClick={() => {
+                  onClick();
+                }}
+              >
+                Terms of Service
+              </li>
+              <li
+                onClick={() => {
+                  onClick();
+                }}
+              >
+                Privacy Policy
+              </li>
+            </ul> */}
+          </div>
           <p>
             Copyright © 2023 Edusession. All Rights Reserved. For any query,
             Contact us at <span>+91 82378 15800</span>

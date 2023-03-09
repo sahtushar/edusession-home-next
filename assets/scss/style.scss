@@ -227,6 +227,16 @@
     color: #ffeb3b;
   }
 
+  .cities {
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      li{
+        margin: 20px;
+      }
+    }
+  }
   .copyrightText {
     width: 100%;
     background: #0075ef;
@@ -255,6 +265,15 @@
   @media (max-width: 768px) {
     .container {
       grid-template-columns: repeat(1, 1fr);
+    }
+    .cities {
+      ul {
+        li{
+          margin:3px;
+          border: 1px solid blue;
+          padding: 3px;
+        }
+      }
     }
   }
 }

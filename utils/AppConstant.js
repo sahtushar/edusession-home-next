@@ -348,6 +348,26 @@ export const activeCities = {
     state: "Goa",
     display: "Goa",
   },
+  panaji: {
+    state: "Goa",
+    display: "Panajim - Goa",
+  },
+  margao: {
+    state: "Goa",
+    display: "Margao - Goa",
+  },
+  morjim: {
+    state: "Goa",
+    display: "Morjim - Goa",
+  },
+  mormugao: {
+    state: "Goa",
+    display: "Mormugao - Goa",
+  },
+  mapusa: {
+    state: "Goa",
+    display: "Mapusa - Goa",
+  },
   pune: {
     state: "Maharashtra",
     display: "Pune",
@@ -372,30 +392,6 @@ export const activeCities = {
     state: "Karnataka",
     display: "Belgaum",
   },
-  panaji: {
-    state: "Goa",
-    display: "Panajim - Goa",
-  },
-  margao: {
-    state: "Goa",
-    display: "Margao - Goa",
-  },
-  morjim: {
-    state: "Goa",
-    display: "Morjim - Goa",
-  },
-  mormugao: {
-    state: "Goa",
-    display: "Mormugao - Goa",
-  },
-  mapusa: {
-    state: "Goa",
-    display: "Mapusa - Goa",
-  },
-  bhubaneswar: {
-    state: "Orissa",
-    display: "Bhubaneswar",
-  },
 };
 
 export const cityPaths = [
@@ -411,7 +407,6 @@ export const cityPaths = [
   { params: { city: "morjim" } },
   { params: { city: "mapusa" } },
   { params: { city: "mormugao" } },
-  { params: { city: "bhubaneswar" } },
 ];
 
 export const adminCreds = [

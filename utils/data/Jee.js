@@ -2,24 +2,24 @@ export const JEE = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">JEE Mains and Advanced (MH-CET & GCET)</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for JEE Mains and Advanced (MH-CET & GCET) preparation.
   <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
-  title: "JEE Mains and Advanced (MH-CET & GCET) Classes: Key Features",
+  title: "JEE Mains and Advanced (MH-CET & GCET) Online One-to-One Classes",
   description:
-    "JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to study engineering in the top institutes of India. The online classes cover topics like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. The classes also focus on enhancing problem-solving skills, time management, and exam strategies to help students excel in the competitive exams.",
+    "JEE Mains and Advanced, MH-CET & GCET are entrance exams for students aspiring to study engineering in the top institutes of India. Our online 1-on-1 classes cover topics like Physics, Chemistry, and Mathematics in a comprehensive and in-depth manner. The classes also focus on enhancing problem-solving skills, time management, and exam strategies to help students excel in the competitive exams.",
   sections: [
     {
       title: "Comprehensive Study Material",
       content:
-        "JEE classes provide their students with comprehensive study material that is designed to cover the entire syllabus in a structured manner. The material is prepared by experienced faculty members who have a thorough understanding of the JEE exam pattern and the type of questions that are asked. This study material is updated regularly to keep up with any changes in the exam pattern.",
+        "Edusession provide their students with comprehensive study material that is designed to cover the entire syllabus in a structured manner. The material is prepared by experienced faculty members who have a thorough understanding of the JEE exam pattern and the type of questions that are asked. Our study material is updated regularly to keep up with any changes in the exam pattern.",
     },
     {
       title: "Experienced Faculty",
       content:
-        "The faculty at JEE classes comprises experienced teachers who have a deep understanding of the subject matter. They have a proven track record of helping students crack the JEE exam and are well-versed in the latest teaching methodologies. They use innovative techniques to help students understand difficult concepts and ensure that every student is well-prepared for the exam.",
+        "The faculty at our JEE online classes comprises experienced teachers who have a deep understanding of the subject matter. We have a proven track record of helping students crack the JEE exam and are well-versed in the latest teaching methodologies. We use innovative techniques to help students understand difficult concepts and ensure that every student is well-prepared for the exam.",
     },
     {
       title: "Regular Mock Tests",
       content:
-        "Mock tests are an essential part of JEE preparation, and JEE classes understand this. They conduct regular mock tests that simulate the actual JEE exam. These mock tests help students gauge their preparation level, identify their strengths and weaknesses, and work on them accordingly. Mock tests also help students understand the exam pattern and time management, which are crucial for cracking the JEE.",
+        "Mock tests are an essential part of JEE preparation, and JEE classes understand this. We conduct regular mock tests that simulate the actual JEE exam. These mock tests help students gauge their preparation level, identify their strengths and weaknesses, and work on them accordingly. Mock tests also help students understand the exam pattern and time management, which are crucial for cracking the JEE.",
     },
     {
       title: "Doubt Clearance Sessions",
@@ -29,32 +29,32 @@ export const JEE = {
     {
       title: "Personalized Attention",
       content:
-        "JEE classes understand that every student has unique strengths and weaknesses. Therefore, they provide personalized attention to every student and work on their weaknesses to help them improve. They also provide regular feedback to students, which helps them understand their progress and areas that need improvement.",
+        "Edusession understand that every student has unique strengths and weaknesses. Therefore, we provide personalized attention to every student and work on their weaknesses to help them improve. We also provide regular feedback to students, which helps them understand their progress and areas that need improvement.",
     },
     {
       title: "Access to Study Resources",
       content:
-        "JEE classes provide their students with access to a wide range of study resources, including books, online study material, and question banks. These resources are designed to help students understand the concepts better and practice a wide range of questions.",
+        "Our online one-to-one JEE classes provide our students with access to a wide range of study resources, including books, online study material, and question banks. These resources are designed to help students understand the concepts better and practice a wide range of questions.",
     },
     {
       title: "Motivational Sessions",
       content:
-        "Preparing for the JEE can be stressful, and students often need motivation to keep going. JEE classes provide motivational sessions where experienced faculty members share their success stories and provide tips on how to stay motivated during the preparation phase.",
+        "Preparing for the JEE can be stressful, and students often need motivation to keep going. Edusession provide motivational sessions where experienced faculty members share their success stories and provide tips on how to stay motivated during the preparation phase.",
     },
     {
       title: "Parent-Teacher Interaction",
       content:
-        "JEE classes understand the importance of parent-teacher interaction in a student's academic success. They provide regular parent-teacher meetings where parents can interact with faculty members and understand their child's progress. This helps parents stay informed about their child's performance and support them accordingly.",
+        "We understand the importance of parent-teacher interaction in a student's academic success. We provide regular parent-teacher meetings where parents can interact with faculty members and understand their child's progress. This helps parents stay informed about their child's performance and support them accordingly.",
     },
     {
       title: "Flexible Learning Options",
       content:
-        "JEE classes understand that every student has unique learning needs. Therefore, they provide flexible learning options, including online classes, recorded lectures, and in-person classes. This allows students to choose the learning option that best suits their needs and preferences.",
+        "We understand that every student has unique learning needs. Therefore, we provide flexible learning options, including online classes, recorded lectures, and one-to-one classes. This allows students to choose the learning option that best suits their needs and preferences.",
     },
     {
       title: "Post-Exam Support",
       content:
-        "JEE classes understand that cracking the JEE is just the first step towards a successful career. Therefore, they provide post-exam support to their students, including counseling and guidance on college selection and career options.",
+        "We understand that cracking the JEE is just the first step towards a successful career. Therefore, we provide post-exam support to their students, including counseling and guidance on college selection and career options.",
     },
     {
       title: "JEE Main Subjects",
@@ -122,13 +122,13 @@ export const JEE = {
       {
         question: "What is a JEE (Mains and Advance) online course?",
         answer:
-          "A JEE (Mains and Advance) online course is a comprehensive program designed to help students prepare for both the JEE Mains and JEE Advance exams through virtual classes, study materials, mock tests, and other resources.",
+          "Our JEE (Mains and Advance) online course is a comprehensive program designed to help students prepare for both the JEE Mains and JEE Advance exams through virtual classes, study materials, mock tests, and other resources.",
       },
       {
         question:
-          "What does a typical JEE (Mains and Advance) online course include?",
+          "What does Edusession's JEE (Mains and Advance) online course include?",
         answer:
-          "A typical JEE (Mains and Advance) online course includes live video lectures, pre-recorded videos, interactive sessions, doubt solving sessions, study materials, mock tests, and performance analysis reports. The course content is designed to cover the entire syllabus for both JEE Mains and JEE Advance exams.",
+          "JEE (Mains and Advance) online course includes live video lectures, pre-recorded videos, interactive sessions, doubt solving sessions, study materials, mock tests, and performance analysis reports. The course content is designed to cover the entire syllabus for both JEE Mains and JEE Advance exams.",
       },
       {
         question:
