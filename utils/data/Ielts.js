@@ -1,8 +1,8 @@
 export const IELTS = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">IELTS (UKVI - Academic - General)</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for IELTS (UKVI - Academic - General) preparation.
-    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
-  title: "IELTS (UKVI - Academic - General) Classes: Key Features",
+    <span>Doubt clearance is now easy with focused one to one tuiton by best Online Tutors</span></span>`,
+  title: "Online IELTS (UKVI - Academic - General) 1-on-1 Class",
   description:
     "In today's globalized world, English has become the most spoken language, with over 1.5 billion people using it as their primary or secondary language. Therefore, the demand for English language courses has been increasing exponentially, and the International English Language Testing System (IELTS) is one of the most sought-after courses worldwide. IELTS is a globally recognized English language proficiency test that assesses a candidate's ability to communicate in English for academic or general purposes. This article provides an overview of IELTS (UKVI - Academic - General) online course of Edusession Live",
   sections: [
@@ -39,22 +39,22 @@ export const IELTS = {
     {
       title: "IELTS Online Course Overview",
       content:
-        "Our IELTS online course is designed to provide candidates with the necessary knowledge and skills to achieve their desired score in the IELTS test. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level.",
+        "Online 1 on 1 course is designed to provide candidates with the necessary knowledge and skills to achieve their desired score in the IELTS test. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level.",
     },
     {
       title: "Course Structure",
       content:
-        "Our IELTS online course is structured into four sections: listening, reading, writing, and speaking. Each section comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level. The course also includes practice tests, which are designed to simulate the real IELTS test and provide candidates with feedback on their performance.",
+        "Edusession's IELTS online one to one course is structured into four sections: listening, reading, writing, and speaking. Each section comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level. The course also includes practice tests, which are designed to simulate the real IELTS test and provide candidates with feedback on their performance.",
     },
     {
       title: "Course Material",
       content:
-        "Our IELTS online course provides candidates with comprehensive course material, including textbooks, videos, and online resources. The course material is designed to enhance the candidate's language proficiency level and provide them with the necessary knowledge and skills to achieve their desired score in the IELTS test.",
+        "Our IELTS online one on one course provides candidates with comprehensive course material, including textbooks, videos, and online resources. The course material is designed to enhance the candidate's language proficiency level and provide them with the necessary knowledge and skills to achieve their desired score in the IELTS test.",
     },
     {
       title: "Course Features",
       content:
-        "Our IELTS online course includes various features, such as interactive learning materials, practice tests, personalized feedback, and online support. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course also includes live webinars and discussion forums, which provide candidates with the opportunity to interact with other candidates and instructors.",
+        "Edusession's IELTS online course includes various features, such as interactive learning materials, practice tests, personalized feedback, and online support. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course also includes live webinars and discussion forums, which provide candidates with the opportunity to interact with other candidates and instructors.",
     },
     {
       title: "Course Benefits",
@@ -64,7 +64,7 @@ export const IELTS = {
     {
       title: "Who Can Take the Course?",
       content:
-        "Our IELTS online course is designed for anyone who wants to improve their English language proficiency level and achieve their desired score in the IELTS test. The course is suitable for candidates who want to study or work abroad, immigrate to an English-speaking country, or join a professional organization.",
+        "Our course is designed for anyone who wants to improve their English language proficiency level and achieve their desired score in the IELTS test. The course is suitable for candidates who want to study or work abroad, immigrate to an English-speaking country, or join a professional organization.",
     },
     {
       title: "How to Register for the Course?",
@@ -74,7 +74,7 @@ export const IELTS = {
     {
       title: "Conclusion",
       content:
-        "In conclusion, our IELTS online course provides candidates with the necessary knowledge and skills to achieve their desired score in the IELTS test. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level. The course also includes practice tests, personalized feedback, and online support, which provide candidates with the necessary guidance and assistance to succeed in the IELTS test.",
+        "In conclusion, Edusession's IELTS online course provides candidates with the necessary knowledge and skills to achieve their desired score in the IELTS test. The course is conducted entirely online, which means that candidates can study at their own pace and convenience. The course comprises interactive learning materials, including videos, quizzes, and exercises, which are designed to enhance the candidate's language proficiency level. The course also includes practice tests, personalized feedback, and online support, which provide candidates with the necessary guidance and assistance to succeed in the IELTS test.",
     },
   ],
   faq: {

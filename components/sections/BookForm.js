@@ -54,7 +54,6 @@ const BookForm = ({
       let selectedcourse = mapper["courses"].find(
         (item) => item.value == getCourseData[props.course]
       );
-      debugger;
       if (selectedcourse) {
         handleChange(selectedcourse, "course");
       }

@@ -7,6 +7,7 @@ import {
 } from "../../utils/AppConstant";
 
 import { Button } from "reactstrap";
+import CoursesDropDown from "../dropdownmenu";
 import Link from "next/link";
 import Logo from "./partials/Logo";
 import MyImage from "../elements/MyImage";
@@ -275,6 +276,12 @@ const Header = ({
                         </li>
                       );
                     })}
+                    {/* <li key={`header course`}>
+                      <a>
+                        {" "}
+                        <CoursesDropDown />
+                      </a>
+                    </li> */}
                   </ul>
                 </div>
               </nav>
