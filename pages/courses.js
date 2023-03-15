@@ -14,7 +14,6 @@ import { useRouter as useHistory } from "next/router";
 const Course = (props) => {
   const history = useHistory();
   const { course, city } = history.query;
-  debugger;
   const [courseData, setCourseData] = useState(props.courseData);
   // const setIsLoading = props.setIsLoading;
 

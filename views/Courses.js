@@ -53,48 +53,53 @@ const CoursesPage = (props) => {
     };
   };
 
+  const getMetaTags=()=>{
+    if(!cityData.cityData){
+      if(getCourseMetaTags[course]){
+        return getCourseMetaTags[course];
+      }
+      else{
+        return getHelmetData();
+      }
+    }
+    else {
+      return getHelmetData()
+    }
+  }
   return (
     <>
       {header && (
         <Head>
           <meta charSet="utf-8" />
           <title>
-            {getCourseMetaTags?.[course]?.title || getHelmetData().title}
+            {getMetaTags().title}
           </title>
           <meta
             name="description"
-            content={getCourseMetaTags?.[course]?.desc || getHelmetData().desc}
+            content={getMetaTags().desc}
           />
           <meta
             property="og:title"
             content={
-              !cityData?.cityData
-                ? getCourseMetaTags?.[course]?.title
-                : getHelmetData().title
+              getMetaTags().title
             }
           />
           <meta
             property="og:description"
             content={
-              !cityData?.cityData
-                ? getCourseMetaTags?.[course]?.desc
-                : getHelmetData().desc
+              getMetaTags().desc
             }
           />
           <meta
             itemprop="name"
             content={
-              !cityData?.cityData
-                ? getCourseMetaTags?.[course]?.title
-                : getHelmetData().title
+              getMetaTags().title
             }
           />
           <meta
             itemprop="description"
             content={
-              !cityData?.cityData
-                ? getCourseMetaTags?.[course]?.desc
-                : getHelmetData().desc
+              getMetaTags().desc
             }
           />
           <link rel="canonical" href={canonicalPath(history.asPath)} />
