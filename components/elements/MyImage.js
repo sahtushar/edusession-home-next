@@ -5,7 +5,7 @@ function MyImage({ src, width, alt, className, ...rest }) {
     <div>
       <Image
         src={src}
-        alt="Open"
+        alt={alt}
         layout="raw"
         width={width}
         className={className}

@@ -37,6 +37,7 @@ const Hero = ({
   courseIdentifier,
   rightImg,
   cityData,
+  alt,
   ...props
 }) => {
   const [videoModalActive, setVideomodalactive] = useState(false);
@@ -157,7 +158,7 @@ const Hero = ({
           data-reveal-value="20px"
           data-reveal-delay="800"
         >
-          <ImageHover src={rightImg} />
+          <ImageHover src={rightImg} alt={alt}/>
           {/* <Image src={homepageicon} alt="Hero" /> */}
         </div>
       </div>

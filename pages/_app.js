@@ -111,14 +111,6 @@ export default function MyApp(props) {
         <meta name="theme-color" content="#000000" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="One to One Online Classes for IGCSE, CBSE, ICSE, JEE, NEET, Spoken English etc"
-        />
-        <meta
-          property="og:description"
-          content="Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for  JEE, NEET, Class 6 to 12, Spoken English, IELTS, CA & more"
-        />
         <meta property="og:url" content="https://edusession.live/" />
         <meta property="og:site_name" content="Edusession Online Classes" />
         {/* <!-- <meta

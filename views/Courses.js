@@ -4,6 +4,7 @@ import {
   capitalize,
   getCourseData,
   getCourseDataResult,
+  getCourseMetaTags,
 } from "../utils/AppConstant";
 
 import Approach from "../components/sections/Approach";
@@ -18,6 +19,7 @@ import StructuredData from "../components/elements/StructuredData";
 import Testimonial from "../components/sections/Testimonial";
 import { callCourseData } from "../services/authroutes";
 import homepageicon from "./../assets/images/homepageicon.png";
+import spokenenglishicon from "./../assets/images/spoken-english.png";
 import { useRouter as useHistory } from "next/router";
 
 // import sections
@@ -34,6 +36,12 @@ const CoursesPage = (props) => {
     setHeader(getCourseData[course]);
   }, [props.course]);
 
+  const getRightImageDetails = {
+    "spoken-english": {
+      icon: spokenenglishicon,
+      alt: "Spoken English Classes",
+    },
+  };
   const getHelmetData = () => {
     return {
       title: `${header} Online One to One Class ${
@@ -50,8 +58,21 @@ const CoursesPage = (props) => {
       {header && (
         <Head>
           <meta charSet="utf-8" />
-          <title>{getHelmetData().title}</title>
-          <meta name="description" content={getHelmetData().desc} />
+          <title>
+            {getCourseMetaTags?.[course]?.title || getHelmetData().title}
+          </title>
+          <meta
+            name="description"
+            content={getCourseMetaTags?.[course]?.desc || getHelmetData().desc}
+          />
+          <meta
+            property="og:title"
+            content= {getCourseMetaTags?.[course]?.title || getHelmetData().title}
+          />
+          <meta
+            property="og:description"
+            content={getCourseMetaTags?.[course]?.desc || getHelmetData().desc}
+          />
           <link rel="canonical" href={canonicalPath(history.asPath)} />
         </Head>
       )}
@@ -62,7 +83,10 @@ const CoursesPage = (props) => {
           className="illustration-section-01"
           data={courseData}
           courseIdentifier={props.course}
-          rightImg={homepageicon}
+          rightImg={getRightImageDetails?.[course]?.icon || homepageicon}
+          alt={
+            getRightImageDetails?.[course]?.alt || "Edusession online classes"
+          }
           cityData={cityData}
         />
         <CourseIntro

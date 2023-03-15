@@ -81,11 +81,6 @@ export const CA = {
           "While there is limited interaction with faculty members outside of live classes and doubt-solving sessions, students can reach out to them via email or phone for any queries or guidance.",
       },
       {
-        question: "Are NEET UG online classes effective?",
-        answer:
-          "Yes, NEET UG online classes can be very effective if students attend them regularly and follow the study material provided. These classes provide students with a structured and organized approach to preparing for the NEET exam and help them track their progress through regular mock tests and practice exams.",
-      },
-      {
         question:
           "Are the courses affordable for all students?",
         answer:

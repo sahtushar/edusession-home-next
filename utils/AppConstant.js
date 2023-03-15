@@ -262,6 +262,12 @@ export const makeBold = (item, keyword) => {
   return res;
 };
 
+export const getCourseMetaTags = {
+  "spoken-english":{
+    title:"Best Spoken English Classes Online | Edusession",
+    desc:"Edusession offers Best Spoken English Classes Online - Live One to One Personalised Class for English Speaking with a level-wise training."
+  }
+}
 export const getCourseKeywords = {
   // "jee-mains-advanced-mhcet-gcet": JEE,
   // "neet-ug": NEETUG,
