@@ -27,6 +27,14 @@ const Legal = (props) => {
         <link rel="canonical" href={canonicalPath(history.asPath)} />
         <meta property="og:title" content={getHelmetData().title} />
         <meta property="og:description" content={getHelmetData().desc} />
+        <meta
+          itemprop="name"
+          content={getHelmetData().title}
+        />
+        <meta
+          itemprop="description"
+          content={getHelmetData().desc}
+        />
       </Head>
       <Header navPosition="right" page="legal" />
       <main className="site-content">

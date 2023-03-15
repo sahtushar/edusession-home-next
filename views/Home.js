@@ -63,14 +63,10 @@ const Home = ({ city, cityData }) => {
         <title>{getHelmetData().title}</title>
         <meta name="description" content={getHelmetData().desc} />
         <link rel="canonical" href={canonicalPath(history.asPath)} />
-        <meta
-          property="og:title"
-          content={getHelmetData().title}
-        />
-        <meta
-          property="og:description"
-          content={getHelmetData().desc}
-        />
+        <meta property="og:title" content={getHelmetData().title} />
+        <meta property="og:description" content={getHelmetData().desc} />
+        <meta itemprop="name" content={getHelmetData().title} />
+        <meta itemprop="description" content={getHelmetData().desc} />
       </Head>
       <Header navPosition="right" page="home" cityData={cityData} />
       <main className="site-content">

@@ -126,14 +126,6 @@ export default function MyApp(props) {
           content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
         />
         <meta
-          itemprop="name"
-          content="One to One Online Classes for IGCSE, CBSE, ICSE, JEE, NEET, Spoken English etc"
-        />
-        <meta
-          itemprop="description"
-          content="Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for  JEE, NEET, Class 6 to 12, Spoken English, IELTS, CA & more"
-        />
-        <meta
           itemprop="image"
           content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
         />

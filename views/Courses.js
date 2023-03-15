@@ -67,10 +67,22 @@ const CoursesPage = (props) => {
           />
           <meta
             property="og:title"
-            content= {getCourseMetaTags?.[course]?.title || getHelmetData().title}
+            content={
+              getCourseMetaTags?.[course]?.title || getHelmetData().title
+            }
           />
           <meta
             property="og:description"
+            content={getCourseMetaTags?.[course]?.desc || getHelmetData().desc}
+          />
+          <meta
+            itemprop="name"
+            content={
+              getCourseMetaTags?.[course]?.title || getHelmetData().title
+            }
+          />
+          <meta
+            itemprop="description"
             content={getCourseMetaTags?.[course]?.desc || getHelmetData().desc}
           />
           <link rel="canonical" href={canonicalPath(history.asPath)} />
