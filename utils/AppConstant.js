@@ -263,11 +263,11 @@ export const makeBold = (item, keyword) => {
 };
 
 export const getCourseMetaTags = {
-  "spoken-english":{
-    title:"Best Spoken English Classes Online | Edusession",
-    desc:"Edusession offers Best Spoken English Classes Online - Live One to One Personalised Class for English Speaking with a level-wise training."
-  }
-}
+  "spoken-english": {
+    title: "Best Spoken English Classes Online | Edusession",
+    desc: "Edusession offers Best Spoken English Classes Online - Live One to One Personalised Class for English Speaking with a level-wise training.",
+  },
+};
 export const getCourseKeywords = {
   // "jee-mains-advanced-mhcet-gcet": JEE,
   // "neet-ug": NEETUG,
@@ -321,7 +321,7 @@ export const getCourseKeywords = {
       "parent-teacher",
       "post-exam",
       "Mock tests",
-      "motivational" 
+      "motivational",
     ],
     subheaderWords: [
       "one-on-one",
@@ -333,7 +333,7 @@ export const getCourseKeywords = {
       "JEE",
       "Advanced",
       "GCET",
-      "personalized"
+      "personalized",
     ],
     sectionHeaderDesc: [
       "one-on-one",
@@ -368,7 +368,7 @@ export const getCourseKeywords = {
       "NEET",
       "UG",
       "NEET-UG",
-      "study material"
+      "study material",
     ],
     subheaderWords: [
       "one-on-one",
@@ -377,7 +377,7 @@ export const getCourseKeywords = {
       "Edusession",
       "personalized",
       "NEET UG",
-      "NEET"
+      "NEET",
     ],
     sectionHeaderDesc: [
       "one-on-one",
@@ -389,7 +389,7 @@ export const getCourseKeywords = {
       "Chemistry",
       "Mathematics",
       "NEET UG",
-      "NEET"
+      "NEET",
     ],
   },
   homepage: {
@@ -461,9 +461,25 @@ export const activeCities = {
     state: "Goa",
     display: "Mapusa - Goa",
   },
+  dabolim: {
+    state: "Goa",
+    display: "Dabolim - Goa",
+  },
+  vasco: {
+    state: "Goa",
+    display: "Vasco da Gama - Goa",
+  },
+  ponda: {
+    state: "Goa",
+    display: "Ponda - Goa",
+  },
   pune: {
     state: "Maharashtra",
     display: "Pune",
+  },
+  "pimpri-chinchwad": {
+    state: "Maharashtra",
+    display: "Pimpri - Chinchwad - Pune",
   },
   mumbai: {
     state: "Maharashtra",
@@ -490,6 +506,7 @@ export const activeCities = {
 export const cityPaths = [
   { params: { city: "goa" } },
   { params: { city: "pune" } },
+  { params: { city: "pimpri-chinchwad" } },
   { params: { city: "mumbai" } },
   { params: { city: "delhi" } },
   { params: { city: "kolhapur" } },
@@ -500,6 +517,9 @@ export const cityPaths = [
   { params: { city: "morjim" } },
   { params: { city: "mapusa" } },
   { params: { city: "mormugao" } },
+  { params: { city: "dabolim" } },
+  { params: { city: "vasco" } },
+  { params: { city: "ponda" } },
 ];
 
 export const adminCreds = [
