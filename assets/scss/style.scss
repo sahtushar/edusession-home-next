@@ -232,7 +232,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      li{
+      li {
         margin: 20px;
       }
     }
@@ -268,10 +268,12 @@
     }
     .cities {
       ul {
-        li{
-          margin:3px;
+        li {
+          margin: 3px;
           border: 1px solid blue;
           padding: 3px;
+          font-size: 12px;
+          border-radius: 7px;
         }
       }
     }

@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import Logo from "./partials/Logo";
 import FooterNav from "./partials/FooterNav";
 import FooterSocial from "./partials/FooterSocial";
+import Logo from "./partials/Logo";
+import PropTypes from "prop-types";
+import React from "react";
+import classNames from "classnames";
 
 const propTypes = {
   topOuterDivider: PropTypes.bool,
