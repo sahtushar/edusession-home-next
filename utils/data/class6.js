@@ -67,7 +67,7 @@ export const Class6 = {
       ],
     },
     {
-      title: "How Edusession Can Help Class 6 CBSE / ICSE / State Boards Students ?",
+      title: "How Edusession Can Help Class 6 CBSE / ICSE / State Boards Students?",
       content:
         "Edusession offers a range of courses for Class 6  students, including:",
       subsections: [
@@ -79,7 +79,7 @@ export const Class6 = {
         {
           title: "ICSE Class 6",
           content:
-            "Edusession offers ICSE Class 6 courses in all major subjects, including English, Mathematics, Science, and Social Science. These courses are designed to help students achieve academic excellence and prepare them for the next level of education. The courses are designed as per the latest syllabus prescribed by CBSE and ICSE boards, ensuring that students receive a comprehensive education.",
+            "Edusession offers ICSE Class 6 courses in all major subjects, including English, Mathematics, Science, and Social Science. These courses are designed to help students achieve academic excellence and prepare them for the next level of education. The courses are designed as per the latest syllabus prescribed by ICSE boards, ensuring that students receive a comprehensive education.",
         },
         {
           title: "Live Online Classes",
