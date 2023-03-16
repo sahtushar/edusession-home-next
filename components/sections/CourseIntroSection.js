@@ -50,7 +50,10 @@ const CourseIntro = ({
   );
   const sectionHeader = {
     title: data?.title,
-    paragraph: makeBold(data?.description, getCourseKeywords?.[courseIdentifier]?.sectionHeaderDesc),
+    paragraph: makeBold(
+      data?.description,
+      getCourseKeywords?.[courseIdentifier]?.sectionHeaderDesc
+    ),
   };
 
   return (
@@ -83,7 +86,8 @@ const CourseIntro = ({
                         dangerouslySetInnerHTML={{
                           __html: makeBold(
                             item.content,
-                            getCourseKeywords?.[courseIdentifier]?.courseContentWords
+                            getCourseKeywords?.[courseIdentifier]
+                              ?.courseContentWords
                           ),
                         }}
                       />

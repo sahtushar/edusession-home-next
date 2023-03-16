@@ -1,4 +1,5 @@
 import { CA } from "./data/CA";
+import { Class6 } from "./data/class6";
 import { Class7 } from "./data/class7";
 import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
@@ -250,6 +251,7 @@ export const getCourseDataResult = {
   "ielts-ukvi-academic-general": IELTS,
   "ca-foundation-intermediate": CA,
   "jee-foundation": JEEFoundation,
+  "class-6": Class6,
 };
 
 export const makeBold = (item, keyword) => {
@@ -391,6 +393,67 @@ export const getCourseKeywords = {
       "NEET",
     ],
   },
+  "class-6": {
+    courseContentWords: [
+      "Online",
+      "one-on-one",
+      "classroom",
+      "personalized",
+      "Edusession",
+      "live",
+      "one-to-one",
+      "parent-teacher",
+      "post-exam",
+      "Mock tests",
+      "motivational",
+      "English",
+      "Mathematics",
+      "Science",
+      "Social",
+      "Hindi",
+      "Civics",
+      "History",
+      "Computer",
+      "Geography",
+      "study material",
+      "CBSE",
+      "ICSE",
+      "State",
+      "Boards",
+      "deliver",
+      "Environmental",
+      "Applications",
+      "Class 6",
+    ],
+    subheaderWords: [
+      "one-on-one",
+      "1-on-1",
+      "online tutors",
+      "Edusession",
+      "personalized",
+      "CBSE",
+      "ICSE",
+      "State",
+      "Boards",
+      "Class 6",
+      "Doubt clearance"
+    ],
+    sectionHeaderDesc: [
+      "one-on-one",
+      "1-on-1",
+      "online tutors",
+      "Edusession",
+      "live",
+      "CBSE",
+      "ICSE",
+      "State",
+      "Boards",
+      "online",
+      "learning",
+      "platform",
+      "Class 6",
+    ],
+  },
   homepage: {
     subheaderWords: [
       "Spoken English",
@@ -439,7 +502,7 @@ export const getCourseKeywords = {
       "quizzes",
       "exercises",
       "candidates",
-      "instructors"
+      "instructors",
     ],
     subheaderWords: [
       "one-on-one",
@@ -452,7 +515,7 @@ export const getCourseKeywords = {
       "Academic",
       "General",
       "Doubt clearance",
-      "one to one"
+      "one to one",
     ],
     sectionHeaderDesc: [
       "one-on-one",
@@ -729,6 +792,11 @@ export const highlightedCourseList = [
     label: <span className="highlightedCourse">JEE Foundation</span>,
     link: `/courses?course=${getCourseDataUrl["JEE Foundation"]}`,
     identifier: getCourseDataUrl["JEE Foundation"],
+  },
+  {
+    label: <span className="highlightedCourse">Class 6</span>,
+    link: `/courses?course=${getCourseDataUrl["Class 6"]}`,
+    identifier: getCourseDataUrl["Class 6"],
   },
 ];
 export const checkauthfailed = (err, setIsLoading, history) => {
