@@ -12,12 +12,15 @@ import { useRouter as useHistory } from "next/router";
 const BookingForm = (props) => {
   const getHelmetData = () => {
     return {
-      title: `Book Online One to One Class | Edusession`,
+      title: `Book Online One to One Class ${
+        cityData?.cityData ? `in ${cityData?.cityData?.display}` : ""
+      } | Edusession`,
       desc: "Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for  JEE, NEET, Class 6 to 12, Spoken English, IELTS, CA & more",
     };
   };
 
   const history = useHistory();
+  const cityData = props.cityData;
 
   return (
     <>
@@ -28,16 +31,10 @@ const BookingForm = (props) => {
         <link rel="canonical" href={canonicalPath(history.pathname)} />
         <meta property="og:title" content={getHelmetData().title} />
         <meta property="og:description" content={getHelmetData().desc} />
-        <meta
-          itemprop="name"
-          content={getHelmetData().title}
-        />
-        <meta
-          itemprop="description"
-          content={getHelmetData().desc}
-        />
+        <meta itemprop="name" content={getHelmetData().title} />
+        <meta itemprop="description" content={getHelmetData().desc} />
       </Head>
-      <Header navPosition="right" page="book-form" />
+      <Header navPosition="right" page="book-form" cityData={cityData} />
       <main className="site-content">
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} /> */}
         {/* <Hero className="illustration-section-01" data={HeroData?.[dashUrl]} />
@@ -47,9 +44,13 @@ const BookingForm = (props) => {
         {/* <Cta split /> */}
         {/* <Courses /> */}
         {/* <Approach /> */}
-        <BookForm course={props.course} setIsLoading={props.setIsLoading} />
+        <BookForm
+          course={props.course}
+          setIsLoading={props.setIsLoading}
+          cityData={cityData}
+        />
       </main>
-      <Footer />
+      <Footer cityData={cityData} />
     </>
   );
 };

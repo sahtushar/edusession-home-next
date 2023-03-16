@@ -40,6 +40,7 @@ const BookForm = ({
   hasBgColor,
   invertColor,
   setIsLoading,
+  cityData,
   ...props
 }) => {
   const [subject, setSubject] = useState({});
@@ -145,8 +146,9 @@ const BookForm = ({
             <div>
               <div className="card p-5">
                 <h1 className="heading">
-                  <i className="fa fa-exchange"></i>{" "}Book a <span>One-on-One</span> Class with{" "}
+                  <i className="fa fa-exchange"></i>{" "}Book a <span>One-on-One</span> Class with{" "}               
                   <span>Edusession Live</span>
+                  {cityData?.cityData ? ` in ${cityData?.cityData?.display}`:""}
                 </h1>
                 <p className="book-msg">
                   <i className="fa fa-laptop my-float"> </i> At your time and

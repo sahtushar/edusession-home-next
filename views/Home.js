@@ -104,7 +104,7 @@ const Home = ({ city, cityData }) => {
         <Approach className="illustration-section-02" />
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>
-      <Footer city={city} />
+      <Footer city={city} cityData={cityData}/>
     </>
   );
 };

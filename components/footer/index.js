@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter as useHistory } from "next/router";
 
-const Footer = ({ city }) => {
+const Footer = ({ city, cityData }) => {
   let competitveExam = [
     { text: "CA Foundation and Intermediate" },
     { text: "IELTS (UKVI - Academic - General)" },
@@ -122,7 +122,9 @@ const Footer = ({ city }) => {
                 return (
                   <li>
                     <Link
-                      href={`/book-form?course=${getCourseDataUrl[item.text]}`}
+                      href={`/book-form?course=${getCourseDataUrl[item.text]}${
+                        cityData?.cityData ? `&city=${cityData?.city}` : ""
+                      }`}
                     >
                       {item.text.trim()}
                     </Link>
@@ -137,7 +139,11 @@ const Footer = ({ city }) => {
               {spokenEnglish.map((item) => {
                 return (
                   <li>
-                    <Link href={`/book-form?course=spoken-english`}>
+                    <Link
+                      href={`/book-form?course=spoken-english${
+                        cityData?.cityData ? `&city=${cityData?.city}` : ""
+                      }`}
+                    >
                       {item.text.trim()}
                     </Link>
                   </li>
@@ -152,7 +158,9 @@ const Footer = ({ city }) => {
                 return (
                   <li>
                     <Link
-                      href={`/book-form?course=${getCourseDataUrl[item.text]}`}
+                      href={`/book-form?course=${getCourseDataUrl[item.text]}${
+                        cityData?.cityData ? `&city=${cityData?.city}` : ""
+                      }`}
                     >
                       {item.text.trim()}
                     </Link>

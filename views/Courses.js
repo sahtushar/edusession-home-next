@@ -136,7 +136,7 @@ const CoursesPage = (props) => {
         {/* <Courses /> */}
         <Approach />
       </main>
-      <Footer city={cityData?.cityData?.display} />
+      <Footer city={cityData?.cityData?.display} cityData={cityData} />
     </>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {
+  getCourseData,
+  getCourseDataUrl,
   getCourseKeywords,
   makeBold,
   verifyIsUserAuthenticated,
@@ -67,8 +69,20 @@ const Hero = ({
 
   const bookAClass = () => {
     if (verifyIsUserAuthenticated()) {
-      if (course) history.push(`/book-form?course=${course}`);
-      else history.push(`/book-form`);
+      debugger;
+      history.push(
+        `/book-form${
+          courseIdentifier && getCourseData[courseIdentifier]
+            ? `?course=${courseIdentifier}`
+            : ""
+        }${
+          cityData?.cityData
+            ? `${
+                courseIdentifier && getCourseData[courseIdentifier] ? "&" : "?"
+              }city=${cityData.city}`
+            : ""
+        }`
+      );
     } else {
       history.push("/sign-in");
     }
@@ -158,7 +172,7 @@ const Hero = ({
           data-reveal-value="20px"
           data-reveal-delay="800"
         >
-          <ImageHover src={rightImg} alt={alt}/>
+          <ImageHover src={rightImg} alt={alt} />
           {/* <Image src={homepageicon} alt="Hero" /> */}
         </div>
       </div>
