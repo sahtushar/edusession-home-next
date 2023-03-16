@@ -33,6 +33,7 @@ const BookingForm = (props) => {
         <meta property="og:description" content={getHelmetData().desc} />
         <meta itemprop="name" content={getHelmetData().title} />
         <meta itemprop="description" content={getHelmetData().desc} />
+        <meta property="og:url" content={canonicalPath(history.asPath)} />
       </Head>
       <Header navPosition="right" page="book-form" cityData={cityData} />
       <main className="site-content">

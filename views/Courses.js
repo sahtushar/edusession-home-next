@@ -53,55 +53,29 @@ const CoursesPage = (props) => {
     };
   };
 
-  const getMetaTags=()=>{
-    if(!cityData.cityData){
-      if(getCourseMetaTags[course]){
+  const getMetaTags = () => {
+    if (!cityData.cityData) {
+      if (getCourseMetaTags[course]) {
         return getCourseMetaTags[course];
-      }
-      else{
+      } else {
         return getHelmetData();
       }
+    } else {
+      return getHelmetData();
     }
-    else {
-      return getHelmetData()
-    }
-  }
+  };
   return (
     <>
       {header && (
         <Head>
           <meta charSet="utf-8" />
-          <title>
-            {getMetaTags().title}
-          </title>
-          <meta
-            name="description"
-            content={getMetaTags().desc}
-          />
-          <meta
-            property="og:title"
-            content={
-              getMetaTags().title
-            }
-          />
-          <meta
-            property="og:description"
-            content={
-              getMetaTags().desc
-            }
-          />
-          <meta
-            itemprop="name"
-            content={
-              getMetaTags().title
-            }
-          />
-          <meta
-            itemprop="description"
-            content={
-              getMetaTags().desc
-            }
-          />
+          <title>{getMetaTags().title}</title>
+          <meta name="description" content={getMetaTags().desc} />
+          <meta property="og:title" content={getMetaTags().title} />
+          <meta property="og:description" content={getMetaTags().desc} />
+          <meta itemprop="name" content={getMetaTags().title} />
+          <meta itemprop="description" content={getMetaTags().desc} />
+          <meta property="og:url" content={canonicalPath(history.asPath)} />
           <link rel="canonical" href={canonicalPath(history.asPath)} />
         </Head>
       )}

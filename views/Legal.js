@@ -27,6 +27,7 @@ const Legal = (props) => {
         <link rel="canonical" href={canonicalPath(history.asPath)} />
         <meta property="og:title" content={getHelmetData().title} />
         <meta property="og:description" content={getHelmetData().desc} />
+        <meta property="og:url" content={canonicalPath(history.asPath)} />
         <meta
           itemprop="name"
           content={getHelmetData().title}

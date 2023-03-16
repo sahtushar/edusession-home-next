@@ -96,12 +96,11 @@ export default function MyApp(props) {
         <meta charset="utf-8" />
         <link
           rel="shortcut icon"
-          href="https://edusession.live/logo.png"
+          href="https://edusession.live/icon.png"
         />
-        <script type="application/ld+json"></script>
         <link
           rel="icon"
-          href="https://edusession.live/logo.png"
+          href="https://edusession.live/icon.png"
           sizes="32x32"
         />
         <link
@@ -111,7 +110,6 @@ export default function MyApp(props) {
         <meta name="theme-color" content="#000000" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://edusession.live/" />
         <meta property="og:site_name" content="Edusession Online Classes" />
         {/* <!-- <meta
       property="article:publisher"
@@ -131,16 +129,16 @@ export default function MyApp(props) {
         />
         <link
           rel="icon"
-          href="https://edusession.live/logo.png"
+          href="https://edusession.live/icon.png"
           sizes="192x192"
         />
         <link
           rel="apple-touch-icon"
-          href="https://edusession.live/logo.png"
+          href="https://edusession.live/icon.png"
         />
         <meta
           name="msapplication-TileImage"
-          content="https://edusession.live/logo.png"
+          content="https://edusession.live/icon.png"
         />
       </Head>
 
