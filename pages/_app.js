@@ -96,12 +96,12 @@ export default function MyApp(props) {
         <meta charset="utf-8" />
         <link
           rel="shortcut icon"
-          href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          href="https://edusession.live/logo.png"
         />
         <script type="application/ld+json"></script>
         <link
           rel="icon"
-          href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          href="https://edusession.live/logo.png"
           sizes="32x32"
         />
         <link
@@ -123,24 +123,24 @@ export default function MyApp(props) {
         />
         <meta
           property="og:image"
-          content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          content="https://edusession.live/edusession.png"
         />
         <meta
           itemprop="image"
-          content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          content="https://edusession.live/edusession.png"
         />
         <link
           rel="icon"
-          href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          href="https://edusession.live/logo.png"
           sizes="192x192"
         />
         <link
           rel="apple-touch-icon"
-          href="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          href="https://edusession.live/logo.png"
         />
         <meta
           name="msapplication-TileImage"
-          content="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png"
+          content="https://edusession.live/logo.png"
         />
       </Head>
 
