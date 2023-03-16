@@ -1,20 +1,20 @@
 export const Class6 = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Class 6 ( ICSE / CBSE / State Boards )</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Class 6 ( ICSE / CBSE / State Boards ) preparation.
-        <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors.</span></span>`,
+        <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "Online Class 6 ( ICSE / CBSE / State Boards ) 1-on-1 Class",
   description:
-    "The Indian education system has always been highly respected across the world for its quality of education. CBSE and ICSE are two of the most renowned boards in India, and Class 6 is the first stage of secondary education for students. With the advent of online learning, it has become easier for students to access quality education at their convenience. Edusession, an online learning platform, has emerged as one of the leading providers of online education in India.",
+    "The Indian education system has always been highly respected across the world for its quality of education. CBSE and ICSE are two of the most renowned boards in India, and Class 6 is the first stage of secondary education for students. With the advent of online one to one learning, it has become easier for students to access quality education at their convenience. Edusession, an online learning platform, is emerging as one of the leading providers of online education in India.",
   sections: [
     {
       title: "Advantages of Online Learning for Class 6 Students",
       content:
-        "Online learning has a plethora of benefits for Class 6 students, including:",
+        "Online one-to-one learning has a plethora of benefits for Class 6 students, including:",
       subsections: [
         {
           title: "Convenience and Flexibility",
           content:
-            "Online learning platforms offer students the convenience of studying from home, eliminating the need for travel. This helps students to save time and money, allowing them to use that extra time for self-study or extra-curricular activities.",
+            "Online one on one learning platforms offer students the convenience of studying from home, eliminating the need for travel. This helps students to save time and money, allowing them to use that extra time for self-study or extra-curricular activities.",
         },
         {
           title: "Personalized Learning",
@@ -47,7 +47,7 @@ export const Class6 = {
         {
           title: "Interactive Learning Experience",
           content:
-            "Edusession offers an interactive learning experience, where students can interact with their teachers in real-time. This helps students to clear their doubts and understand the material better.",
+            "Edusession offers an interactive 1 on 1 learning experience, where students can interact with their teachers in real-time. This helps students to clear their doubts and understand the material better.",
         },
         {
           title: "Access to a Wide Range of Study Material",
