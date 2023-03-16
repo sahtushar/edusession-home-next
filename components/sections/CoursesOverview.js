@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import {
   getCourseData,
+  getCourseDataResult,
   getCourseDataUrl,
   removeSpacesAndReplaceSymbols,
 } from "../../utils/AppConstant";
@@ -84,7 +85,7 @@ const Courses = ({
             Book Class
           </Link>
         </Button>
-        {getCourseData?.[getCourseDataUrl?.[link]] && (
+        {getCourseDataResult?.[getCourseDataUrl?.[link]] && (
           <Button color="primary">
             <Link
               href={`/courses?course=${getCourseDataUrl[link]}${
@@ -102,7 +103,7 @@ const Courses = ({
     "Class 6":
       "Class 6 online courses cover a wide range of subjects, including Mathematics, Science, Social Studies, and English. The Mathematics topics include basic operations, geometry, and algebra. The Science topics cover topics such as matter, energy, and living organisms. In Social Studies, students learn about history, geography, and civics. In English, students develop their reading, writing, and communication skills. Students in Class 6 are also introduced to basic computer skills, such as typing, internet usage, and coding.",
 
-    "Class 7 (CBSE / ICSE / State Boards)":
+    "Class 7":
       "Class 7 online courses cover advanced topics in Mathematics, Science, Social Studies, and English. The Mathematics topics include integers, fractions, and algebraic expressions. The Science topics cover topics such as force and motion, light and sound, and basic chemistry. In Social Studies, students learn about the world, ancient civilizations, and contemporary issues. In English, students develop their reading, writing, and critical thinking skills. Additionally, students in Class 7 are introduced to basic programming concepts and computer applications.",
 
     "Class 8":

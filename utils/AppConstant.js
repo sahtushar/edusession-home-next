@@ -18,7 +18,7 @@ export const WhatsAppNo = +918237815800;
 // };
 export const COURSES_GRADES = () => {
   const courses = `Class 6,
-  Class 7 (CBSE / ICSE / State Boards),
+  Class 7,
 Class 8,
 Class 9,
 Class 10,
@@ -59,7 +59,7 @@ export const SUBJECTS = (course) => {
         "Sanskrit",
       ],
     },
-    "Class 7 (CBSE / ICSE / State Boards)": {
+    "Class 7": {
       Subjects: [
         "English",
         "Mathematics",
@@ -232,7 +232,7 @@ export const getCourseData = {
   "neet-ug": "NEET UG",
   "spoken-english": "Spoken English",
   "ielts-ukvi-academic-general": "IELTS (UKVI - Academic - General)",
-  "class-7": "Class 7 (CBSE / ICSE)",
+  "class-7": "Class 7",
   "ca-foundation-intermediate": "CA Foundation and Intermediate",
   "jee-foundation": "JEE Foundation",
   "class-6": "Class 6",
@@ -248,7 +248,6 @@ export const getCourseDataResult = {
   "neet-ug": NEETUG,
   "spoken-english": SpokenEnglish,
   "ielts-ukvi-academic-general": IELTS,
-  "class-7": Class7,
   "ca-foundation-intermediate": CA,
   "jee-foundation": JEEFoundation,
 };
@@ -480,7 +479,7 @@ export const getCourseDataUrl = {
   "NEET UG": "neet-ug",
   "Spoken English": "spoken-english",
   "IELTS (UKVI - Academic - General)": "ielts-ukvi-academic-general",
-  "Class 7 (CBSE / ICSE / State Boards)": "class-7",
+  "Class 7": "class-7",
   "CA Foundation and Intermediate": "ca-foundation-intermediate",
   "JEE Foundation": "jee-foundation",
   "Class 6": "class-6",
@@ -716,11 +715,11 @@ export const highlightedCourseList = [
     link: `/courses?course=${getCourseDataUrl["IELTS (UKVI - Academic - General)"]}`,
     identifier: getCourseDataUrl["IELTS (UKVI - Academic - General)"],
   },
-  {
-    label: <span className="highlightedCourse">Class 7</span>,
-    link: `/courses?course=${getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"]}`,
-    identifier: getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"],
-  },
+  // {
+  //   label: <span className="highlightedCourse">Class 7</span>,
+  //   link: `/courses?course=${getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"]}`,
+  //   identifier: getCourseDataUrl["Class 7 (CBSE / ICSE / State Boards)"],
+  // },
   {
     label: <span className="highlightedCourse">CA</span>,
     link: `/courses?course=${getCourseDataUrl["CA Foundation and Intermediate"]}`,
