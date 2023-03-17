@@ -369,9 +369,11 @@ div:nth-child(2)
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .moreCourses .list-group-item {
-  height: 53px;
+  font-size: 18px;
+  margin-bottom: 2px;
 }
 @media screen and (max-width: 1024px) {
   .moreCourses .list-group a {
