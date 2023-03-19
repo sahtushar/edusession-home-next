@@ -693,6 +693,10 @@ export const activeCities = {
     state: "Karnataka",
     display: "Belgaum",
   },
+  "gangtok-sikkim":{
+    state:'Sikkim',
+    display: 'Gangtok - Sikkim'
+  }
 };
 
 export const cityPaths = [
@@ -712,6 +716,8 @@ export const cityPaths = [
   { params: { city: "dabolim" } },
   { params: { city: "vasco" } },
   { params: { city: "ponda" } },
+  { params: { city: "gangtok-sikkim" } },
+  
 ];
 
 export const adminCreds = [
