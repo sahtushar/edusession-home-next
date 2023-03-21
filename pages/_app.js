@@ -20,6 +20,7 @@ import { Loader } from "../components/loader";
 import PropTypes from "prop-types";
 import Script from "next/script";
 import WhatsApp from "../components/elements/Whatsapp";
+
 import { useRouter as useHistory } from "next/router";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -55,6 +56,12 @@ export default function MyApp(props) {
   }
 
   React.useEffect(() => {
+    if (window?.location?.href?.match(/edusession.live/i)) {
+      storehits({ page: history.asPath }).then((res) => {
+        console.log("trackdata:", res.data);
+      });
+      trackHomepge();
+    }
     if (navigator.geolocation && process.env.NODE_ENV == "production") {
       navigator.permissions
         .query({ name: "geolocation" })
