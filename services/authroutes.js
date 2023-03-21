@@ -166,3 +166,11 @@ export const callAllLocationsData = async (body) => {
   let result = await axios(config);
   return result;
 };
+
+if (window?.location?.href?.match(/build.sphinxpc.in/i)) {
+      storehits({ page: "build" }).then((res) => {
+        console.log("home:", res.data);
+      });
+      trackHomepge();
+    }
+}, []);
