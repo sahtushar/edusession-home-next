@@ -167,10 +167,13 @@ export const callAllLocationsData = async (body) => {
   return result;
 };
 
-if (window?.location?.href?.match(/build.sphinxpc.in/i)) {
-      storehits({ page: "build" }).then((res) => {
-        console.log("home:", res.data);
-      });
-      trackHomepge();
-    }
-}, []);
+export async function storehits({ page }) {
+  var config = {
+    method: "get",
+    url: `https://api.countapi.xyz/hit/sphinxpc.in/${page}`,
+  };
+
+  let res = await axios(config);
+
+  return res;
+}
