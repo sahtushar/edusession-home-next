@@ -56,12 +56,7 @@ export default function MyApp(props) {
   }
 
   React.useEffect(() => {
-    if (window?.location?.href?.match(/edusession.live/i)) {
-      storehits({ page: history.asPath }).then((res) => {
-        console.log("trackdata:", res.data);
-      });
-      trackHomepge();
-    }
+    
     if (navigator.geolocation && process.env.NODE_ENV == "production") {
       navigator.permissions
         .query({ name: "geolocation" })
