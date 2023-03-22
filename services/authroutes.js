@@ -170,7 +170,7 @@ export const callAllLocationsData = async (body) => {
 export async function storehits({ page }) {
   var config = {
     method: "get",
-    url: `https://api.countapi.xyz/hit/sphinxpc.in/${page}`,
+    url: `https://api.countapi.xyz/hit/edusession.live${page}`,
   };
 
   let res = await axios(config);

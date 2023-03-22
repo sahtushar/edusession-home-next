@@ -13,14 +13,17 @@ import "./../components/elements/whatsapp.scss";
 
 import * as React from "react";
 
-import { callTrackHomepage, trackHomepge } from "../services/authroutes";
+import {
+  callTrackHomepage,
+  storehits,
+  trackHomepge,
+} from "../services/authroutes";
 
 import Head from "next/head";
 import { Loader } from "../components/loader";
 import PropTypes from "prop-types";
 import Script from "next/script";
 import WhatsApp from "../components/elements/Whatsapp";
-
 import { useRouter as useHistory } from "next/router";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -56,7 +59,11 @@ export default function MyApp(props) {
   }
 
   React.useEffect(() => {
-    
+    if (window?.location?.pathname.match(/edusession.live/)) {
+      storehits({ page: history.asPath }).then((res) => {
+        console.log(res.data);
+      });
+    }
     if (navigator.geolocation && process.env.NODE_ENV == "production") {
       navigator.permissions
         .query({ name: "geolocation" })
@@ -96,10 +103,7 @@ export default function MyApp(props) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
         <meta charset="utf-8" />
-        <link
-          rel="shortcut icon"
-          href="https://edusession.live/icon.png"
-        />
+        <link rel="shortcut icon" href="https://edusession.live/icon.png" />
         <link
           rel="icon"
           href="https://edusession.live/icon.png"
@@ -134,10 +138,7 @@ export default function MyApp(props) {
           href="https://edusession.live/icon.png"
           sizes="192x192"
         />
-        <link
-          rel="apple-touch-icon"
-          href="https://edusession.live/icon.png"
-        />
+        <link rel="apple-touch-icon" href="https://edusession.live/icon.png" />
         <meta
           name="msapplication-TileImage"
           content="https://edusession.live/icon.png"
