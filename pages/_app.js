@@ -59,7 +59,7 @@ export default function MyApp(props) {
   }
 
   React.useEffect(() => {
-    if (window?.location?.pathname.match(/edusession.live/)) {
+    if (process.env.NODE_ENV == "production") {
       storehits({ page: history.asPath }).then((res) => {
         console.log(res.data);
       });
