@@ -12,6 +12,7 @@ if (!isProd()) {
 }
 
 export const SIGNUP = `${BASEURL}/api/auth/signup`;
+export const EVENTSIGNUP = `${BASEURL}/api/auth/eventsignup`;
 export const SIGNIN = `${BASEURL}/api/auth/signin`;
 export const BOOKFORM = `${BASEURL}/api/bookForm`;
 export const ALLFORMS = `${BASEURL}/api/bookedClass`;

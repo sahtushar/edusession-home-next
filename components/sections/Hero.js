@@ -13,6 +13,7 @@ import Image from "../elements/Image";
 import ImageHover from "../3dhoverimage";
 import Modal from "../elements/Modal";
 import MoreCourses from "../elements/MoreCourses";
+import { QuarkEvent } from "./QuarkBanner";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import homepageicon from "./../../assets/images/homepageicon.png";
@@ -88,11 +89,15 @@ const Hero = ({
     }
   };
   return (
+    <>
+    <QuarkEvent/>
     <section {...props} className={`${outerClasses} homepagesection`}>
       <div className="container-sm">
         <div className={innerClasses}>
           <div className={`hero-content hero-content2`}>
+         
             <div className="container-xs">
+           
               <h1
                 className="mt-0 mb-16"
                 data-reveal-delay="200"
@@ -177,6 +182,7 @@ const Hero = ({
         </div>
       </div>
     </section>
+    </>
   );
 };
 

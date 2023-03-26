@@ -33,6 +33,23 @@ export const callSignUp = async (body) => {
   return result;
 };
 
+export const eventSignUp = async (body) => {
+  var data = qs.stringify(body);
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: SIGNUP,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    data: data,
+  };
+  let result = await axios(config);
+  let status = result.status;
+
+  return result;
+};
+
 export const callSignIn = async (body) => {
   var data = qs.stringify(body);
   var config = {

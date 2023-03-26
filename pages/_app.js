@@ -10,6 +10,7 @@ import "./../components/sections/sign-up.scss";
 import "./../components/sections/legal.scss";
 import "./../components/sections/profilepage.scss";
 import "./../components/elements/whatsapp.scss";
+import "./../components/sections/quark.scss";
 
 import * as React from "react";
 
