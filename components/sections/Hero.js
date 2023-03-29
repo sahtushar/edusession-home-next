@@ -90,7 +90,7 @@ const Hero = ({
   };
   return (
     <>
-    <QuarkEvent/>
+    {/* <QuarkEvent/> */}
     <section {...props} className={`${outerClasses} homepagesection`}>
       <div className="container-sm">
         <div className={innerClasses}>

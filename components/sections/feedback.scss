@@ -1,0 +1,13 @@
+.feedbackWrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    h1{
+        color: black;
+        margin-bottom: 10px !important;
+    }
+    label{
+        font-size: 15px;
+    }
+}
