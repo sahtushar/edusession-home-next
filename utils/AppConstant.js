@@ -697,6 +697,10 @@ export const activeCities = {
     state:'Sikkim',
     display: 'Gangtok - Sikkim'
   }
+  "malda":{
+    state:'West Bengal',
+    display: 'Malda - West Bengal'
+  }
 };
 
 export const cityPaths = [
@@ -717,6 +721,7 @@ export const cityPaths = [
   { params: { city: "vasco" } },
   { params: { city: "ponda" } },
   { params: { city: "gangtok-sikkim" } },
+  { params: { city: "malda" } },
   
 ];
 
