@@ -696,7 +696,7 @@ export const activeCities = {
   "gangtok-sikkim":{
     state:'Sikkim',
     display: 'Gangtok - Sikkim'
-  }
+  },
   "malda":{
     state:'West Bengal',
     display: 'Malda - West Bengal'
