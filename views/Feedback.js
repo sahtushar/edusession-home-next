@@ -17,7 +17,7 @@ const Feedback = (props) => {
 
   const getHelmetData = () => {
     return {
-      title: `Book Online One to One Class | Edusession Sign Up`,
+      title: `Teacher Feedback Form - Online One to One Class | Edusession`,
       desc: "Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for  JEE, NEET, Class 6 to 12, Spoken English, IELTS, CA & more",
     };
   };
