@@ -146,9 +146,12 @@ const BookForm = ({
             <div>
               <div className="card p-5">
                 <h1 className="heading">
-                  <i className="fa fa-exchange"></i>{" "}Book a <span>One-on-One</span> Class with{" "}               
+                  <i className="fa fa-exchange"></i> Book a{" "}
+                  <span>One-on-One</span> Class with{" "}
                   <span>Edusession Live</span>
-                  {cityData?.cityData ? ` in ${cityData?.cityData?.display}`:""}
+                  {cityData?.cityData
+                    ? ` in ${cityData?.cityData?.display}`
+                    : ""}
                 </h1>
                 <p className="book-msg">
                   <i className="fa fa-laptop my-float"> </i> At your time and
@@ -241,8 +244,8 @@ const BookForm = ({
                 <div className="m-2">
                   <p className="callMessage">
                     {" "}
-                    <i className="fa fa-phone my-float"></i> Need help in anything?
-                    Call us at <span>+91 82378 15800</span>
+                    <i className="fa fa-phone my-float"></i> Need help in
+                    anything? Call us at <span>+91 82378 15800</span>
                   </p>
                 </div>
               </div>

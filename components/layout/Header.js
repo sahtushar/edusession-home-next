@@ -157,6 +157,17 @@ const Header = ({
           }
         : {}),
     },
+    {
+      ...(isAdminCred(username)
+        ? {
+            label: <span className="highlightedCourse">Feedback</span>,
+            onClick: (e) => {
+              history.push("/feedback");
+              closeMenu();
+            },
+          }
+        : {}),
+    },
   ];
   const headerMapper = {
     home: [

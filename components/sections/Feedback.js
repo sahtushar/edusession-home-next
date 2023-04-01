@@ -3,6 +3,12 @@ import React from "react";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import { useState } from "react";
+import { callFeedbackSubmit } from "../../services/authroutes";
+import {
+  checkauthfailed,
+  verifyIsUserAuthenticated,
+} from "../../utils/AppConstant";
+import { useRouter as useHistory } from "next/router";
 
 const propTypes = {
   children: PropTypes.node,
@@ -23,6 +29,7 @@ const TeacherFeedback = ({
   bottomDivider,
   hasBgColor,
   invertColor,
+  setIsLoading,
   ...props
 }) => {
   const outerClasses = classNames(
@@ -39,7 +46,7 @@ const TeacherFeedback = ({
     topDivider && "has-top-divider",
     bottomDivider && "has-bottom-divider"
   );
-
+  const history = useHistory();
   const [feedback, setFeedback] = useState({
     fullName: "",
     email: "",
@@ -72,10 +79,7 @@ const TeacherFeedback = ({
       rating: "",
       comment: "",
     },
-    suggestions: {
-      rating: "",
-      comment: "",
-    },
+    suggestions: "",
     sessionRating: {
       rating: "",
       comment: "",
@@ -85,18 +89,52 @@ const TeacherFeedback = ({
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
-    setFeedback((prevFeedback) => ({
-      ...prevFeedback,
-      [category]: {
-        ...prevFeedback[category],
-        [subCategory]: value,
-      },
-    }));
+
+    if (!subCategory) {
+      setFeedback((prevFeedback) => ({
+        ...prevFeedback,
+        [name]: value,
+      }));
+    } else
+      setFeedback((prevFeedback) => ({
+        ...prevFeedback,
+        [category]: {
+          ...prevFeedback[category],
+          [subCategory]: value,
+        },
+      }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(feedback);
+    let body = {
+      data: feedback,
+      roles: ["user"],
+    };
+    debugger;
+    // if (!subject?.value?.trim() || !course?.value?.trim()) {
+    //   setError("Please fill all the relevant info");
+    //   return;
+    // }
+    if (verifyIsUserAuthenticated()) {
+      try {
+        setIsLoading(true);
+        const res = await callFeedbackSubmit(body);
+        setIsLoading(false);
+        if (res.status == 200 || res.data.status == 200) {
+          history.push("/feedback");
+        }
+      } catch (err) {
+        if (checkauthfailed(err, setIsLoading, history)) {
+          return;
+        }
+        setIsLoading(false);
+        alert("Server error. Try again");
+        console.log(err.message);
+      }
+    } else {
+      history.push("/sign-in");
+    }
   };
 
   return (
@@ -183,23 +221,6 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="likelihoodOfEnrolling">
-                  Likelihood of Enrolling in a Course/Program based on the Demo
-                  Class
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="5"
-                  className="form-control"
-                  id="likelihoodOfEnrolling"
-                  name="likelihoodOfEnrolling"
-                  value={feedback.likelihoodOfEnrolling}
-                  onChange={handleFeedbackChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
                 <label htmlFor="howTheyHeard">
                   How They Heard About the Demo Class
                 </label>
@@ -254,10 +275,10 @@ const TeacherFeedback = ({
                   required
                 >
                   <option value=""></option>
-                  <option value="high school">High School</option>
-                  <option value="bachelor's degree">Bachelor's Degree</option>
-                  <option value="master's degree">Master's Degree</option>
-                  <option value="doctorate">Doctorate</option>
+                  <option value="High School">High School</option>
+                  <option value="Bachelor's Degree">Bachelor's Degree</option>
+                  <option value="Master's Degree">Master's Degree</option>
+                  <option value="Doctorate">Doctorate</option>
                 </select>
               </div>
               <div className="mb-3">
@@ -283,7 +304,6 @@ const TeacherFeedback = ({
                     name="conceptsCleared.comment"
                     value={feedback.conceptsCleared.comment}
                     onChange={handleFeedbackChange}
-                    required
                     placeholder="Add your comments here"
                   />
                 </div>
@@ -309,7 +329,6 @@ const TeacherFeedback = ({
                     name="sessionOnTime.comment"
                     value={feedback.sessionOnTime.comment}
                     onChange={handleFeedbackChange}
-                    required
                     placeholder="Add your comments here"
                   />
                 </div>
@@ -337,7 +356,6 @@ const TeacherFeedback = ({
                     name="facultyClearDoubts.comment"
                     value={feedback.facultyClearDoubts.comment}
                     onChange={handleFeedbackChange}
-                    required
                     placeholder="Add your comments here"
                   />
                 </div>
@@ -365,7 +383,6 @@ const TeacherFeedback = ({
                     name="connectivityDifficulty.comment"
                     value={feedback.connectivityDifficulty.comment}
                     onChange={handleFeedbackChange}
-                    required
                     placeholder="Add your comments here"
                   />
                 </div>
@@ -393,7 +410,6 @@ const TeacherFeedback = ({
                     name="sessionInteractive.comment"
                     value={feedback.sessionInteractive.comment}
                     onChange={handleFeedbackChange}
-                    required
                     placeholder="Add your comments here"
                   />
                 </div>
@@ -414,7 +430,7 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="likelihoodEnrolling">
+                <label htmlFor="likelihoodOfEnrolling">
                   Likelihood of Enrolling in a Course or Program Based on the
                   Demo Class
                 </label>
@@ -422,7 +438,7 @@ const TeacherFeedback = ({
                   <input
                     className="form-check-input"
                     type="radio"
-                    name="likelihoodEnrolling"
+                    name="likelihoodOfEnrolling"
                     id="likely"
                     value="likely"
                     onChange={handleFeedbackChange}
@@ -436,7 +452,7 @@ const TeacherFeedback = ({
                   <input
                     className="form-check-input"
                     type="radio"
-                    name="likelihoodEnrolling"
+                    name="likelihoodOfEnrolling"
                     id="neutral"
                     value="neutral"
                     onChange={handleFeedbackChange}
@@ -450,7 +466,7 @@ const TeacherFeedback = ({
                   <input
                     className="form-check-input"
                     type="radio"
-                    name="likelihoodEnrolling"
+                    name="likelihoodOfEnrolling"
                     id="unlikely"
                     value="unlikely"
                     onChange={handleFeedbackChange}

@@ -9,11 +9,11 @@ import SignUp from "../components/sections/SignUpForm";
 import TeacherFeedback from "../components/sections/Feedback";
 import { useRouter as useHistory } from "next/router";
 
-const EventSignUp = (props) => {
+const Feedback = (props) => {
   const history = useHistory();
-  if (verifyIsUserAuthenticated()) {
-    history.push("/");
-  }
+  // if (verifyIsUserAuthenticated()) {
+  //   history.push("/");
+  // }
 
   const getHelmetData = () => {
     return {
@@ -52,4 +52,4 @@ const EventSignUp = (props) => {
   );
 };
 
-export default EventSignUp;
+export default Feedback;

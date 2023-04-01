@@ -2,6 +2,7 @@ import {
   ALLBOOKEDCLASSES,
   ALLFORMS,
   BOOKFORM,
+  FEEDBACKSUBMIT,
   GETALLOCATIONSDATA,
   GETCOURSEDATA,
   SIGNIN,
@@ -73,6 +74,24 @@ export const callBookForm = async (body) => {
     method: "post",
     maxBodyLength: Infinity,
     url: BOOKFORM,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "x-access-token": localStorage.getItem("auth-token"),
+    },
+    data: data,
+  };
+  let result = await axios(config);
+  let status = result.status;
+
+  return result;
+};
+
+export const callFeedbackSubmit = async (body) => {
+  var data = qs.stringify(body);
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: FEEDBACKSUBMIT,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "x-access-token": localStorage.getItem("auth-token"),
@@ -177,7 +196,7 @@ export const callAllLocationsData = async (body) => {
       "Access-Control-Allow-Credentials": true,
       "x-access-token": localStorage.getItem("auth-token"),
     },
-    data: data || {}
+    data: data || {},
   };
 
   let result = await axios(config);

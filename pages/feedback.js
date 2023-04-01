@@ -6,7 +6,7 @@ import { useRouter as useHistory } from "next/router";
 // import sections
 
 const FeedbackR = (props) => {
-  return <Feedback />;
+  return <Feedback setIsLoading={props.setIsLoading} />;
 };
 
 export default FeedbackR;
