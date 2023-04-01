@@ -89,7 +89,10 @@ const TeacherFeedback = ({
         rating: "",
         comment: "",
       },
-      suggestions: "",
+      suggestions: {
+        rating: "",
+        comment: "",
+      },
       careercoaching: "",
       sessionRating: {
         rating: "",
@@ -201,7 +204,10 @@ const TeacherFeedback = ({
           rating: feedback.postdemo.sessionInteractive.rating,
           comment: feedback.postdemo.sessionInteractive.comment,
         },
-        suggestions: feedback.postdemo.suggestions,
+        suggestions: {
+          rating: feedback.postdemo.suggestions.rating,
+          comment: feedback.postdemo.suggestions.comment,
+        },
         careercoaching: feedback.postdemo.careercoaching,
         sessionRating: {
           rating: feedback.postdemo.sessionRating.rating,
@@ -258,6 +264,7 @@ const TeacherFeedback = ({
           <div className="feedbackWrapper">
             <h1>Lead generation</h1>
             <div className="mb-3">
+              <p>Find A Lead</p>
               <label htmlFor="mobile">Mobile</label>
               <input
                 type="text"
@@ -280,7 +287,9 @@ const TeacherFeedback = ({
                 Submit
               </button>
             </div>
-            <form onSubmit={handleSubmit} className="container my-5 basicInfo">
+
+            <form onSubmit={handleSubmit} className="container my-2 basicInfo">
+              <p>Or Create a new Lead...</p>
               <h2>Basic Info</h2>
               <div className="mb-3">
                 <label htmlFor="fullName">Full Name</label>
@@ -336,7 +345,7 @@ const TeacherFeedback = ({
                 <label htmlFor="preferredCommunication">
                   Preferred Mode of Communication
                 </label>
-                <input
+                {/* <input
                   type="text"
                   className="form-control"
                   id="preferredCommunication"
@@ -344,7 +353,20 @@ const TeacherFeedback = ({
                   value={feedback.userdata.preferredCommunication}
                   onChange={handleFeedbackChange}
                   required
-                />
+                /> */}
+                <select
+                  className="form-control"
+                  id="preferredCommunication"
+                  name="preferredCommunication.userdata"
+                  value={feedback.userdata.preferredCommunication}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  <option value=""></option>
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
               <div className="mb-3">
                 <label htmlFor="geographicLocation">Geographic Location</label>
@@ -362,7 +384,7 @@ const TeacherFeedback = ({
                 <label htmlFor="howTheyHeard">
                   How They Heard About the Demo Class
                 </label>
-                <input
+                {/* <input
                   type="text"
                   className="form-control"
                   id="howTheyHeard"
@@ -370,7 +392,22 @@ const TeacherFeedback = ({
                   value={feedback.userdata.howTheyHeard}
                   onChange={handleFeedbackChange}
                   required
-                />
+                /> */}
+                <select
+                  className="form-control"
+                  id="howTheyHeard"
+                  name="howTheyHeard.userdata"
+                  value={feedback.userdata.howTheyHeard}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  <option value=""></option>
+                  <option value="Just Dial">Just Dial</option>
+                  <option value="Web Search">Web Search</option>
+                  <option value="Advertisement">Advertisement</option>
+                  <option value="Word of Mouth">Word of Mouth</option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
               <div className="mb-3">
                 <label htmlFor="age">Age</label>
@@ -437,7 +474,7 @@ const TeacherFeedback = ({
                     type="number"
                     min="1"
                     max="5"
-                    className="form-control me-2"
+                    className="form-control me-2 rating"
                     id="conceptsClearedRating"
                     name="conceptsCleared.rating"
                     value={feedback.postdemo.conceptsCleared.rating}
@@ -462,7 +499,7 @@ const TeacherFeedback = ({
                     type="number"
                     min="1"
                     max="5"
-                    className="form-control me-2"
+                    className="form-control me-2 rating"
                     id="sessionOnTimeRating"
                     name="sessionOnTime.rating"
                     value={feedback.postdemo.sessionOnTime.rating}
@@ -489,7 +526,7 @@ const TeacherFeedback = ({
                     type="number"
                     min="1"
                     max="5"
-                    className="form-control me-2"
+                    className="form-control me-2 rating"
                     id="facultyClearDoubtsRating"
                     name="facultyClearDoubts.rating"
                     value={feedback.postdemo.facultyClearDoubts.rating}
@@ -516,7 +553,7 @@ const TeacherFeedback = ({
                     type="number"
                     min="1"
                     max="5"
-                    className="form-control me-2"
+                    className="form-control me-2 rating"
                     id="connectivityDifficultyRating"
                     name="connectivityDifficulty.rating"
                     value={feedback.postdemo.connectivityDifficulty.rating}
@@ -543,7 +580,7 @@ const TeacherFeedback = ({
                     type="number"
                     min="1"
                     max="5"
-                    className="form-control me-2"
+                    className="form-control me-2 rating"
                     id="sessionInteractiveRating"
                     name="sessionInteractive.rating"
                     value={feedback.postdemo.sessionInteractive.rating}
@@ -561,21 +598,7 @@ const TeacherFeedback = ({
                   />
                 </div>
               </div>
-              <div className="mb-3">
-                <label htmlFor="suggestions">
-                  Do You Have Any Suggestions for the Betterment of the
-                  Institute?
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="suggestions"
-                  name="suggestions"
-                  value={feedback.postdemo.suggestions}
-                  onChange={handleFeedbackChange}
-                  required
-                />
-              </div>
+
               <div className="mb-3">
                 <label htmlFor="likelihoodOfEnrolling">
                   Likelihood of Enrolling in a Course or Program Based on the
@@ -615,6 +638,7 @@ const TeacherFeedback = ({
                     Neutral
                   </label>
                 </div>
+
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -638,6 +662,42 @@ const TeacherFeedback = ({
                     {feedback.postdemo.likelihoodOfEnrolling}
                   </span>
                 </label>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="suggestions">
+                  How would you rate your overall Edu-session experience?
+                </label>
+                {/* <input
+                    type="text"
+                    className="form-control"
+                    id="suggestions"
+                    name="suggestions"
+                    value={feedback.postdemo.suggestions}
+                    onChange={handleFeedbackChange}
+                    required
+                  /> */}
+                <div className="d-flex align-items-center">
+                  <input
+                    type="number"
+                    min="1"
+                    max="5"
+                    className="form-control me-2 rating"
+                    id="suggestions"
+                    name="suggestions.rating"
+                    value={feedback.postdemo.suggestions.rating}
+                    onChange={handleFeedbackChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="suggestionsComment"
+                    name="suggestions.comment"
+                    value={feedback.postdemo.suggestions.comment}
+                    onChange={handleFeedbackChange}
+                    placeholder="Any Suggestion for our Betterment"
+                  />
+                </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="careercoaching">

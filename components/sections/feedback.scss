@@ -5,6 +5,13 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 1px lightgray;
+    input, select{
+        font-size: 16px;
+    }
+    .rating{
+        width: 30%;
+        border: 1px solid #5658dd;
+    }
     h1{
         color: black;
         margin-bottom: 10px !important;
