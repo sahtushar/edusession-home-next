@@ -3,7 +3,10 @@ import React from "react";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import { useState } from "react";
-import { callFeedbackSubmit } from "../../services/authroutes";
+import {
+  callFeedbackSubmit,
+  fetchFeedbackFetch,
+} from "../../services/authroutes";
 import {
   checkauthfailed,
   verifyIsUserAuthenticated,
@@ -48,74 +51,109 @@ const TeacherFeedback = ({
   );
   const history = useHistory();
   const [feedback, setFeedback] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    topicsOfInterest: "",
-    preferredCommunication: "",
-    geographicLocation: "",
-    likelihoodOfEnrolling: "",
-    howTheyHeard: "",
-    age: "",
-    gender: "",
-    educationalBackground: "",
-    conceptsCleared: {
-      rating: "",
-      comment: "",
+    //userdata
+
+    userdata: {
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      topicsOfInterest: "",
+      preferredCommunication: "",
+      geographicLocation: "",
+      howTheyHeard: "",
+      age: "",
+      gender: "",
+      educationalBackground: "",
     },
-    sessionOnTime: {
-      rating: "",
-      comment: "",
-    },
-    facultyClearDoubts: {
-      rating: "",
-      comment: "",
-    },
-    connectivityDifficulty: {
-      rating: "",
-      comment: "",
-    },
-    sessionInteractive: {
-      rating: "",
-      comment: "",
-    },
-    suggestions: "",
-    sessionRating: {
-      rating: "",
-      comment: "",
+
+    //postdemo data
+    postdemo: {
+      likelihoodOfEnrolling: "",
+      conceptsCleared: {
+        rating: "",
+        comment: "",
+      },
+      sessionOnTime: {
+        rating: "",
+        comment: "",
+      },
+      facultyClearDoubts: {
+        rating: "",
+        comment: "",
+      },
+      connectivityDifficulty: {
+        rating: "",
+        comment: "",
+      },
+      sessionInteractive: {
+        rating: "",
+        comment: "",
+      },
+      suggestions: "",
+      careercoaching: "",
+      sessionRating: {
+        rating: "",
+        comment: "",
+      },
     },
   });
+  const [mobile, setmobile] = useState("");
 
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
 
-    if (!subCategory) {
+    if (subCategory == "userdata") {
       setFeedback((prevFeedback) => ({
         ...prevFeedback,
-        [name]: value,
+        userdata: { ...prevFeedback.userdata, ...{ [category]: value } },
       }));
-    } else
-      setFeedback((prevFeedback) => ({
-        ...prevFeedback,
-        [category]: {
-          ...prevFeedback[category],
+    } else {
+      // setFeedback((prevFeedback) => ({
+      //   ...prevFeedback,
+      //   postdemo: {
+      //     ...prevFeedback.postdemo,
+      //     ...{
+      //       [category]: {
+      //         ...prevFeedback[category],
+      //         [subCategory]: value,
+      //       },
+      //     },
+      //   },
+      // }));
+      let feedbackValue = { ...feedback };
+      if (subCategory) {
+        feedbackValue.postdemo[category] = {
+          ...feedbackValue.postdemo[category],
           [subCategory]: value,
-        },
-      }));
+        };
+      } else {
+        feedbackValue.postdemo[category] = value;
+      }
+      setFeedback(feedbackValue);
+    }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     let body = {
-      data: feedback,
+      mobile: feedback.userdata.phoneNumber,
+      userdata: {
+        fullName: feedback.userdata.fullName,
+        email: feedback.userdata.email,
+        phoneNumber: feedback.userdata.phoneNumber,
+        topicsOfInterest: feedback.userdata.topicsOfInterest,
+        preferredCommunication: feedback.userdata.preferredCommunication,
+        geographicLocation: feedback.userdata.geographicLocation,
+        howTheyHeard: feedback.userdata.howTheyHeard,
+        age: feedback.userdata.age,
+        gender: feedback.userdata.gender,
+        educationalBackground: feedback.userdata.educationalBackground,
+      },
+      type: "userdata",
       roles: ["user"],
     };
-    debugger;
-    // if (!subject?.value?.trim() || !course?.value?.trim()) {
-    //   setError("Please fill all the relevant info");
-    //   return;
-    // }
+
     if (verifyIsUserAuthenticated()) {
       try {
         setIsLoading(true);
@@ -137,21 +175,121 @@ const TeacherFeedback = ({
     }
   };
 
+  const handleSubmitFeedback = async (event) => {
+    event.preventDefault();
+    let body = {
+      mobile: feedback.userdata.phoneNumber || mobile,
+      postdemo: {
+        likelihoodOfEnrolling: feedback.postdemo.likelihoodOfEnrolling,
+        conceptsCleared: {
+          rating: feedback.postdemo.conceptsCleared.rating,
+          comment: feedback.postdemo.conceptsCleared.comment,
+        },
+        sessionOnTime: {
+          rating: feedback.postdemo.sessionOnTime.rating,
+          comment: feedback.postdemo.sessionOnTime.comment,
+        },
+        facultyClearDoubts: {
+          rating: feedback.postdemo.facultyClearDoubts.rating,
+          comment: feedback.postdemo.facultyClearDoubts.comment,
+        },
+        connectivityDifficulty: {
+          rating: feedback.postdemo.connectivityDifficulty.rating,
+          comment: feedback.postdemo.connectivityDifficulty.comment,
+        },
+        sessionInteractive: {
+          rating: feedback.postdemo.sessionInteractive.rating,
+          comment: feedback.postdemo.sessionInteractive.comment,
+        },
+        suggestions: feedback.postdemo.suggestions,
+        careercoaching: feedback.postdemo.careercoaching,
+        sessionRating: {
+          rating: feedback.postdemo.sessionRating.rating,
+          comment: feedback.postdemo.sessionRating.comment,
+        },
+      },
+      type: "postdemo",
+      roles: ["user"],
+    };
+
+    if (verifyIsUserAuthenticated()) {
+      try {
+        setIsLoading(true);
+        const res = await callFeedbackSubmit(body);
+        setIsLoading(false);
+        if (res.status == 200 || res.data.status == 200) {
+          history.push("/feedback");
+        }
+      } catch (err) {
+        if (checkauthfailed(err, setIsLoading, history)) {
+          return;
+        }
+        setIsLoading(false);
+        alert("Server error. Try again");
+        console.log(err.message);
+      }
+    } else {
+      history.push("/sign-in");
+    }
+  };
+
+  async function fetchFeedback() {
+    let body = {
+      mobile: mobile,
+    };
+    if (mobile && mobile.length >= 10) {
+      try {
+        let res = await fetchFeedbackFetch(body);
+        let feedbackOld = { ...feedback };
+        feedbackOld["userdata"] = res.data.userdata;
+        feedbackOld["postdemo"] = res.data.postdemo;
+        setFeedback(feedbackOld);
+      } catch (e) {
+        alert("Lead/User Not Found");
+        return;
+      }
+    }
+  }
+
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
           <div className="feedbackWrapper">
-            <h1>Teacher Feedback Form</h1>
-            <form onSubmit={handleSubmit} className="container my-5">
+            <h1>Lead generation</h1>
+            <div className="mb-3">
+              <label htmlFor="mobile">Mobile</label>
+              <input
+                type="text"
+                className="form-control mb-3"
+                id="mobile"
+                name="mobile.userdata"
+                value={mobile}
+                onChange={(e) => {
+                  setmobile(e.target.value);
+                }}
+                required
+              />
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={() => {
+                  fetchFeedback();
+                }}
+              >
+                Submit
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className="container my-5 basicInfo">
+              <h2>Basic Info</h2>
               <div className="mb-3">
                 <label htmlFor="fullName">Full Name</label>
                 <input
                   type="text"
                   className="form-control"
                   id="fullName"
-                  name="fullName"
-                  value={feedback.fullName}
+                  name="fullName.userdata"
+                  value={feedback.userdata.fullName}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -162,8 +300,8 @@ const TeacherFeedback = ({
                   type="email"
                   className="form-control"
                   id="email"
-                  name="email"
-                  value={feedback.email}
+                  name="email.userdata"
+                  value={feedback.userdata.email}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -174,8 +312,8 @@ const TeacherFeedback = ({
                   type="tel"
                   className="form-control"
                   id="phoneNumber"
-                  name="phoneNumber"
-                  value={feedback.phoneNumber}
+                  name="phoneNumber.userdata"
+                  value={feedback.userdata.phoneNumber}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -188,8 +326,8 @@ const TeacherFeedback = ({
                   type="text"
                   className="form-control"
                   id="topicsOfInterest"
-                  name="topicsOfInterest"
-                  value={feedback.topicsOfInterest}
+                  name="topicsOfInterest.userdata"
+                  value={feedback.userdata.topicsOfInterest}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -202,8 +340,8 @@ const TeacherFeedback = ({
                   type="text"
                   className="form-control"
                   id="preferredCommunication"
-                  name="preferredCommunication"
-                  value={feedback.preferredCommunication}
+                  name="preferredCommunication.userdata"
+                  value={feedback.userdata.preferredCommunication}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -214,8 +352,8 @@ const TeacherFeedback = ({
                   type="text"
                   className="form-control"
                   id="geographicLocation"
-                  name="geographicLocation"
-                  value={feedback.geographicLocation}
+                  name="geographicLocation.userdata"
+                  value={feedback.userdata.geographicLocation}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -228,8 +366,8 @@ const TeacherFeedback = ({
                   type="text"
                   className="form-control"
                   id="howTheyHeard"
-                  name="howTheyHeard"
-                  value={feedback.howTheyHeard}
+                  name="howTheyHeard.userdata"
+                  value={feedback.userdata.howTheyHeard}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -240,8 +378,8 @@ const TeacherFeedback = ({
                   type="number"
                   className="form-control"
                   id="age"
-                  name="age"
-                  value={feedback.age}
+                  name="age.userdata"
+                  value={feedback.userdata.age}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -251,8 +389,8 @@ const TeacherFeedback = ({
                 <select
                   className="form-control"
                   id="gender"
-                  name="gender"
-                  value={feedback.gender}
+                  name="gender.userdata"
+                  value={feedback.userdata.gender}
                   onChange={handleFeedbackChange}
                   required
                 >
@@ -269,8 +407,8 @@ const TeacherFeedback = ({
                 <select
                   className="form-control"
                   id="educationalBackground"
-                  name="educationalBackground"
-                  value={feedback.educationalBackground}
+                  name="educationalBackground.userdata"
+                  value={feedback.userdata.educationalBackground}
                   onChange={handleFeedbackChange}
                   required
                 >
@@ -281,6 +419,15 @@ const TeacherFeedback = ({
                   <option value="Doctorate">Doctorate</option>
                 </select>
               </div>
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+            <form
+              className="container my-5 postDemo"
+              onSubmit={handleSubmitFeedback}
+            >
+              <h2>Post Demo Feedback</h2>
               <div className="mb-3">
                 <label htmlFor="conceptsCleared">
                   Were the Concepts Cleared in the Demo?
@@ -293,7 +440,7 @@ const TeacherFeedback = ({
                     className="form-control me-2"
                     id="conceptsClearedRating"
                     name="conceptsCleared.rating"
-                    value={feedback.conceptsCleared.rating}
+                    value={feedback.postdemo.conceptsCleared.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -302,7 +449,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="conceptsClearedComment"
                     name="conceptsCleared.comment"
-                    value={feedback.conceptsCleared.comment}
+                    value={feedback.postdemo.conceptsCleared.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -318,7 +465,7 @@ const TeacherFeedback = ({
                     className="form-control me-2"
                     id="sessionOnTimeRating"
                     name="sessionOnTime.rating"
-                    value={feedback.sessionOnTime.rating}
+                    value={feedback.postdemo.sessionOnTime.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -327,7 +474,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="sessionOnTimeComment"
                     name="sessionOnTime.comment"
-                    value={feedback.sessionOnTime.comment}
+                    value={feedback.postdemo.sessionOnTime.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -345,7 +492,7 @@ const TeacherFeedback = ({
                     className="form-control me-2"
                     id="facultyClearDoubtsRating"
                     name="facultyClearDoubts.rating"
-                    value={feedback.facultyClearDoubts.rating}
+                    value={feedback.postdemo.facultyClearDoubts.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -354,7 +501,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="facultyClearDoubtsComment"
                     name="facultyClearDoubts.comment"
-                    value={feedback.facultyClearDoubts.comment}
+                    value={feedback.postdemo.facultyClearDoubts.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -372,7 +519,7 @@ const TeacherFeedback = ({
                     className="form-control me-2"
                     id="connectivityDifficultyRating"
                     name="connectivityDifficulty.rating"
-                    value={feedback.connectivityDifficulty.rating}
+                    value={feedback.postdemo.connectivityDifficulty.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -381,7 +528,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="connectivityDifficultyComment"
                     name="connectivityDifficulty.comment"
-                    value={feedback.connectivityDifficulty.comment}
+                    value={feedback.postdemo.connectivityDifficulty.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -399,7 +546,7 @@ const TeacherFeedback = ({
                     className="form-control me-2"
                     id="sessionInteractiveRating"
                     name="sessionInteractive.rating"
-                    value={feedback.sessionInteractive.rating}
+                    value={feedback.postdemo.sessionInteractive.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -408,7 +555,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="sessionInteractiveComment"
                     name="sessionInteractive.comment"
-                    value={feedback.sessionInteractive.comment}
+                    value={feedback.postdemo.sessionInteractive.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -424,7 +571,7 @@ const TeacherFeedback = ({
                   className="form-control"
                   id="suggestions"
                   name="suggestions"
-                  value={feedback.suggestions}
+                  value={feedback.postdemo.suggestions}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -440,9 +587,12 @@ const TeacherFeedback = ({
                     type="radio"
                     name="likelihoodOfEnrolling"
                     id="likely"
-                    value="likely"
+                    value="Likely"
                     onChange={handleFeedbackChange}
                     required
+                    checked={
+                      feedback.postdemo.likelihoodOfEnrolling == "Likely"
+                    }
                   />
                   <label className="form-check-label" htmlFor="likely">
                     Likely
@@ -454,9 +604,12 @@ const TeacherFeedback = ({
                     type="radio"
                     name="likelihoodOfEnrolling"
                     id="neutral"
-                    value="neutral"
+                    value="Neutral"
                     onChange={handleFeedbackChange}
                     required
+                    checked={
+                      feedback.postdemo.likelihoodOfEnrolling == "Neutral"
+                    }
                   />
                   <label className="form-check-label" htmlFor="neutral">
                     Neutral
@@ -468,14 +621,40 @@ const TeacherFeedback = ({
                     type="radio"
                     name="likelihoodOfEnrolling"
                     id="unlikely"
-                    value="unlikely"
+                    value="Unlikely"
                     onChange={handleFeedbackChange}
                     required
+                    checked={
+                      feedback.postdemo.likelihoodOfEnrolling == "Unlikely"
+                    }
                   />
                   <label className="form-check-label" htmlFor="unlikely">
                     Unlikely
                   </label>
                 </div>
+                <label>
+                  Value:
+                  <span style={{ color: "black" }}>
+                    {feedback.postdemo.likelihoodOfEnrolling}
+                  </span>
+                </label>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="careercoaching">
+                  Is any requirement for career coaching?
+                </label>
+                <select
+                  className="form-control"
+                  id="careercoaching"
+                  name="careercoaching"
+                  value={feedback.postdemo.careercoaching}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  <option value=""></option>
+                  <option value="Yes">Yes</option>
+                  <option value="Yes">No</option>
+                </select>
               </div>
               <button type="submit" className="btn btn-primary">
                 Submit

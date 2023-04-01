@@ -3,9 +3,17 @@
     flex-direction: column;
     background-color: white;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px lightgray;
     h1{
         color: black;
         margin-bottom: 10px !important;
+        margin-top: 0px;
+    }
+    h2{
+        color: black;
+        margin-bottom: 10px !important;
+        margin-top: 0px;
     }
     label{
         font-size: 15px;

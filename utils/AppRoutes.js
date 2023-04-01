@@ -16,6 +16,7 @@ export const EVENTSIGNUP = `${BASEURL}/api/auth/eventsignup`;
 export const SIGNIN = `${BASEURL}/api/auth/signin`;
 export const BOOKFORM = `${BASEURL}/api/bookForm`;
 export const FEEDBACKSUBMIT = `${BASEURL}/api/feedbacksubmit`;
+export const FEEDBACKFETCH = `${BASEURL}/api/feedbackfetch`;
 export const ALLFORMS = `${BASEURL}/api/bookedClass`;
 export const ALLBOOKEDCLASSES = `${BASEURL}/api/getBookedClasses`;
 export const GETCOURSEDATA = `${BASEURL}/api/getCourseData`;

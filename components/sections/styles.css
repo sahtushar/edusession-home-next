@@ -155,7 +155,7 @@ section.testimonialPage {
 }
 .ctaHomepage {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .featureListings {
   display: flex !important;
