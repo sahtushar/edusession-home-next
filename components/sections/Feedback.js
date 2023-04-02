@@ -245,12 +245,15 @@ const TeacherFeedback = ({
     };
     if (mobile && mobile.length >= 10) {
       try {
+        setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
+        setIsLoading(false);
         let feedbackOld = { ...feedback };
         feedbackOld["userdata"] = res.data.userdata;
         feedbackOld["postdemo"] = res.data.postdemo;
         setFeedback(feedbackOld);
       } catch (e) {
+        setIsLoading(false);
         alert("Lead/User Not Found");
         return;
       }
