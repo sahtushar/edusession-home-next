@@ -263,7 +263,7 @@ const TeacherFeedback = ({
         <div className={innerClasses}>
           <div className="feedbackWrapper">
             <h1>Lead generation</h1>
-            <div className="mb-3">
+            <div className="mb-3 border-bottom">
               <p>Find A Lead</p>
               <label htmlFor="mobile">Mobile</label>
               <input
@@ -477,7 +477,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="conceptsClearedRating"
                     name="conceptsCleared.rating"
-                    value={feedback.postdemo.conceptsCleared.rating}
+                    value={feedback?.postdemo?.conceptsCleared?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -486,7 +486,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="conceptsClearedComment"
                     name="conceptsCleared.comment"
-                    value={feedback.postdemo.conceptsCleared.comment}
+                    value={feedback?.postdemo?.conceptsCleared?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -502,7 +502,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="sessionOnTimeRating"
                     name="sessionOnTime.rating"
-                    value={feedback.postdemo.sessionOnTime.rating}
+                    value={feedback?.postdemo?.sessionOnTime?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -511,7 +511,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="sessionOnTimeComment"
                     name="sessionOnTime.comment"
-                    value={feedback.postdemo.sessionOnTime.comment}
+                    value={feedback?.postdemo?.sessionOnTime?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -529,7 +529,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="facultyClearDoubtsRating"
                     name="facultyClearDoubts.rating"
-                    value={feedback.postdemo.facultyClearDoubts.rating}
+                    value={feedback?.postdemo?.facultyClearDoubts?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -538,7 +538,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="facultyClearDoubtsComment"
                     name="facultyClearDoubts.comment"
-                    value={feedback.postdemo.facultyClearDoubts.comment}
+                    value={feedback?.postdemo?.facultyClearDoubts?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -556,7 +556,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="connectivityDifficultyRating"
                     name="connectivityDifficulty.rating"
-                    value={feedback.postdemo.connectivityDifficulty.rating}
+                    value={feedback?.postdemo?.connectivityDifficulty?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -565,7 +565,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="connectivityDifficultyComment"
                     name="connectivityDifficulty.comment"
-                    value={feedback.postdemo.connectivityDifficulty.comment}
+                    value={feedback?.postdemo?.connectivityDifficulty?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -583,7 +583,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="sessionInteractiveRating"
                     name="sessionInteractive.rating"
-                    value={feedback.postdemo.sessionInteractive.rating}
+                    value={feedback?.postdemo?.sessionInteractive?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -592,7 +592,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="sessionInteractiveComment"
                     name="sessionInteractive.comment"
-                    value={feedback.postdemo.sessionInteractive.comment}
+                    value={feedback?.postdemo?.sessionInteractive?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Add your comments here"
                   />
@@ -614,7 +614,7 @@ const TeacherFeedback = ({
                     onChange={handleFeedbackChange}
                     required
                     checked={
-                      feedback.postdemo.likelihoodOfEnrolling == "Likely"
+                      feedback?.postdemo?.likelihoodOfEnrolling == "Likely"
                     }
                   />
                   <label className="form-check-label" htmlFor="likely">
@@ -631,7 +631,7 @@ const TeacherFeedback = ({
                     onChange={handleFeedbackChange}
                     required
                     checked={
-                      feedback.postdemo.likelihoodOfEnrolling == "Neutral"
+                      feedback?.postdemo?.likelihoodOfEnrolling == "Neutral"
                     }
                   />
                   <label className="form-check-label" htmlFor="neutral">
@@ -649,7 +649,7 @@ const TeacherFeedback = ({
                     onChange={handleFeedbackChange}
                     required
                     checked={
-                      feedback.postdemo.likelihoodOfEnrolling == "Unlikely"
+                      feedback?.postdemo?.likelihoodOfEnrolling == "Unlikely"
                     }
                   />
                   <label className="form-check-label" htmlFor="unlikely">
@@ -659,7 +659,7 @@ const TeacherFeedback = ({
                 <label>
                   Value:
                   <span style={{ color: "black" }}>
-                    {feedback.postdemo.likelihoodOfEnrolling}
+                    {feedback?.postdemo?.likelihoodOfEnrolling}
                   </span>
                 </label>
               </div>
@@ -684,7 +684,7 @@ const TeacherFeedback = ({
                     className="form-control me-2 rating"
                     id="suggestions"
                     name="suggestions.rating"
-                    value={feedback.postdemo.suggestions.rating}
+                    value={feedback?.postdemo?.suggestions?.rating}
                     onChange={handleFeedbackChange}
                     required
                   />
@@ -693,7 +693,7 @@ const TeacherFeedback = ({
                     className="form-control"
                     id="suggestionsComment"
                     name="suggestions.comment"
-                    value={feedback.postdemo.suggestions.comment}
+                    value={feedback?.postdemo?.suggestions?.comment}
                     onChange={handleFeedbackChange}
                     placeholder="Any Suggestion for our Betterment"
                   />
@@ -707,7 +707,7 @@ const TeacherFeedback = ({
                   className="form-control"
                   id="careercoaching"
                   name="careercoaching"
-                  value={feedback.postdemo.careercoaching}
+                  value={feedback?.postdemo?.careercoaching}
                   onChange={handleFeedbackChange}
                   required
                 >
