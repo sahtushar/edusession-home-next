@@ -94,10 +94,6 @@ const TeacherFeedback = ({
         comment: "",
       },
       careercoaching: "",
-      sessionRating: {
-        rating: "",
-        comment: "",
-      },
     },
   });
   const [mobile, setmobile] = useState("");
@@ -209,10 +205,6 @@ const TeacherFeedback = ({
           comment: feedback.postdemo.suggestions.comment,
         },
         careercoaching: feedback.postdemo.careercoaching,
-        sessionRating: {
-          rating: feedback.postdemo.sessionRating.rating,
-          comment: feedback.postdemo.sessionRating.comment,
-        },
       },
       type: "postdemo",
       roles: ["user"],
