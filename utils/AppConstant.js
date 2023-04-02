@@ -9,6 +9,28 @@ import { NEETUG } from "./data/NeetUg";
 import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
 
+export const jokes = [
+  "Why did the math book look so sad? Because it had too many problems.",
+  "Why did the physics teacher break up with the biology teacher? There was no chemistry.",
+  "Why did the English teacher refuse to teach about numbers? They wanted to stick to the plot.",
+  "Why was the history book always repeating itself? Because it had a lot of chapters.",
+  "Why did the music teacher need a ladder? To reach the high notes.",
+  "Why did the student bring a ladder to school? To reach the top of the class.",
+  "Why did the geography teacher go on a date with the history teacher? They wanted to put their worlds together.",
+  "Why did the teacher wear sunglasses to class? Because their students were too bright.",
+  "Why did the biology teacher cross the road? To get to the other side of the food chain.",
+  "Why did the physics teacher need a therapist? To work out their energy problems.",
+  "Why did the teacher wear a waterproof jacket? Because their class was so good, it made them want to jump for joy!",
+  "Why did the geography teacher break up with the history teacher? There was no future in it.",
+  "What did the math teacher say when they finished their workout? 'I'm two-thirds of the way there!'",
+  "Why did the teacher put a bell on their chair? Because they wanted to hear their lesson plan!",
+  "What did the history teacher say when asked about their dating life? 'I'm still looking for my perfect match - I hear there's a lot of chemistry between us!'",
+  "What's a teacher's favorite kind of sandwich? PB and J-okes!",
+  "Why did the biology teacher go on a blind date? To see if they had chemistry!",
+  "What do you call a teacher who doesn't let their students nap in class? A nap-timist!",
+  "Why did the music teacher keep hitting themselves on the head with a tuning fork? Because they wanted to find the right note!",
+];
+
 export const WhatsAppNo = +918237815800;
 // export const getCourseDataUrl = {
 //   "JEE Mains and Advanced (MH-CET and GCET)":
@@ -438,7 +460,7 @@ export const getCourseKeywords = {
       "State",
       "Boards",
       "Class 6",
-      "Doubt clearance"
+      "Doubt clearance",
     ],
     sectionHeaderDesc: [
       "one-on-one",
@@ -500,7 +522,7 @@ export const getCourseKeywords = {
       "State",
       "Boards",
       "Class 9",
-      "Doubt clearance"
+      "Doubt clearance",
     ],
     sectionHeaderDesc: [
       "one-on-one",
@@ -693,14 +715,14 @@ export const activeCities = {
     state: "Karnataka",
     display: "Belgaum",
   },
-  "gangtok-sikkim":{
-    state:'Sikkim',
-    display: 'Gangtok - Sikkim'
+  "gangtok-sikkim": {
+    state: "Sikkim",
+    display: "Gangtok - Sikkim",
   },
-  "malda":{
-    state:'West Bengal',
-    display: 'Malda - West Bengal'
-  }
+  malda: {
+    state: "West Bengal",
+    display: "Malda - West Bengal",
+  },
 };
 
 export const cityPaths = [
@@ -722,7 +744,6 @@ export const cityPaths = [
   { params: { city: "ponda" } },
   { params: { city: "gangtok-sikkim" } },
   { params: { city: "malda" } },
-  
 ];
 
 export const adminCreds = [

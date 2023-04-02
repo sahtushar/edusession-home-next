@@ -9,6 +9,7 @@ import {
 } from "../../services/authroutes";
 import {
   checkauthfailed,
+  jokes,
   verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
@@ -257,6 +258,7 @@ const TeacherFeedback = ({
       <div className="container">
         <div className={innerClasses}>
           <div className="feedbackWrapper">
+            <p>"{jokes[Math.floor(Math.random() * jokes.length)]}"</p>
             <h1>Lead generation</h1>
             <div className="mb-3 border-bottom">
               <p>Find A Lead</p>

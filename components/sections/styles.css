@@ -13,6 +13,7 @@
   line-height: 35px;
   color: black;
   font-weight: 400;
+  text-shadow:  1px 1px darkgrey;
 }
 .site-header .container {
   max-width: 90% !important;
@@ -141,8 +142,8 @@ section.testimonialPage {
   display: flex;
   text-align: left;
   padding-top: 3.5rem !important;
-  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 90%);
-  background-image: url("./../../assets/images/hand.avif");
+  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 55%);
+  background-image: url("./../../assets/images/backgrounds/u1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
