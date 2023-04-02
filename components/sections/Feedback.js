@@ -13,6 +13,8 @@ import {
   verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
+import { useStyleRegistry } from "styled-jsx";
+import { Table } from "reactstrap";
 
 const propTypes = {
   children: PropTypes.node,
@@ -98,7 +100,7 @@ const TeacherFeedback = ({
     },
   });
   const [mobile, setmobile] = useState("");
-
+  const [allLeads, setAllLeads] = useState([]);
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
@@ -162,6 +164,7 @@ const TeacherFeedback = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
+        fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
           return;
@@ -219,6 +222,7 @@ const TeacherFeedback = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
+        fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
           return;
@@ -235,6 +239,7 @@ const TeacherFeedback = ({
   async function fetchFeedback() {
     let body = {
       mobile: mobile,
+      username: localStorage?.getItem("username"),
     };
     if (mobile && mobile.length >= 10) {
       try {
@@ -252,7 +257,47 @@ const TeacherFeedback = ({
       }
     }
   }
+  async function fetchAllFeedback() {
+    let body = {
+      showAll: true,
+      username: localStorage?.getItem("username"),
+    };
+    try {
+      setIsLoading(true);
+      let res = await fetchFeedbackFetch(body);
+      setIsLoading(false);
 
+      setAllLeads(res.data.forms);
+    } catch (e) {
+      setIsLoading(false);
+      alert("Lead/User Not Found");
+      return;
+    }
+  }
+
+  let exludedheaders = {
+    roles: true,
+    _id: true,
+    __v: true,
+  };
+  const getTdValue = (val) => {
+    if (val.rating && val.comment) {
+      return (
+        <tr>
+          <td>
+            <span style={{ color: "brown" }}>Comment:</span>
+            {val.comment}
+          </td>
+          <td>
+            <span style={{ color: "brown" }}>Rating:</span>
+            {val.rating}
+          </td>
+        </tr>
+      );
+    } else {
+      return val;
+    }
+  };
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
@@ -274,15 +319,54 @@ const TeacherFeedback = ({
                 }}
                 required
               />
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={() => {
-                  fetchFeedback();
-                }}
-              >
-                Submit
-              </button>
+              <div className="ctasforlead">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={() => {
+                    fetchFeedback();
+                  }}
+                >
+                  Submit
+                </button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    fetchAllFeedback();
+                  }}
+                >
+                  Fetch All Feedback
+                </button>
+              </div>
+              <Table hover responsive>
+                <thead>
+                  <tr key={"header"}>
+                    {Object.keys({
+                      ...allLeads?.[0]?.userdata,
+                      ...allLeads?.[0]?.postdemo,
+                    }).map((key) => (
+                      <th style={{ textTransform: "capitalize" }}>
+                        {key
+                          .replace(/([A-Z]+)/g, " $1")
+                          .replace(/([A-Z][a-z])/g, " $1")}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {" "}
+                  {allLeads.map((item, index) => (
+                    <tr key={`${index}`}>
+                      {Object.values({
+                        ...item?.userdata,
+                        ...item?.postdemo,
+                      }).map((val) => (
+                        <td>{getTdValue(val)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
             </div>
 
             <form onSubmit={handleSubmit} className="container my-2 basicInfo">
