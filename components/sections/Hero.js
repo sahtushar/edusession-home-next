@@ -89,98 +89,113 @@ const Hero = ({
   };
   return (
     <>
-    {/* <QuarkEvent/> */}
-    <section {...props} className={`${outerClasses} homepagesection`}>
-      <div className="container-sm">
-        <div className={innerClasses}>
-          <div className={`hero-content hero-content2`}>
-         
-            <div className="container-xs">
-           
-              <h1
-                className="mt-0 mb-16"
-                data-reveal-delay="200"
-                dangerouslySetInnerHTML={{
-                  __html: `<span>${data?.header}${
-                    cityData?.cityData
-                      ? ` in <strong>${
-                          cityData?.cityData?.display || ""
-                        }</strong>`
-                      : ""
-                  }</span>`,
-                }}
-              >
-                {/* {data?.header} */}
-              </h1>
-              {data?.subheadertag == "h2" ? (
-                <h2
-                  className="m-0 mb-32 subheader"
-                  data-reveal-delay="400"
+      {/* <QuarkEvent/> */}
+      <section {...props} className={`${outerClasses} homepagesection`}>
+        <div className="container-sm">
+          <div className={innerClasses}>
+            <div className={`hero-content hero-content2`}>
+              <div className="container-xs">
+                <h1
+                  className="mt-0 mb-16"
+                  data-reveal-delay="200"
                   dangerouslySetInnerHTML={{
-                    __html: makeBold(
-                      `<span>${data?.subheader}${
-                        cityData?.cityData
-                          ? ` in <strong>${
-                              cityData?.cityData?.display || ""
-                            }.</strong>`
-                          : ""
-                      }</span>`,
-                      getCourseKeywords?.[courseIdentifier]?.subheaderWords
-                    ),
+                    __html: `<span>${data?.header}${
+                      cityData?.cityData
+                        ? ` in <strong>${
+                            cityData?.cityData?.display || ""
+                          }</strong>`
+                        : ""
+                    }</span>`,
                   }}
                 >
-                  {/* {data?.subheader} */}
-                </h2>
-              ) : (
-                <p
-                  className="m-0 mb-32 subheader"
-                  data-reveal-delay="400"
-                  dangerouslySetInnerHTML={{
-                    __html: makeBold(
-                      `<span>${data?.subheader}${
-                        cityData?.cityData
-                          ? ` in <strong>${
-                              cityData?.cityData?.display || ""
-                            }</strong>`
-                          : ""
-                      }.</span>`,
-                      getCourseKeywords?.[courseIdentifier]?.subheaderWords
-                    ),
-                  }}
-                >
-                  {/* {data?.subheader} */}
-                </p>
-              )}
-
-              <div className="ctaHomepage">
-                <ButtonGroup>
-                  <Button
-                    tag="a"
-                    color="primary"
-                    wideMobile
-                    onClick={() => {
-                      bookAClass();
+                  {/* {data?.header} */}
+                </h1>
+                {data?.subheadertag == "h2" ? (
+                  <h2
+                    className="m-0 mb-32 subheader"
+                    data-reveal-delay="400"
+                    dangerouslySetInnerHTML={{
+                      __html: makeBold(
+                        `<span>${data?.subheader}${
+                          cityData?.cityData
+                            ? ` in <strong>${
+                                cityData?.cityData?.display || ""
+                              }.</strong>`
+                            : ""
+                        }</span>`,
+                        getCourseKeywords?.[courseIdentifier]?.subheaderWords
+                      ),
                     }}
                   >
-                    Book a Class
-                  </Button>
-                </ButtonGroup>
+                    {/* {data?.subheader} */}
+                  </h2>
+                ) : (
+                  <p
+                    className="m-0 mb-32 subheader"
+                    data-reveal-delay="400"
+                    dangerouslySetInnerHTML={{
+                      __html: makeBold(
+                        `<span>${data?.subheader}${
+                          cityData?.cityData
+                            ? ` in <strong>${
+                                cityData?.cityData?.display || ""
+                              }</strong>`
+                            : ""
+                        }.</span>`,
+                        getCourseKeywords?.[courseIdentifier]?.subheaderWords
+                      ),
+                    }}
+                  >
+                    {/* {data?.subheader} */}
+                  </p>
+                )}
+
+                <div className="ctaHomepage">
+                  <ButtonGroup>
+                    <Button
+                      tag="a"
+                      color="primary"
+                      wideMobile
+                      onClick={() => {
+                        bookAClass();
+                      }}
+                    >
+                      <i className="fa fa-external-link"> </i>Book a Class
+                    </Button>
+
+                    <Button
+                      tag="a"
+                      color="dark"
+                      wideMobile
+                      // onClick={() => {
+                      //   bookAClass();
+                      // }}
+                    >
+                      <a
+                        href="tel:+91
+                        82378 15800"
+                      >
+                        Or Call us <i className="fa fa-phone-square"></i> +91
+                        82378 15800
+                      </a>
+                    </Button>
+                  </ButtonGroup>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container-sm">
-        <div
-          className="hero-figure illustration-element-01"
-          data-reveal-value="20px"
-          data-reveal-delay="800"
-        >
-          <ImageHover src={rightImg} alt={alt} />
-          {/* <Image src={homepageicon} alt="Hero" /> */}
+        <div className="container-sm">
+          <div
+            className="hero-figure illustration-element-01"
+            data-reveal-value="20px"
+            data-reveal-delay="800"
+          >
+            <ImageHover src={rightImg} alt={alt} />
+            {/* <Image src={homepageicon} alt="Hero" /> */}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

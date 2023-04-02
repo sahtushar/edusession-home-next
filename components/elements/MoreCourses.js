@@ -24,7 +24,9 @@ const MoreCourses = ({ header, cityData }) => {
           return (
             <ListGroupItem>
               <Link
-                href={`${item.link}${cityData?.cityData ? `&city=${cityData.city}` : ""}`}
+                href={`${item.link}${
+                  cityData?.cityData ? `&city=${cityData.city}` : ""
+                }`}
               >
                 <a>{item.label}</a>
               </Link>

@@ -9,6 +9,7 @@ import classNames from "classnames";
 import government from "./../../assets/images/government.webp";
 import note from "./../../assets/images/note.webp";
 import rail from "./../../assets/images/rail.webp";
+import { jokes } from "../../utils/AppConstant";
 
 const propTypes = {
   ...SectionTilesProps.types,
