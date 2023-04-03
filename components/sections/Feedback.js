@@ -67,6 +67,7 @@ const TeacherFeedback = ({
       age: "",
       gender: "",
       educationalBackground: "",
+      remarks:""
     },
 
     //postdemo data
@@ -151,6 +152,7 @@ const TeacherFeedback = ({
         age: feedback.userdata.age,
         gender: feedback.userdata.gender,
         educationalBackground: feedback.userdata.educationalBackground,
+        remarks:feedback.userdata.remarks
       },
       type: "userdata",
       roles: ["user"],
@@ -536,6 +538,17 @@ const TeacherFeedback = ({
                   <option value="Master's Degree">Master's Degree</option>
                   <option value="Doctorate">Doctorate</option>
                 </select>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="remarks">Remarks</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="remarks"
+                  name="remarks.userdata"
+                  value={feedback.userdata.remarks}
+                  onChange={handleFeedbackChange}
+                />
               </div>
               <button type="submit" className="btn btn-primary">
                 Submit
