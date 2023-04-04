@@ -368,51 +368,53 @@ const TeacherFeedback = ({
               ) : (
                 <></>
               )}
-              <Table hover responsive innerRef={tableRef}>
-                <thead>
-                  <tr key={"header"}>
-                    <th>Count</th>
-                    <th>Date</th>
-                    {Object.keys({
-                      ...feedback.userdata,
-                      ...feedback.postdemo,
-                    }).map((key) => (
-                      <th style={{ textTransform: "capitalize" }}>
-                        {key
-                          .replace(/([A-Z]+)/g, " $1")
-                          .replace(/([A-Z][a-z])/g, " $1")}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {" "}
-                  {allLeads.map((item, index) => (
-                    <>
-                      <tr key={`${index}__leads`}>
-                        <td>{index + 1}</td>
-                        <td style={{ color: "brown", fontWeight: "bold" }}>
-                          {getCreationDate(item._id)}
-                        </td>
-                        {Object.values({
-                          ...item?.userdata,
-                          ...(item?.postdemo || {}),
-                        }).map((val, dataindex) => (
-                          <td
-                            style={
-                              dataindex == 2
-                                ? { color: "brown", fontWeight: "bold" }
-                                : {}
-                            }
-                          >
-                            {getTdValue(val)}
+              {
+                allLeads.length ? <Table hover responsive innerRef={tableRef}>
+                  <thead>
+                    <tr key={"header"}>
+                      <th>Count</th>
+                      <th>Date</th>
+                      {Object.keys({
+                        ...feedback.userdata,
+                        ...feedback.postdemo,
+                      }).map((key) => (
+                        <th style={{ textTransform: "capitalize" }}>
+                          {key
+                            .replace(/([A-Z]+)/g, " $1")
+                            .replace(/([A-Z][a-z])/g, " $1")}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {" "}
+                    {allLeads.map((item, index) => (
+                      <>
+                        <tr key={`${index}__leads`}>
+                          <td>{index + 1}</td>
+                          <td style={{ color: "brown", fontWeight: "bold" }}>
+                            {getCreationDate(item._id)}
                           </td>
-                        ))}
-                      </tr>
-                    </>
-                  ))}
-                </tbody>
-              </Table>
+                          {Object.values({
+                            ...item?.userdata,
+                            ...(item?.postdemo || {}),
+                          }).map((val, dataindex) => (
+                            <td
+                              style={
+                                dataindex == 2
+                                  ? { color: "brown", fontWeight: "bold" }
+                                  : {}
+                              }
+                            >
+                              {getTdValue(val)}
+                            </td>
+                          ))}
+                        </tr>
+                      </>
+                    ))}
+                  </tbody>
+                </Table> : <></>
+              }
             </div>
 
             <form onSubmit={handleSubmit} className="container my-2 basicInfo">
