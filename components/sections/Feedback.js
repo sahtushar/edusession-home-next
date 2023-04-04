@@ -360,18 +360,21 @@ const TeacherFeedback = ({
                 </thead>
                 <tbody>
                   {" "}
-                  <tr key={`${index_lead}`}>
-                      {index+1}
-                  </tr>
-                  {allLeads.map((item, index) => (                
-                    <tr key={`${index}__leads`}>
-                      {Object.values({
-                        ...item?.userdata,
-                        ...item?.postdemo,
-                      }).map((val) => (
-                        <td>{getTdValue(val)}</td>
-                      ))}
-                    </tr>
+
+                  {allLeads.map((item, index) => (
+                    <>
+                      <tr key={`${index}__leads`}>
+                        <td>
+                          {index}
+                        </td>
+                        {Object.values({
+                          ...item?.userdata,
+                          ...item?.postdemo,
+                        }).map((val) => (
+                          <td>{getTdValue(val)}</td>
+                        ))}
+                      </tr>
+                    </>
                   ))}
                 </tbody>
               </Table>
