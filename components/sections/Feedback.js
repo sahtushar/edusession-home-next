@@ -346,6 +346,9 @@ const TeacherFeedback = ({
                     <th>
                       Count
                     </th>
+                    <th>
+                      Date
+                    </th>
                     {Object.keys({
                       ...allLeads?.[0]?.userdata,
                       ...allLeads?.[0]?.postdemo,
@@ -365,7 +368,10 @@ const TeacherFeedback = ({
                     <>
                       <tr key={`${index}__leads`}>
                         <td>
-                          {index}
+                          {index+1}
+                        </td>
+                        <td>
+                          { moment(item?._id?.getTimestamp())?.format("DD/MM/YYY")}
                         </td>
                         {Object.values({
                           ...item?.userdata,
