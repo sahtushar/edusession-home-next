@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import { useState } from "react";
@@ -14,8 +14,8 @@ import {
 } from "../../utils/AppConstant";
 import { useRouter as useHistory } from "next/router";
 import { useStyleRegistry } from "styled-jsx";
-import { Table } from "reactstrap";
-import moment from 'moment';
+import { Button, Table } from "reactstrap";
+import { DownloadTableExcel } from "react-export-table-to-excel";
 
 const propTypes = {
   children: PropTypes.node,
@@ -68,7 +68,7 @@ const TeacherFeedback = ({
       age: "",
       gender: "",
       educationalBackground: "",
-      remarks: ""
+      remarks: "",
     },
 
     //postdemo data
@@ -103,6 +103,11 @@ const TeacherFeedback = ({
   });
   const [mobile, setmobile] = useState("");
   const [allLeads, setAllLeads] = useState([]);
+  const tableRef = useRef(null);
+  const [currentFact, setCurrentfact] = useState("");
+  useEffect(() => {
+    setCurrentfact(jokes[Math.floor(Math.random() * jokes.length)]);
+  }, []);
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
@@ -153,7 +158,7 @@ const TeacherFeedback = ({
         age: feedback.userdata.age,
         gender: feedback.userdata.gender,
         educationalBackground: feedback.userdata.educationalBackground,
-        remarks: feedback.userdata.remarks
+        remarks: feedback.userdata.remarks,
       },
       type: "userdata",
       roles: ["user"],
@@ -284,29 +289,38 @@ const TeacherFeedback = ({
     __v: true,
   };
   const getTdValue = (val) => {
-    if (val.rating && val.comment) {
+    if (typeof val == "object") {
       return (
-        <tr>
-          <td>
-            <span style={{ color: "brown" }}>Comment:</span>
-            {val.comment}
-          </td>
-          <td>
-            <span style={{ color: "brown" }}>Rating:</span>
-            {val.rating}
-          </td>
-        </tr>
+        <div>
+          <span style={{ color: "brown" }}>Comment:</span>
+          {val.comment} <span style={{ color: "brown" }}>Rating:</span>
+          {val.rating}
+        </div>
       );
     } else {
       return val;
     }
   };
+
+  const getCreationDate = (id) => {
+    var timestamp = id.toString().substring(0, 8);
+
+    var date = new Date(parseInt(timestamp, 16) * 1000);
+    var month = date.getUTCMonth() + 1; //months from 1-12
+    var day = date.getUTCDate();
+    var year = date.getUTCFullYear();
+
+    let newdate = day + "/" + month + "/" + year;
+
+    return newdate;
+  };
+
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
           <div className="feedbackWrapper">
-            <p>"{jokes[Math.floor(Math.random() * jokes.length)]}"</p>
+            <p>"{currentFact}"</p>
             <h1>Lead generation</h1>
             <div className="mb-3 border-bottom">
               <p>Find A Lead</p>
@@ -341,18 +355,27 @@ const TeacherFeedback = ({
                   Fetch All Feedback
                 </button>
               </div>
-              <Table hover responsive>
+              {allLeads.length ? (
+                <div style={{ marginTop: "10px" }}>
+                  <DownloadTableExcel
+                    filename="users table"
+                    sheet="users"
+                    currentTableRef={tableRef.current}
+                  >
+                    <Button> Export excel </Button>
+                  </DownloadTableExcel>
+                </div>
+              ) : (
+                <></>
+              )}
+              <Table hover responsive innerRef={tableRef}>
                 <thead>
                   <tr key={"header"}>
-                    <th>
-                      Count
-                    </th>
-                    <th>
-                      Date
-                    </th>
+                    <th>Count</th>
+                    <th>Date</th>
                     {Object.keys({
-                      ...allLeads?.[0]?.userdata,
-                      ...allLeads?.[0]?.postdemo,
+                      ...feedback.userdata,
+                      ...feedback.postdemo,
                     }).map((key) => (
                       <th style={{ textTransform: "capitalize" }}>
                         {key
@@ -364,21 +387,26 @@ const TeacherFeedback = ({
                 </thead>
                 <tbody>
                   {" "}
-
                   {allLeads.map((item, index) => (
                     <>
                       <tr key={`${index}__leads`}>
-                        <td>
-                          {index+1}
-                        </td>
-                        <td>
-                          { moment(item?._id?.getTimestamp())?.format("DD/MM/YYY")}
+                        <td>{index + 1}</td>
+                        <td style={{ color: "brown", fontWeight: "bold" }}>
+                          {getCreationDate(item._id)}
                         </td>
                         {Object.values({
                           ...item?.userdata,
-                          ...item?.postdemo,
-                        }).map((val) => (
-                          <td>{getTdValue(val)}</td>
+                          ...(item?.postdemo || {}),
+                        }).map((val, dataindex) => (
+                          <td
+                            style={
+                              dataindex == 2
+                                ? { color: "brown", fontWeight: "bold" }
+                                : {}
+                            }
+                          >
+                            {getTdValue(val)}
+                          </td>
                         ))}
                       </tr>
                     </>
@@ -548,6 +576,7 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                   required
                 >
+                  <option value=""></option>
                   <option value="Class 6">Class 6</option>
                   <option value="Class 7">Class 7</option>
                   <option value="Class 8">Class 8</option>
@@ -555,46 +584,126 @@ const TeacherFeedback = ({
                   <option value="Class 10">Class 10</option>
                   <option value="Class 11">Class 11</option>
                   <option value="Class 12">Class 12</option>
-                  <option value="Bachelor of Arts (BA)">Bachelor of Arts (BA)</option>
-                  <option value="Bachelor of Science (BSc)">Bachelor of Science (BSc)</option>
-                  <option value="Bachelor of Commerce (BCom)">Bachelor of Commerce (BCom)</option>
-                  <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
-                  <option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
-                  <option value="Bachelor of Engineering (BE)">Bachelor of Engineering (BE)</option>
-                  <option value="Bachelor of Technology (BTech)">Bachelor of Technology (BTech)</option>
-                  <option value="Bachelor of Architecture (BArch)">Bachelor of Architecture (BArch)</option>
-                  <option value="Bachelor of Education (BEd)">Bachelor of Education (BEd)</option>
-                  <option value="Bachelor of Laws (LLB)">Bachelor of Laws (LLB)</option>
-                  <option value="Bachelor of Medicine and Bachelor of Surgery (MBBS)">Bachelor of Medicine and Bachelor of Surgery (MBBS)</option>
-                  <option value="Bachelor of Dental Surgery (BDS)">Bachelor of Dental Surgery (BDS)</option>
-                  <option value="Bachelor of Pharmacy (BPharm)">Bachelor of Pharmacy (BPharm)</option>
-                  <option value="Bachelor of Physiotherapy (BPT)">Bachelor of Physiotherapy (BPT)</option>
-                  <option value="Bachelor of Fine Arts (BFA)">Bachelor of Fine Arts (BFA)</option>
-                  <option value="Bachelor of Design (BDes)">Bachelor of Design (BDes)</option>
-                  <option value="Bachelor of Hotel Management and Catering Technology (BHMCT)">Bachelor of Hotel Management and Catering Technology (BHMCT)</option>
-                  <option value="Master of Arts (MA)">Master of Arts (MA)</option>
-                  <option value="Master of Science (MSc)">Master of Science (MSc)</option>
-                  <option value="Master of Commerce (MCom)">Master of Commerce (MCom)</option>
-                  <option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
-                  <option value="Master of Computer Applications (MCA)">Master of Computer Applications (MCA)</option>
-                  <option value="Master of Engineering (ME)">Master of Engineering (ME)</option>
-                  <option value="Master of Technology (MTech)">Master of Technology (MTech)</option>
-                  <option value="Master of Architecture (MArch)">Master of Architecture (MArch)</option>
-                  <option value="Master of Education (MEd)">Master of Education (MEd)</option>
-                  <option value="Master of Laws (LLM)">Master of Laws (LLM)</option>
-                  <option value="Master of Medicine (MD)">Master of Medicine (MD)</option>
-                  <option value="Master of Surgery (MS)">Master of Surgery (MS)</option>
-                  <option value="Master of Dental Surgery (MDS)">Master of Dental Surgery (MDS)</option>
-                  <option value="Master of Pharmacy (MPharm)">Master of Pharmacy (MPharm)</option>
-                  <option value="Master of Physiotherapy (MPT)">Master of Physiotherapy (MPT)</option>
-                  <option value="Master of Fine Arts (MFA)">Master of Fine Arts (MFA)</option>
-                  <option value="Master of Design (MDes)">Master of Design (MDes)</option>
-                  <option value="Master of Hotel Management and Catering Technology (MHMCT)">Master of Hotel Management and Catering Technology (MHMCT)</option>
-                  <option value="Master of Social Work (MSW)">Master of Social Work (MSW)</option>
-                  <option value="Doctor of Philosophy (PhD)">Doctor of Philosophy (PhD)</option>
-                  <option value="Doctor of Medicine (DM)">Doctor of Medicine (DM)</option>
-                  <option value="Doctor of Dental Surgery (DDS)">Doctor of Dental Surgery (DDS)</option>
-                  <option value="Doctor of Pharmacy (PharmD)">Doctor of Pharmacy (PharmD)</option>
+                  <option value="Bachelor of Arts (BA)">
+                    Bachelor of Arts (BA)
+                  </option>
+                  <option value="Bachelor of Science (BSc)">
+                    Bachelor of Science (BSc)
+                  </option>
+                  <option value="Bachelor of Commerce (BCom)">
+                    Bachelor of Commerce (BCom)
+                  </option>
+                  <option value="Bachelor of Business Administration (BBA)">
+                    Bachelor of Business Administration (BBA)
+                  </option>
+                  <option value="Bachelor of Computer Applications (BCA)">
+                    Bachelor of Computer Applications (BCA)
+                  </option>
+                  <option value="Bachelor of Engineering (BE)">
+                    Bachelor of Engineering (BE)
+                  </option>
+                  <option value="Bachelor of Technology (BTech)">
+                    Bachelor of Technology (BTech)
+                  </option>
+                  <option value="Bachelor of Architecture (BArch)">
+                    Bachelor of Architecture (BArch)
+                  </option>
+                  <option value="Bachelor of Education (BEd)">
+                    Bachelor of Education (BEd)
+                  </option>
+                  <option value="Bachelor of Laws (LLB)">
+                    Bachelor of Laws (LLB)
+                  </option>
+                  <option value="Bachelor of Medicine and Bachelor of Surgery (MBBS)">
+                    Bachelor of Medicine and Bachelor of Surgery (MBBS)
+                  </option>
+                  <option value="Bachelor of Dental Surgery (BDS)">
+                    Bachelor of Dental Surgery (BDS)
+                  </option>
+                  <option value="Bachelor of Pharmacy (BPharm)">
+                    Bachelor of Pharmacy (BPharm)
+                  </option>
+                  <option value="Bachelor of Physiotherapy (BPT)">
+                    Bachelor of Physiotherapy (BPT)
+                  </option>
+                  <option value="Bachelor of Fine Arts (BFA)">
+                    Bachelor of Fine Arts (BFA)
+                  </option>
+                  <option value="Bachelor of Design (BDes)">
+                    Bachelor of Design (BDes)
+                  </option>
+                  <option value="Bachelor of Hotel Management and Catering Technology (BHMCT)">
+                    Bachelor of Hotel Management and Catering Technology (BHMCT)
+                  </option>
+                  <option value="Master of Arts (MA)">
+                    Master of Arts (MA)
+                  </option>
+                  <option value="Master of Science (MSc)">
+                    Master of Science (MSc)
+                  </option>
+                  <option value="Master of Commerce (MCom)">
+                    Master of Commerce (MCom)
+                  </option>
+                  <option value="Master of Business Administration (MBA)">
+                    Master of Business Administration (MBA)
+                  </option>
+                  <option value="Master of Computer Applications (MCA)">
+                    Master of Computer Applications (MCA)
+                  </option>
+                  <option value="Master of Engineering (ME)">
+                    Master of Engineering (ME)
+                  </option>
+                  <option value="Master of Technology (MTech)">
+                    Master of Technology (MTech)
+                  </option>
+                  <option value="Master of Architecture (MArch)">
+                    Master of Architecture (MArch)
+                  </option>
+                  <option value="Master of Education (MEd)">
+                    Master of Education (MEd)
+                  </option>
+                  <option value="Master of Laws (LLM)">
+                    Master of Laws (LLM)
+                  </option>
+                  <option value="Master of Medicine (MD)">
+                    Master of Medicine (MD)
+                  </option>
+                  <option value="Master of Surgery (MS)">
+                    Master of Surgery (MS)
+                  </option>
+                  <option value="Master of Dental Surgery (MDS)">
+                    Master of Dental Surgery (MDS)
+                  </option>
+                  <option value="Master of Pharmacy (MPharm)">
+                    Master of Pharmacy (MPharm)
+                  </option>
+                  <option value="Master of Physiotherapy (MPT)">
+                    Master of Physiotherapy (MPT)
+                  </option>
+                  <option value="Master of Fine Arts (MFA)">
+                    Master of Fine Arts (MFA)
+                  </option>
+                  <option value="Master of Design (MDes)">
+                    Master of Design (MDes)
+                  </option>
+                  <option value="Master of Hotel Management and Catering Technology (MHMCT)">
+                    Master of Hotel Management and Catering Technology (MHMCT)
+                  </option>
+                  <option value="Master of Social Work (MSW)">
+                    Master of Social Work (MSW)
+                  </option>
+                  <option value="Doctor of Philosophy (PhD)">
+                    Doctor of Philosophy (PhD)
+                  </option>
+                  <option value="Doctor of Medicine (DM)">
+                    Doctor of Medicine (DM)
+                  </option>
+                  <option value="Doctor of Dental Surgery (DDS)">
+                    Doctor of Dental Surgery (DDS)
+                  </option>
+                  <option value="Doctor of Pharmacy (PharmD)">
+                    Doctor of Pharmacy (PharmD)
+                  </option>
                   <option value="Others">Others</option>
                 </select>
               </div>

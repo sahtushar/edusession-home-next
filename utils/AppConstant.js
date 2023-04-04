@@ -53,6 +53,15 @@ export const jokes = [
   "The longest tennis match in history lasted for 11 hours and 5 minutes.",
   "The first computer mouse was made of wood.",
   'The shortest verse in the Bible is "Jesus wept" (John 11:35).',
+  "Jaipur city was founded in 1727 by Maharaja Sawai Jai Singh II.",
+  "Jaipur is also known as the 'Pink City' because of the distinct pink color of many of its buildings.",
+  "Jaipur city is home to several UNESCO World Heritage Sites, including the Jantar Mantar observatory and the Amer Fort.",
+  "Jaipur is a popular tourist destination known for its rich history, culture, and cuisine.",
+  "Jaipur city is famous for its traditional handicrafts, including textiles, jewelry, and pottery.",
+  "The Hawa Mahal, a palace in Jaipur, is one of the most iconic landmarks in India.",
+  "The Jaipur is also known for its elephant rides, which are a popular tourist activity.",
+  "Jaipur is home to several prestigious educational institutions, including the Indian Institute of Management and the Malaviya National Institute of Technology.",
+  "The Jaipur Literature Festival, held annually in the city, is the world's largest free literary festival.",
 ];
 
 export const WhatsAppNo = +918237815800;
