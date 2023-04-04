@@ -343,6 +343,9 @@ const TeacherFeedback = ({
               <Table hover responsive>
                 <thead>
                   <tr key={"header"}>
+                    <th>
+                      Count
+                    </th>
                     {Object.keys({
                       ...allLeads?.[0]?.userdata,
                       ...allLeads?.[0]?.postdemo,
@@ -357,8 +360,11 @@ const TeacherFeedback = ({
                 </thead>
                 <tbody>
                   {" "}
-                  {allLeads.map((item, index) => (
-                    <tr key={`${index}`}>
+                  <tr key={`${index_lead}`}>
+                      {index+1}
+                  </tr>
+                  {allLeads.map((item, index) => (                
+                    <tr key={`${index}__leads`}>
                       {Object.values({
                         ...item?.userdata,
                         ...item?.postdemo,
@@ -851,6 +857,7 @@ const TeacherFeedback = ({
                   <option value=""></option>
                   <option value="Yes">Yes</option>
                   <option value="Yes">No</option>
+                  <option value="Neutral">Can't Say for now</option>
                 </select>
               </div>
               <button type="submit" className="btn btn-primary">
