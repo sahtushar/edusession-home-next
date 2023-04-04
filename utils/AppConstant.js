@@ -1,6 +1,7 @@
 import { CA } from "./data/CA";
 import { Class6 } from "./data/class6";
 import { Class7 } from "./data/class7";
+import { Class8 } from "./data/class8";
 import { Class9 } from "./data/class9";
 import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
@@ -309,6 +310,7 @@ export const getCourseDataResult = {
   "jee-foundation": JEEFoundation,
   "class-6": Class6,
   "class-9": Class9,
+  "class-8": Class8,
 };
 
 export const makeBold = (item, keyword) => {
@@ -927,6 +929,11 @@ export const highlightedCourseList = [
     label: <span className="highlightedCourse">Class 6</span>,
     link: `/courses?course=${getCourseDataUrl["Class 6"]}`,
     identifier: getCourseDataUrl["Class 6"],
+  },
+  {
+    label: <span className="highlightedCourse">Class 8</span>,
+    link: `/courses?course=${getCourseDataUrl["Class 8"]}`,
+    identifier: getCourseDataUrl["Class 8"],
   },
   {
     label: <span className="highlightedCourse">Class 9</span>,

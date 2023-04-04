@@ -54,7 +54,7 @@ const Legal = ({
     </div> */}
     <div className="tabs_content">
       <div className="tab_head">
-        <h2>Privacy terms &amp; Disclaimer</h2>
+        <h2>Privacy terms &ampHe; Disclaimer</h2>
       </div>
       <div className="tab_body">
         <div className="tab_item tab_item_1">
