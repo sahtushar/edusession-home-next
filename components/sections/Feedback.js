@@ -15,6 +15,7 @@ import {
 import { useRouter as useHistory } from "next/router";
 import { useStyleRegistry } from "styled-jsx";
 import { Table } from "reactstrap";
+import moment from 'moment';
 
 const propTypes = {
   children: PropTypes.node,
