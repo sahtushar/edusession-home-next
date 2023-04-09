@@ -75,23 +75,43 @@ const FAQ = ({
             from="faqIntro"
             tag="h3"
           />
-          <div className="container">
-            <article className="faqarticle">
-              <Accordion open={open} toggle={toggle}>
-                {data?.faq?.data?.map((item, index) => {
-                  return (
+          <div
+            className="container"
+            itemscope=""
+            itemtype="https://schema.org/FAQPage"
+          >
+            <Accordion open={open} toggle={toggle}>
+              {data?.faq?.data?.map((item, index) => {
+                return (
+                  <section
+                    itemscope=""
+                    itemprop="mainEntity"
+                    itemtype="https://schema.org/Question"
+                  >
                     <AccordionItem key={item.question || item.Question}>
-                      <AccordionHeader tag="h3" targetId={`${index + 1}`}>
+                      <AccordionHeader
+                        tag="h3"
+                        targetId={`${index + 1}`}
+                        itemprop="name text"
+                      >
                         {item.question || item.Question}
                       </AccordionHeader>
-                      <AccordionBody tag="p" accordionId={`${index + 1}`}>
-                        {item.answer || item.Answer}
-                      </AccordionBody>
+                      <div
+                        itemprop="suggestedAnswer acceptedAnswer"
+                        itemscope=""
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          <AccordionBody tag="p" accordionId={`${index + 1}`}>
+                            {item.answer || item.Answer}
+                          </AccordionBody>
+                        </div>
+                      </div>
                     </AccordionItem>
-                  );
-                })}
-              </Accordion>
-            </article>
+                  </section>
+                );
+              })}
+            </Accordion>
           </div>
         </div>
       </div>

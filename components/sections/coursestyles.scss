@@ -50,9 +50,18 @@
     padding-top: 40px !important;
     padding-bottom: 40px !important;
   }
+  h3 {
+    margin-top: 0px !important;
+  }
+  .accordion-header{
+    margin-top: 0px !important;
+  }
   .faqarticle {
     h3 {
-      margin-top: 0px;
+      margin-top: 0px !important;
+    }
+    .accordion-header{
+      margin-top: 0px !important;
     }
     p{
       color: dimgrey;

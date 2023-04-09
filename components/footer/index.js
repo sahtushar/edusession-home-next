@@ -113,6 +113,15 @@ const Footer = ({ city, cityData }) => {
                   <i className="fa fa-youtube-play"></i>
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/edusession"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <i className="fa fa-linkedin-square"></i>
+                </a>
+              </li>
             </ul>
           </div>
           <div className="sec quicklinks">
