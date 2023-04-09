@@ -494,6 +494,8 @@ const TeacherFeedback = ({
                   <option value=""></option>
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
+                  <option value="Marathi">Marathi</option>
+                  <option value="Konkan">Konkan</option>
                   <option value="Others">Others</option>
                 </select>
               </div>
@@ -532,6 +534,7 @@ const TeacherFeedback = ({
                 >
                   <option value=""></option>
                   <option value="Just Dial">Just Dial</option>
+                  <option value="Sulekha">Sulekha</option>
                   <option value="Web Search">Web Search</option>
                   <option value="Advertisement">Advertisement</option>
                   <option value="Word of Mouth">Word of Mouth</option>
