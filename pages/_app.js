@@ -12,6 +12,7 @@ import "./../components/sections/profilepage.scss";
 import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
 import "./../components/sections/feedback.scss";
+import ErrorBoundary from "./../components/ErrorBoundary.js";
 
 import * as React from "react";
 
@@ -146,8 +147,9 @@ export default function MyApp(props) {
           content="https://edusession.live/icon.png"
         />
       </Head>
-
+      <ErrorBoundary>
       <Component {...pageProps} setIsLoading={setIsLoading} />
+      </ErrorBoundary>
       {loading && <Loader />}
       <WhatsApp />
     </>
