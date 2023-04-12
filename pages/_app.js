@@ -67,8 +67,8 @@ export default function MyApp(props) {
         console.log(res.data);
       });
     }
-    if (navigator?.geolocation && process.env.NODE_ENV == "production") {
-      navigator?.permissions
+    if (navigator?.geolocation && navigator.permissions && process.env.NODE_ENV == "production") {
+      navigator.permissions
         .query({ name: "geolocation" })
         .then(function (result) {
           if (result.state === "granted") {
