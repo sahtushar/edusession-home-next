@@ -1,5 +1,6 @@
 import { useRouter as useHistory } from "next/router";
 class ErrorBoundary extends React.Component {
+    
     constructor(props) {
       super(props)
   
@@ -18,6 +19,7 @@ class ErrorBoundary extends React.Component {
     render() {
       // Check if the error is thrown
       if (this.state.hasError) {
+        const history = useHistory();
         history.push("/");
         // You can render any custom fallback UI
         return (
