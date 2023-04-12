@@ -67,16 +67,16 @@ export default function MyApp(props) {
         console.log(res.data);
       });
     }
-    if (navigator.geolocation && process.env.NODE_ENV == "production") {
-      navigator.permissions
+    if (navigator?.geolocation && process.env.NODE_ENV == "production") {
+      navigator?.permissions
         .query({ name: "geolocation" })
         .then(function (result) {
           if (result.state === "granted") {
             console.log(result.state);
             //If granted then you can directly call your function here
-            navigator.geolocation.getCurrentPosition(success);
+            navigator.geolocation?.getCurrentPosition(success);
           } else if (result.state === "prompt") {
-            navigator.geolocation.getCurrentPosition(success, errors, options);
+            navigator.geolocation?.getCurrentPosition(success, errors, options);
           } else if (result.state === "denied") {
             // alert("Please enable location for best Experience!")
           }
