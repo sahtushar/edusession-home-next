@@ -1,4 +1,6 @@
+import React from "react";
 import { useRouter as useHistory } from "next/router";
+
 class ErrorBoundary extends React.Component {
     
     constructor(props) {
