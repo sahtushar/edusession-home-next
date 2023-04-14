@@ -13,7 +13,7 @@
   line-height: 35px;
   color: black;
   font-weight: 400;
-  text-shadow:  1px 1px darkgrey;
+  text-shadow:  1px 1px lightgray;
 }
 .site-header .container {
   max-width: 90% !important;
