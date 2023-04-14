@@ -40,7 +40,7 @@ const Home = ({ city, cityData }) => {
             CBSE, ICSE, JEE, NEET, State Board, Spoken English, IELTS and Competitive examinations
           </span>
           preparation.
-          <span>Doubt clearance is now easy with focused 1-on-1 tuiton by best Online Tutors</span><span>`,
+          <span>Doubt clearance is now easy with focused 1-on-1 tuition by best Online Tutors</span><span>`,
     rightImg: homepageicon,
     subheadertag: "h2",
   };
