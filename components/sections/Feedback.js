@@ -275,12 +275,12 @@ const TeacherFeedback = ({
     }
   };
 
-  async function fetchFeedback() {
+  async function fetchFeedback(phone) {
     let body = {
-      mobile: mobile,
+      mobile: phone || mobile,
       username: localStorage?.getItem("username"),
     };
-    if (mobile && mobile.length >= 10) {
+    if ((phone && phone.length >= 10) || (mobile && mobile.length >= 10)) {
       try {
         setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
@@ -293,7 +293,7 @@ const TeacherFeedback = ({
           .querySelector(
             "#__next > main > section > div > div > div > form.container.my-2.basicInfo"
           )
-          .scrollIntoView();
+          ?.scrollIntoView();
       } catch (e) {
         setIsLoading(false);
         alert("Lead/User Not Found");
@@ -310,7 +310,6 @@ const TeacherFeedback = ({
       setIsLoading(true);
       let res = await fetchFeedbackFetch(body);
       setIsLoading(false);
-
       setAllLeads(res.data.forms);
       setAllLeadsOriginal(res.data.forms);
     } catch (e) {
@@ -430,20 +429,18 @@ const TeacherFeedback = ({
                         ...feedback.postdemo,
                       }).map((key) => (
                         <th style={{ textTransform: "capitalize" }}>
-                          {key
-                            .replace(/([A-Z]+)/g, " $1")
-                            .replace(/([A-Z][a-z])/g, " $1")}
+                          {key}
                         </th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {" "}
-                    {allLeads.map((item, index) => (
+                    {allLeads?.reverse()?.map((item, index) => (
                       <>
                         <tr key={`${index}__leads`}>
                           <td>{index + 1}</td>
-                          <td style={{ color: "brown", fontWeight: "bold" }}>
+                          <td style={{ color: "black", fontWeight: "bold" }}>
                             {getCreationDate(item._id)}
                           </td>
                           {Object.values({
@@ -452,18 +449,27 @@ const TeacherFeedback = ({
                           }).map((val, dataindex) => (
                             <td
                               style={
-                                dataindex == 2
+                                dataindex == 2 || dataindex == 0
                                   ? { color: "brown", fontWeight: "bold" }
                                   : {}
                               }
                             >
                               {dataindex == 2 ? (
-                                <a
-                                  style={{ color: "blue" }}
-                                  href={`tel:${getTdValue(val)}`}
-                                >
-                                  {getTdValue(val)}
-                                </a>
+                                <div style={{ display: "flex" }}>
+                                  <i
+                                    onClick={() => {
+                                      fetchFeedback(val);
+                                    }}
+                                    style={{ marginRight: "2px" }}
+                                    className="fa fa-edit"
+                                  ></i>
+                                  <a
+                                    style={{ color: "blue" }}
+                                    href={`tel:${getTdValue(val)}`}
+                                  >
+                                    {getTdValue(val)}
+                                  </a>
+                                </div>
                               ) : (
                                 getTdValue(val)
                               )}
@@ -642,9 +648,7 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                   required
                 >
-                  {
-                    educationalBackground()
-                  }
+                  {educationalBackground()}
                 </select>
               </div>
               <div className="mb-3">
@@ -668,6 +672,12 @@ const TeacherFeedback = ({
                 >
                   {CallActivity()}
                 </select>
+                <label>
+                  Value:
+                  <span style={{ color: "black" }}>
+                    {feedback?.userdata?.remarks}
+                  </span>
+                </label>
               </div>
               <div className="mb-3">
                 <label htmlFor="remarks2">Remarks-2</label>
