@@ -6,7 +6,7 @@ import { useRouter as useHistory } from "next/router";
 
 const City = () => {
   const history = useHistory();
-  const { city } = history.query;
+  const { city } = history?.query;
   useEffect(() => {
     if (!activeCities?.[city]) history.push("/");
   }, [city]);
