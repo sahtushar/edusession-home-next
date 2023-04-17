@@ -436,7 +436,7 @@ const TeacherFeedback = ({
                   </thead>
                   <tbody>
                     {" "}
-                    {allLeads?.reverse()?.map((item, index) => (
+                    {allLeads.map((item, index) => (
                       <>
                         <tr key={`${index}__leads`}>
                           <td>{index + 1}</td>
