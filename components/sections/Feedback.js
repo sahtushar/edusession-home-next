@@ -1,14 +1,16 @@
 import { Button, Table } from "reactstrap";
+import {
+  CallActivity,
+  checkauthfailed,
+  educationalBackground,
+  jokes,
+  verifyIsUserAuthenticated,
+} from "../../utils/AppConstant";
 import React, { useEffect, useRef } from "react";
 import {
   callFeedbackSubmit,
   fetchFeedbackFetch,
 } from "../../services/authroutes";
-import {
-  checkauthfailed,
-  jokes,
-  verifyIsUserAuthenticated,
-} from "../../utils/AppConstant";
 
 import { DownloadTableExcel } from "react-export-table-to-excel";
 import PropTypes from "prop-types";
@@ -640,147 +642,32 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                   required
                 >
-                  <option value=""></option>
-                  <option value="Class 6">Class 6</option>
-                  <option value="Class 7">Class 7</option>
-                  <option value="Class 8">Class 8</option>
-                  <option value="Class 9">Class 9</option>
-                  <option value="Class 10">Class 10</option>
-                  <option value="Class 11">Class 11</option>
-                  <option value="Class 12">Class 12</option>
-                  <option value="Bachelor of Arts (BA)">
-                    Bachelor of Arts (BA)
-                  </option>
-                  <option value="Bachelor of Science (BSc)">
-                    Bachelor of Science (BSc)
-                  </option>
-                  <option value="Bachelor of Commerce (BCom)">
-                    Bachelor of Commerce (BCom)
-                  </option>
-                  <option value="Bachelor of Business Administration (BBA)">
-                    Bachelor of Business Administration (BBA)
-                  </option>
-                  <option value="Bachelor of Computer Applications (BCA)">
-                    Bachelor of Computer Applications (BCA)
-                  </option>
-                  <option value="Bachelor of Engineering (BE)">
-                    Bachelor of Engineering (BE)
-                  </option>
-                  <option value="Bachelor of Technology (BTech)">
-                    Bachelor of Technology (BTech)
-                  </option>
-                  <option value="Bachelor of Architecture (BArch)">
-                    Bachelor of Architecture (BArch)
-                  </option>
-                  <option value="Bachelor of Education (BEd)">
-                    Bachelor of Education (BEd)
-                  </option>
-                  <option value="Bachelor of Laws (LLB)">
-                    Bachelor of Laws (LLB)
-                  </option>
-                  <option value="Bachelor of Medicine and Bachelor of Surgery (MBBS)">
-                    Bachelor of Medicine and Bachelor of Surgery (MBBS)
-                  </option>
-                  <option value="Bachelor of Dental Surgery (BDS)">
-                    Bachelor of Dental Surgery (BDS)
-                  </option>
-                  <option value="Bachelor of Pharmacy (BPharm)">
-                    Bachelor of Pharmacy (BPharm)
-                  </option>
-                  <option value="Bachelor of Physiotherapy (BPT)">
-                    Bachelor of Physiotherapy (BPT)
-                  </option>
-                  <option value="Bachelor of Fine Arts (BFA)">
-                    Bachelor of Fine Arts (BFA)
-                  </option>
-                  <option value="Bachelor of Design (BDes)">
-                    Bachelor of Design (BDes)
-                  </option>
-                  <option value="Bachelor of Hotel Management and Catering Technology (BHMCT)">
-                    Bachelor of Hotel Management and Catering Technology (BHMCT)
-                  </option>
-                  <option value="Master of Arts (MA)">
-                    Master of Arts (MA)
-                  </option>
-                  <option value="Master of Science (MSc)">
-                    Master of Science (MSc)
-                  </option>
-                  <option value="Master of Commerce (MCom)">
-                    Master of Commerce (MCom)
-                  </option>
-                  <option value="Master of Business Administration (MBA)">
-                    Master of Business Administration (MBA)
-                  </option>
-                  <option value="Master of Computer Applications (MCA)">
-                    Master of Computer Applications (MCA)
-                  </option>
-                  <option value="Master of Engineering (ME)">
-                    Master of Engineering (ME)
-                  </option>
-                  <option value="Master of Technology (MTech)">
-                    Master of Technology (MTech)
-                  </option>
-                  <option value="Master of Architecture (MArch)">
-                    Master of Architecture (MArch)
-                  </option>
-                  <option value="Master of Education (MEd)">
-                    Master of Education (MEd)
-                  </option>
-                  <option value="Master of Laws (LLM)">
-                    Master of Laws (LLM)
-                  </option>
-                  <option value="Master of Medicine (MD)">
-                    Master of Medicine (MD)
-                  </option>
-                  <option value="Master of Surgery (MS)">
-                    Master of Surgery (MS)
-                  </option>
-                  <option value="Master of Dental Surgery (MDS)">
-                    Master of Dental Surgery (MDS)
-                  </option>
-                  <option value="Master of Pharmacy (MPharm)">
-                    Master of Pharmacy (MPharm)
-                  </option>
-                  <option value="Master of Physiotherapy (MPT)">
-                    Master of Physiotherapy (MPT)
-                  </option>
-                  <option value="Master of Fine Arts (MFA)">
-                    Master of Fine Arts (MFA)
-                  </option>
-                  <option value="Master of Design (MDes)">
-                    Master of Design (MDes)
-                  </option>
-                  <option value="Master of Hotel Management and Catering Technology (MHMCT)">
-                    Master of Hotel Management and Catering Technology (MHMCT)
-                  </option>
-                  <option value="Master of Social Work (MSW)">
-                    Master of Social Work (MSW)
-                  </option>
-                  <option value="Doctor of Philosophy (PhD)">
-                    Doctor of Philosophy (PhD)
-                  </option>
-                  <option value="Doctor of Medicine (DM)">
-                    Doctor of Medicine (DM)
-                  </option>
-                  <option value="Doctor of Dental Surgery (DDS)">
-                    Doctor of Dental Surgery (DDS)
-                  </option>
-                  <option value="Doctor of Pharmacy (PharmD)">
-                    Doctor of Pharmacy (PharmD)
-                  </option>
-                  <option value="Others">Others</option>
+                  {
+                    educationalBackground()
+                  }
                 </select>
               </div>
               <div className="mb-3">
-                <label htmlFor="remarks">Remarks</label>
-                <input
+                <label htmlFor="remarks">Remarks (Call Activity)</label>
+                {/* <input
                   type="text"
                   className="form-control"
                   id="remarks"
                   name="remarks.userdata"
                   value={feedback.userdata.remarks}
                   onChange={handleFeedbackChange}
-                />
+                /> */}
+                <select
+                  type="text"
+                  className="form-control"
+                  id="remarks"
+                  name="remarks.userdata"
+                  value={feedback.userdata.remarks}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  {CallActivity()}
+                </select>
               </div>
               <div className="mb-3">
                 <label htmlFor="remarks2">Remarks-2</label>

@@ -951,3 +951,279 @@ export const checkauthfailed = (err, setIsLoading, history) => {
     return true;
   }
 };
+
+export const CallActivity = () => {
+  return (
+    <>
+      <option value=""></option>
+      <option value="Interested, Booked live session">
+        Interested, Booked live session
+      </option>
+      <option value="Interested, but concerned with fees">
+        Interested, but concerned with fees
+      </option>
+      <option value="Interested, but no available time">
+        Interested, but no available time
+      </option>
+      <option value="Interested, Call Back">Interested, Call Back</option>
+      <option value="Interested, Call Pending">Interested, Call Pending</option>
+      <option value="Interested, Fee Is High">Interested, Fee Is High</option>
+      <option value="Interested, Free Courses">Interested, Free Courses</option>
+      <option value="Interested, Student will visit the Center">
+        Interested, Student will visit the Center
+      </option>
+      <option value="Interested, to enroll in a Course">
+        Interested, to enroll in a Course
+      </option>
+      <option value="Interested, want office job but lacks the qualifications">
+        Interested, want office job but lacks the qualifications
+      </option>
+      <option value="Interested, Working">Interested, Working</option>
+      <option value="Interested, Phone Counselling done">
+        Interested, Phone Counselling done
+      </option>
+      <option value="Interested, CC Demo booked">
+        Interested, CC Demo booked
+      </option>
+      <option value="Interested, CC Demo done">Interested, CC Demo done</option>
+      <option value="Interested, Will enroll in 3 days">
+        Interested, Will enroll in 3 days
+      </option>
+      <option value="Interested, will enroll">Interested, will enroll</option>
+      <option value="Interested- seeking additional discount">
+        Interested- seeking additional discount
+      </option>
+      <option value="Interested - awaiting for eligible docs">
+        Interested - awaiting for eligible docs
+      </option>
+      <option value="Mildly Interested - will consult friends">
+        Mildly Interested - will consult friends
+      </option>
+      <option value="Mildly Interested - will consult parents">
+        Mildly Interested - will consult parents
+      </option>
+      <option value="Mildly Interested - Will Join after 2 or 3 months">
+        Mildly Interested - Will Join after 2 or 3 months
+      </option>
+      <option value="Not Interested - currently studying">
+        Not Interested - currently studying
+      </option>
+      <option value="Not Interested - currently working">
+        Not Interested - currently working
+      </option>
+      <option value="Not Interested - Disconnected">
+        Not Interested - Disconnected
+      </option>
+      <option value="Not Interested - Employee At EB">
+        Not Interested - Employee At EB
+      </option>
+      <option value="Not Interested - fees too high">
+        Not Interested - fees too high
+      </option>
+      <option value="Not Interested - Going Foreign">
+        Not Interested - Going Foreign
+      </option>
+      <option value="Not Interested - In Paid Course">
+        Not Interested - In Paid Course
+      </option>
+      <option value="Not Interested - joining the competition">
+        Not Interested - joining the competition
+      </option>
+      <option value="Not Interested - Looking For A Job">
+        Not Interested - Looking For A Job
+      </option>
+      <option value="Not Interested - Network Problem">
+        Not Interested - Network Problem
+      </option>
+      <option value="Not Interested - Not Interested for Job">
+        Not Interested - Not Interested for Job
+      </option>
+      <option value="Not Interested - not offering required course">
+        Not Interested - not offering required course
+      </option>
+      <option value="Not Interested - not offering required timing">
+        Not Interested - not offering required timing
+      </option>
+      <option value="Not Interested - not serious for a job">
+        Not Interested - not serious for a job
+      </option>
+      <option value="Not Interested - Old Student">
+        Not Interested - Old Student
+      </option>
+      <option value="Not Interested - Online Course">
+        Not Interested - Online Course
+      </option>
+      <option value="Not Interested - Timings are not matching">
+        Not Interested - Timings are not matching
+      </option>
+      <option value="Not Interested - want technical jobs">
+        Not Interested - want technical jobs
+      </option>
+      <option value="Student Not Eligible">Student Not Eligible</option>
+      <option value="Unable To Connect - Disconnected">
+        Unable To Connect - Disconnected
+      </option>
+      <option value="Unable To Connect - Incoming Is Disabled">
+        Unable To Connect - Incoming Is Disabled
+      </option>
+      <option value="Unable To Connect - Language Issue">
+        Unable To Connect - Language Issue
+      </option>
+      <option value="Unable to connect - Not Connected">
+        Unable to connect - Not Connected
+      </option>
+      <option value="Unable To Connect - Not In-Service">
+        Unable To Connect - Not In-Service
+      </option>
+      <option value="Unable To Connect - Not Responding">
+        Unable To Connect - Not Responding
+      </option>
+      <option value="Unable To Connect - Student">
+        Unable To Connect - Student
+      </option>
+      <option value="Unable to connect- Not Connected">
+        Unable to connect- Not Connected
+      </option>
+      <option value="Unable to Contact - Busy">Unable to Contact - Busy</option>
+      <option value="Unable to Contact - Call Back Informed Parents">
+        Unable to Contact - Call Back Informed Parents
+      </option>
+      <option value="Unable to Contact - Call disconnected by the Student">
+        Unable to Contact - Call disconnected by the Student
+      </option>
+      <option value="Unable to Contact - Call forwarded">
+        Unable to Contact - Call forwarded
+      </option>
+      <option value="Unable to Contact - No Answer">
+        Unable to Contact - No Answer
+      </option>
+      <option value="Unable to Contact - Not Reachable">
+        Unable to Contact - Not Reachable
+      </option>
+      <option value="Unable to Contact - Switched off">
+        Unable to Contact - Switched off
+      </option>
+      <option value="Unable to Contact - Wrong Number">
+        Unable to Contact - Wrong Number
+      </option>
+    </>
+  );
+};
+
+export const educationalBackground = () => {
+  return (
+    <>
+      <option value=""></option>
+      <option value="Class 6">Class 6</option>
+      <option value="Class 7">Class 7</option>
+      <option value="Class 8">Class 8</option>
+      <option value="Class 9">Class 9</option>
+      <option value="Class 10">Class 10</option>
+      <option value="Class 11">Class 11</option>
+      <option value="Class 12">Class 12</option>
+      <option value="Bachelor of Arts (BA)">Bachelor of Arts (BA)</option>
+      <option value="Bachelor of Science (BSc)">
+        Bachelor of Science (BSc)
+      </option>
+      <option value="Bachelor of Commerce (BCom)">
+        Bachelor of Commerce (BCom)
+      </option>
+      <option value="Bachelor of Business Administration (BBA)">
+        Bachelor of Business Administration (BBA)
+      </option>
+      <option value="Bachelor of Computer Applications (BCA)">
+        Bachelor of Computer Applications (BCA)
+      </option>
+      <option value="Bachelor of Engineering (BE)">
+        Bachelor of Engineering (BE)
+      </option>
+      <option value="Bachelor of Technology (BTech)">
+        Bachelor of Technology (BTech)
+      </option>
+      <option value="Bachelor of Architecture (BArch)">
+        Bachelor of Architecture (BArch)
+      </option>
+      <option value="Bachelor of Education (BEd)">
+        Bachelor of Education (BEd)
+      </option>
+      <option value="Bachelor of Laws (LLB)">Bachelor of Laws (LLB)</option>
+      <option value="Bachelor of Medicine and Bachelor of Surgery (MBBS)">
+        Bachelor of Medicine and Bachelor of Surgery (MBBS)
+      </option>
+      <option value="Bachelor of Dental Surgery (BDS)">
+        Bachelor of Dental Surgery (BDS)
+      </option>
+      <option value="Bachelor of Pharmacy (BPharm)">
+        Bachelor of Pharmacy (BPharm)
+      </option>
+      <option value="Bachelor of Physiotherapy (BPT)">
+        Bachelor of Physiotherapy (BPT)
+      </option>
+      <option value="Bachelor of Fine Arts (BFA)">
+        Bachelor of Fine Arts (BFA)
+      </option>
+      <option value="Bachelor of Design (BDes)">
+        Bachelor of Design (BDes)
+      </option>
+      <option value="Bachelor of Hotel Management and Catering Technology (BHMCT)">
+        Bachelor of Hotel Management and Catering Technology (BHMCT)
+      </option>
+      <option value="Master of Arts (MA)">Master of Arts (MA)</option>
+      <option value="Master of Science (MSc)">Master of Science (MSc)</option>
+      <option value="Master of Commerce (MCom)">
+        Master of Commerce (MCom)
+      </option>
+      <option value="Master of Business Administration (MBA)">
+        Master of Business Administration (MBA)
+      </option>
+      <option value="Master of Computer Applications (MCA)">
+        Master of Computer Applications (MCA)
+      </option>
+      <option value="Master of Engineering (ME)">
+        Master of Engineering (ME)
+      </option>
+      <option value="Master of Technology (MTech)">
+        Master of Technology (MTech)
+      </option>
+      <option value="Master of Architecture (MArch)">
+        Master of Architecture (MArch)
+      </option>
+      <option value="Master of Education (MEd)">
+        Master of Education (MEd)
+      </option>
+      <option value="Master of Laws (LLM)">Master of Laws (LLM)</option>
+      <option value="Master of Medicine (MD)">Master of Medicine (MD)</option>
+      <option value="Master of Surgery (MS)">Master of Surgery (MS)</option>
+      <option value="Master of Dental Surgery (MDS)">
+        Master of Dental Surgery (MDS)
+      </option>
+      <option value="Master of Pharmacy (MPharm)">
+        Master of Pharmacy (MPharm)
+      </option>
+      <option value="Master of Physiotherapy (MPT)">
+        Master of Physiotherapy (MPT)
+      </option>
+      <option value="Master of Fine Arts (MFA)">
+        Master of Fine Arts (MFA)
+      </option>
+      <option value="Master of Design (MDes)">Master of Design (MDes)</option>
+      <option value="Master of Hotel Management and Catering Technology (MHMCT)">
+        Master of Hotel Management and Catering Technology (MHMCT)
+      </option>
+      <option value="Master of Social Work (MSW)">
+        Master of Social Work (MSW)
+      </option>
+      <option value="Doctor of Philosophy (PhD)">
+        Doctor of Philosophy (PhD)
+      </option>
+      <option value="Doctor of Medicine (DM)">Doctor of Medicine (DM)</option>
+      <option value="Doctor of Dental Surgery (DDS)">
+        Doctor of Dental Surgery (DDS)
+      </option>
+      <option value="Doctor of Pharmacy (PharmD)">
+        Doctor of Pharmacy (PharmD)
+      </option>
+      <option value="Others">Others</option>
+    </>
+  );
+};
