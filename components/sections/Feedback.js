@@ -1,8 +1,5 @@
-import PropTypes from "prop-types";
+import { Button, Table } from "reactstrap";
 import React, { useEffect, useRef } from "react";
-import { SectionProps } from "../../utils/SectionProps";
-import classNames from "classnames";
-import { useState } from "react";
 import {
   callFeedbackSubmit,
   fetchFeedbackFetch,
@@ -12,10 +9,14 @@ import {
   jokes,
   verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
-import { useRouter as useHistory } from "next/router";
-import { useStyleRegistry } from "styled-jsx";
-import { Button, Table } from "reactstrap";
+
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import PropTypes from "prop-types";
+import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
+import { useRouter as useHistory } from "next/router";
+import { useState } from "react";
+import { useStyleRegistry } from "styled-jsx";
 
 const propTypes = {
   children: PropTypes.node,
@@ -69,6 +70,7 @@ const TeacherFeedback = ({
       gender: "",
       educationalBackground: "",
       remarks: "",
+      remarks2: "",
     },
 
     //postdemo data
@@ -102,12 +104,38 @@ const TeacherFeedback = ({
     },
   });
   const [mobile, setmobile] = useState("");
+  const [nametext, setnametext] = useState("");
   const [allLeads, setAllLeads] = useState([]);
+  const [allLeadsOriginal, setAllLeadsOriginal] = useState([]);
   const tableRef = useRef(null);
   const [currentFact, setCurrentfact] = useState("");
+
   useEffect(() => {
     setCurrentfact(jokes[Math.floor(Math.random() * jokes.length)]);
   }, []);
+
+  useEffect(() => {
+    let existingLists = [...allLeads];
+    let filtered = [];
+    if (nametext.length >= 2) {
+      existingLists.map((item) => {
+        if (
+          item.userdata.fullName
+            .toLocaleLowerCase()
+            .match(nametext.toLocaleLowerCase()) ||
+          item.userdata.phoneNumber
+            .toLocaleLowerCase()
+            .match(nametext.toLocaleLowerCase())
+        ) {
+          filtered.push(item);
+        }
+      });
+      setAllLeads(filtered);
+    } else {
+      setAllLeads(allLeadsOriginal);
+    }
+  }, [nametext]);
+
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
@@ -159,6 +187,7 @@ const TeacherFeedback = ({
         gender: feedback.userdata.gender,
         educationalBackground: feedback.userdata.educationalBackground,
         remarks: feedback.userdata.remarks,
+        remarks2: feedback.userdata.remarks2,
       },
       type: "userdata",
       roles: ["user"],
@@ -258,6 +287,11 @@ const TeacherFeedback = ({
         feedbackOld["userdata"] = res.data.userdata;
         feedbackOld["postdemo"] = res.data.postdemo;
         setFeedback(feedbackOld);
+        document
+          .querySelector(
+            "#__next > main > section > div > div > div > form.container.my-2.basicInfo"
+          )
+          .scrollIntoView();
       } catch (e) {
         setIsLoading(false);
         alert("Lead/User Not Found");
@@ -276,6 +310,7 @@ const TeacherFeedback = ({
       setIsLoading(false);
 
       setAllLeads(res.data.forms);
+      setAllLeadsOriginal(res.data.forms);
     } catch (e) {
       setIsLoading(false);
       alert("Lead/User Not Found");
@@ -355,8 +390,8 @@ const TeacherFeedback = ({
                   Fetch All Feedback
                 </button>
               </div>
-              {allLeads.length ? (
-                <div style={{ marginTop: "10px" }}>
+              {true ? (
+                <div className="feedbackTableSection">
                   <DownloadTableExcel
                     filename="users table"
                     sheet="users"
@@ -364,12 +399,26 @@ const TeacherFeedback = ({
                   >
                     <Button> Export excel </Button>
                   </DownloadTableExcel>
+                  <div className="mt-3">
+                    <label htmlFor="nametext">Search by Name or Mobile</label>
+                    <input
+                      type="text"
+                      className="form-control mb-3"
+                      id="nametext"
+                      name="nametext.userdata"
+                      value={nametext}
+                      onChange={(e) => {
+                        setnametext(e.target.value);
+                      }}
+                      required
+                    />
+                  </div>
                 </div>
               ) : (
                 <></>
               )}
-              {
-                allLeads.length ? <Table hover responsive innerRef={tableRef}>
+              {allLeads.length ? (
+                <Table hover responsive innerRef={tableRef}>
                   <thead>
                     <tr key={"header"}>
                       <th>Count</th>
@@ -406,15 +455,26 @@ const TeacherFeedback = ({
                                   : {}
                               }
                             >
-                              {getTdValue(val)}
+                              {dataindex == 2 ? (
+                                <a
+                                  style={{ color: "blue" }}
+                                  href={`tel:${getTdValue(val)}`}
+                                >
+                                  {getTdValue(val)}
+                                </a>
+                              ) : (
+                                getTdValue(val)
+                              )}
                             </td>
                           ))}
                         </tr>
                       </>
                     ))}
                   </tbody>
-                </Table> : <></>
-              }
+                </Table>
+              ) : (
+                <></>
+              )}
             </div>
 
             <form onSubmit={handleSubmit} className="container my-2 basicInfo">
@@ -441,7 +501,6 @@ const TeacherFeedback = ({
                   name="email.userdata"
                   value={feedback.userdata.email}
                   onChange={handleFeedbackChange}
-                  required
                 />
               </div>
               <div className="mb-3">
@@ -720,6 +779,17 @@ const TeacherFeedback = ({
                   id="remarks"
                   name="remarks.userdata"
                   value={feedback.userdata.remarks}
+                  onChange={handleFeedbackChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="remarks2">Remarks-2</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="remarks2"
+                  name="remarks2.userdata"
+                  value={feedback.userdata.remarks2}
                   onChange={handleFeedbackChange}
                 />
               </div>
