@@ -6,6 +6,7 @@ import { Class9 } from "./data/class9";
 import { IELTS } from "./data/Ielts";
 import { JEE } from "./data/Jee";
 import { JEEFoundation } from "./data/JEEFoundation";
+import { NDA } from "./data/nda";
 import { NEETUG } from "./data/NeetUg";
 import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
@@ -87,6 +88,7 @@ CA Foundation and Intermediate,
 IELTS (UKVI - Academic - General),
 Spoken English,
 JEE Mains and Advanced (MH-CET and GCET),
+NDA (National Defence Academy),
 NEET UG`;
   let arr = courses.split(",");
   let res = [];
@@ -183,6 +185,17 @@ export const SUBJECTS = (course) => {
         "Economics",
         "Informatics Practices",
         "Computer Science",
+      ],
+    },
+    "NDA (National Defence Academy)": {
+      Subjects: [
+        "General Knowledge (GK)",
+        "English",
+        "Chemistry",
+        "Physics",
+        "Geography",
+        "General Science",
+        "Current Events",
       ],
     },
     "JEE Foundation": {
@@ -293,6 +306,7 @@ export const getCourseData = {
   "class-7": "Class 7",
   "ca-foundation-intermediate": "CA Foundation and Intermediate",
   "jee-foundation": "JEE Foundation",
+  "nda": "NDA (National Defence Academy)",
   "class-6": "Class 6",
   "class-8": "Class 8",
   "class-9": "Class 9",
@@ -311,6 +325,7 @@ export const getCourseDataResult = {
   "class-6": Class6,
   "class-9": Class9,
   "class-8": Class8,
+  nda: NDA,
 };
 
 export const makeBold = (item, keyword) => {
@@ -409,6 +424,62 @@ export const getCourseKeywords = {
       "JEE",
       "Advanced",
       "GCET",
+    ],
+  },
+  nda: {
+    courseContentWords: [
+      "Online",
+      "one-on-one",
+      "classroom",
+      "personalized",
+      "Edusession",
+      "live",
+      "Mains",
+      "MH-CET",
+      "NDA",
+      "Mathematics",
+      "English",
+      "General Knowledge",
+      "JEE",
+      "Advanced",
+      "one-to-one",
+      "parent-teacher",
+      "post-exam",
+      "Mock tests",
+      "motivational",
+      "National Defence Academy",
+      "NDA",
+    ],
+    subheaderWords: [
+      "one-on-one",
+      "1-on-1",
+      "online tutors",
+      "Edusession",
+      "National Defence Academy",
+      "Mains",
+      "MH-CET",
+      "JEE",
+      "Advanced",
+      "GCET",
+      "personalized",
+      "NDA",
+    ],
+    sectionHeaderDesc: [
+      "one-on-one",
+      "1-on-1",
+      "online tutors",
+      "Edusession",
+      "live",
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "Mains",
+      "MH-CET",
+      "JEE",
+      "Advanced",
+      "GCET",
+      "National Defence Academy",
+      "NDA",
     ],
   },
   "neet-ug": {
@@ -667,6 +738,7 @@ export const getCourseDataUrl = {
   "Class 7": "class-7",
   "CA Foundation and Intermediate": "ca-foundation-intermediate",
   "JEE Foundation": "jee-foundation",
+  "NDA (National Defence Academy)":"nda",
   "Class 6": "class-6",
   "Class 8": "class-8",
   "Class 9": "class-9",
@@ -890,6 +962,11 @@ export const homepagestructuredata = {
 };
 
 export const highlightedCourseList = [
+  {
+    label: <span className="highlightedCourse">NDA</span>,
+    link: `/courses?course=${getCourseDataUrl["NDA (National Defence Academy)"]}`,
+    identifier: getCourseDataUrl["NDA (National Defence Academy)"],
+  },
   {
     label: <span className="highlightedCourse">JEE</span>,
     link: `/courses?course=${getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]}`,
