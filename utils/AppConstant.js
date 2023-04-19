@@ -64,6 +64,16 @@ export const jokes = [
   "The Jaipur is also known for its elephant rides, which are a popular tourist activity.",
   "Jaipur is home to several prestigious educational institutions, including the Indian Institute of Management and the Malaviya National Institute of Technology.",
   "The Jaipur Literature Festival, held annually in the city, is the world's largest free literary festival.",
+  "India is the land of jugaad where anything is possible.",
+  "Traffic rules in India are not suggestions, they are mere decorations.",
+  "In India, chai (tea) is not just a beverage, it's a way of life.",
+  "India is the only country where people use the word 'adjust' more than any other country.",
+  "In India, cricket is not just a sport, it's a religion.",
+  "The best way to experience India is through its street food, but beware of the spicy surprises!",
+  "India has the largest number of vegetarians in the world, which makes it a paradise for vegetarians.",
+  "In India, you don't need a gym membership, just travel in a local train during peak hours.",
+  "India has a rich cultural heritage, but the traffic noise and pollution sometimes make it hard to appreciate.",
+  "India is a country where bargaining is not just a way of life, it's an art form."
 ];
 
 export const WhatsAppNo = +918237815800;
