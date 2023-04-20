@@ -37,7 +37,7 @@ const Home = ({ city, cityData }) => {
     subheader: `<span>Get the best interactive personalized One-on-one sessions at your time
           and comfort with your preferred faculties for
           <span style="color:#5658dd">
-            CBSE, ICSE, JEE, NEET, State Board, Spoken English, IELTS and Competitive examinations
+            CBSE, ICSE, JEE, NDA, NEET, State Board, Spoken English, IELTS and Competitive examinations
           </span>
           preparation.
           <span>Doubt clearance is now easy with focused 1-on-1 tuition by best Online Tutors</span><span>`,
