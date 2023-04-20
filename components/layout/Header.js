@@ -171,20 +171,20 @@ const Header = ({
   ];
   const headerMapper = {
     home: [
-      {
-        label: "Why us?",
-        onClick: () => {
-          document.querySelector("#whyus").scrollIntoView();
-          closeMenu();
-        },
-      },
-      {
-        label: "Courses",
-        onClick: () => {
-          document.querySelector("#courses").scrollIntoView();
-          closeMenu();
-        },
-      },
+      // {
+      //   label: "Why us?",
+      //   onClick: () => {
+      //     document.querySelector("#whyus").scrollIntoView();
+      //     closeMenu();
+      //   },
+      // },
+      // {
+      //   label: "Courses",
+      //   onClick: () => {
+      //     document.querySelector("#courses").scrollIntoView();
+      //     closeMenu();
+      //   },
+      // },
       ...highlightedCourseList,
       loginArea(),
     ],
