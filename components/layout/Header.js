@@ -114,6 +114,17 @@ const Header = ({
   };
   const highlightedCourseList = [
     {
+      label: <span className="highlightedCourse">NDA <span style={{color:"brown"}}>(Newly Launched)</span></span>,
+      onClick: (e) => {
+        history.push(
+          `/courses?course=${
+            getCourseDataUrl["NDA (National Defence Academy)"]
+          }${cityData?.cityData ? `&city=${cityData.city}` : ""}`
+        );
+        closeMenu();
+      },
+    },
+    {
       label: <span className="highlightedCourse">JEE</span>,
       onClick: (e) => {
         history.push(
