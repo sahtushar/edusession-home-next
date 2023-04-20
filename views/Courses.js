@@ -91,6 +91,7 @@ const CoursesPage = (props) => {
             getRightImageDetails?.[course]?.alt || "Edusession online classes"
           }
           cityData={cityData}
+          course={course}
         />
         <CourseIntro
           data={courseData}

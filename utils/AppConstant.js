@@ -446,7 +446,6 @@ export const getCourseKeywords = {
       "live",
       "Mains",
       "MH-CET",
-      "NDA",
       "Mathematics",
       "English",
       "General Knowledge",
@@ -458,7 +457,9 @@ export const getCourseKeywords = {
       "Mock tests",
       "motivational",
       "National Defence Academy",
-      "NDA",
+      "Standard",
+      "Foundation",
+      "NDA"
     ],
     subheaderWords: [
       "one-on-one",

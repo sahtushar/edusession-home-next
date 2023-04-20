@@ -4,7 +4,7 @@ export const NDA = {
     <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "Online NDA (National Defence Academy) 1-on-1 Class",
   description:
-    " Looking for an NDA online course? Edusession.live offers a comprehensive NDA Online Course Overview to help you ace the exam. Read on to learn more.",
+    "Looking for an NDA online course? Edusession Live offers a comprehensive NDA Online Course Overview to help you ace the exam. Read on to learn more.",
   sections: [
     {
       title: "Introduction",
@@ -14,19 +14,24 @@ export const NDA = {
     {
       title: "",
       content:
-        "If you're looking to join the NDA, you need a comprehensive online course that covers all aspects of the exam. That's where Edusession.live comes in. Our online platform offers an NDA Online Course Overview that will help you master the exam.",
+        "If you're looking to join the NDA, you need a comprehensive online course that covers all aspects of the exam. That's where Edusession Live comes in. Our online platform offers an NDA Online Course Overview that will help you master the exam.",
     },
     {
       title: "",
       content:
-        "In this article, we'll take a closer look at the NDA Online Course Overview by our online platform Edusession.live. We'll cover the key features of the course, the syllabus, and the benefits of studying with us.",
+        "In this article, we'll take a closer look at the NDA Online Course Overview by our online platform Edusession Live. We'll cover the key features of the course, the syllabus, and the benefits of studying with us.",
     },
     {
       title:
-        "Key Features of the NDA Online Course Overview by our online platform Edusession.live",
+        "Key Features of the NDA Online Course Overview by our online platform Edusession Live",
       content:
         "Our NDA Online Course Overview is designed to help students prepare for the exam and build a solid foundation for their future career. Here are some of the key features of our course:",
       subsections: [
+        {
+          title: "One-to-one Interactive Sessions",
+          content:
+             "Our online platform offers live one-to-one interactive online coaching where students can ask questions and clarify their doubts. These sessions are conducted by our experienced faculty members and are designed to provide a personalized learning experience.",
+        },
         {
           title: "Comprehensive Coverage",
           content:
@@ -37,11 +42,7 @@ export const NDA = {
           content:
             "Our faculty members are highly experienced and have a deep understanding of the NDA exam pattern and syllabus. They provide personalized attention to each student and ensure that they understand the concepts thoroughly",
         },
-        {
-          title: "Interactive Sessions",
-          content:
-            "Our online platform offers live interactive sessions where students can ask questions and clarify their doubts. These sessions are conducted by our experienced faculty members and are designed to provide a personalized learning experience.",
-        },
+
         {
           title: "Mock Tests",
           content:
@@ -57,7 +58,7 @@ export const NDA = {
     {
       title: "Benefits of Studying with Edusession Live",
       content:
-        "Studying with Edusession.live offers several benefits that can help you ace the NDA exam:",
+        "Studying with Edusession Live offers several benefits that can help you ace the NDA exam:",
       subsections: [
         {
           title: "Personalized Attention",
@@ -85,26 +86,40 @@ export const NDA = {
       title: "Syllabus of the NDA Online Course",
       content:
         "To prepare for the NDA exam, it's essential to have a clear understanding of the syllabus. Here's a brief overview of the topics covered in our NDA Online Course Overview:",
-      subsections: [
-        {
-          title: "Mathematics",
-          content:
-            "Algebra, Trigonometry, Matrices and Determinants, Analytical Geometry, Differential Calculus, Integral Calculus, and Vector Algebra.",
-        },
-        {
-          title: "English",
-          content: "Grammar, Comprehension, Vocabulary, and Usage.",
-        },
-        {
-          title: "General Knowledge",
-          content:
-            "History, Geography, Civics, Economics, Current Affairs, and General Science.",
-        },
-      ],
     },
+    {
+        title: "Syllabus of the NDA Online Course",
+        content:
+          "To prepare for the NDA exam, it's essential to have a clear understanding of the syllabus. Here's a brief overview of the topics covered in our NDA Online Course Overview:",
+        subsections: [
+          {
+            title: "Mathematics",
+            content:
+              `<table>
+              <thead>
+              <tr>
+              <th>Topic</th><th>Syllabus</th>
+              </tr></thead><tbody><tr>
+              <td>Algebra</td>
+              <td>Concept of set, operations on sets, Venn diagrams. De Morgan laws, Cartesian product, relation, equivalence relation. Representation of real numbers on a line, Complex numbers - basic properties, modulus, argument, cube roots of unity. Binary system of numbers. Conversion of a number in decimal system to binary system and vice-versa. Arithmetic, Geometric and Harmonic progressions. Quadratic equations with real coefficients. Solution of linear inequations of two variables by graphs. Permutation and Combination. Binomial theorem and its application. Logarithms and their applications.</td></tr><tr><td>Matrices and Determinants</td><td>Types of matrices, operations on matrices. Determinant of a matrix, basic properties of determinants. Adjoint and inverse of a square matrix, Applications - Solution of a system of linear equations in two or three unknowns by Cramer's rule and by Matrix Method.</td>
+              </tr>
+              <tr><td>Trigonometry</td><td>Angles and their measures in degrees and in radians. Trigonometrical ratios. Trigonometric identities Sum and difference formulae. Multiple and Submultiple angles. Inverse trigonometric functions. Applications - Height and distance, properties of triangles.</td></tr><tr><td>Analytical Geometry of Two and Three Dimensions</td><td>Rectangular Cartesian Coordinate system. Distance formulae. Equation of a line in various forms. Angle between two lines. Distance of a point from a line. Equation of a circle in standard and in general form. Standard forms of parabola, ellipse and hyperbola. Eccentricity and axis of a conic. Point in a three-dimensional space, distance between two points. Direction Cosines and direction ratios. Equation of a plane and a line in various forms. Angle between two lines and angle between two planes. Equation of a sphere.</td></tr><tr><td>Differential Calculus</td><td>Concept of a real valued function - domain, range and graph of a function. Composite functions, one to one, onto and inverse functions. Notion of limit, Standard limits - examples. Continuity of functions - examples, algebraic operations on continuous functions. Derivative of a function at a point, geometrical and physical interpretation of a derivative - applications. Derivatives of sum, product and quotient of functions, derivative of a function with respect of another function, derivative of a composite function. Second order derivatives. Increasing and decreasing functions. Application of derivatives in problems of maxima and minima.</td></tr><tr><td>Integral Calculus and Differential Equations</td><td>Integration as inverse of differentiation, integration by substitution and by parts, standard integrals involving algebraic expressions, trigonometric, exponential and hyperbolic functions. Evaluation of definite integrals - determination of areas of plane regions bounded by curves - applications. Definition of order and degree of a differential equation, formation of a differential equation by examples. General and particular solution of a differential equation, solution of first order and first degree differential equations of various types - examples.</td></tr><tr><td>Vector Algebra</td><td>Vectors in two and three dimensions, magnitude and direction of a vector. Unit and null vectors, addition of vectors, scalar multiplication of vector, scalar product or dot product of two-vectors. Vector product and cross product of two vectors. Applications-work done by a force and moment of a force, and in geometrical problems.</td></tr><tr><td>Statistics and Probability</td><td>Statistics: Classification of data, Frequency distribution, cumulative frequency distribution - examples. Graphical representation - Histogram, Pie Chart, Frequency Polygon - examples. Measures of Central tendency - Mean, Median and Mode. Variance and standard deviation - determination and comparison. Correlation and regression. Probability: Random</td></tr>
+              </tbody></table>`,
+          },
+          {
+            title: "English",
+            content: "Grammar, Comprehension, Vocabulary, and Usage.",
+          },
+          {
+            title: "General Knowledge",
+            content:
+              "History, Geography, Civics, Economics, Current Affairs, and General Science.",
+          },
+        ],
+      },
   ],
   faq: {
-    title: "FAQs for JEE(Mains and Advance)",
+    title: "FAQs for NDA (National Defence Academy)",
     data: [
       {
         question: "What is the NDA exam, and who can apply for it?",
@@ -127,8 +142,7 @@ export const NDA = {
     "@type": "Course",
     url: "https://edusession.live/courses?course=nda",
     name: "NDA (National Defence Academy)",
-    description:
-      "Online Live one to one NDA (National Defence Academy) Class",
+    description: "Online Live one to one NDA (National Defence Academy) Class",
     provider: {
       "@type": "Organization",
       name: "Edusession",

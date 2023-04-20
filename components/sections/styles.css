@@ -150,6 +150,9 @@ section.testimonialPage {
   background-attachment: fixed;
   background-position: center;
 }
+.ndabackground{
+  background-image: url("./../../assets/images/backgrounds/nda2.jpg");
+}
 .hero-figure {
   padding-top: 2rem;
 }
