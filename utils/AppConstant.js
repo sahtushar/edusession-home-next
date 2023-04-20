@@ -73,7 +73,7 @@ export const jokes = [
   "India has the largest number of vegetarians in the world, which makes it a paradise for vegetarians.",
   "In India, you don't need a gym membership, just travel in a local train during peak hours.",
   "India has a rich cultural heritage, but the traffic noise and pollution sometimes make it hard to appreciate.",
-  "India is a country where bargaining is not just a way of life, it's an art form."
+  "India is a country where bargaining is not just a way of life, it's an art form.",
 ];
 
 export const WhatsAppNo = +918237815800;
@@ -316,7 +316,7 @@ export const getCourseData = {
   "class-7": "Class 7",
   "ca-foundation-intermediate": "CA Foundation and Intermediate",
   "jee-foundation": "JEE Foundation",
-  "nda": "NDA (National Defence Academy)",
+  nda: "NDA (National Defence Academy)",
   "class-6": "Class 6",
   "class-8": "Class 8",
   "class-9": "Class 9",
@@ -459,7 +459,7 @@ export const getCourseKeywords = {
       "National Defence Academy",
       "Standard",
       "Foundation",
-      "NDA"
+      "NDA",
     ],
     subheaderWords: [
       "one-on-one",
@@ -749,7 +749,7 @@ export const getCourseDataUrl = {
   "Class 7": "class-7",
   "CA Foundation and Intermediate": "ca-foundation-intermediate",
   "JEE Foundation": "jee-foundation",
-  "NDA (National Defence Academy)":"nda",
+  "NDA (National Defence Academy)": "nda",
   "Class 6": "class-6",
   "Class 8": "class-8",
   "Class 9": "class-9",
@@ -974,17 +974,29 @@ export const homepagestructuredata = {
 
 export const highlightedCourseList = [
   {
-    label: <span className="highlightedCourse">NDA</span>,
+    label: (
+      <span className="highlightedCourse">
+        NDA <span style={{ color: "brown" }}>(New Launch)</span>
+      </span>
+    ),
     link: `/courses?course=${getCourseDataUrl["NDA (National Defence Academy)"]}`,
     identifier: getCourseDataUrl["NDA (National Defence Academy)"],
   },
   {
-    label: <span className="highlightedCourse">JEE</span>,
+    label: (
+      <span className="highlightedCourse">
+        JEE <span style={{ color: "brown" }}>(Trending)</span>
+      </span>
+    ),
     link: `/courses?course=${getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"]}`,
     identifier: getCourseDataUrl["JEE Mains and Advanced (MH-CET and GCET)"],
   },
   {
-    label: <span className="highlightedCourse">NEET</span>,
+    label: (
+      <span className="highlightedCourse">
+        NEET <span style={{ color: "brown" }}>(Trending)</span>
+      </span>
+    ),
     link: `/courses?course=${getCourseDataUrl["NEET UG"]}`,
     identifier: getCourseDataUrl["NEET UG"],
   },
