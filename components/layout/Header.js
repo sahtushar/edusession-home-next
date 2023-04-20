@@ -15,6 +15,7 @@ import PropTypes from "prop-types";
 import Router from "next/router";
 import avatar from "./../../assets/images/avatar.svg";
 import classNames from "classnames";
+import newlaunch from "./../../assets/images/giphy.gif";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -114,7 +115,9 @@ const Header = ({
   };
   const highlightedCourseList = [
     {
-      label: <span className="highlightedCourse">NDA <span style={{color:"brown"}}>(Newly Launched)</span></span>,
+      label: <span className="highlightedCourse">NDA <span style={{color:"brown"}}>(Newly Launched)</span>
+      {/* <img src={newlaunch}/> */}
+      </span>,
       onClick: (e) => {
         history.push(
           `/courses?course=${

@@ -19,6 +19,7 @@
   max-width: 90% !important;
 }
 .site-header .container .highlightedCourse {
+  background-color: white;
   color: #5658dd;
   font-weight: bold;
   border: 1px solid #5658dd;
@@ -27,7 +28,7 @@
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 15px;
 }
 .split-item-content h4 {
   color: black;
