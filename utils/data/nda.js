@@ -83,9 +83,18 @@ export const NDA = {
       ],
     },
     {
-      title: "Syllabus of the NDA Online Course",
+      title: "NDA Exam Overview - Exam Pattern and Details",
       content:
-        "To prepare for the NDA exam, it's essential to have a clear understanding of the syllabus. Here's a brief overview of the topics covered in our NDA Online Course Overview:",
+        `<table><tbody>
+        <tr><td><p>Name of the Exam</p></td><td><p>National Defence Academy, NDA</p></td></tr>
+        <tr><td><p>Exam Conducting Body</p></td><td><p>Union Public Service Commission, UPSC</p></td>
+        </tr><tr><td><p>Frequency of NDA Exam</p></td><td><p>Two times a year</p><p>(NDA 1 &amp; NDA 2)</p></td>
+        </tr><tr><td><p>Selection Process</p></td><td><p>Written Test consisting of Objective Type Questions</p><p>Intelligence &amp; Personality Test (SSB)</p></td></tr>
+        <tr><td><p>Mode of exam</p></td><td><p>Offline (Pen and Paper mode)</p></td></tr>
+        <tr><td><p>Total Papers in NDA Exam</p></td><td><p>Mathematics</p><p>General Ability Test (GAT)</p></td>
+        </tr>
+        <tr><td><p>Total Marks for NDA Exam</p></td><td><p>Total: 900 Marks</p><p>- Mathematics: 300 Marks</p><p>- GAT: 600 Marks</p></td></tr>
+        <tr><td><p>Total No. of Questions</p></td><td><p>Mathematics: 120</p><p>GAT: 150</p></td></tr><tr><td><p>Negative Marking</p></td><td><p>Mathematics: -0.83</p><p>GAT: -1.33 marks</p></td></tr><tr><td><p>Exam Duration</p></td><td><p>Mathematics: 2 Hours 30 Minutes</p><p>GAT: 2 Hours 30 Minutes</p></td></tr></tbody></table>`,
     },
     {
         title: "Syllabus of the NDA Online Course",
