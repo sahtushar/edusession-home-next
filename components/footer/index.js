@@ -10,6 +10,7 @@ const Footer = ({ city, cityData }) => {
     { text: "IELTS (UKVI - Academic - General)" },
     { text: "JEE Mains and Advanced (MH-CET and GCET)" },
     { text: "NEET UG" },
+    { text: "NDA (National Defence Academy)"}
   ];
   let spokenEnglish = [
     { text: "Spoken English" },
