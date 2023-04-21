@@ -604,6 +604,8 @@ const TeacherFeedback = ({
                   <option value="Sulekha">Sulekha</option>
                   <option value="Web Search">Web Search</option>
                   <option value="Advertisement">Advertisement</option>
+                  <option value="Facebook Ad">Facebook Ad</option>
+                  <option value="Google Ad">Google Ad</option>
                   <option value="Word of Mouth">Word of Mouth</option>
                   <option value="Others">Others</option>
                 </select>
