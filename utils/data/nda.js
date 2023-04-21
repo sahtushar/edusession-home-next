@@ -1,6 +1,6 @@
 export const NDA = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">NDA - National Defence Academy</span></span>`,
-  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NDA - National Defence Academy preparation.
+  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NDA - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span> preparation.
     <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
   title: "Online NDA - National Defence Academy 1-on-1 Class",
   description:
