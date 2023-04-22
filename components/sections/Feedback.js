@@ -604,7 +604,6 @@ const TeacherFeedback = ({
                   name="geographicLocation.userdata"
                   value={feedback.userdata.geographicLocation}
                   onChange={handleFeedbackChange}
-                  required
                 />
               </div>
               <div className="mb-3">
@@ -648,7 +647,6 @@ const TeacherFeedback = ({
                   name="age.userdata"
                   value={feedback.userdata.age}
                   onChange={handleFeedbackChange}
-                  required
                 />
               </div>
               <div className="mb-3">
