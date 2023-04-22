@@ -1,7 +1,7 @@
 export const NDA = {
-  header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">NDA - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span></span></span>`,
-  subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NDA - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span> preparation.
-    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+  header: `<span style="color:white; text-shadow: 1px 1px 1px black;">Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span>NDA - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span></span> - 2023</span>`,
+  subheader: `<span style="font-weight: 500;">Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NDA 2023 - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span> preparation.
+    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span></span>`,
   title: "Online NDA - National Defence Academy 1-on-1 Class",
   description:
     "Looking for an NDA online course? Edusession Live offers a comprehensive NDA Online Course Overview to help you ace the exam. Read on to learn more.",
@@ -30,7 +30,7 @@ export const NDA = {
         {
           title: "One-to-one Interactive Sessions",
           content:
-             "Our online platform offers live one-to-one interactive online coaching where students can ask questions and clarify their doubts. These sessions are conducted by our experienced faculty members and are designed to provide a personalized learning experience.",
+            "Our online platform offers live one-to-one interactive online coaching where students can ask questions and clarify their doubts. These sessions are conducted by our experienced faculty members and are designed to provide a personalized learning experience.",
         },
         {
           title: "Comprehensive Coverage",
@@ -83,9 +83,58 @@ export const NDA = {
       ],
     },
     {
+      title: "NDA -1 Exam 2023 Dates",
+      content: `<table width="100%"> 
+        <tbody> 
+         <tr> 
+          <th width="48%">Events&nbsp;</th> 
+          <th width="49%">NDA 1 Exam Date 2023</th> 
+         </tr> 
+         <tr> 
+          <td width="48%"> <p>NDA 1 2023 notification</p> </td> 
+          <td width="49%"> <p>21-Dec-2022</p> </td> 
+         </tr> 
+         <tr> 
+          <td width="48%"> <p>NDA 1 2023 form filling date</p> </td> 
+          <td width="49%"> <p>21-Dec-2022 to 12-Jan-2023</p> </td> 
+         </tr> 
+         <tr> 
+          <td width="48%"> <p>NDA 1 2023</p> </td> 
+          <td width="49%"> <p>16-Apr-2023</p> </td> 
+         </tr> 
+         <tr> 
+          <td> <p>NDA 1 Result 2023</p> </td> 
+          <td> <p>May 2023</p> </td> 
+         </tr> 
+        </tbody> 
+       </table>`,
+    },
+    {
+      title: "NDA - 2 Exam 2023 Dates",
+      content: `<table width="100%"> 
+      <tbody> 
+       <tr> 
+        <th>Events</th> 
+        <th>NDA 2 Exam Date 2023</th> 
+       </tr> 
+       <tr> 
+        <td width="48%"> <p>NDA 2 2023 notification</p> </td> 
+        <td width="49%"> <p>17-May-2023</p> </td> 
+       </tr> 
+       <tr> 
+        <td width="48%"> <p>NDA 2 2023 application form</p> </td> 
+        <td width="49%"> <p>17-May-2023 to 06-Jun-2023</p> </td> 
+       </tr> 
+       <tr> 
+        <td width="48%"> <p>NDA 2 2023</p> </td> 
+        <td width="49%"> <p>03-Sep-2023</p> </td> 
+       </tr> 
+      </tbody> 
+     </table>`,
+    },
+    {
       title: "NDA Exam Overview - Exam Pattern and Details",
-      content:
-        `<table><tbody>
+      content: `<table><tbody>
         <tr><td><p>Name of the Exam</p></td><td><p>National Defence Academy, NDA</p></td></tr>
         <tr><td><p>Exam Conducting Body</p></td><td><p>Union Public Service Commission, UPSC</p></td>
         </tr><tr><td><p>Frequency of NDA Exam</p></td><td><p>Two times a year</p><p>(NDA 1 &amp; NDA 2)</p></td>
@@ -97,14 +146,32 @@ export const NDA = {
         <tr><td><p>Total No. of Questions</p></td><td><p>Mathematics: 120</p><p>GAT: 150</p></td></tr><tr><td><p>Negative Marking</p></td><td><p>Mathematics: -0.83</p><p>GAT: -1.33 marks</p></td></tr><tr><td><p>Exam Duration</p></td><td><p>Mathematics: 2 Hours 30 Minutes</p><p>GAT: 2 Hours 30 Minutes</p></td></tr></tbody></table>`,
     },
     {
-        title: "Syllabus of the NDA Online Course",
-        content:
-          "To prepare for the NDA exam, it's essential to have a clear understanding of the syllabus. Here's a brief overview of the topics covered in our NDA Online Course Overview:",
-        subsections: [
-          {
-            title: "Mathematics",
-            content:
-              `<table>
+      title: "NDA Exam Eligibility 2023",
+      content: `<div><h3><strong>Gender &amp; Marital Status</strong></h3> 
+      <ul> 
+       <li aria-level="1">Both male and female candidates will be eligible for NDA 2023</li> 
+       <li aria-level="1">Candidates will not be allowed to marry until they complete their training period</li> 
+      </ul> 
+      <h3>NDA Physical Fitness</h3> 
+      <ul> 
+       <li aria-level="1">Candidates must be physically fit to be eligible for the exam</li> 
+       <li aria-level="1">Candidates who have withdrawn or resigned from any training academies of Armed forces on disciplinary grounds will not be eligible for NDA examination</li> 
+      </ul>
+      <h3>NDA Age Limit 2023</h3>
+      <ul>
+      <li aria-level="1">NDA 1 2023 age limit is 16.5 to 19.5 years. Only unmarried male/female candidates born not earlier than 02nd July, 2004 and not later than 1st July, 2007 are eligible</li>
+      </ul>
+      <a style="color:blue;" target="_blank" href="https://www.upsc.gov.in/examinations/%20National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28I%29%2C%202021">UPSC - NDA Official Page</a>
+      </div> `,
+    },
+    {
+      title: "Syllabus of the NDA Online Course",
+      content:
+        "To prepare for the NDA exam, it's essential to have a clear understanding of the syllabus. Here's a brief overview of the topics covered in our NDA Online Course Overview:",
+      subsections: [
+        {
+          title: "Mathematics",
+          content: `<table>
               <thead>
               <tr>
               <th>Topic</th><th>Syllabus</th>
@@ -118,18 +185,18 @@ export const NDA = {
               <tr>
               <td>Vector Algebra</td><td>Vectors in two and three dimensions, magnitude and direction of a vector. Unit and null vectors, addition of vectors, scalar multiplication of vector, scalar product or dot product of two-vectors. Vector product and cross product of two vectors. Applications-work done by a force and moment of a force, and in geometrical problems.</td></tr><tr><td>Statistics and Probability</td><td>Statistics: Classification of data, Frequency distribution, cumulative frequency distribution - examples. Graphical representation - Histogram, Pie Chart, Frequency Polygon - examples. Measures of Central tendency - Mean, Median and Mode. Variance and standard deviation - determination and comparison. Correlation and regression. Probability: Random</td></tr>
               </tbody></table>`,
-          },
-          {
-            title: "English",
-            content: "Grammar, Comprehension, Vocabulary, and Usage.",
-          },
-          {
-            title: "General Knowledge",
-            content:
-              "History, Geography, Civics, Economics, Current Affairs, and General Science.",
-          },
-        ],
-      },
+        },
+        {
+          title: "English",
+          content: "Grammar, Comprehension, Vocabulary, and Usage.",
+        },
+        {
+          title: "General Knowledge",
+          content:
+            "History, Geography, Civics, Economics, Current Affairs, and General Science.",
+        },
+      ],
+    },
   ],
   faq: {
     title: "FAQs for NDA - National Defence Academy",
@@ -155,7 +222,8 @@ export const NDA = {
     "@type": "Course",
     url: "https://edusession.live/courses?course=nda",
     name: "NDA (National Defence Academy)",
-    description: "Online Live one to one NDA - National Defence Academy Exam Class",
+    description:
+      "Online Live one to one NDA - National Defence Academy Exam Class",
     provider: {
       "@type": "Organization",
       name: "Edusession",

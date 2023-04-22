@@ -1,6 +1,7 @@
 import { Button, Table } from "reactstrap";
 import {
   CallActivity,
+  CoursesDropdown,
   checkauthfailed,
   educationalBackground,
   jokes,
@@ -64,6 +65,7 @@ const TeacherFeedback = ({
       fullName: "",
       email: "",
       phoneNumber: "",
+      selectedCourse: "",
       topicsOfInterest: "",
       preferredCommunication: "",
       geographicLocation: "",
@@ -182,6 +184,7 @@ const TeacherFeedback = ({
         email: feedback.userdata.email,
         phoneNumber: feedback.userdata.phoneNumber,
         topicsOfInterest: feedback.userdata.topicsOfInterest,
+        selectedCourse: feedback.userdata.selectedCourse,
         preferredCommunication: feedback.userdata.preferredCommunication,
         geographicLocation: feedback.userdata.geographicLocation,
         howTheyHeard: feedback.userdata.howTheyHeard,
@@ -294,8 +297,11 @@ const TeacherFeedback = ({
             "#__next > main > section > div > div > div > form.container.my-2.basicInfo"
           )
           ?.scrollIntoView();
-      } catch (e) {
+      } catch (err) {
         setIsLoading(false);
+        if (checkauthfailed(err, setIsLoading, history)) {
+          return;
+        }
         alert("Lead/User Not Found");
         return;
       }
@@ -312,8 +318,11 @@ const TeacherFeedback = ({
       setIsLoading(false);
       setAllLeads(res.data.forms);
       setAllLeadsOriginal(res.data.forms);
-    } catch (e) {
+    } catch (err) {
       setIsLoading(false);
+      if (checkauthfailed(err, setIsLoading, history)) {
+        return;
+      }
       alert("Lead/User Not Found");
       return;
     }
@@ -334,7 +343,7 @@ const TeacherFeedback = ({
         </div>
       );
     } else {
-      return val;
+      return val || "";
     }
   };
 
@@ -428,9 +437,7 @@ const TeacherFeedback = ({
                         ...feedback.userdata,
                         ...feedback.postdemo,
                       }).map((key) => (
-                        <th style={{ textTransform: "capitalize" }}>
-                          {key}
-                        </th>
+                        <th style={{ textTransform: "capitalize" }}>{key}</th>
                       ))}
                     </tr>
                   </thead>
@@ -522,6 +529,28 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                   required
                 />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="selectedCourse">Selected Course</label>
+                {/* <input
+                  type="text"
+                  className="form-control"
+                  id="preferredCommunication"
+                  name="preferredCommunication.userdata"
+                  value={feedback.userdata.preferredCommunication}
+                  onChange={handleFeedbackChange}
+                  required
+                /> */}
+                <select
+                  className="form-control"
+                  id="selectedCourse"
+                  name="selectedCourse.userdata"
+                  value={feedback.userdata.selectedCourse}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  {CoursesDropdown()}
+                </select>
               </div>
               <div className="mb-3">
                 <label htmlFor="topicsOfInterest">
