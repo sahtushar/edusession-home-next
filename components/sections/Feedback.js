@@ -343,7 +343,7 @@ const TeacherFeedback = ({
         </div>
       );
     } else {
-      return val || "";
+      return val || "N/A";
     }
   };
 

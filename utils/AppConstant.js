@@ -89,6 +89,7 @@ export const WhatsAppNo = +918237815800;
 export const CoursesDropdown = () => {
   return (
     <>
+      <option value=""></option>
       <option value="Class 6">Class 6</option>
       <option value="Class 7">Class 7</option>
       <option value="Class 8">Class 8</option>
