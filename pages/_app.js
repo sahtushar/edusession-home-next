@@ -9,10 +9,10 @@ import "./../components/loader/styles.scss";
 import "./../components/sections/sign-up.scss";
 import "./../components/sections/legal.scss";
 import "./../components/sections/profilepage.scss";
+import "./../components/elements/bookslot.scss";
 import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
 import "./../components/sections/feedback.scss";
-import ErrorBoundary from "./../components/ErrorBoundary.js";
 
 import * as React from "react";
 
@@ -22,6 +22,7 @@ import {
   trackHomepge,
 } from "../services/authroutes";
 
+import ErrorBoundary from "./../components/ErrorBoundary.js";
 import Head from "next/head";
 import { Loader } from "../components/loader";
 import PropTypes from "prop-types";

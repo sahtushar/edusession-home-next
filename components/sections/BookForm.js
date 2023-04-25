@@ -11,6 +11,7 @@ import {
 } from "../../utils/AppConstant";
 import React, { useEffect, useState } from "react";
 
+import { BookSlot } from "../elements/BookSlot";
 import { Button } from "reactstrap";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -18,6 +19,7 @@ import { SectionProps } from "../../utils/SectionProps";
 import Select from "react-select";
 import { callBookForm } from "../../services/authroutes";
 import classNames from "classnames";
+import moment from "moment";
 import { useRouter as useHistory } from "next/router";
 
 const propTypes = {
@@ -49,6 +51,8 @@ const BookForm = ({
   const [course, setCourse] = useState({});
   const history = useHistory();
   const [error, setError] = useState(false);
+  const [date, setDate] = useState(moment());
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
 
   useEffect(() => {
     if (props.course) {
@@ -104,9 +108,16 @@ const BookForm = ({
       subject: subject.value,
       course: course.value,
       specialRequirement: specialrequest,
+      date: `${date}`,
+      formattedDate: date.format("dddd, MMMM Do YYYY"),
+      time: selectedTimeSlot,
       roles: ["user"],
     };
-    if (!subject?.value?.trim() || !course?.value?.trim()) {
+    if (
+      !subject?.value?.trim() ||
+      !course?.value?.trim() ||
+      !selectedTimeSlot?.trim()
+    ) {
       setError("Please fill all the relevant info");
       return;
     }
@@ -219,6 +230,17 @@ const BookForm = ({
                     onChange={(e) => {
                       setspecialrequest(e.target.value);
                     }}
+                  />
+                </div>
+                <div className="m-2">
+                  <label htmlFor={"Preferrd Call Time"}>
+                    Preferred Call Time
+                  </label>
+                  <BookSlot
+                    date={date}
+                    setDate={setDate}
+                    selectedTimeSlot={selectedTimeSlot}
+                    setSelectedTimeSlot={setSelectedTimeSlot}
                   />
                 </div>
                 <div className="m-2">

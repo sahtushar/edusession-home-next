@@ -1,0 +1,13 @@
+.slotbookWrapper {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 1rem;
+  .selectedTimeSlot{
+    display: flex;
+    flex-direction: column;
+    span{
+        font-size: 15px;
+        color: #5658dd;
+    }
+  }
+}

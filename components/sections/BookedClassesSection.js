@@ -166,6 +166,7 @@ const BookedClassesSection = ({
                   <th>Mobile</th>
                   <th>Course</th>
                   <th>Subject</th>
+                  <th>Preferred Call Time</th>
                   <th>Special Requirement</th>
                 </tr>
               </thead>
@@ -177,6 +178,7 @@ const BookedClassesSection = ({
                     <td>{item.mobile}</td>
                     <td>{item.course}</td>
                     <td>{item.subject}</td>
+                    <td>{(item?.formattedDate || "")+" "+(item?.time || "")}</td>
                     <td>{item.specialRequirement}</td>
                   </tr>
                 ))}
