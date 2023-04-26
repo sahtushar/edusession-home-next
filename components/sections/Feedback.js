@@ -547,9 +547,9 @@ const TeacherFeedback = ({
                   name="selectedCourse.userdata"
                   value={feedback.userdata.selectedCourse}
                   onChange={handleFeedbackChange}
-                  required
                 >
                   {CoursesDropdown()}
+
                 </select>
               </div>
               <div className="mb-3">
