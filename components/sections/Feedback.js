@@ -299,9 +299,9 @@ const TeacherFeedback = ({
           ?.scrollIntoView();
       } catch (err) {
         setIsLoading(false);
-        if (checkauthfailed(err, setIsLoading, history)) {
-          return;
-        }
+        //if (checkauthfailed(err, setIsLoading, history)) {
+          //return;
+       // }
         alert("Lead/User Not Found");
         return;
       }
