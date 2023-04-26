@@ -280,10 +280,10 @@ const TeacherFeedback = ({
 
   async function fetchFeedback(phone) {
     let body = {
-      mobile: phone || mobile,
+      mobile: phone?.trim() || mobile?.trim(),
       username: localStorage?.getItem("username"),
     };
-    if ((phone && phone.length >= 10) || (mobile && mobile.length >= 10)) {
+    if ((phone?.trim() && phone?.trim()?.length >= 10) || (mobile?.trim() && mobile?.trim()?.length >= 10)) {
       try {
         setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
