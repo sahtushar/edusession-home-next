@@ -1,6 +1,9 @@
 .mb-32 {
   margin-bottom: 32px !important;
 }
+main{
+  background: #F6FFDE;
+}
 .hero-content2 h1 {
   color: black;
 }
