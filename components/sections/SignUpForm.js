@@ -5,7 +5,9 @@ import { SectionProps } from "../../utils/SectionProps";
 import { callSignUp } from "../../services/authroutes";
 import classNames from "classnames";
 import { useRouter as useHistory } from "next/router";
-
+import logo from "./../../assets/images/logo-no-background.png";
+import MyImage from "../elements/MyImage";
+import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
 const propTypes = {
   children: PropTypes.node,
   ...SectionProps.types,

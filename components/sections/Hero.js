@@ -69,7 +69,6 @@ const Hero = ({
 
   const bookAClass = () => {
     if (verifyIsUserAuthenticated()) {
-      debugger;
       history.push(
         `/book-form${
           courseIdentifier && getCourseData[courseIdentifier]
