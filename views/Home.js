@@ -97,12 +97,13 @@ const Home = ({ city, cityData }) => {
           city={city}
           className="illustration-section-01"
         />
-        {/* <Cta split /> */}
+        {/* <Cta split /> 
         //<Courses
          // city={city}
          // className="illustration-section-01"
          // cityData={cityData}
         // />
+        */}
         <Approach className="illustration-section-02" />
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>
