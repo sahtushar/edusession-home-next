@@ -2,6 +2,9 @@
   border: 1px solid lightgray;
   border-radius: 8px;
   padding: 1rem;
+  button{
+    font-size: 12px;
+  }
   .selectedTimeSlot{
     display: flex;
     flex-direction: column;

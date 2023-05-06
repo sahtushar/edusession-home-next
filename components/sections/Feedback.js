@@ -13,10 +13,13 @@ import {
   fetchFeedbackFetch,
 } from "../../services/authroutes";
 
+import { BookSlot } from "../elements/BookSlot";
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import LeadsTable from "../elements/LeadsTable";
 import PropTypes from "prop-types";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
+import moment from "moment";
 import { useRouter as useHistory } from "next/router";
 import { useState } from "react";
 import { useStyleRegistry } from "styled-jsx";
@@ -58,6 +61,8 @@ const TeacherFeedback = ({
     bottomDivider && "has-bottom-divider"
   );
   const history = useHistory();
+  const [date, setDate] = useState(moment());
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const [feedback, setFeedback] = useState({
     //userdata
 
@@ -74,7 +79,7 @@ const TeacherFeedback = ({
       gender: "",
       educationalBackground: "",
       remarks: "",
-      remarks2: "",
+      remarks2: ""
     },
 
     //postdemo data
@@ -113,7 +118,7 @@ const TeacherFeedback = ({
   const [allLeadsOriginal, setAllLeadsOriginal] = useState([]);
   const tableRef = useRef(null);
   const [currentFact, setCurrentfact] = useState("");
-
+  
   useEffect(() => {
     setCurrentfact(jokes[Math.floor(Math.random() * jokes.length)]);
   }, []);
@@ -193,6 +198,9 @@ const TeacherFeedback = ({
         educationalBackground: feedback.userdata.educationalBackground,
         remarks: feedback.userdata.remarks,
         remarks2: feedback.userdata.remarks2,
+        date: `${date}`,
+        formattedDate: date?.format("dddd, MMMM Do YYYY"),
+        time: selectedTimeSlot,
       },
       type: "userdata",
       roles: ["user"],
@@ -333,19 +341,6 @@ const TeacherFeedback = ({
     _id: true,
     __v: true,
   };
-  const getTdValue = (val) => {
-    if (typeof val == "object") {
-      return (
-        <div>
-          <span style={{ color: "brown" }}>Comment:</span>
-          {val.comment} <span style={{ color: "brown" }}>Rating:</span>
-          {val.rating}
-        </div>
-      );
-    } else {
-      return val || "N/A";
-    }
-  };
 
   const getCreationDate = (id) => {
     var timestamp = id.toString().substring(0, 8);
@@ -428,65 +423,12 @@ const TeacherFeedback = ({
                 <></>
               )}
               {allLeads.length ? (
-                <Table hover responsive innerRef={tableRef}>
-                  <thead>
-                    <tr key={"header"}>
-                      <th>Count</th>
-                      <th>Date</th>
-                      {Object.keys({
-                        ...feedback.userdata,
-                        ...feedback.postdemo,
-                      }).map((key) => (
-                        <th style={{ textTransform: "capitalize" }}>{key}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {" "}
-                    {allLeads.map((item, index) => (
-                      <>
-                        <tr key={`${index}__leads`}>
-                          <td>{index + 1}</td>
-                          <td style={{ color: "black", fontWeight: "bold" }}>
-                            {getCreationDate(item._id)}
-                          </td>
-                          {Object.values({
-                            ...item?.userdata,
-                            ...(item?.postdemo || {}),
-                          }).map((val, dataindex) => (
-                            <td
-                              style={
-                                dataindex == 2 || dataindex == 0
-                                  ? { color: "brown", fontWeight: "bold" }
-                                  : {}
-                              }
-                            >
-                              {dataindex == 2 ? (
-                                <div style={{ display: "flex" }}>
-                                  <i
-                                    onClick={() => {
-                                      fetchFeedback(val);
-                                    }}
-                                    style={{ marginRight: "2px" }}
-                                    className="fa fa-edit"
-                                  ></i>
-                                  <a
-                                    style={{ color: "blue" }}
-                                    href={`tel:${getTdValue(val)}`}
-                                  >
-                                    {getTdValue(val)}
-                                  </a>
-                                </div>
-                              ) : (
-                                getTdValue(val)
-                              )}
-                            </td>
-                          ))}
-                        </tr>
-                      </>
-                    ))}
-                  </tbody>
-                </Table>
+                <LeadsTable
+                  allLeads={allLeads}
+                  tableRef={tableRef}
+                  feedback={feedback}
+                  fetchFeedback={fetchFeedback}
+                />
               ) : (
                 <></>
               )}
@@ -717,6 +659,17 @@ const TeacherFeedback = ({
                   name="remarks2.userdata"
                   value={feedback.userdata.remarks2}
                   onChange={handleFeedbackChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor={"Preferrd Call Time"}>
+                  Preferred Demo Slot
+                </label>
+                <BookSlot
+                  date={date}
+                  setDate={setDate}
+                  selectedTimeSlot={selectedTimeSlot}
+                  setSelectedTimeSlot={setSelectedTimeSlot}
                 />
               </div>
               <button type="submit" className="btn btn-primary">

@@ -1,4 +1,73 @@
 .feedbackWrapper {
+  .highlighted{
+    background-color: #dc143c;
+    td{
+      color: white !important;
+    }
+    i{
+      color: white;
+    }
+    a{
+      color: white !important;
+    }
+  }
+  .enrolled{
+    background-color: lightgreen;
+  }
+  .booked{
+    background-color: lightyellow;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &.active {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+      }
+
+      &:hover:not(.active) {
+        background-color: #f1f1f1;
+      }
+    }
+    .pagination__link {
+      color: #007bff;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      }
+      
+      .pagination__link:hover {
+      background-color: #007bff;
+      color: #fff;
+      }
+      
+      .pagination__link--disabled {
+      color: #ccc;
+      cursor: default;
+      }
+      
+      .pagination__link--active {
+      background-color: #007bff;
+      color: #fff;
+      }
+      li{
+        margin: 5px;
+      }
+  }
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -14,7 +83,7 @@
   select {
     font-size: 16px;
   }
-  .feedbackTableSection{
+  .feedbackTableSection {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -43,7 +112,7 @@
   label {
     font-size: 15px;
   }
-  .table-responsive{
+  .table-responsive {
     background-color: white;
     padding: 5px;
   }
