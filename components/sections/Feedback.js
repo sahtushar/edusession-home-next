@@ -288,10 +288,10 @@ const TeacherFeedback = ({
 
   async function fetchFeedback(phone) {
     let body = {
-      mobile: phone || mobile,
+      mobile: phone?.trim() || mobile?.trim(),
       username: localStorage?.getItem("username"),
     };
-    if ((phone && phone.length >= 10) || (mobile && mobile.length >= 10)) {
+    if ((phone?.trim() && phone?.trim()?.length >= 10) || (mobile?.trim() && mobile?.trim()?.length >= 10)) {
       try {
         setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
@@ -307,9 +307,9 @@ const TeacherFeedback = ({
           ?.scrollIntoView();
       } catch (err) {
         setIsLoading(false);
-        if (checkauthfailed(err, setIsLoading, history)) {
-          return;
-        }
+        //if (checkauthfailed(err, setIsLoading, history)) {
+          //return;
+       // }
         alert("Lead/User Not Found");
         return;
       }
@@ -489,9 +489,9 @@ const TeacherFeedback = ({
                   name="selectedCourse.userdata"
                   value={feedback.userdata.selectedCourse}
                   onChange={handleFeedbackChange}
-                  required
                 >
                   {CoursesDropdown()}
+
                 </select>
               </div>
               <div className="mb-3">

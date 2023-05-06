@@ -13,6 +13,7 @@ import "./../components/elements/bookslot.scss";
 import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
 import "./../components/sections/feedback.scss";
+import { Analytics } from '@vercel/analytics/react';
 
 import * as React from "react";
 
@@ -149,6 +150,7 @@ export default function MyApp(props) {
         />
       </Head>
       <ErrorBoundary>
+       <Analytics />
       <Component {...pageProps} setIsLoading={setIsLoading} />
       </ErrorBoundary>
       {loading && <Loader />}

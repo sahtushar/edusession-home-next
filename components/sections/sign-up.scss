@@ -8,10 +8,12 @@
   max-width: 600px;
   border: 1px solid lightgray;
   box-shadow: 2px 2px 2px lightgray;
-  padding: 2rem;
+  padding: 1rem;
   background-color: white;
+  margin: auto;
   label {
     color: #009e76;
+    display: none !important;
   }
 }
 
@@ -20,9 +22,11 @@
 }
 
 .form-box h1 {
-  margin-bottom: 40px;
   font-weight: 700;
   color: black;
+  font-size: 2rem;
+  margin: 1rem;
+  margin-left: 0px
 }
 
 .form-box .field {

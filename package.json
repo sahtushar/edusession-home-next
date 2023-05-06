@@ -24,7 +24,8 @@
     "react-paginate": "^8.2.0",
     "react-select": "^5.7.0",
     "reactstrap": "^9.1.5",
-    "sass": "^1.49.7"
+    "sass": "^1.49.7",
+    "@vercel/analytics":"^1.0.0"
   },
   "scripts": {
     "dev": "next",

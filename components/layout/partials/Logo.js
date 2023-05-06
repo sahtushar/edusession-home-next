@@ -20,7 +20,7 @@ const Logo = ({ className, cityData, ...props }) => {
             history.push(`/${cityData?.cityData ? `/city/${cityData?.city}` : ""}`);
           }}
         >
-          <MyImage src={logo} alt="Open" width="210" layout="raw" />
+          <MyImage src={logo} alt="Edusession Logo" width="210" layout="raw" />
         </a>
       </h3>
     </div>
