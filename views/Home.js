@@ -15,10 +15,12 @@ import Head from "next/head";
 import Header from "../components/layout/Header";
 import Hero from "../components/sections/Hero";
 import MyImage from "../components/elements/MyImage";
+import PromoModal from "../components/elements/PromoModal";
 import StructuredData from "../components/elements/StructuredData";
 import Testimonial from "../components/sections/Testimonial";
 import homepageicon from "./../assets/images/homepageicon.png";
 import icon from "./../assets/images/icon.png";
+import img from "./../assets/images/spoken-en-promo.jpeg";
 import { useRouter as useHistory } from "next/router";
 
 const Home = ({ city, cityData }) => {
@@ -57,6 +59,7 @@ const Home = ({ city, cityData }) => {
   };
   return (
     <>
+      <PromoModal promoimg={img} link={"/courses?course=spoken-english"}/>
       <StructuredData data={homepagestructuredata} />
       <Head>
         <meta charSet="utf-8" />
@@ -68,7 +71,6 @@ const Home = ({ city, cityData }) => {
         <meta itemprop="name" content={getHelmetData().title} />
         <meta itemprop="description" content={getHelmetData().desc} />
         <meta property="og:url" content={canonicalPath(history.asPath)} />
-      
       </Head>
       <Header navPosition="right" page="home" cityData={cityData} />
       <main className="site-content">
@@ -107,7 +109,7 @@ const Home = ({ city, cityData }) => {
         <Approach className="illustration-section-02" />
         <MyImage src={icon} style={{ display: "none" }} alt="Edusession Icon" />
       </main>
-      <Footer city={city} cityData={cityData}/>
+      <Footer city={city} cityData={cityData} />
     </>
   );
 };

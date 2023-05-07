@@ -55,7 +55,7 @@ const Hero = ({
   };
 
   const outerClasses = classNames(
-    "hero section center-content",
+    "hero section center-content animatedbg",
     bottomOuterDivider && "has-bottom-divider",
     hasBgColor && "has-bg-color",
     invertColor && "invert-color",
@@ -89,7 +89,12 @@ const Hero = ({
   return (
     <>
       {/* <QuarkEvent/> */}
-      <section {...props} className={`${outerClasses} homepagesection ${course =="nda" ? "ndabackground":""}`}>
+      <section
+        {...props}
+        className={`${outerClasses} homepagesection ${
+          course == "nda" ? "ndabackground" : ""
+        }`}
+      >
         <div className="container-sm">
           <div className={innerClasses}>
             <div className={`hero-content hero-content2`}>

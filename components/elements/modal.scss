@@ -1,0 +1,21 @@
+.ReactModalPortal{
+    .ReactModal__Content{
+        width: 500px;
+        height: 500px;
+        padding: 0 !important;
+    }
+    @media screen and (max-width: 540px) {
+        .ReactModal__Content{
+            width: 400px;
+            height: 400px; 
+        }
+
+    }
+    @media screen and (max-width: 400px) {
+        .ReactModal__Content{
+            width: 300px;
+            height: 300px; 
+        }
+
+    }
+}

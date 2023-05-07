@@ -13,7 +13,7 @@ import "./../components/elements/bookslot.scss";
 import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
 import "./../components/sections/feedback.scss";
-import { Analytics } from '@vercel/analytics/react';
+import "./../components/elements/modal.scss";
 
 import * as React from "react";
 
@@ -23,6 +23,7 @@ import {
   trackHomepge,
 } from "../services/authroutes";
 
+import { Analytics } from '@vercel/analytics/react';
 import ErrorBoundary from "./../components/ErrorBoundary.js";
 import Head from "next/head";
 import { Loader } from "../components/loader";
