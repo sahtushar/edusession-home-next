@@ -79,7 +79,7 @@ const TeacherFeedback = ({
       gender: "",
       educationalBackground: "",
       remarks: "",
-      remarks2: ""
+      remarks2: "",
     },
 
     //postdemo data
@@ -118,10 +118,30 @@ const TeacherFeedback = ({
   const [allLeadsOriginal, setAllLeadsOriginal] = useState([]);
   const tableRef = useRef(null);
   const [currentFact, setCurrentfact] = useState("");
-  
+
   useEffect(() => {
     setCurrentfact(jokes[Math.floor(Math.random() * jokes.length)]);
   }, []);
+
+  useEffect(() => {
+    setFeedback((prevFeedback) => ({
+      ...prevFeedback,
+      userdata: {
+        ...prevFeedback.userdata,
+        ...{ date: date, formattedDate: date?.format("dddd, MMMM Do YYYY") },
+      },
+    }));
+  }, [date]);
+
+  useEffect(() => {
+    setFeedback((prevFeedback) => ({
+      ...prevFeedback,
+      userdata: {
+        ...prevFeedback.userdata,
+        ...{ time: selectedTimeSlot },
+      },
+    }));
+  }, [selectedTimeSlot]);
 
   useEffect(() => {
     let existingLists = [...allLeads];
@@ -198,9 +218,9 @@ const TeacherFeedback = ({
         educationalBackground: feedback.userdata.educationalBackground,
         remarks: feedback.userdata.remarks,
         remarks2: feedback.userdata.remarks2,
-        date: `${date}`,
-        formattedDate: date?.format("dddd, MMMM Do YYYY"),
-        time: selectedTimeSlot,
+        date: feedback.userdata.date,
+        formattedDate: feedback.userdata.formattedDate,
+        time: feedback.userdata.time,
       },
       type: "userdata",
       roles: ["user"],
@@ -291,7 +311,10 @@ const TeacherFeedback = ({
       mobile: phone?.trim() || mobile?.trim(),
       username: localStorage?.getItem("username"),
     };
-    if ((phone?.trim() && phone?.trim()?.length >= 10) || (mobile?.trim() && mobile?.trim()?.length >= 10)) {
+    if (
+      (phone?.trim() && phone?.trim()?.length >= 10) ||
+      (mobile?.trim() && mobile?.trim()?.length >= 10)
+    ) {
       try {
         setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
@@ -308,8 +331,8 @@ const TeacherFeedback = ({
       } catch (err) {
         setIsLoading(false);
         //if (checkauthfailed(err, setIsLoading, history)) {
-          //return;
-       // }
+        //return;
+        // }
         alert("Lead/User Not Found");
         return;
       }
@@ -491,7 +514,6 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                 >
                   {CoursesDropdown()}
-
                 </select>
               </div>
               <div className="mb-3">
