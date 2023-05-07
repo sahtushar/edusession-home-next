@@ -74,6 +74,16 @@ export const jokes = [
   "In India, you don't need a gym membership, just travel in a local train during peak hours.",
   "India has a rich cultural heritage, but the traffic noise and pollution sometimes make it hard to appreciate.",
   "India is a country where bargaining is not just a way of life, it's an art form.",
+  "I used to be a teacher, but I couldn't get the class to take me seriously. They said I was always speaking in the present tense.",
+  "I tried to start a school for clowns, but I couldn't get the curriculum to juggle the right subjects.",
+  "Why did the math book look sad? Because it had too many problems.",
+  "I failed my philosophy class, but at least I know why.",
+  "I told my parents I wanted to be a doctor, but they said I couldn't handle the sight of blood. So now I'm a teacher - I just have to deal with the sight of students.",
+  "Why did the teacher wear sunglasses? Because his students were so bright.",
+  "I asked my teacher for help with my spelling, and she said 'ironic' is spelled with an 'i'. That's not ironic, it's just annoying.",
+  "I don't always understand what my teacher is saying, but when I do, it's usually on the test.",
+  "My teacher told me to turn in my essay, but I ain't no snitch.",
+  "I wanted to be a teacher, but I realized I didn't have enough patience for recess.",
 ];
 
 export const WhatsAppNo = +918237815800;
