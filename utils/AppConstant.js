@@ -97,7 +97,9 @@ export const CoursesDropdown = () => {
       <option value="Class 10">Class 10</option>
       <option value="Class 11">Class 11</option>
       <option value="Class 12">Class 12</option>
-      <option value="Career Guidance/Counseling">Career Guidance/Counseling</option>
+      <option value="Career Guidance/Counseling">
+        Career Guidance/Counseling
+      </option>
       <option value="JEE Foundation">JEE Foundation</option>
       <option value="CA Foundation and Intermediate">
         CA Foundation and Intermediate
@@ -1032,7 +1034,11 @@ export const highlightedCourseList = [
     identifier: getCourseDataUrl["NEET UG"],
   },
   {
-    label: <span className="highlightedCourse">Spoken English</span>,
+    label: (
+      <span className="highlightedCourse">
+        Spoken English <span style={{ color: "brown" }}>(Trending)</span>
+      </span>
+    ),
     link: `/courses?course=${getCourseDataUrl["Spoken English"]}`,
     identifier: getCourseDataUrl["Spoken English"],
   },
@@ -1087,9 +1093,7 @@ export const CallActivity = () => {
   return (
     <>
       <option value=""></option>
-      <option value="Enrolled">
-        Enrolled
-      </option>
+      <option value="Enrolled">Enrolled</option>
       <option value="Interested, Booked live session">
         Interested, Booked live session
       </option>

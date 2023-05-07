@@ -116,7 +116,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
             <th>Count</th>
             <th>Date</th>
             {Object.keys({
-              ...headers,
+              ...feedback.userdata,
               ...feedback.postdemo,
             }).map((key) => (
               <th
@@ -142,6 +142,8 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
         nextLinkClassName={"pagination__link"}
         disabledClassName={"pagination__link--disabled"}
         activeClassName={"pagination__link--active"}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
       />
     </>
   );
