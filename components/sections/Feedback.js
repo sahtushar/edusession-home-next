@@ -692,6 +692,7 @@ const TeacherFeedback = ({
                   setDate={setDate}
                   selectedTimeSlot={selectedTimeSlot}
                   setSelectedTimeSlot={setSelectedTimeSlot}
+                  disableSlot={false}
                 />
               </div>
               <button type="submit" className="btn btn-primary">

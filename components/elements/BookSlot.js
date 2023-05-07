@@ -8,6 +8,7 @@ export const BookSlot = ({
   setDate,
   selectedTimeSlot,
   setSelectedTimeSlot,
+  disableSlot=true
 }) => {
 
 const timeSlots = [
@@ -81,7 +82,7 @@ const timeSlots = [
             <Button
               key={timeSlot}
               onClick={() => handleTimeSlotClick(timeSlot)}
-              disabled={isDisabled(timeSlot)}
+              disabled={disableSlot ? isDisabled(timeSlot): false}
               style={{
                 backgroundColor: selectedTimeSlot === timeSlot ? "#5658dd" : "",
               }}
