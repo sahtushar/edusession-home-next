@@ -1,7 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import React from "react";
 import { SectionProps } from "../../utils/SectionProps";
+import classNames from "classnames";
+import { useRouter as useHistory } from "next/router";
 
 const propTypes = {
   children: PropTypes.node,
@@ -38,6 +39,8 @@ const GenericSection = ({
     topDivider && "has-top-divider",
     bottomDivider && "has-bottom-divider"
   );
+
+  const history = useHistory();
 
   return (
     <section {...props} className={outerClasses}>

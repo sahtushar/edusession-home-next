@@ -4,6 +4,8 @@ import {
   FormFeedback,
   FormGroup,
   Input,
+  InputGroup,
+  InputGroupAddon,
   Label,
 } from "reactstrap";
 import React, { useEffect, useState } from "react";
@@ -14,6 +16,7 @@ import { SectionProps } from "../../utils/SectionProps";
 import { callPromoSubmit } from "../../services/authroutes";
 import classNames from "classnames";
 import img from "./../../assets/images/browser/chemistry.png";
+import { useRouter as useHistory } from "next/router";
 
 const propTypes = {
   children: PropTypes.node,
@@ -56,7 +59,7 @@ const ContactForm = ({
   const [phone, setPhone] = useState("");
   const [phoneValid, setPhoneValid] = useState(false);
   const [formValid, setFormValid] = useState(false);
-
+  const history = useHistory();
   useEffect(() => {
     validateForm();
   }, [name, emailValid, phoneValid]);
@@ -74,13 +77,16 @@ const ContactForm = ({
       try {
         await callPromoSubmit(data);
         console.log("Form submitted successfully with data:", data);
-        alert("We have got your details! Now relax and meanwhile you can see our Courses in header above!")
+        alert(
+          "We have got your details! Now relax and meanwhile you can explore our website for more courses!"
+        );
         setName("");
         setEmail("");
         setEmailValid(false);
         setPhone("");
         setPhoneValid(false);
         setFormValid(false);
+        history.push("/");
       } catch (error) {
         console.error("Error submitting form:", error);
         // optionally, display an error message to the user
@@ -110,7 +116,8 @@ const ContactForm = ({
         <div className={innerClasses}>
           <div className="formsection">
             <h1>
-              <span>NEET/JEE Chemistry</span> Online Course
+              <span>Book Demo - </span>
+              <span>NEET/JEE Chemistry</span> Online Course by Edusession
             </h1>
             <p>
               Fill the contact details and we will contact you for Free Demo

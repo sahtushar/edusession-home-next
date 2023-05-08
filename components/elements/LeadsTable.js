@@ -39,9 +39,9 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   };
 
   const getHighlightedRow = (remarks) => {
-    if (remarks.match(/enrolled/i)) {
+    if (remarks?.match(/enrolled/i)) {
       return "enrolled";
-    } else if (remarks.match(/booked/)) {
+    } else if (remarks?.match(/booked/)) {
       return "booked";
     }
     let arr = [
