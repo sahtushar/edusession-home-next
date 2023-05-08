@@ -1,6 +1,7 @@
 import {
   ALLBOOKEDCLASSES,
   ALLFORMS,
+  ALLPROMOLEADS,
   BOOKFORM,
   FEEDBACKFETCH,
   FEEDBACKSUBMIT,
@@ -165,6 +166,23 @@ export const callAllBookedClasses = async (body) => {
     method: "post",
     maxBodyLength: Infinity,
     url: ALLBOOKEDCLASSES,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "x-access-token": localStorage.getItem("auth-token"),
+    },
+    data: data,
+  };
+  let result = await axios(config);
+
+  return result;
+};
+
+export const callAllPromoLeads = async (body) => {
+  var data = qs.stringify(body);
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: ALLPROMOLEADS,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "x-access-token": localStorage.getItem("auth-token"),

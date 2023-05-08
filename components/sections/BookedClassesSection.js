@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import {
   callAllBookedClasses,
   callAllLocationsData,
+  callAllPromoLeads,
 } from "../../services/authroutes";
 
 import SectionHeader from "./partials/SectionHeader";
@@ -27,6 +28,7 @@ const BookedClassesSection = ({
   ...props
 }) => {
   const [data, setdata] = useState([]);
+  const [promodata, setpromodata] = useState([]);
   const [locationData, setLocationData] = useState({});
   const history = useHistory();
   const [chartComp, setChartComp] = useState(null);
@@ -127,6 +129,19 @@ const BookedClassesSection = ({
         setIsLoading(false);
         history.push("/");
       });
+      
+      callAllPromoLeads(body)
+      .then((res) => {
+        setpromodata(res.data.forms || []);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        if (checkauthfailed(err, setIsLoading, history)) {
+          return;
+        }
+        setIsLoading(false);
+        history.push("/");
+      });
   }, []);
   const outerClasses = classNames(
     "adminpanel section",
@@ -156,6 +171,31 @@ const BookedClassesSection = ({
             className="center-content"
             from="adminPanel"
           />
+          <div className="table-responsive">
+            <h2 style={{ color: "#5658dd", margin: "0" }}>Promo Leads</h2>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Course</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {promodata.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.email}</td>
+                    <td>{item.name}</td>
+                    <td>{item.mobile}</td>
+                    <td>{item.course}</td>
+                    <td>{item.src}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className="table-responsive">
             <h2 style={{ color: "#5658dd", margin: "0" }}>Booked Classes</h2>
             <table className="table">

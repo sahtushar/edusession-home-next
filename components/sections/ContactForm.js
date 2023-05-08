@@ -74,6 +74,7 @@ const ContactForm = ({
       try {
         await callPromoSubmit(data);
         console.log("Form submitted successfully with data:", data);
+        alert("We have got your details! Now relax and meanwhile you can see our Courses in header above!")
         setName("");
         setEmail("");
         setEmailValid(false);
@@ -113,7 +114,7 @@ const ContactForm = ({
             </h1>
             <p>
               Fill the contact details and we will contact you for Free Demo
-              Booking and further process
+              Booking and further process.
             </p>
             <Form onSubmit={handleSubmit}>
               <FormGroup className="inputform">

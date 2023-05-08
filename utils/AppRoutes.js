@@ -19,6 +19,7 @@ export const FEEDBACKSUBMIT = `${BASEURL}/api/feedbacksubmit`;
 export const FEEDBACKFETCH = `${BASEURL}/api/feedbackfetch`;
 export const ALLFORMS = `${BASEURL}/api/bookedClass`;
 export const ALLBOOKEDCLASSES = `${BASEURL}/api/getBookedClasses`;
+export const ALLPROMOLEADS = `${BASEURL}/api/getAllPromoClasses`;
 export const GETCOURSEDATA = `${BASEURL}/api/getCourseData`;
 export const TRACKLOCATION = `${BASEURL}/api/trackLocation`;
 export const PROMOSUBMIT = `${BASEURL}/api/promosubmit`;
