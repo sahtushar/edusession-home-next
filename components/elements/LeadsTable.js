@@ -37,33 +37,35 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
 
     return newdate;
   };
-  
-  const getHighlightedRow=(remarks) => {
-    if(remarks.match(/enrolled/i)){
+
+  const getHighlightedRow = (remarks) => {
+    if (remarks.match(/enrolled/i)) {
       return "enrolled";
-    }
-    else if(remarks.match(/booked/)){
+    } else if (remarks.match(/booked/)) {
       return "booked";
     }
-    let arr=[
+    let arr = [
       "call back",
       "reachable",
       "not connected",
       "unable to connect",
-      "unable to contact"
-    ]
-    for(let i=0;i<arr.length;i++){
-      if(remarks?.toLocaleLowerCase()?.match(arr[i].toLocaleLowerCase())){
+      "unable to contact",
+    ];
+    for (let i = 0; i < arr.length; i++) {
+      if (remarks?.toLocaleLowerCase()?.match(arr[i].toLocaleLowerCase())) {
         return "highlighted";
       }
     }
   };
-  
+
   const currentPageData = allLeads
     .slice(offset, offset + PER_PAGE)
     .map((item, index) => (
       <>
-        <tr key={`${index}__leads`} className={`${getHighlightedRow(item.userdata.remarks)}`}>
+        <tr
+          key={`${index}__leads`}
+          className={`${getHighlightedRow(item.userdata.remarks)}`}
+        >
           <td>{index + 1}</td>
           <td style={{ color: "black", fontWeight: "bold" }}>
             {getCreationDate(item._id)}
@@ -71,33 +73,41 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
           {Object.values({
             ...item?.userdata,
             ...(item?.postdemo || {}),
-          }).map((val, dataindex) => (
-            <td
-              style={
-                dataindex == 2 || dataindex == 0
-                  ? { color: "brown", fontWeight: "bold" }
-                  : {}
-              }
-              
-            >
-              {dataindex == 2 ? (
-                <div style={{ display: "flex" }}>
-                  <i
-                    onClick={() => {
-                      fetchFeedback(val);
-                    }}
-                    style={{ marginRight: "2px" }}
-                    className="fa fa-edit"
-                  ></i>
-                  <a style={{ color: "blue" }} href={`tel:${getTdValue(val)}`}>
-                    {getTdValue(val)}
-                  </a>
-                </div>
-              ) : (
-                getTdValue(val)
-              )}
-            </td>
-          ))}
+          }).map((val, dataindex) => {
+            // if(val._isAMomentObject){
+            //   return;
+            // }
+            delete item.userdata.date;
+            return (
+              <td
+                style={
+                  dataindex == 2 || dataindex == 0
+                    ? { color: "brown", fontWeight: "bold" }
+                    : {}
+                }
+              >
+                {dataindex == 2 ? (
+                  <div style={{ display: "flex" }}>
+                    <i
+                      onClick={() => {
+                        fetchFeedback(val);
+                      }}
+                      style={{ marginRight: "2px" }}
+                      className="fa fa-edit"
+                    ></i>
+                    <a
+                      style={{ color: "blue" }}
+                      href={`tel:${getTdValue(val)}`}
+                    >
+                      {getTdValue(val)}
+                    </a>
+                  </div>
+                ) : (
+                  getTdValue(val)
+                )}
+              </td>
+            );
+          })}
         </tr>
       </>
     ));
@@ -108,7 +118,11 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     formattedDate: "1",
     "Demo Time": "1",
   };
-  let headers = { ...feedback.userdata, ...demoheaders };
+
+  let feedbackdata = { ...feedback };
+  let headers = { ...feedback.userdata };
+  delete headers["date"];
+  delete feedbackdata.userdata.date;
   return (
     <>
       <Table hover responsive innerRef={tableRef}>
@@ -117,13 +131,13 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
             <th>Count</th>
             <th>Date</th>
             {Object.keys({
-              ...feedback.userdata,
-              ...feedback.postdemo,
+              ...feedbackdata.userdata,
+              ...feedbackdata.postdemo,
             }).map((key) => (
               <th
                 style={{
                   textTransform: "capitalize",
-                  ...(demoheaders[key] ? {color:"brown"} : {}),
+                  ...(demoheaders[key] ? { color: "brown" } : {}),
                 }}
               >
                 {key}
