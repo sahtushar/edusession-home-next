@@ -5,6 +5,7 @@ import "./../assets/scss/style.scss";
 import "./../components/sections/coursestyles.scss";
 import "./../components/sections/bookform.scss";
 import "./../components/sections/signin.scss";
+import "./../components/sections/contactform.scss";
 import "./../components/loader/styles.scss";
 import "./../components/sections/sign-up.scss";
 import "./../components/sections/legal.scss";

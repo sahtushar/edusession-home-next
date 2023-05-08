@@ -49,7 +49,8 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
       "call back",
       "reachable",
       "not connected",
-      "unable to connect"
+      "unable to connect",
+      "unable to contact"
     ]
     for(let i=0;i<arr.length;i++){
       if(remarks?.toLocaleLowerCase()?.match(arr[i].toLocaleLowerCase())){

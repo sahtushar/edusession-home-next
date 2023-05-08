@@ -1,0 +1,51 @@
+.contactform{
+    h1{
+        margin: 0px;
+        margin-bottom: 12px;
+        font-size: 32px;
+        color: #5658dd;
+    }
+    p{
+        font-size: 16px;
+        color: darkgrey !important;
+        margin-bottom: 12px;
+    }
+    .contactformdiv{
+        display: flex;
+    }
+    .courseimg{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 400px;
+            margin: 10px;
+        }
+    }
+    .contactforminner{
+        display: flex;
+
+    }
+    .inputform{
+        margin-bottom: 10px !important;
+    }
+    .formsection{
+        border: 1px solid darkgray;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    .privacytext{
+        font-size: 15px;
+    }
+    @media screen and (max-width: 1024px) {
+        .contactforminner{
+            flex-direction: column;
+        }
+        h1{
+            font-size: 24px;
+        }
+        p{
+            font-size: 13px;
+
+        }
+    }
+}
