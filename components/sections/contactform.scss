@@ -1,4 +1,6 @@
 .contactform{
+    background-image: url(https://img.freepik.com/free-vector/science-scribbles_23-2147501583.jpg?w=740&t=st=1683538158~exp=1683538758~hmac=34435fa…);
+    box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 85%);
     h1{
         margin: 0px;
         margin-bottom: 12px;
@@ -32,6 +34,8 @@
         border: 1px solid darkgray;
         border-radius: 8px;
         padding: 10px;
+        background-color: white;
+        box-shadow: 2px 2px 2px darkgray;
     }
     .privacytext{
         font-size: 15px;
