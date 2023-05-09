@@ -102,12 +102,12 @@ const ContactForm = ({
   };
 
   const validatePhone = (phone) => {
-    const regex = /^\d{10}$/;
+    const regex = /\d+/g;
     setPhoneValid(regex.test(phone));
   };
 
   const validateForm = () => {
-    setFormValid(name && emailValid && phoneValid);
+    setFormValid(name && emailValid);
   };
 
   return (
@@ -152,17 +152,17 @@ const ContactForm = ({
               <FormGroup className="inputform">
                 <Label for="phone">Phone</Label>
                 <Input
-                  type="tel"
+                  type="number"
                   name="phone"
                   id="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  onBlur={() => validatePhone(phone)}
-                  invalid={phone && !phoneValid}
+                  // onBlur={() => validatePhone(phone)}
+                  // invalid={phone && !phoneValid}
                   required
                 />
                 <FormFeedback>
-                  Please enter a 10-digit phone number.
+                  Please enter a valid phone number.
                 </FormFeedback>
               </FormGroup>
               <Button
