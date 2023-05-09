@@ -186,7 +186,7 @@ section.testimonialPage {
   color: rgb(41, 23, 23);
 }
 .features-tiles{
-  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 55%);
+  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 85%);
   background-image: url("https://edemy-react.envytheme.com/images/banner-img3.png");
   background-repeat: no-repeat;  
   background-position: center;
