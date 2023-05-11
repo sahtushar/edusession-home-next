@@ -464,7 +464,7 @@ const TeacherFeedback = ({
               <p>Or Create a new Lead...</p>
               <h2>Basic Info</h2>
               <div className="mb-3">
-                <label htmlFor="fullName">Full Name</label>
+                <label htmlFor="fullName">Full Name (*)</label>
                 <input
                   type="text"
                   className="form-control"
@@ -487,7 +487,7 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="phoneNumber">Phone Number</label>
+                <label htmlFor="phoneNumber">Phone Number(*)</label>
                 <input
                   type="tel"
                   className="form-control"
@@ -499,7 +499,7 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="relationship">Relationship with student</label>
+                <label htmlFor="relationship">Relationship with student(*)</label>
                 {/* <input
                   type="text"
                   className="form-control"
@@ -549,7 +549,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="topicsOfInterest">
-                  Topics/Subjects of Interest
+                  Topics/Subjects of Interest(*)
                 </label>
                 <input
                   type="text"
@@ -563,7 +563,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="preferredCommunication">
-                  Preferred Mode of Communication
+                  Preferred Mode of Communication(*)
                 </label>
                 {/* <input
                   type="text"
@@ -603,7 +603,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="howTheyHeard">
-                  How They Heard About the Demo Class
+                  How They Heard About the Demo Class(*)
                 </label>
                 {/* <input
                   type="text"
@@ -645,7 +645,7 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="gender">Gender</label>
+                <label htmlFor="gender">Gender (*)</label>
                 <select
                   className="form-control"
                   id="gender"
@@ -662,7 +662,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="educationalBackground">
-                  Educational Background
+                  Educational Background (*)
                 </label>
                 <select
                   className="form-control"
@@ -676,7 +676,7 @@ const TeacherFeedback = ({
                 </select>
               </div>
               <div className="mb-3">
-                <label htmlFor="remarks">Remarks (Call Activity)</label>
+                <label htmlFor="remarks">Remarks (Call Activity) (*)</label>
                 {/* <input
                   type="text"
                   className="form-control"
