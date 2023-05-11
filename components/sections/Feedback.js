@@ -6,6 +6,7 @@ import {
   educationalBackground,
   jokes,
   verifyIsUserAuthenticated,
+  RelationShipStudent
 } from "../../utils/AppConstant";
 import React, { useEffect, useRef } from "react";
 import {
@@ -70,6 +71,7 @@ const TeacherFeedback = ({
       fullName: "",
       email: "",
       phoneNumber: "",
+      relationship:"",
       selectedCourse: "",
       topicsOfInterest: "",
       preferredCommunication: "",
@@ -208,6 +210,7 @@ const TeacherFeedback = ({
         fullName: feedback.userdata.fullName,
         email: feedback.userdata.email,
         phoneNumber: feedback.userdata.phoneNumber,
+        relationship: feedback.userdata.relationship,
         topicsOfInterest: feedback.userdata.topicsOfInterest,
         selectedCourse: feedback.userdata.selectedCourse,
         preferredCommunication: feedback.userdata.preferredCommunication,
@@ -494,6 +497,34 @@ const TeacherFeedback = ({
                   onChange={handleFeedbackChange}
                   required
                 />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="relationship">Relationship with student</label>
+                {/* <input
+                  type="text"
+                  className="form-control"
+                  id="remarks"
+                  name="remarks.userdata"
+                  value={feedback.userdata.remarks}
+                  onChange={handleFeedbackChange}
+                /> */}
+                <select
+                  type="text"
+                  className="form-control"
+                  id="relationship"
+                  name="relationship.userdata"
+                  value={feedback.userdata.relationship}
+                  onChange={handleFeedbackChange}
+                  required
+                >
+                  {RelationShipStudent()}
+                </select>
+                <label>
+                  Value:
+                  <span style={{ color: "black" }}>
+                    {feedback?.userdata?.relationship}
+                  </span>
+                </label>
               </div>
               <div className="mb-3">
                 <label htmlFor="selectedCourse">Selected Course</label>

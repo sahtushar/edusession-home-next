@@ -317,6 +317,25 @@ export const SUBJECTS = (course) => {
   return res;
 };
 
+export const RelationShipStudent = () => {
+  return <><option value="">Choose One</option>
+  <option value="Self">Self</option>
+    <option value="Parent">Parent</option>
+    <option value="Guardian">Guardian</option>
+    <option value="Grandparent">Grandparent</option>
+    <option value="Aunt/Uncle">Aunt/Uncle</option>
+    <option value="Sibling">Sibling</option>
+    <option value="Other relative">Other relative</option>
+    <option value="Family friend">Family friend</option>
+    <option value="Teacher">Teacher</option>
+    <option value="School staff">School staff</option>
+    <option value="Counselor">Counselor</option>
+    <option value="Coach">Coach</option>
+    <option value="Mentor">Mentor</option>
+    <option value="Employer">Employer</option>
+    <option value="Other">Other</option></>
+};
+
 export const verifyIsUserAuthenticated = () => {
   if (typeof window !== "undefined") {
     if (
