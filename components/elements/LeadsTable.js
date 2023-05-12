@@ -58,6 +58,23 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     }
   };
 
+  let headers = {
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    relationship:"",
+    selectedCourse: "",
+    topicsOfInterest: "",
+    preferredCommunication: "",
+    geographicLocation: "",
+    howTheyHeard: "",
+    age: "",
+    gender: "",
+    educationalBackground: "",
+    remarks: "",
+    remarks2: "",
+  };
+
   const currentPageData = allLeads
     .slice(offset, offset + PER_PAGE)
     .map((item, index) => (
@@ -86,7 +103,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
                     : {}
                 }
               >
-                {dataindex == 1 ? (
+                {dataindex == 2 ? (
                   <div style={{ display: "flex" }}>
                     <i
                       onClick={() => {
@@ -120,7 +137,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   };
 
   let feedbackdata = { ...feedback };
-  let headers = { ...feedback.userdata };
+  let headers = { ...headers };
   delete headers["date"];
   delete feedbackdata.userdata.date;
   return (
@@ -131,7 +148,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
             <th>Count</th>
             <th>Date</th>
             {Object.keys({
-              ...feedbackdata.userdata,
+              ...headers,
               ...feedbackdata.postdemo,
             }).map((key) => (
               <th
