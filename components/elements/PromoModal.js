@@ -5,11 +5,19 @@ import Modal from "react-modal";
 import MyImage from "./MyImage";
 import img from "./../../assets/images/spoken-en-promo.jpeg";
 
-const PromoModal = ({ promoimg, link }) => {
+const PromoModal = ({ promoimg, link, timeout }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    setIsModalOpen(true);
+    if(timeout){
+      setTimeout(() => {
+        setIsModalOpen(true);
+      }, timeout);
+    }
+    else{
+      setIsModalOpen(true);
+    }
+  
   }, []);
 
   const handleCloseModal = () => {

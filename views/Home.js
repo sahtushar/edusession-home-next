@@ -59,7 +59,7 @@ const Home = ({ city, cityData }) => {
   };
   return (
     <>
-      <PromoModal promoimg={img} link={"/courses?course=spoken-english"}/>
+      <PromoModal promoimg={img} link={"/courses?course=spoken-english"} timeout="3000"/>
       <StructuredData data={homepagestructuredata} />
       <Head>
         <meta charSet="utf-8" />
