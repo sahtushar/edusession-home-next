@@ -58,7 +58,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     }
   };
 
-  let headers = {
+  let headersfinal = {
     fullName: "",
     email: "",
     phoneNumber: "",
@@ -137,7 +137,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   };
 
   let feedbackdata = { ...feedback };
-  let headers = { ...headers };
+  let headers = { ...headersfinal };
   delete headers["date"];
   delete feedbackdata.userdata.date;
   return (
