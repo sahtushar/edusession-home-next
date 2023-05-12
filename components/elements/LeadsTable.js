@@ -103,7 +103,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
                     : {}
                 }
               >
-                {dataindex == 2 ? (
+                {dataindex == 3 ? (
                   <div style={{ display: "flex" }}>
                     <i
                       onClick={() => {
