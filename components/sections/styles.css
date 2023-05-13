@@ -163,6 +163,8 @@ section.testimonialPage {
   background-image: url("./../../assets/images/backgrounds/u5.png");
   background-repeat: no-repeat;  
   background-position: center;
+  background-attachment: fixed;
+
 }
 .ndabackground{
   background-image: url("./../../assets/images/backgrounds/nda2.jpg");
@@ -187,9 +189,10 @@ section.testimonialPage {
 }
 .features-tiles{
   box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 85%);
-  background-image: url("https://edemy-react.envytheme.com/images/banner-img3.png");
+  background-image: url("./../../assets/images//backgrounds/u6.png");
   background-repeat: no-repeat;  
   background-position: center;
+  background-attachment: fixed;
 }
 .split-wrap {
   border: 1px dotted #5658dd;

@@ -77,8 +77,11 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
 
   const currentPageData = allLeads
     .slice(offset, offset + PER_PAGE)
-    .map((item, index) => (
-      <>
+    .map((item, index) => {
+      if(item.userdata.relationship == undefined){
+        item.userdata.relationship == "N/A"
+      }
+      return <>
         <tr
           key={`${index}__leads`}
           className={`${getHighlightedRow(item.userdata.remarks)}`}
@@ -95,6 +98,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
             //   return;
             // }
             delete item.userdata.date;
+           
             return (
               <td
                 style={
@@ -127,7 +131,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
           })}
         </tr>
       </>
-    ));
+    });
 
   const pageCount = Math.ceil(allLeads.length / PER_PAGE);
   let demoheaders = {
