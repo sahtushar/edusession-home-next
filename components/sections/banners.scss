@@ -17,12 +17,15 @@
     100% { width: var(--finalSize); opacity: 0; }
   }
    */
+   .firework{
+    z-index: 9999;
+   }
   .firework,
   .firework::before,
   .firework::after
   {
     --initialSize: 0.5vmin;
-    --finalSize: 45vmin;
+    --finalSize: 35vmin;
     --particleSize: 0.2vmin;
     --color1: yellow;
     --color2: khaki;
