@@ -7,6 +7,7 @@ import {
 } from "../utils/AppConstant";
 
 import Approach from "../components/sections/Approach";
+import Banners from "../components/sections/Banners";
 import Courses from "../components/sections/CoursesOverview";
 import FeaturesSplit from "../components/sections/FeaturesSplit";
 import FeaturesTiles from "../components/sections/FeaturesTiles";
@@ -74,6 +75,7 @@ const Home = ({ city, cityData }) => {
       </Head>
       <Header navPosition="right" page="home" cityData={cityData} />
       <main className="site-content">
+      <Banners/>
         <Hero
           className="illustration-section-01"
           data={HeroData}
@@ -81,6 +83,7 @@ const Home = ({ city, cityData }) => {
           rightImg={homepageicon}
           courseIdentifier="homepage"
         />
+      
         <FeaturesTiles
           className="illustration-section-01"
           cityData={cityData}

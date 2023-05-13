@@ -8,6 +8,7 @@ import "./../components/sections/signin.scss";
 import "./../components/sections/contactform.scss";
 import "./../components/loader/styles.scss";
 import "./../components/sections/sign-up.scss";
+import "./../components/sections/banners.scss";
 import "./../components/sections/legal.scss";
 import "./../components/sections/profilepage.scss";
 import "./../components/elements/bookslot.scss";

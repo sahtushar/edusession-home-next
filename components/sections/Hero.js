@@ -13,6 +13,7 @@ import Image from "../elements/Image";
 import ImageHover from "../3dhoverimage";
 import Modal from "../elements/Modal";
 import MoreCourses from "../elements/MoreCourses";
+import MyImage from "../elements/MyImage";
 import { SectionProps } from "../../utils/SectionProps";
 import classNames from "classnames";
 import homepageicon from "./../../assets/images/homepageicon.png";
