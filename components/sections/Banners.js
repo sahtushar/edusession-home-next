@@ -49,10 +49,10 @@ const Banners = ({
     <section {...props} className={outerClasses}>
       <div>
         <div className={innerClasses}>
-            <div className="img1">
+            <div className="img1 dashed" >
              <MyImage src={result10} alt="12th results 2023" /> 
             </div>
-            <div className="img1">
+            <div className="img1 dashed">
              <MyImage src={result12} alt="10th results 2023" /> 
             </div>
         </div>

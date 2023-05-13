@@ -5,10 +5,37 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  .dashed {
+    --b: 3px;  /* border thickness */
+    --s: 30px; /* size of the dashes */
+    --c1: #215A6D;
+    --c2: #92C7A3;
+    position: relative;
+  }
+  .dashed::before {
+    content:"";
+    position: absolute;
+    inset: 0;
+    padding: var(--b);
+    background: 
+      repeating-conic-gradient(var(--c1) 0 25%,var(--c2) 0 50%) 
+      0 0/var(--s) var(--s) round;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
   .img1 {
     display: flex;
     justify-content: center;
     margin: 1rem;
+    img{
+        box-shadow: 3px 2px 2px darkgrey;
+    }
+    
     div {
       display: flex;
       justify-content: center;
