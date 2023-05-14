@@ -158,7 +158,7 @@ section.testimonialPage {
 .homepagesection {
   display: flex;
   text-align: left;
-  padding-top: 3.5rem !important;
+  /* padding-top: 3.5rem !important; */
   box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 55%);
   background-image: url("./../../assets/images/backgrounds/u5.png");
   background-repeat: no-repeat;  
