@@ -499,7 +499,7 @@ const TeacherFeedback = ({
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="relationship">Relationship with student(*)</label>
+                <label htmlFor="relationship">Relationship with student</label>
                 {/* <input
                   type="text"
                   className="form-control"
@@ -515,7 +515,6 @@ const TeacherFeedback = ({
                   name="relationship.userdata"
                   value={feedback.userdata.relationship}
                   onChange={handleFeedbackChange}
-                  required
                 >
                   {RelationShipStudent()}
                 </select>
