@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import CareerGuidanceViewSection from "../components/sections/CareerGuidanceViewSection";
+import CareerGuidanceViewSection from "../components/sections/CareerGuidance";
 import Footer from "../components/footer";
 import Head from "next/head";
 import Header from "../components/layout/Header";
