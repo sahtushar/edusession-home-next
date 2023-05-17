@@ -25,7 +25,7 @@ const SectionHeader = ({ className, data, children, tag, from, ...props }) => {
     <>
       {(data.title || data.paragraph) && (
         <div {...props} className={`${classes}`}>
-          <div className={`container-xs darkheader ${from}`}>
+          <div className={`container darkheader ${from}`}>
             {children}
             {data.title && (
               <Component

@@ -41,6 +41,7 @@ const Hero = ({
   rightImg,
   cityData,
   alt,
+  bookButton,
   ...props
 }) => {
   const [videoModalActive, setVideomodalactive] = useState(false);
@@ -68,6 +69,20 @@ const Hero = ({
     bottomDivider && "has-bottom-divider"
   );
 
+  let mapper = {
+    "career-guidance": (
+      <Button
+        tag="a"
+        color="primary"
+        wideMobile
+        onClick={() => {
+          bookAClass();
+        }}
+      >
+        <i className="fa fa-external-link"> </i>Book Session
+      </Button>
+    ),
+  };
   const bookAClass = () => {
     if (verifyIsUserAuthenticated()) {
       history.push(
@@ -157,16 +172,20 @@ const Hero = ({
 
                 <div className="ctaHomepage">
                   <ButtonGroup>
-                    <Button
-                      tag="a"
-                      color="primary"
-                      wideMobile
-                      onClick={() => {
-                        bookAClass();
-                      }}
-                    >
-                      <i className="fa fa-external-link"> </i>Book a Class
-                    </Button>
+                    {bookButton ? (
+                      mapper[bookButton]
+                    ) : (
+                      <Button
+                        tag="a"
+                        color="primary"
+                        wideMobile
+                        onClick={() => {
+                          bookAClass();
+                        }}
+                      >
+                        <i className="fa fa-external-link"> </i>Book a Class
+                      </Button>
+                    )}
 
                     <Button
                       tag="a"

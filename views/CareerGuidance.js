@@ -4,15 +4,17 @@ import CareerGuidanceViewSection from "../components/sections/CareerGuidance";
 import Footer from "../components/footer";
 import Head from "next/head";
 import Header from "../components/layout/Header";
+import Hero from "../components/sections/Hero";
 import { canonicalPath } from "../utils/AppConstant";
+import careerguidance from "./../assets/images/users/careerguidancehero.png";
 import { useRouter as useHistory } from "next/router";
 
 // import sections
 
-const CareerGuidanceView = (props) => {
+const CareerGuidanceView = (props, ...{ city, cityData }) => {
   const getHelmetData = () => {
     return {
-      title: `Book Online One to One Class ${
+      title: `Edusession Career Guidance and Coaching ${
         cityData?.cityData ? `in ${cityData?.cityData?.display}` : ""
       } | Edusession`,
       desc: "Get One to One Online Tuitions from the best Instructors. Sign up now to get classes from highly qualified tutors for  JEE, NEET, Class 6 to 12, Spoken English, IELTS, CA & more",
@@ -20,7 +22,19 @@ const CareerGuidanceView = (props) => {
   };
 
   const history = useHistory();
-  const cityData = props.cityData;
+
+  let HeroData = {
+    header: city
+      ? `<span>
+          Online Live <span style="color:#5658dd">One to One</span>
+          Personalized Class</span>
+        </span>`
+      : `<span>
+      Unlock Your Potential: Expert <span style="color:#5658dd">Career Guidance</span> for 10th and 12th Grade Students`,
+    subheader: `Introducing Edusession, a comprehensive career guidance program designed specifically for students who have just completed their 10th or 12th exams. Discover your true potential and make informed decisions about your future career path with the help of industry experts.`,
+    rightImg: careerguidance,
+    subheadertag: "h2",
+  };
 
   return (
     <>
@@ -45,6 +59,14 @@ const CareerGuidanceView = (props) => {
         {/* <Cta split /> */}
         {/* <Courses /> */}
         {/* <Approach /> */}
+        <Hero
+          className="illustration-section-01"
+          data={HeroData}
+          cityData={cityData}
+          rightImg={careerguidance}
+          courseIdentifier="career-guidance"
+          bookButton="career-guidance"
+        />
         <CareerGuidanceViewSection
           course={props.course}
           setIsLoading={props.setIsLoading}
