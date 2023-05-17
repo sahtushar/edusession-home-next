@@ -10,7 +10,7 @@ const Footer = ({ city, cityData }) => {
     { text: "IELTS (UKVI - Academic - General)" },
     { text: "JEE Mains and Advanced (MH-CET and GCET)" },
     { text: "NEET UG" },
-    { text: "NDA (National Defence Academy)"}
+    { text: "NDA (National Defence Academy)" },
   ];
   let spokenEnglish = [
     { text: "Spoken English" },
@@ -246,7 +246,10 @@ const Footer = ({ city, cityData }) => {
           </div>
           <p>
             Copyright © 2023 Edusession. All Rights Reserved. For any query,
-            Contact us at <span>+91 82378 15800</span>
+            Contact us at <span>+91 82378 15800</span>{" "}
+          </p>
+          <p>
+          <i className="fa fa-envelope-o"></i>{" "}<span>support@edusession.live</span>
           </p>
         </div>
       </footer>

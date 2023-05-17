@@ -28,7 +28,7 @@ const PromoModal = ({ promoimg, link, timeout }) => {
     <Modal
       isOpen={isModalOpen}
       onRequestClose={handleCloseModal}
-      contentLabel="Example Modal"
+      contentLabel="Promo Modal"
       shouldCloseOnOverlayClick={true}
       style={{
         overlay: {
