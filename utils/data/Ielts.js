@@ -22,10 +22,22 @@ export const IELTS = {
         "Taking the IELTS test is essential for many reasons, such as studying or working abroad, immigrating to an English-speaking country, or joining a professional organization. The test helps candidates demonstrate their English language proficiency level, which is required by most universities, colleges, employers, and immigration authorities. Achieving a high score in the IELTS test can open up new opportunities and increase the chances of success in various fields.",
     },
     {
-      title:"IELTS Registration, Test Dates, Test Centers - Useful Links ",
-      content:`<div class="ieltecon">
-      <ol><li><p>British Council India - IELTS: This is the official website of the British Council in India, where you can find information about the IELTS exam, test dates, and registration process. [Link: <a href="https://www.britishcouncil.in/exam/ielts" target="_new">https://www.britishcouncil.in/exam/ielts</a>]</p></li><li><p>IDP IELTS India: This is the official website of IDP Education India, where you can find information about the IELTS exam, test dates, and registration process. [Link: <a href="https://www.ieltsidpindia.com/" target="_new">https://www.ieltsidpindia.com/</a>]</p></li><li><p>IELTS Registration - British Council: This page on the British Council India website provides detailed information on how to register for the IELTS exam, including online registration and payment options. [Link: <a href="https://www.britishcouncil.in/exam/ielts/registration" target="_new">https://www.britishcouncil.in/exam/ielts/registration</a>]</p></li><li><p>IELTS Registration - IDP India: This page on the IDP IELTS India website provides step-by-step instructions on how to register for the IELTS exam, including online registration and payment options. [Link: <a href="https://www.ieltsidpindia.com/how-to-register-for-ielts" target="_new">https://www.ieltsidpindia.com/how-to-register-for-ielts</a>]</p></li><li><p>IELTS Test Dates - British Council: This page on the British Council India website allows you to search for available test dates and locations for the IELTS exam in India. [Link: <a href="https://www.britishcouncil.in/exam/ielts/dates-locations" target="_new">https://www.britishcouncil.in/exam/ielts/dates-locations</a>]</p></li><li><p>IELTS Test Dates - IDP India: This page on the IDP IELTS India website provides a search tool to find available test dates and locations for the IELTS exam in India. [Link: <a href="https://www.ieltsidpindia.com/ielts-test-dates" target="_new">https://www.ieltsidpindia.com/ielts-test-dates</a>]</p></li><
-      /ol><p>If you have any specific questions or if there's anything else I can assist you with, please let me know!</p></div>`
+      title: "IELTS Registration, Test Dates, Test Centers - Useful Links ",
+      content: `<div class="ieltecon">
+      <ol>
+      <li>
+      <p>IDP IELTS India: This is the official website of IDP Education India, where you can find information about the IELTS exam, test dates, and registration process. [Link: <a href="https://www.ieltsidpindia.com/" target="_new">https://www.ieltsidpindia.com/</a>]</p>
+      </li>
+      <li>
+      <p>IELTS Registration - IDP India: This page on the IDP IELTS India website provides step-by-step instructions on how to register for the IELTS exam, including online registration and payment options. [Link: <a href="https://www.ieltsidpindia.com/registration/registration" target="_new">https://www.ieltsidpindia.com/registration/registration</a>]</p></li>
+      <li><p>
+        IELTS Test Dates:  [Link: <a href="https://www.ieltsidpindia.com/registration/ielts-test-dates-india" target="_new">https://www.ieltsidpindia.com/registration/ielts-test-dates-india</a>]
+      </p></li>
+      <li><p>
+      IELTS Test Centers:  [Link: <a href="https://www.ieltsidpindia.com/ielts_test_centres/india" target="_new">https://www.ieltsidpindia.com/ielts_test_centres/india</a>]
+      </p></li>
+      </ol>
+      </div>`,
     },
     {
       title: " What is UKVI IELTS?",
