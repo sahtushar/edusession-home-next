@@ -746,7 +746,6 @@ export const getCourseKeywords = {
       "post-exam",
       "Mock tests",
       "motivational",
-      "IELTS",
       "study material",
       "UKVI",
       "Academic",

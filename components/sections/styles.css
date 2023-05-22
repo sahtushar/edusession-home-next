@@ -1,10 +1,12 @@
 .mb-32 {
   margin-bottom: 32px !important;
 }
-main{
-  background: #FFFFFF;
+main {
+  background: #ffffff;
 }
-
+.ieltecon a {
+  color: blue !important;
+}
 .hero-content2 h1 {
   color: black;
   overflow: hidden;
@@ -16,8 +18,12 @@ main{
   animation-fill-mode: forwards;
 }
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 .container-xs p {
   color: black;
@@ -28,7 +34,7 @@ main{
   line-height: 35px;
   color: black;
   font-weight: 400;
-  text-shadow:  1px 1px lightgray;
+  text-shadow: 1px 1px lightgray;
 }
 .site-header .container {
   max-width: 90% !important;
@@ -161,14 +167,20 @@ section.testimonialPage {
   /* padding-top: 3.5rem !important; */
   box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 55%);
   background-image: url("./../../assets/images/backgrounds/u5.png");
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-
 }
-.ndabackground{
+.ndabackground {
   background-image: url("./../../assets/images/backgrounds/nda2.jpg");
-  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 20%);
+  box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 40%);
+  background-size: cover;
+}
+.ieltsbackgound {
+  background-image: url("./../../assets/images/backgrounds/ielts.jpg");
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.75);
+  background-attachment:scroll;
+  background-size: contain;
 }
 .hero-figure {
   padding-top: 2rem;
@@ -187,10 +199,10 @@ section.testimonialPage {
 .features-tiles-item-content h5 {
   color: rgb(41, 23, 23);
 }
-.features-tiles{
+.features-tiles {
   box-shadow: inset 0 0 0 1000px rgb(255 255 255 / 85%);
   background-image: url("./../../assets/images//backgrounds/u6.png");
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 }

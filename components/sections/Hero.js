@@ -102,13 +102,18 @@ const Hero = ({
       history.push("/sign-in");
     }
   };
+  const getBackgroundClass = {
+    nda:"ndabackground",
+    "ielts-ukvi-academic-general":"ieltsbackgound"
+  };
+
   return (
     <>
       {/* <QuarkEvent/> */}
       <section
         {...props}
         className={`${outerClasses} homepagesection ${
-          course == "nda" ? "ndabackground" : ""
+          getBackgroundClass[course] || ""
         }`}
       >
         <div className="container-sm">
