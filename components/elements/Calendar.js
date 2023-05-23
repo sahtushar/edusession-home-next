@@ -36,9 +36,9 @@ const Calendar = ({ events }) => {
               {eventsByDate[formattedDate].map((event) => (
                 <div key={event.title} className="calendar-event bg-light p-2 mb-2 me-2">
                   <div className="event-time">{event.userdata.time}</div>
-                  <div className="event-fullname">{event.userdata.fullName}</div>
-                  <div className="event-phonenumber">{event.userdata.phoneNumber}</div>
-                  <div className="event-selectedCourse">{event.userdata.selectedCourse}</div>
+                  <div className="event-fullname userdata">{event.userdata.fullName}</div>
+                  <div className="event-phonenumber userdata">{event.userdata.phoneNumber}</div>
+                  <div className="event-selectedCourse userdata">{event.userdata.selectedCourse}</div>
                 </div>
               ))}
             </div>
