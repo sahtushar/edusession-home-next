@@ -4,7 +4,7 @@ import React from "react";
 const Calendar = ({ events }) => {
   // Sort events by date
   // Filter out events without time
-  const filteredEvents = events.filter((event) => event.userdata.time);
+  const filteredEvents = events.filter((event) => event.userdata.date & event.userdata.remarks.match(/demo booked/i));
 
   // Sort events by date
   const sortedEvents = [...filteredEvents].sort((a, b) => {
