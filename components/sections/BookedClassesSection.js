@@ -5,6 +5,8 @@ import {
   callAllBookedClasses,
   callAllLocationsData,
   callAllPromoLeads,
+  eventSignUp,
+  fetchFeedbackFetch,
 } from "../../services/authroutes";
 
 import SectionHeader from "./partials/SectionHeader";
@@ -12,6 +14,7 @@ import { checkauthfailed } from "../../utils/AppConstant";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useRouter as useHistory } from "next/router";
+import Calendar from "../elements/Calendar";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -32,12 +35,15 @@ const BookedClassesSection = ({
   const [locationData, setLocationData] = useState({});
   const history = useHistory();
   const [chartComp, setChartComp] = useState(null);
+  const [allLeads, setAllLeads] = useState([]);
+
   const setIsLoading = props.setIsLoading;
   useEffect(() => {
     let body = {
       username: localStorage.getItem("username"),
     };
     setIsLoading(true);
+    
     callAllLocationsData(body).then((res) => {
       const uniqueCities = [
         ...new Set(res.data.forms.databycity.map((item) => item.city)),
@@ -117,6 +123,7 @@ const BookedClassesSection = ({
         </div>
       );
     });
+    fetchAllFeedback();
     callAllBookedClasses(body)
       .then((res) => {
         setdata(res.data.forms || []);
@@ -162,6 +169,27 @@ const BookedClassesSection = ({
     title: "Admin Panel",
   };
 
+  async function fetchAllFeedback() {
+    let body = {
+      showAll: true,
+      username: localStorage?.getItem("username"),
+    };
+    try {
+      setIsLoading(true);
+      let res = await fetchFeedbackFetch(body);
+      setIsLoading(false);
+      setAllLeads(res.data.forms);
+      // setAllLeadsOriginal(res.data.forms);
+    } catch (err) {
+      setIsLoading(false);
+      if (checkauthfailed(err, setIsLoading, history)) {
+        return;
+      }
+      alert("Lead/User Not Found");
+      return;
+    }
+  }
+
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
@@ -171,6 +199,11 @@ const BookedClassesSection = ({
             className="center-content"
             from="adminPanel"
           />
+          <div>
+          {
+            allLeads.length && <Calendar events={allLeads}/>
+          }
+          </div>
           <div className="table-responsive">
             <h2 style={{ color: "#5658dd", margin: "0" }}>Promo Leads</h2>
             <table className="table">

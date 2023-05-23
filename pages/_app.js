@@ -17,6 +17,7 @@ import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
 import "./../components/sections/feedback.scss";
 import "./../components/elements/modal.scss";
+import "./../components/elements/calendar.scss";
 
 import * as React from "react";
 
@@ -154,8 +155,8 @@ export default function MyApp(props) {
         />
       </Head>
       <ErrorBoundary>
-       <Analytics />
-      <Component {...pageProps} setIsLoading={setIsLoading} />
+        <Analytics />
+        <Component {...pageProps} setIsLoading={setIsLoading} />
       </ErrorBoundary>
       {loading && <Loader />}
       <WhatsApp />
