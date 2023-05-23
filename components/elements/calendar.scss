@@ -1,5 +1,12 @@
 .calendarWrapper{
     font-size: 14px;
+    .calendar{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .calendar-day{
+        padding: 5px;
+    }
     .today{
         .calendar-day-header{
             color: white !important;
