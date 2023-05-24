@@ -14,7 +14,7 @@ const Logo = ({ className, cityData, ...props }) => {
   const history = useHistory();
   return (
     <div {...props} className={classes}>
-      <h3 className="mt-5">
+      <h3 className="">
         <a
           onClick={() => {
             history.push(`/${cityData?.cityData ? `/city/${cityData?.city}` : ""}`);
