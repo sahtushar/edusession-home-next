@@ -96,6 +96,23 @@ export const WhatsAppNo = +918237815800;
 //   "Class 7 (CBSE / ICSE / State Boards)": "class-7",
 // };
 
+export function removeCountryCodeAndSpaces(mobileNumber) {
+  let mobileNumberWithouSpace = mobileNumber.replace(/\s/g, "");
+  if(mobileNumberWithouSpace.length == 10){
+    return mobileNumberWithouSpace;
+  }
+  // Remove "91" or "+91" from the beginning of the mobile number
+  const countryCodeRemoved = mobileNumber.replace(/^\+?91/, "");
+
+  // Remove spaces from the mobile number
+  const spacesRemoved = countryCodeRemoved.replace(/\s/g, "");
+
+  // Remove leading zeros from the mobile number
+  const leadingZerosRemoved = spacesRemoved.replace(/^0+/, "");
+
+  return leadingZerosRemoved;
+}
+
 export const CoursesDropdown = () => {
   return (
     <>

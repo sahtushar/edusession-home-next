@@ -2,11 +2,71 @@ import React, { useRef, useState } from "react";
 
 import ReactPaginate from "react-paginate";
 import { Table } from "reactstrap";
+import { removeCountryCodeAndSpaces } from "../../utils/AppConstant";
 
 const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const PER_PAGE = 10;
+
+  const getCreationDate = (id) => {
+    var timestamp = id.toString().substring(0, 8);
+
+    var date = new Date(parseInt(timestamp, 16) * 1000);
+    var month = date.getUTCMonth() + 1; //months from 1-12
+    var day = date.getUTCDate();
+    var year = date.getUTCFullYear();
+
+    let newdate = day + "/" + month + "/" + year;
+
+    return newdate;
+  };
+
+  function flattenLeadsArray(allLeads) {
+    const flattenedLeads = [];
+
+    allLeads.forEach((lead) => {
+      const flattenedLead = {};
+
+      function flattenObject(obj, prefix = "") {
+        for (const key in obj) {
+          if (key == "date") return;
+          if (obj.hasOwnProperty(key)) {
+            const propName = key;
+            const value = obj[key];
+
+            if (
+              typeof value === "object" &&
+              value !== null &&
+              !Array.isArray(value)
+            ) {
+              flattenObject(value, propName);
+            } else {
+              flattenedLead[propName] = value;
+            }
+          }
+        }
+      }
+
+      flattenObject(lead);
+      flattenedLeads.push(flattenedLead);
+    });
+    
+    for (let i = 0; i < flattenedLeads.length; i++) {
+      flattenedLeads[i].creationDate = getCreationDate(flattenedLeads[i]._id);
+      flattenedLeads[i].phoneNumber = removeCountryCodeAndSpaces(flattenedLeads[i].phoneNumber);
+    }
+    for (let i = 0; i < flattenedLeads.length; i++) {
+      //delete flattenedLeads[i]._id;
+      delete flattenedLeads[i].date;
+      delete flattenedLeads[i].roles;
+    }
+    
+    return flattenedLeads;
+  }
+
+
+  let formattedallLeads = flattenLeadsArray(allLeads);
 
   function handlePageClick({ selected: selectedPage }) {
     setCurrentPage(selectedPage);
@@ -25,18 +85,6 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     }
   };
   const offset = currentPage * PER_PAGE;
-  const getCreationDate = (id) => {
-    var timestamp = id.toString().substring(0, 8);
-
-    var date = new Date(parseInt(timestamp, 16) * 1000);
-    var month = date.getUTCMonth() + 1; //months from 1-12
-    var day = date.getUTCDate();
-    var year = date.getUTCFullYear();
-
-    let newdate = day + "/" + month + "/" + year;
-
-    return newdate;
-  };
 
   const getHighlightedRow = (remarks) => {
     if (remarks?.match(/enrolled/i)) {
@@ -59,10 +107,11 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   };
 
   let headersfinal = {
+    creationDate:"",
     fullName: "",
     email: "",
     phoneNumber: "",
-    relationship:"",
+    relationship: "",
     selectedCourse: "",
     topicsOfInterest: "",
     preferredCommunication: "",
@@ -75,65 +124,59 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     remarks2: "",
   };
 
-  const currentPageData = allLeads
+  const currentPageData = formattedallLeads
     .slice(offset, offset + PER_PAGE)
     .map((item, index) => {
-      if(item.userdata.relationship == undefined){
-        item.userdata.relationship == "N/A"
-      }
-      return <>
-        <tr
-          key={`${index}__leads`}
-          className={`${getHighlightedRow(item.userdata.remarks)}`}
-        >
-          <td>{index + 1}</td>
-          <td style={{ color: "black", fontWeight: "bold" }}>
-            {getCreationDate(item._id)}
-          </td>
-          {Object.values({
-            ...item?.userdata,
-            ...(item?.postdemo || {}),
-          }).map((val, dataindex) => {
-            // if(val._isAMomentObject){
-            //   return;
-            // }
-            delete item.userdata.date;
-           
-            return (
-              <td
-                style={
-                  dataindex == 2 || dataindex == 0
-                    ? { color: "brown", fontWeight: "bold" }
-                    : {}
-                }
-              >
-                {dataindex == 2 ? (
-                  <div style={{ display: "flex" }}>
-                    <i
-                      onClick={() => {
-                        fetchFeedback(val);
-                      }}
-                      style={{ marginRight: "2px" }}
-                      className="fa fa-edit"
-                    ></i>
-                    <a
-                      style={{ color: "blue" }}
-                      href={`tel:${getTdValue(val)}`}
-                    >
-                      {getTdValue(val)}
-                    </a>
-                  </div>
-                ) : (
-                  getTdValue(val)
-                )}
-              </td>
-            );
-          })}
-        </tr>
-      </>
+      return (
+        <>
+          <tr
+            key={`${index}__leads`}
+            className={`${getHighlightedRow(item.remarks)}`}
+          >
+            <td>{index + 1}</td>
+            {/* {Object.values(item).map((val, dataindex) => {
+              // if(val._isAMomentObject){
+              //   return;
+              // } */}
+              {Object.keys(headersfinal).map((header, dataindex)=>{
+                return (
+                  <td
+                    style={
+                      dataindex == 2 || dataindex == 0
+                        ? { color: "brown", fontWeight: "bold" }
+                        : {}
+                    }
+                  >
+                    {dataindex == 3 ? (
+                      <div style={{ display: "flex" }}>
+                        <i
+                          onClick={() => {
+                            fetchFeedback(item._id);
+                          }}
+                          style={{ marginRight: "2px" }}
+                          className="fa fa-edit"
+                        ></i>
+                        <a
+                          style={{ color: "blue" }}
+                          href={`tel:${getTdValue(item[header])}`}
+                        >
+                          {getTdValue(item[header])}
+                        </a>
+                      </div>
+                    ) : (
+                      getTdValue(item[header])
+                    )}
+                  </td>
+                );
+              })}
+             
+            {/* })} */}
+          </tr>
+        </>
+      );
     });
 
-  const pageCount = Math.ceil(allLeads.length / PER_PAGE);
+  const pageCount = Math.ceil(formattedallLeads.length / PER_PAGE);
   let demoheaders = {
     "Demo Date": "1",
     formattedDate: "1",
@@ -150,10 +193,8 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
         <thead>
           <tr key={"header"}>
             <th>Count</th>
-            <th>Date</th>
             {Object.keys({
-              ...headers,
-              ...feedbackdata.postdemo,
+              ...headersfinal,
             }).map((key) => (
               <th
                 style={{

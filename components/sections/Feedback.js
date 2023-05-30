@@ -2,11 +2,12 @@ import { Button, Table } from "reactstrap";
 import {
   CallActivity,
   CoursesDropdown,
+  RelationShipStudent,
   checkauthfailed,
   educationalBackground,
   jokes,
-  verifyIsUserAuthenticated,
-  RelationShipStudent
+  removeCountryCodeAndSpaces,
+  verifyIsUserAuthenticated
 } from "../../utils/AppConstant";
 import React, { useEffect, useRef } from "react";
 import {
@@ -166,13 +167,19 @@ const TeacherFeedback = ({
       setAllLeads(allLeadsOriginal);
     }
   }, [nametext]);
-
+  
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
 
     if (subCategory == "userdata") {
-      setFeedback((prevFeedback) => ({
+      if(category == "phoneNumber"){
+        setFeedback((prevFeedback) => ({
+          ...prevFeedback,
+          userdata: { ...prevFeedback.userdata, ...{ [category]: removeCountryCodeAndSpaces(value) } },
+        }));
+      }
+      else setFeedback((prevFeedback) => ({
         ...prevFeedback,
         userdata: { ...prevFeedback.userdata, ...{ [category]: value } },
       }));
@@ -309,15 +316,16 @@ const TeacherFeedback = ({
     }
   };
 
-  async function fetchFeedback(phone) {
+  async function fetchFeedback(id) {
     let body = {
-      mobile: phone?.trim() || mobile?.trim(),
+      _id: id.toString(),
       username: localStorage?.getItem("username"),
     };
-    if (
-      (phone?.trim() && phone?.trim()?.length >= 10) ||
-      (mobile?.trim() && mobile?.trim()?.length >= 10)
-    ) {
+    // if (
+    //   (phone?.trim() && phone?.trim()?.length >= 10) ||
+    //   (mobile?.trim() && mobile?.trim()?.length >= 10)
+    // ) 
+    {
       try {
         setIsLoading(true);
         let res = await fetchFeedbackFetch(body);
@@ -362,25 +370,6 @@ const TeacherFeedback = ({
     }
   }
 
-  let exludedheaders = {
-    roles: true,
-    _id: true,
-    __v: true,
-  };
-
-  const getCreationDate = (id) => {
-    var timestamp = id.toString().substring(0, 8);
-
-    var date = new Date(parseInt(timestamp, 16) * 1000);
-    var month = date.getUTCMonth() + 1; //months from 1-12
-    var day = date.getUTCDate();
-    var year = date.getUTCFullYear();
-
-    let newdate = day + "/" + month + "/" + year;
-
-    return newdate;
-  };
-
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
@@ -390,7 +379,7 @@ const TeacherFeedback = ({
             <h1>Lead generation</h1>
             <div className="mb-3 border-bottom">
               <p>Find A Lead</p>
-              <label htmlFor="mobile">Mobile</label>
+              {/* <label htmlFor="mobile">Mobile</label>
               <input
                 type="text"
                 className="form-control mb-3"
@@ -401,9 +390,9 @@ const TeacherFeedback = ({
                   setmobile(e.target.value);
                 }}
                 required
-              />
+              /> */}
               <div className="ctasforlead">
-                <button
+                {/* <button
                   type="submit"
                   className="btn btn-primary"
                   onClick={() => {
@@ -411,7 +400,7 @@ const TeacherFeedback = ({
                   }}
                 >
                   Submit
-                </button>
+                </button> */}
                 <button
                   className="btn btn-primary"
                   onClick={() => {
@@ -493,7 +482,7 @@ const TeacherFeedback = ({
                   className="form-control"
                   id="phoneNumber"
                   name="phoneNumber.userdata"
-                  value={feedback.userdata.phoneNumber}
+                  value={removeCountryCodeAndSpaces(feedback.userdata.phoneNumber)}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -548,7 +537,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="topicsOfInterest">
-                  Topics/Subjects of Interest(*)
+                  Topics/Subjects of Interest
                 </label>
                 <input
                   type="text"
@@ -557,12 +546,11 @@ const TeacherFeedback = ({
                   name="topicsOfInterest.userdata"
                   value={feedback.userdata.topicsOfInterest}
                   onChange={handleFeedbackChange}
-                  required
                 />
               </div>
               <div className="mb-3">
                 <label htmlFor="preferredCommunication">
-                  Preferred Mode of Communication(*)
+                  Preferred Mode of Communication
                 </label>
                 {/* <input
                   type="text"
@@ -579,7 +567,6 @@ const TeacherFeedback = ({
                   name="preferredCommunication.userdata"
                   value={feedback.userdata.preferredCommunication}
                   onChange={handleFeedbackChange}
-                  required
                 >
                   <option value=""></option>
                   <option value="English">English</option>
@@ -661,7 +648,7 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="educationalBackground">
-                  Educational Background (*)
+                  Educational Background
                 </label>
                 <select
                   className="form-control"
@@ -669,7 +656,6 @@ const TeacherFeedback = ({
                   name="educationalBackground.userdata"
                   value={feedback.userdata.educationalBackground}
                   onChange={handleFeedbackChange}
-                  required
                 >
                   {educationalBackground()}
                 </select>
