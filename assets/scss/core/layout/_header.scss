@@ -1,5 +1,5 @@
 .site-header {
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   width: 100%;
   z-index: 10 !important;
@@ -120,6 +120,14 @@ div.avatar {
 @include media("<=1024px") {
   .displaynone {
     display: none !important;
+  }
+  .brand{
+    img{
+      width: 150px !important;
+    }
+  }
+  .site-header-inner{
+    height: 67px !important;
   }
   .header-nav-toggle {
     display: block;
