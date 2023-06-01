@@ -1,7 +1,7 @@
 export const Class6 = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Class 6 ( ICSE / CBSE / State Boards )</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Class 6 ( ICSE / CBSE / State Boards ) preparation.
-        <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+        <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span>`,
   title: "Online Class 6 ( ICSE / CBSE / State Boards ) 1-on-1 Class",
   description:
     "The Indian education system has always been highly respected across the world for its quality of education. CBSE and ICSE are two of the most renowned boards in India, and Class 6 is the first stage of secondary education for students. With the advent of online one to one learning, it has become easier for students to access quality education at their convenience. Edusession, an online learning platform, is emerging as one of the leading providers of online education in India.",

@@ -1,7 +1,7 @@
 export const Class9 = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">Class 9 ( ICSE / CBSE / State Boards )</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for Class 9 ( ICSE / CBSE / State Boards ) preparation.
-          <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+          <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span>`,
   title: "Online Class 9 ( ICSE / CBSE / State Boards ) 1-on-1 Class",
   description:
     "With the rise of online learning, students are turning to the internet to get the education they need. Edusession is an innovative platform that offers online courses for CBSE/ICSE Class 9 students who want to excel in their studies. In this article, we will explore the benefits of Edusession's one-to-one online courses and why it is the best choice for students looking to improve their academic performance.",

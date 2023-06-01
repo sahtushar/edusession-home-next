@@ -1,7 +1,7 @@
 export const CA = {
   header: `<span><span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span style="color:#5658dd">CA Foundation and Intermediate</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for CA Foundation and Intermediate preparation.
-    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+    <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span>`,
   title: "CA Foundation and Intermediate: Key Features",
   description:
     "Our online 1 on 1 platform offers comprehensive CA Foundation and Intermediate courses that provide students with the knowledge and skills necessary to clear the CA exams. The courses are designed to be interactive and engaging, with video lectures, live one on one classes, and practice tests to help students revise and test their knowledge. Our team of experienced faculty members is available to students for doubt solving and guidance throughout the course. While the courses offer limited flexibility and personalized attention, their competitive pricing makes them an excellent choice for students from all backgrounds.",

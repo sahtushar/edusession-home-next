@@ -1,7 +1,7 @@
 export const JEEFoundation = {
   header: `<span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span  style="color:#5658dd">JEE Foundation</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for JEE Foundation preparation.
-      <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+      <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span>`,
   title: "JEE Foundation Online One to One Classes: Key Features",
   description:
     "If you're preparing for the Joint Entrance Examination (JEE) and looking for a reliable and effective way to prepare, you might want to consider Edusession's online one to one course.",

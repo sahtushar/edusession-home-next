@@ -1,7 +1,7 @@
 export const NDA = {
   header: `<span style="color:white; text-shadow: 1px 1px 1px black;">Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span>NDA - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span></span> - 2023</span>`,
   subheader: `<span style="font-weight: 500;">Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NDA 2023 - <span style="color:#FF9933;">National</span> <span style="color:#FFFFFF; text-shadow: 1px 1px 1px black;">Defence</span> <span style="color:#138808;">Academy</span> preparation.
-    <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span></span>`,
+    <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span></span>`,
   title: "Online NDA - National Defence Academy 1-on-1 Class",
   description:
     "Looking for an NDA online course? Edusession Live offers a comprehensive NDA Online Course Overview to help you ace the exam. Read on to learn more.",

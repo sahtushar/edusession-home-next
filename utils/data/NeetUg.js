@@ -1,7 +1,7 @@
 export const NEETUG = {
   header: `<span><span>Online Live <span style="color:#5658dd">One to One</span> Personalized Class for <span style="color:#5658dd">NEET UG</span></span>`,
   subheader: `Get the best interactive personalized One-on-one sessions at your time and comfort with your preferred faculties for NEET UG preparation.
-  <span>Doubt clearance is now easy with focused one on one tuiton by best Online Tutors</span></span>`,
+  <span>Doubt clearance is now easy with focused one on one tuition by best Online Tutors</span></span>`,
   title: "Online ( NEET UG ) 1-on-1 Class",
   description:
     "Edusession's Online one-on-one NEET UG classes are specifically designed to help students prepare for the NEET exam. In this article, we will take a detailed look at the key features of NEET UG classes and how they can help students achieve their dream of becoming a doctor.",
