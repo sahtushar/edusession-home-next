@@ -161,7 +161,7 @@ export const NDA = {
       <ul>
       <li aria-level="1">NDA 1 2023 age limit is 16.5 to 19.5 years. Only unmarried male/female candidates born not earlier than 02nd July, 2004 and not later than 1st July, 2007 are eligible</li>
       </ul>
-      <a style="color:blue;" target="_blank" href="https://www.upsc.gov.in/examinations/%20National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28I%29%2C%202021">UPSC - NDA Official Page</a>
+      <a style="color:blue;" target="_blank" href="https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202023">UPSC - NDA Official Page</a>
       </div> `,
     },
     {
