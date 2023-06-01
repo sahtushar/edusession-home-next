@@ -17,6 +17,15 @@
   .booked{
     background-color: lightyellow;
   }
+  #react-select-2-listbox{
+    font-size: 13px !important;
+  }
+  [id^="react-select"] {
+    font-size: 13px !important; 
+  }
+  .css-1dimb5e-singleValue{
+    font-size: 14px !important;
+  }
   .pagination {
     display: flex;
     justify-content: center;

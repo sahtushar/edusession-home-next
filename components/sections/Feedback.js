@@ -7,7 +7,7 @@ import {
   educationalBackground,
   jokes,
   removeCountryCodeAndSpaces,
-  verifyIsUserAuthenticated
+  verifyIsUserAuthenticated,
 } from "../../utils/AppConstant";
 import React, { useEffect, useRef } from "react";
 import {
@@ -16,6 +16,7 @@ import {
 } from "../../services/authroutes";
 
 import { BookSlot } from "../elements/BookSlot";
+import CitiesDropdown from "../elements/CitiesDropdown";
 import { DownloadTableExcel } from "react-export-table-to-excel";
 import LeadsTable from "../elements/LeadsTable";
 import PropTypes from "prop-types";
@@ -72,7 +73,7 @@ const TeacherFeedback = ({
       fullName: "",
       email: "",
       phoneNumber: "",
-      relationship:"",
+      relationship: "",
       selectedCourse: "",
       topicsOfInterest: "",
       preferredCommunication: "",
@@ -167,22 +168,26 @@ const TeacherFeedback = ({
       setAllLeads(allLeadsOriginal);
     }
   }, [nametext]);
-  
+
   const handleFeedbackChange = (event) => {
+  debugger;
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
 
     if (subCategory == "userdata") {
-      if(category == "phoneNumber"){
+      if (category == "phoneNumber") {
         setFeedback((prevFeedback) => ({
           ...prevFeedback,
-          userdata: { ...prevFeedback.userdata, ...{ [category]: removeCountryCodeAndSpaces(value) } },
+          userdata: {
+            ...prevFeedback.userdata,
+            ...{ [category]: removeCountryCodeAndSpaces(value) },
+          },
         }));
-      }
-      else setFeedback((prevFeedback) => ({
-        ...prevFeedback,
-        userdata: { ...prevFeedback.userdata, ...{ [category]: value } },
-      }));
+      } else
+        setFeedback((prevFeedback) => ({
+          ...prevFeedback,
+          userdata: { ...prevFeedback.userdata, ...{ [category]: value } },
+        }));
     } else {
       // setFeedback((prevFeedback) => ({
       //   ...prevFeedback,
@@ -325,7 +330,7 @@ const TeacherFeedback = ({
     // if (
     //   (phone?.trim() && phone?.trim()?.length >= 10) ||
     //   (mobile?.trim() && mobile?.trim()?.length >= 10)
-    // ) 
+    // )
     {
       try {
         setIsLoading(true);
@@ -483,7 +488,9 @@ const TeacherFeedback = ({
                   className="form-control"
                   id="phoneNumber"
                   name="phoneNumber.userdata"
-                  value={removeCountryCodeAndSpaces(feedback.userdata.phoneNumber)}
+                  value={removeCountryCodeAndSpaces(
+                    feedback.userdata.phoneNumber
+                  )}
                   onChange={handleFeedbackChange}
                   required
                 />
@@ -579,14 +586,25 @@ const TeacherFeedback = ({
               </div>
               <div className="mb-3">
                 <label htmlFor="geographicLocation">Geographic Location</label>
-                <input
+                {/* <input
                   type="text"
                   className="form-control"
                   id="geographicLocation"
                   name="geographicLocation.userdata"
                   value={feedback.userdata.geographicLocation}
                   onChange={handleFeedbackChange}
+                /> */}
+                <CitiesDropdown
+                  id="geographicLocation"
+                  name="geographicLocation.userdata"
+                  handleFeedbackChange={handleFeedbackChange}
                 />
+                <label>
+                  Value:
+                  <span style={{ color: "black" }}>
+                    {feedback?.userdata?.geographicLocation}
+                  </span>
+                </label>
               </div>
               <div className="mb-3">
                 <label htmlFor="howTheyHeard">
