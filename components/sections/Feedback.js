@@ -244,6 +244,7 @@ const TeacherFeedback = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
+        window.location.reload(false);
         //fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
