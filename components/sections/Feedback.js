@@ -170,7 +170,6 @@ const TeacherFeedback = ({
   }, [nametext]);
 
   const handleFeedbackChange = (event) => {
-  debugger;
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
 

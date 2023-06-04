@@ -1142,14 +1142,38 @@ export const CallActivity = () => {
       <option value="Interested, Booked live session">
         Interested, Booked live session
       </option>
+      <option value="Interested, CC Demo booked">
+        Interested, CC Demo booked
+      </option>
+      <option value="Interested, Call Back">Interested, Call Back</option>
+      <option value="Interested, Call Pending">Interested, Call Pending</option>
+      <option value="Unable to connect - Not Connected">
+        Unable to connect - Not Connected
+      </option>
+      <option value="Unable To Connect - Not In-Service">
+        Unable To Connect - Not In-Service
+      </option>
+      <option value="Unable To Connect - Not Responding">
+        Unable To Connect - Not Responding
+      </option>
+      <option value="Unable To Connect - Disconnected">
+        Unable To Connect - Disconnected
+      </option>
+      <option value="Unable To Connect - Incoming Is Disabled">
+        Unable To Connect - Incoming Is Disabled
+      </option>
+      <option value="Unable to Contact - No Answer">
+        Unable to Contact - No Answer
+      </option>
+      <option value="Unable to Contact - Not Reachable">
+        Unable to Contact - Not Reachable
+      </option>
       <option value="Interested, but concerned with fees">
         Interested, but concerned with fees
       </option>
       <option value="Interested, but no available time">
         Interested, but no available time
       </option>
-      <option value="Interested, Call Back">Interested, Call Back</option>
-      <option value="Interested, Call Pending">Interested, Call Pending</option>
       <option value="Interested, Fee Is High">Interested, Fee Is High</option>
       <option value="Interested, Free Courses">Interested, Free Courses</option>
       <option value="Interested, Student will visit the Center">
@@ -1164,9 +1188,6 @@ export const CallActivity = () => {
       <option value="Interested, Working">Interested, Working</option>
       <option value="Interested, Phone Counselling done">
         Interested, Phone Counselling done
-      </option>
-      <option value="Interested, CC Demo booked">
-        Interested, CC Demo booked
       </option>
       <option value="Interested, CC Demo done">Interested, CC Demo done</option>
       <option value="Interested, Will enroll in 3 days">
@@ -1243,23 +1264,8 @@ export const CallActivity = () => {
         Not Interested - want technical jobs
       </option>
       <option value="Student Not Eligible">Student Not Eligible</option>
-      <option value="Unable To Connect - Disconnected">
-        Unable To Connect - Disconnected
-      </option>
-      <option value="Unable To Connect - Incoming Is Disabled">
-        Unable To Connect - Incoming Is Disabled
-      </option>
       <option value="Unable To Connect - Language Issue">
         Unable To Connect - Language Issue
-      </option>
-      <option value="Unable to connect - Not Connected">
-        Unable to connect - Not Connected
-      </option>
-      <option value="Unable To Connect - Not In-Service">
-        Unable To Connect - Not In-Service
-      </option>
-      <option value="Unable To Connect - Not Responding">
-        Unable To Connect - Not Responding
       </option>
       <option value="Unable To Connect - Student">
         Unable To Connect - Student
@@ -1271,17 +1277,14 @@ export const CallActivity = () => {
       <option value="Unable to Contact - Call Back Informed Parents">
         Unable to Contact - Call Back Informed Parents
       </option>
+      <option value="Unable to Contact - Call Back Informed Students">
+        Unable to Contact - Call Back Informed Students
+      </option>
       <option value="Unable to Contact - Call disconnected by the Student">
         Unable to Contact - Call disconnected by the Student
       </option>
       <option value="Unable to Contact - Call forwarded">
         Unable to Contact - Call forwarded
-      </option>
-      <option value="Unable to Contact - No Answer">
-        Unable to Contact - No Answer
-      </option>
-      <option value="Unable to Contact - Not Reachable">
-        Unable to Contact - Not Reachable
       </option>
       <option value="Unable to Contact - Switched off">
         Unable to Contact - Switched off
