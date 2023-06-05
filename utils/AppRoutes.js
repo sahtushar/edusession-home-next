@@ -24,3 +24,4 @@ export const GETCOURSEDATA = `${BASEURL}/api/getCourseData`;
 export const TRACKLOCATION = `${BASEURL}/api/trackLocation`;
 export const PROMOSUBMIT = `${BASEURL}/api/promosubmit`;
 export const GETALLOCATIONSDATA = `${BASEURL}/api/getAllLocationsData`;
+export const EMAILNOTIFICATION = `${BASEURL}/api/emailnotification`;

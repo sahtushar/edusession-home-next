@@ -12,12 +12,14 @@ import {
 import React, { useEffect, useRef } from "react";
 import {
   callFeedbackSubmit,
+  emmailNotification,
   fetchFeedbackFetch,
 } from "../../services/authroutes";
 
 import { BookSlot } from "../elements/BookSlot";
 import CitiesDropdown from "../elements/CitiesDropdown";
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import EdusessionWelcome from "../elements/WelcomeEmail";
 import LeadsTable from "../elements/LeadsTable";
 import PropTypes from "prop-types";
 import { SectionProps } from "../../utils/SectionProps";
@@ -66,6 +68,7 @@ const TeacherFeedback = ({
   const history = useHistory();
   const [date, setDate] = useState(moment());
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
+  const [demotime, setDemoTime] = useState("");
   const [feedback, setFeedback] = useState({
     //userdata
 
@@ -244,11 +247,31 @@ const TeacherFeedback = ({
       try {
         setIsLoading(true);
         const res = await callFeedbackSubmit(body);
+        console.log("res", res);
+        if (!res?.data?.documentExisted && res?.data?.doc?.userdata?.email) {
+          console.log("Email block");
+          let user = {
+            fullName: res?.data?.doc?.userdata?.fullName || "",
+            email: res?.data?.doc?.userdata?.email,
+            mobile: res?.data?.doc?.mobile,
+          };
+          console.log("user:",{ user });
+          let body = EdusessionWelcome(user);
+          try {
+            let email = await emmailNotification({
+              to: user.email,
+              subject: "New World Of Online Learning - Edusession Live!",
+              body: body       
+            });
+          } catch (err) {
+            console.log(err);
+          }
+        }
         setIsLoading(false);
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
-        window.location.reload(false);
+        //window.location.reload(false);
         //fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
@@ -339,6 +362,7 @@ const TeacherFeedback = ({
         feedbackOld["userdata"] = res.data.userdata;
         feedbackOld["postdemo"] = res.data.postdemo;
         setFeedback(feedbackOld);
+        setDemoTime(res?.data?.userdata?.time);
         document
           .querySelector(
             "#__next > main > section > div > div > div > form.container.my-2.basicInfo"
