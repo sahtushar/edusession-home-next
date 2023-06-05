@@ -271,7 +271,10 @@ const TeacherFeedback = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
-        //window.location.reload(false);
+        setTimeout(()=>{
+          window.location.reload(false);
+        },2000)
+        //
         //fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
