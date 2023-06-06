@@ -18,6 +18,7 @@ import {
 
 import { BookSlot } from "../elements/BookSlot";
 import CitiesDropdown from "../elements/CitiesDropdown";
+import DemoEmail from "../elements/DemoEmail";
 import { DownloadTableExcel } from "react-export-table-to-excel";
 import EdusessionWelcome from "../elements/WelcomeEmail";
 import LeadsTable from "../elements/LeadsTable";
@@ -175,7 +176,6 @@ const TeacherFeedback = ({
   const handleFeedbackChange = (event) => {
     const { name, value } = event.target;
     const [category, subCategory] = name.split(".");
-
     if (subCategory == "userdata") {
       if (category == "phoneNumber") {
         setFeedback((prevFeedback) => ({
@@ -255,25 +255,51 @@ const TeacherFeedback = ({
             email: res?.data?.doc?.userdata?.email,
             mobile: res?.data?.doc?.mobile,
           };
-          console.log("user:",{ user });
           let body = EdusessionWelcome(user);
+          //Welcome Email
           try {
             let email = await emmailNotification({
               to: user.email,
               subject: "New World Of Online Learning - Edusession Live!",
-              body: body       
+              body: body,
             });
           } catch (err) {
             console.log(err);
           }
         }
+
+        if (selectedTimeSlot && res?.data?.doc?.userdata?.email) {
+          let user = {
+            fullName: res?.data?.doc?.userdata?.fullName || "",
+            email: res?.data?.doc?.userdata?.email,
+            mobile: res?.data?.doc?.mobile,
+          };
+          let demodetails = { 
+            name:res?.data?.doc?.userdata?.fullName || "", 
+            courseName:res?.data?.doc?.userdata?.selectedCourse || "", 
+            date:res?.data?.doc?.userdata?.formattedDate,
+            time:res?.data?.doc?.userdata?.time
+          };
+          let body = DemoEmail(demodetails);
+          //Demo Email
+          try {
+            let email = await emmailNotification({
+              to: user.email,
+              subject: "Free Demo Booked - Edusession Live!",
+              body: body,
+            });
+          } catch (err) {
+            console.log(err);
+          }
+        }
+
         setIsLoading(false);
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
-        setTimeout(()=>{
-          window.location.reload(false);
-        },2000)
+        // setTimeout(() => {
+        //   window.location.reload(false);
+        // }, 2000);
         //
         //fetchAllFeedback();
       } catch (err) {
@@ -365,7 +391,7 @@ const TeacherFeedback = ({
         feedbackOld["userdata"] = res.data.userdata;
         feedbackOld["postdemo"] = res.data.postdemo;
         setFeedback(feedbackOld);
-        setDemoTime(res?.data?.userdata?.time);
+        //setDemoTime(res?.data?.userdata?.time);
         document
           .querySelector(
             "#__next > main > section > div > div > div > form.container.my-2.basicInfo"
