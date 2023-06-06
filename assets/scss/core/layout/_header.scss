@@ -4,7 +4,45 @@
   width: 100%;
   z-index: 10 !important;
   //background: color-bg(header);
-  background-color: white;
+  background: linear-gradient(268deg, #156e08, #5658dd, #850224);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 37s ease infinite;
+  -moz-animation: AnimationName 37s ease infinite;
+  animation: AnimationName 37s ease infinite;
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   border-bottom: 1px solid lightgray;
   box-shadow: 2px 1px 1px lightgrey;
   .loginButton {
@@ -34,6 +72,11 @@
 
   .brand {
     margin-right: $header-nav--padding-h;
+    img {
+      color: transparent;
+      background: white;
+      box-shadow: 2px 2px 2px #5658dd;
+    }
   }
 }
 
@@ -121,12 +164,12 @@ div.avatar {
   .displaynone {
     display: none !important;
   }
-  .brand{
-    img{
+  .brand {
+    img {
       width: 150px !important;
     }
   }
-  .site-header-inner{
+  .site-header-inner {
     height: 67px !important;
   }
   .header-nav-toggle {
@@ -157,6 +200,7 @@ div.avatar {
       .header-nav-inner {
         flex-direction: column;
         padding: $header-nav--padding-v__mobile;
+        background-color: #5658dd;
       }
 
       ul {

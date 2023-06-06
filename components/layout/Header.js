@@ -115,7 +115,7 @@ const Header = ({
   };
   const highlightedCourseList = [
     {
-      label: <span className="highlightedCourse">NDA <span style={{color:"brown"}}>(Newly Launched)</span>
+      label: <span className="highlightedCourse">NDA <span style={{color:"orange", fontWeight:"500"}}>(Newly Launched)</span>
       {/* <img src={newlaunch}/> */}
       </span>,
       onClick: (e) => {

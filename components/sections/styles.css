@@ -40,10 +40,10 @@ main {
   max-width: 90% !important;
 }
 .site-header .container .highlightedCourse {
-  background-color: white;
-  color: #5658dd;
-  font-weight: bold;
-  border: 1px solid #5658dd;
+  /* background-color: white; */
+  color: white;
+  font-weight: 400;
+  /* border: 1px solid #5658dd;  */
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 8px;
@@ -51,6 +51,11 @@ main {
   border-radius: 10px;
   font-size: 15px;
 }
+.highlightedCourse:hover{
+    cursor: pointer;
+    color: yellow !important;
+}
+
 .split-item-content h4 {
   color: black;
 }
