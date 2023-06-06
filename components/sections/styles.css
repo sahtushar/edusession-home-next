@@ -1,7 +1,7 @@
 .mb-32 {
   margin-bottom: 32px !important;
 }
-.btn-primary{
+.btn-primary-hero {
   background: linear-gradient(268deg, #156e08, #5658dd, #850224);
   background-size: 600% 600%;
 
@@ -10,34 +10,49 @@
   -o-animation: Button 11s ease infinite;
   animation: Button 11s ease infinite;
 }
-.button-primary{
-    background: linear-gradient(268deg, #156e08, #5658dd, #850224);
-    background-size: 600% 600%;
-
-    -webkit-animation: Button 11s ease infinite;
-    -moz-animation: Button 11s ease infinite;
-    -o-animation: Button 11s ease infinite;
-    animation: Button 11s ease infinite;
-}
 @-webkit-keyframes Button {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes Button {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-o-keyframes Button {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes Button {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 main {
   background: #ffffff;
@@ -89,9 +104,9 @@ main {
   border-radius: 10px;
   font-size: 15px;
 }
-.highlightedCourse:hover{
-    cursor: pointer;
-    color: yellow !important;
+.site-header .container .highlightedCourse:hover {
+  cursor: pointer;
+  color: yellow !important;
 }
 
 .split-item-content h4 {
@@ -222,7 +237,7 @@ section.testimonialPage {
 .ieltsbackgound {
   background-image: url("./../../assets/images/backgrounds/ielts.jpg");
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.75);
-  background-attachment:scroll;
+  background-attachment: scroll;
 }
 .hero-figure {
   padding-top: 2rem;
@@ -233,6 +248,61 @@ section.testimonialPage {
 .ctaHomepage {
   display: flex;
   justify-content: flex-start;
+}
+.ctaHomepage .button-primary {
+  display: flex;
+  justify-content: flex-start;
+  background: linear-gradient(268deg, #156e08, #5658dd, #850224);
+  background-size: 600% 600%;
+
+  -webkit-animation: Button 11s ease infinite;
+  -moz-animation: Button 11s ease infinite;
+  -o-animation: Button 11s ease infinite;
+  animation: Button 11s ease infinite;
+  @-webkit-keyframes Button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes Button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-o-keyframes Button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes Button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 .featureListings {
   display: flex !important;
