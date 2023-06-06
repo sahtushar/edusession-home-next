@@ -1,6 +1,44 @@
 .mb-32 {
   margin-bottom: 32px !important;
 }
+.btn-primary{
+  background: linear-gradient(268deg, #156e08, #5658dd, #850224);
+  background-size: 600% 600%;
+
+  -webkit-animation: Button 11s ease infinite;
+  -moz-animation: Button 11s ease infinite;
+  -o-animation: Button 11s ease infinite;
+  animation: Button 11s ease infinite;
+}
+.button-primary{
+    background: linear-gradient(268deg, #156e08, #5658dd, #850224);
+    background-size: 600% 600%;
+
+    -webkit-animation: Button 11s ease infinite;
+    -moz-animation: Button 11s ease infinite;
+    -o-animation: Button 11s ease infinite;
+    animation: Button 11s ease infinite;
+}
+@-webkit-keyframes Button {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes Button {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes Button {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes Button {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 main {
   background: #ffffff;
 }
