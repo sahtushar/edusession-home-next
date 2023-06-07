@@ -468,6 +468,25 @@ const TeacherFeedback = ({
                   Fetch All Feedback
                 </button>
               </div>
+              <div className="ctasforlead">
+                {/* <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={() => {
+                    fetchFeedback();
+                  }}
+                >
+                  Submit
+                </button> */}
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    fetchAllFeedback();
+                  }}
+                >
+                  Fetch All Feedback
+                </button>
+              </div>
               {true ? (
                 <div className="feedbackTableSection">
                   <DownloadTableExcel

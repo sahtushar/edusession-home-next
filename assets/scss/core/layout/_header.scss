@@ -60,10 +60,12 @@
   .loginButton {
     background-color: white;
     padding: 5px;
+    border-radius: 20px;
     a {
       color: #5658dd !important;
       font-size: 15px;
       font-weight: bolder !important;
+      border-radius: 20px;
     }
     border: 1px solid #5658dd !important;
   }
@@ -87,7 +89,8 @@
     img {
       color: transparent;
       background: white;
-      box-shadow: 2px 2px 2px #5658dd;
+      box-shadow: 2px 2px 2px lightgray;
+      border-radius: 20px;
     }
   }
 }

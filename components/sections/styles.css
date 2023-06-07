@@ -249,6 +249,9 @@ section.testimonialPage {
   display: flex;
   justify-content: flex-start;
 }
+.ctaHomepage a {
+  border-radius: 20px;
+}
 .ctaHomepage .button-primary {
   display: flex;
   background: linear-gradient(268deg, #156e08, #5658dd, #850224);
