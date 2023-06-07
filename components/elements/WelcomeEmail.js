@@ -2,8 +2,8 @@ const EdusessionWelcome = (props) => {
   return `<div style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
   <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
     <div style="margin-bottom: 20px; text-align: center;">
-      <img src="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png" alt="Company Logo" style="max-width: 200px;">
-           <img width="150px" src="https://edusession.live/_next/static/media/u5.03301891.png" style="text-align: center;"/>
+      <img src="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png" alt="Company Logo" style="max-width: 120px;">
+           <img width="100px" src="https://edusession.live/_next/static/media/u5.03301891.png" style="text-align: center;"/>
     </div>
     <div style="background-color: #f2f2f2; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
       <h2>Welcome to Edusession Live!</h2>
