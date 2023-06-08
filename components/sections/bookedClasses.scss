@@ -1,0 +1,28 @@
+.adminpanel {
+  .locationWrapper {
+    tbody{
+        display: flex;
+        flex-wrap: wrap;
+        // tr{
+        //     margin: 5px;
+        // }
+        .count{
+            color: brown;
+        }
+    }
+    th, td{
+        padding: 2px !important;
+    }
+    .eachCityCount {
+      margin: 5px;
+      border: 1px solid darkgray;
+      border-radius: 10px;
+      padding: 2px;
+      font-size: 13px;
+      height: 32px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}
