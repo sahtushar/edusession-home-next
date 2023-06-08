@@ -274,11 +274,11 @@ const TeacherFeedback = ({
             email: res?.data?.doc?.userdata?.email,
             mobile: res?.data?.doc?.mobile,
           };
-          let demodetails = { 
-            name:res?.data?.doc?.userdata?.fullName || "", 
-            courseName:res?.data?.doc?.userdata?.selectedCourse || "", 
-            date:res?.data?.doc?.userdata?.formattedDate,
-            time:res?.data?.doc?.userdata?.time
+          let demodetails = {
+            name: res?.data?.doc?.userdata?.fullName || "",
+            courseName: res?.data?.doc?.userdata?.selectedCourse || "",
+            date: res?.data?.doc?.userdata?.formattedDate,
+            time: res?.data?.doc?.userdata?.time,
           };
           let body = DemoEmail(demodetails);
           //Demo Email
@@ -288,6 +288,9 @@ const TeacherFeedback = ({
               subject: "Free Demo Booked - Edusession Live!",
               body: body,
             });
+            setTimeout(() => {
+              window.location.reload(false);
+            }, 2000);
           } catch (err) {
             console.log(err);
           }
@@ -297,10 +300,7 @@ const TeacherFeedback = ({
         if (res.status == 200 || res.data.status == 200) {
           history.push("/feedback");
         }
-        // setTimeout(() => {
-        //   window.location.reload(false);
-        // }, 2000);
-        //
+
         //fetchAllFeedback();
       } catch (err) {
         if (checkauthfailed(err, setIsLoading, history)) {
@@ -478,14 +478,14 @@ const TeacherFeedback = ({
                 >
                   Submit
                 </button> */}
-                <button
+                {/* <button
                   className="btn btn-primary"
                   onClick={() => {
                     fetchAllFeedback();
                   }}
                 >
                   Fetch All Feedback
-                </button>
+                </button> */}
               </div>
               {true ? (
                 <div className="feedbackTableSection">

@@ -15,6 +15,7 @@ import "./../components/sections/careerguidance.scss";
 import "./../components/elements/bookslot.scss";
 import "./../components/elements/whatsapp.scss";
 import "./../components/sections/quark.scss";
+import "./../components/sections/bookedClasses.scss";
 import "./../components/sections/feedback.scss";
 import "./../components/elements/modal.scss";
 import "./../components/elements/calendar.scss";

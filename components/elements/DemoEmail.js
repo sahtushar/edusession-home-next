@@ -2,7 +2,7 @@ const DemoEmail = ({ name, courseName, date, time }) => {
     return `<div style="background-color: #f5f5f5; padding: 20px;">
     <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
       <div style="margin-bottom: 20px; text-align: center;">
-        <img src="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png" alt="Company Logo" style="max-width: 120x;">
+        <img src="https://edusession.live/_next/static/media/logo-no-background.7c66c390.png" alt="Company Logo" style="max-width: 120px;">
       </div>
       <div style="background-color: #f2f2f2; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
         <h1>Welcome to Edusession Live!</h1>

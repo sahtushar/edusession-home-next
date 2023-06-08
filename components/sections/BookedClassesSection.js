@@ -9,12 +9,13 @@ import {
   fetchFeedbackFetch,
 } from "../../services/authroutes";
 
+import Calendar from "../elements/Calendar";
 import SectionHeader from "./partials/SectionHeader";
 import { checkauthfailed } from "../../utils/AppConstant";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
+import { func } from "prop-types";
 import { useRouter as useHistory } from "next/router";
-import Calendar from "../elements/Calendar";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -43,83 +44,80 @@ const BookedClassesSection = ({
       username: localStorage.getItem("username"),
     };
     setIsLoading(true);
-    
+
     callAllLocationsData(body).then((res) => {
-      const uniqueCities = [
-        ...new Set(res.data.forms.databycity.map((item) => item.city)),
-      ];
-      const uniqueCounts = [
-        ...new Set(res.data.forms.databycity.map((item) => item.count)),
-      ];
+      // const uniqueCities = [
+      //   ...new Set(res.data.forms.databycity.map((item) => item.city)),
+      // ];
+      // const uniqueCounts = [
+      //   ...new Set(res.data.forms.databycity.map((item) => item.count)),
+      // ];
+     let uniqueCities=res.data.forms.databycity;
+     uniqueCities.sort(function(a,b){
+      return b.count - a.count;
+     })
+     
+     console.log({uniqueCities});
 
-      const uniquePath = [
-        ...new Set(res.data.forms.databypath.map((item) => item.path)),
-      ];
-      const uniquePathCounts = [
-        ...new Set(res.data.forms.databypath.map((item) => item.count)),
-      ];
+      // let chartconfig1 = {
+      //   options: {
+      //     chart: {
+      //       id: "city-chart",
+      //     },
+      //     xaxis: {
+      //       categories: uniqueCities,
+      //     },
+      //   },
+      //   series: [
+      //     {
+      //       name: "City Count",
+      //       data: uniqueCounts,
+      //     },
+      //   ],
+      // };
 
-      let chartconfig1 = {
-        options: {
-          chart: {
-            id: "city-chart",
-          },
-          xaxis: {
-            categories: uniqueCities,
-          },
-        },
-        series: [
-          {
-            name: "City Count",
-            data: uniqueCounts,
-          },
-        ],
-      };
-
-      let chartconfig2 = {
-        options: {
-          chart: {
-            id: "path-chart",
-          },
-          xaxis: {
-            categories: uniquePath,
-          },
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
-            barHeight: "50%",
-            rangeBarGroupRows: true,
-          },
-        },
-        series: [
-          {
-            name: "Path Count",
-            data: uniquePathCounts,
-          },
-        ],
-      };
+      // let chartconfig2 = {
+      //   options: {
+      //     chart: {
+      //       id: "path-chart",
+      //     },
+      //     xaxis: {
+      //       categories: uniquePath,
+      //     },
+      //   },
+      //   plotOptions: {
+      //     bar: {
+      //       horizontal: true,
+      //       barHeight: "50%",
+      //       rangeBarGroupRows: true,
+      //     },
+      //   },
+      //   series: [
+      //     {
+      //       name: "Path Count",
+      //       data: uniquePathCounts,
+      //     },
+      //   ],
+      // };
 
       setChartComp(
-        <div className="container">
-          <div className="chartAreaCity mb-16 mt-16">
-            <p>By City</p>
-            <Chart
-              options={chartconfig1.options}
-              series={chartconfig1.series}
-              type="bar"
-              height={400}
-            />
-          </div>
-          <div className="chartAreaPath mb-16">
-            <p>By Path</p>
-            <Chart
-              options={chartconfig2.options}
-              series={chartconfig2.series}
-              type="bar"
-              height={400}
-            />
-          </div>
+        <div className="container locationWrapper">
+          <table>
+            <thead>
+              <tr className="eachCityCount">
+                <th>City -</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {uniqueCities.map((cityData, index) => (
+                <tr className="eachCityCount" key={index}>
+                  <td>{cityData.city}-</td>
+                  <td className="count">{cityData.count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       );
     });
@@ -136,8 +134,8 @@ const BookedClassesSection = ({
         setIsLoading(false);
         history.push("/");
       });
-      
-      callAllPromoLeads(body)
+
+    callAllPromoLeads(body)
       .then((res) => {
         setpromodata(res.data.forms || []);
         setIsLoading(false);
@@ -199,11 +197,7 @@ const BookedClassesSection = ({
             className="center-content"
             from="adminPanel"
           />
-          <div>
-          {
-            allLeads.length && <Calendar events={allLeads}/>
-          }
-          </div>
+          <div>{allLeads.length && <Calendar events={allLeads} />}</div>
           <div className="table-responsive">
             <h2 style={{ color: "#5658dd", margin: "0" }}>Promo Leads</h2>
             <table className="table">
@@ -251,7 +245,9 @@ const BookedClassesSection = ({
                     <td>{item.mobile}</td>
                     <td>{item.course}</td>
                     <td>{item.subject}</td>
-                    <td>{(item?.formattedDate || "")+" "+(item?.time || "")}</td>
+                    <td>
+                      {(item?.formattedDate || "") + " " + (item?.time || "")}
+                    </td>
                     <td>{item.specialRequirement}</td>
                   </tr>
                 ))}

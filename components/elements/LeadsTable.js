@@ -30,7 +30,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
 
       function flattenObject(obj, prefix = "") {
         for (const key in obj) {
-          if (key == "date") return;
+          if (key == "date") continue;
           if (obj.hasOwnProperty(key)) {
             const propName = key;
             const value = obj[key];
@@ -51,20 +51,21 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
       flattenObject(lead);
       flattenedLeads.push(flattenedLead);
     });
-    
+
     for (let i = 0; i < flattenedLeads.length; i++) {
       flattenedLeads[i].creationDate = getCreationDate(flattenedLeads[i]._id);
-      flattenedLeads[i].phoneNumber = removeCountryCodeAndSpaces(flattenedLeads[i].phoneNumber);
+      flattenedLeads[i].phoneNumber = removeCountryCodeAndSpaces(
+        flattenedLeads[i].phoneNumber
+      );
     }
     for (let i = 0; i < flattenedLeads.length; i++) {
       //delete flattenedLeads[i]._id;
       delete flattenedLeads[i].date;
       delete flattenedLeads[i].roles;
     }
-    
+
     return flattenedLeads;
   }
-
 
   let formattedallLeads = flattenLeadsArray(allLeads);
 
@@ -107,7 +108,7 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
   };
 
   let headersfinal = {
-    creationDate:"",
+    creationDate: "",
     fullName: "",
     email: "",
     phoneNumber: "",
@@ -122,6 +123,8 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     educationalBackground: "",
     remarks: "",
     remarks2: "",
+    formattedDate: "",
+    time: "",
   };
 
   const currentPageData = formattedallLeads
@@ -138,38 +141,38 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
               // if(val._isAMomentObject){
               //   return;
               // } */}
-              {Object.keys(headersfinal).map((header, dataindex)=>{
-                return (
-                  <td
-                    style={
-                      dataindex == 2 || dataindex == 0
-                        ? { color: "brown", fontWeight: "bold" }
-                        : {}
-                    }
-                  >
-                    {dataindex == 3 ? (
-                      <div style={{ display: "flex" }}>
-                        <i
-                          onClick={() => {
-                            fetchFeedback(item._id);
-                          }}
-                          style={{ marginRight: "2px" }}
-                          className="fa fa-edit"
-                        ></i>
-                        <a
-                          style={{ color: "blue" }}
-                          href={`tel:${getTdValue(item[header])}`}
-                        >
-                          {getTdValue(item[header])}
-                        </a>
-                      </div>
-                    ) : (
-                      getTdValue(item[header])
-                    )}
-                  </td>
-                );
-              })}
-             
+            {Object.keys(headersfinal).map((header, dataindex) => {
+              return (
+                <td
+                  style={
+                    dataindex == 2 || dataindex == 0
+                      ? { color: "brown", fontWeight: "bold" }
+                      : {}
+                  }
+                >
+                  {dataindex == 3 ? (
+                    <div style={{ display: "flex" }}>
+                      <i
+                        onClick={() => {
+                          fetchFeedback(item._id);
+                        }}
+                        style={{ marginRight: "2px" }}
+                        className="fa fa-edit"
+                      ></i>
+                      <a
+                        style={{ color: "blue" }}
+                        href={`tel:${getTdValue(item[header])}`}
+                      >
+                        {getTdValue(item[header])}
+                      </a>
+                    </div>
+                  ) : (
+                    getTdValue(item[header])
+                  )}
+                </td>
+              );
+            })}
+
             {/* })} */}
           </tr>
         </>
