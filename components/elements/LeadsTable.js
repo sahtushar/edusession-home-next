@@ -92,6 +92,9 @@ const LeadsTable = ({ allLeads, tableRef, feedback, fetchFeedback }) => {
     } else if (remarks?.match(/booked/i)) {
       return "booked";
     }
+    else if(remarks2?.match(/call pending/i)){
+      return "pending";
+    }
     let arr = [
       "call back",
       "reachable",
