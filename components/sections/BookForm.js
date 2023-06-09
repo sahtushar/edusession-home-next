@@ -109,7 +109,7 @@ const BookForm = ({
       course: course.value,
       specialRequirement: specialrequest,
       date: `${date}`,
-      formattedDate: date.format("dddd, MMMM Do YYYY"),
+      formattedDate: date?.format("dddd, MMMM Do YYYY"),
       time: selectedTimeSlot,
       roles: ["user"],
     };

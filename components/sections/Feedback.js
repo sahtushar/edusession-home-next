@@ -67,7 +67,7 @@ const TeacherFeedback = ({
     bottomDivider && "has-bottom-divider"
   );
   const history = useHistory();
-  const [date, setDate] = useState(moment());
+  const [date, setDate] = useState();
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const [demotime, setDemoTime] = useState("");
   const [feedback, setFeedback] = useState({
@@ -132,13 +132,15 @@ const TeacherFeedback = ({
   }, []);
 
   useEffect(() => {
-    setFeedback((prevFeedback) => ({
-      ...prevFeedback,
-      userdata: {
-        ...prevFeedback.userdata,
-        ...{ date: date, formattedDate: date?.format("dddd, MMMM Do YYYY") },
-      },
-    }));
+    if (date) {
+      setFeedback((prevFeedback) => ({
+        ...prevFeedback,
+        userdata: {
+          ...prevFeedback.userdata,
+          ...{ date: date, formattedDate: date?.format("dddd, MMMM Do YYYY") },
+        },
+      }));
+    }
   }, [date]);
 
   useEffect(() => {
@@ -263,6 +265,7 @@ const TeacherFeedback = ({
               subject: "New World Of Online Learning - Edusession Live!",
               body: body,
             });
+            console.log("Welcome email sent!");
           } catch (err) {
             console.log(err);
           }
@@ -288,6 +291,7 @@ const TeacherFeedback = ({
               subject: "Free Demo Booked - Edusession Live!",
               body: body,
             });
+            console.log("Demo email sent!");
             setTimeout(() => {
               window.location.reload(false);
             }, 2000);

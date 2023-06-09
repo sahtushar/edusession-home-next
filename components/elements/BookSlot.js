@@ -70,7 +70,7 @@ const timeSlots = [
         <label htmlFor={"date"}>Select Date</label>
         <Input
           type="date"
-          value={date.format("YYYY-MM-DD")}
+          value={date?.format("YYYY-MM-DD")}
           onChange={(e) => handleDateChange(e.target.value)}
           id="date"
         />
@@ -97,7 +97,7 @@ const timeSlots = [
       {selectedTimeSlot && (
         <div className="mb-2 selectedTimeSlot">
           <div>Selected Time Slot:</div>
-          <span>{date.format("dddd, MMMM Do YYYY")}</span>
+          <span>{date?.format("dddd, MMMM Do YYYY")}</span>
           <span>{selectedTimeSlot}</span>
         </div>
       )}
