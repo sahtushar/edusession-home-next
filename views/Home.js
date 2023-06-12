@@ -36,14 +36,14 @@ const Home = ({ city, cityData }) => {
         </span>`
       : `<span>
         Online Live <span style="color:#5658dd">One to One</span>
-        Personalized Class`,
-    subheader: `<span>Get the best interactive personalized One-on-one sessions at your time
+        Personalized Class</span>`,
+    subheader: `<div style="background:white; opacity:0.8; padding:4px; border-radius:12px;"><span>Get the best interactive personalized One-on-one sessions at your time
           and comfort with your preferred faculties for
           <span style="color:#5658dd">
             CBSE, ICSE, JEE, NDA, NEET, State Board, Spoken English, IELTS and Competitive examinations
           </span>
           preparation.
-          <span>Doubt clearance is now easy with focused 1-on-1 tuition by best Online Tutors</span><span>`,
+          <span>Doubt clearance is now easy with focused 1-on-1 tuition by best Online Tutors</span><span></div>`,
     rightImg: homepageicon,
     subheadertag: "h2",
   };
