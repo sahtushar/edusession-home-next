@@ -1,10 +1,11 @@
 import React from "react";
+import SectionHeader from "../sections/partials/SectionHeader";
 
 const TeamPage = () => {
   const teamMembers = [
     {
       name: "Prerna Choudhary",
-      subjects: ["Maths", "Economics", "Spoken English", "IELTS"],
+      subjects: ["Math", "Economics", "Spoken English", "IELTS"],
       imageSrc: "https://edusession.live/prernac.jpg",
     },
     {
@@ -19,7 +20,7 @@ const TeamPage = () => {
     },
     {
       name: "Prerna Trivedi",
-      subjects: ["Maths", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
+      subjects: ["Math", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
       imageSrc: "https://edusession.live/prernatrivedi.jpg",
     },
     // {
@@ -33,26 +34,51 @@ const TeamPage = () => {
     },
     {
       name: "Alka Kumari",
-      subjects: ["Maths", "Science"],
+      subjects: ["Math", "Science"],
       imageSrc: "https://edusession.live/alka.jpg",
     },
     {
-        name: "Abhilasha Kumari",
-        subjects: ["Maths", "Science"],
-        imageSrc: "https://edusession.live/abhilasha.jpg",
-      },
+      name: "Abhilasha Kumari",
+      subjects: ["Math", "Science", "Chemistry, Biology, Physics"],
+      imageSrc: "https://edusession.live/abhilasha.jpg",
+    },
     // Add more team members as needed
   ];
 
+  const sectionHeader = {
+    title: (
+      <>
+        <i className="fa fa-users"></i> Meet our{" "}
+        <span style={{ color: "#5658dd" }}>Dream</span> Online Tutors
+      </>
+    ),
+    paragraph: `<span style="color: dimgrey;">Access Subject-specific tutors who specialize in your areas of
+    interest. Enhance your understanding and grasp complex concepts with
+    the help of these expert tutors. Whether you need assistance in
+    <span style="color: #5658dd;">Math, Science, IELTS, NDA</span>, or any other subject, these tutors are
+    here to guide you towards success. Boost your grades and knowledge
+    with the support of subject-specific tutors!</span>`,
+  };
+
   return (
-    <div className="responsive-container-block outer-container">
+    <div className="container responsive-container-block outer-container">
       <div className="responsive-container-block inner-container">
         <div className="responsive-cell-block">
-          <p className="text-blk heading-text">Meet our dream team</p>
-          <p className="text-blk sub-heading-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla
-            et sagittis, vestibulum risus lacus sit.
-          </p>
+          {/* <h3 className="text-blk heading-text">Meet our Dream Teachers</h3> */}
+          {/* <p className="text-blk sub-heading-text">
+            Access Subject-specific tutors who specialize in your areas of
+            interest. Enhance your understanding and grasp complex concepts with
+            the help of these expert tutors. Whether you need assistance in
+            Math, Science, IELTS, NDA, or any other subject, these tutors are
+            here to guide you towards success. Boost your grades and knowledge
+            with the support of subject-specific tutors!
+          </p> */}
+          <SectionHeader
+            data={sectionHeader}
+            className="center-content"
+            from="meetourteachers"
+            tag="h3"
+          />
         </div>
         <div className="responsive-cell-block memberswrapper">
           {teamMembers.map((member, index) => (

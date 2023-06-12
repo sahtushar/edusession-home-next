@@ -46,7 +46,6 @@
   padding-left: 10px;
   margin-top: 50px;
   margin-right: auto;
-  margin-bottom: 50px;
   margin-left: auto;
 }
 
@@ -114,24 +113,26 @@
   padding-bottom: 10px;
   padding-left: 10px;
   border: 0;
+  margin: 5px;
   min-width: 200px;
   max-width: 250px;
 }
-.memberswrapper{
-    display: flex;
-    flex-wrap: wrap;
+.memberswrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .card-img {
-  width: 100%;
   margin-top: 0px;
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
   max-width: 300px;
+  box-shadow: 2px 2px 2px lightgray;
 }
-.subjects{
-    font-size: 14px;
-    color: grey;
+.subjects {
+  font-size: 14px;
+  color: grey;
 }
 
 .card-container {
@@ -178,11 +179,8 @@
   }
 
   .card-img {
-    width: 100%;
-    min-width: 100%;
-    height: 250px;
-    min-height: 230px;
-    max-height: 230px;
+    // width: 100%;
+    // min-width: 100%;
   }
 }
 
@@ -235,8 +233,7 @@
   }
 
   .card-img {
-    max-width: 300px;
-    min-width: 250px;
+    // height: 100px;
   }
 
   .headings-container {
@@ -273,7 +270,9 @@
     text-align: left;
     line-height: 65px;
   }
-
+  .subjects {
+    font-size: 12px;
+  }
   .sub-heading-text {
     color: rgb(122, 122, 122);
     text-align: left;
@@ -288,6 +287,7 @@
     padding-right: 0px;
     padding-bottom: 5px;
     padding-left: 0px;
+    font-size: 14px;
   }
 
   .position {
@@ -311,13 +311,17 @@
     padding-bottom: 0px;
     padding-left: 0px;
   }
-
+.card-container{
+    margin-bottom: 3px;
+}
   .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border:0;
+    border: 0;
+    max-width: 100px;
+    min-width: 100px;
   }
 
   .outer-container {
@@ -327,19 +331,19 @@
     padding-left: 20px;
   }
 
-  .card-img {
-    width: 100%;
-    border: 0;
-  }
+  //   .card-img {
+  //     width: 100%;
+  //     border: 0;
+  //   }
 
   .heading-text {
     font-size: 40px;
     line-height: 45px;
   }
 
-  .card-img {
-    min-width: auto;
-  }
+  //   .card-img {
+  //     min-width: auto;
+  //   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap");
 
