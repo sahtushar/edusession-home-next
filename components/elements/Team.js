@@ -5,7 +5,7 @@ const TeamPage = () => {
   const teamMembers = [
     {
       name: "Prerna Choudhary",
-      subjects: ["Math", "Economics", "Spoken English", "IELTS"],
+      subjects: ["Maths", "Economics", "Spoken English", "IELTS"],
       imageSrc: "https://edusession.live/prernac.jpg",
     },
     {
@@ -20,7 +20,7 @@ const TeamPage = () => {
     },
     {
       name: "Prerna Trivedi",
-      subjects: ["Math", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
+      subjects: ["Maths", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
       imageSrc: "https://edusession.live/prernatrivedi.jpg",
     },
     // {
@@ -34,12 +34,12 @@ const TeamPage = () => {
     },
     {
       name: "Alka Kumari",
-      subjects: ["Math", "Science"],
+      subjects: ["Maths", "Science"],
       imageSrc: "https://edusession.live/alka.jpg",
     },
     {
       name: "Abhilasha Kumari",
-      subjects: ["Math", "Science", "Chemistry, Biology, Physics"],
+      subjects: ["Maths", "Science", "Chemistry, Biology, Physics"],
       imageSrc: "https://edusession.live/abhilasha.jpg",
     },
     // Add more team members as needed
