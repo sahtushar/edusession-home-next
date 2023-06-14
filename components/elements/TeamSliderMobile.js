@@ -49,15 +49,12 @@ const TeamPageM = () => {
       </>
     ),
     paragraph: (
-      `<span style={{ color: "dimgrey" }}>
-        Access Subject-specific tutors who specialize in your areas of interest.
-        Enhance your understanding and grasp complex concepts with the help of
-        these expert tutors. Whether you need assistance in{" "}
-        <span style={{ color: "#5658dd" }}>Math, Science, IELTS, NDA</span>, or
-        any other subject, these tutors are here to guide you towards success.
-        Boost your grades and knowledge with the support of subject-specific
-        tutors!
-      </span>`
+      `<span style="color: dimgrey;">Access Subject-specific tutors who specialize in your areas of
+      interest. Enhance your understanding and grasp complex concepts with
+      the help of these expert tutors. Whether you need assistance in
+      <span style="color: #5658dd;">Math, Science, IELTS, NDA</span>, or any other subject, these tutors are
+      here to guide you towards success. Boost your grades and knowledge
+      with the support of subject-specific tutors!</span>`
     ),
   };
 
