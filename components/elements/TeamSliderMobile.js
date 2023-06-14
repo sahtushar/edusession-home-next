@@ -121,7 +121,7 @@ const TeamPageM = () => {
           className="slider-controls"
           style={{
             position: "absolute",
-            top: "50%",
+            bottom: "30%",
             transform: "translateY(-50%)",
             display: "flex",
             justifyContent: "space-between",
