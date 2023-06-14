@@ -61,11 +61,12 @@ const TeamPage = () => {
   };
 
   return (
-    <div className="container responsive-container-block outer-container">
-      <div className="responsive-container-block inner-container">
-        <div className="responsive-cell-block">
-          {/* <h3 className="text-blk heading-text">Meet our Dream Teachers</h3> */}
-          {/* <p className="text-blk sub-heading-text">
+    <div className="teampageslider">
+      <div className="container responsive-container-block outer-container">
+        <div className="responsive-container-block inner-container">
+          <div className="responsive-cell-block">
+            {/* <h3 className="text-blk heading-text">Meet our Dream Teachers</h3> */}
+            {/* <p className="text-blk sub-heading-text">
             Access Subject-specific tutors who specialize in your areas of
             interest. Enhance your understanding and grasp complex concepts with
             the help of these expert tutors. Whether you need assistance in
@@ -73,27 +74,28 @@ const TeamPage = () => {
             here to guide you towards success. Boost your grades and knowledge
             with the support of subject-specific tutors!
           </p> */}
-          <SectionHeader
-            data={sectionHeader}
-            className="center-content"
-            from="meetourteachers"
-            tag="h3"
-          />
-        </div>
-        <div className="responsive-cell-block memberswrapper">
-          {teamMembers.map((member, index) => (
-            <div className="responsive-cell-block card-container" key={index}>
-              <div className="card">
-                <img
-                  className="card-img"
-                  src={member.imageSrc}
-                  alt="Team Member"
-                />
-                <p className="text-blk name">{member.name}</p>
-                <p className="subjects">{member.subjects.join(", ")}</p>
+            <SectionHeader
+              data={sectionHeader}
+              className="center-content"
+              from="meetourteachers"
+              tag="h3"
+            />
+          </div>
+          <div className="responsive-cell-block membersWrapper">
+            {teamMembers.map((member, index) => (
+              <div className="responsive-cell-block card-container" key={index}>
+                <div className="card">
+                  <img
+                    className="card-img"
+                    src={member.imageSrc}
+                    alt="Team Member"
+                  />
+                  <p className="text-blk name">{member.name}</p>
+                  <p className="subjects">{member.subjects.join(", ")}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

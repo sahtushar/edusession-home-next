@@ -19,6 +19,7 @@ import MyImage from "../components/elements/MyImage";
 import PromoModal from "../components/elements/PromoModal";
 import StructuredData from "../components/elements/StructuredData";
 import TeamPage from "../components/elements/Team";
+import TeamPageM from "../components/elements/TeamSliderMobile";
 import Testimonial from "../components/sections/Testimonial";
 import homepageicon from "./../assets/images/homepageicon.png";
 import icon from "./../assets/images/icon.png";
@@ -85,6 +86,7 @@ const Home = ({ city, cityData }) => {
           courseIdentifier="homepage"
         />
         <TeamPage/>
+        <TeamPageM/>
         <FeaturesTiles
           className="illustration-section-01"
           cityData={cityData}

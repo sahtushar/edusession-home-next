@@ -18,7 +18,8 @@ import "./../components/sections/quark.scss";
 import "./../components/sections/bookedClasses.scss";
 import "./../components/sections/feedback.scss";
 import "./../components/elements/modal.scss";
-import "./../components/elements/meetteam.scss"
+import "./../components/elements/meetteam.scss";
+import "./../components/elements/teamslidermobile.scss"
 import "./../components/elements/calendar.scss";
 
 import * as React from "react";
