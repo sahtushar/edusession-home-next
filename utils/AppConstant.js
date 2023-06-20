@@ -10,8 +10,6 @@ import { NDA } from "./data/nda";
 import { NEETUG } from "./data/NeetUg";
 import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
-import { teamMembers } from "../../utils/AppConstant"
-
 
 export const jokes = [
   "A group of flamingos is called a flamboyance.",

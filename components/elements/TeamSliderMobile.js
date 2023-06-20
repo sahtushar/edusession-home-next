@@ -1,46 +1,9 @@
 import React, { useState } from "react";
 
 import SectionHeader from "../sections/partials/SectionHeader";
+import { teamMembers } from "../../utils/AppConstant";
 
 const TeamPageM = () => {
-  const teamMembers = [
-    {
-      name: "Prerna Choudhary",
-      subjects: ["Math", "Economics", "Spoken English", "IELTS"],
-      imageSrc: "https://edusession.live/prernac.jpg",
-    },
-    {
-      name: "Prakash Kaushik",
-      subjects: ["Maths (IIT-JEE)"],
-      imageSrc: "https://edusession.live/prakash.jpg",
-    },
-    {
-      name: "Ishita Gawaskar",
-      subjects: ["Botany", "SST", "Hindi"],
-      imageSrc: "https://edusession.live/ishita.jpg",
-    },
-    {
-      name: "Prerna Trivedi",
-      subjects: ["Math", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
-      imageSrc: "https://edusession.live/prernatrivedi.jpg",
-    },
-    {
-      name: "Paramjot Kaur",
-      subjects: ["Spoken English", "IELTS"],
-      imageSrc: "https://edusession.live/paramjot.jpg",
-    },
-    {
-      name: "Alka Kumari",
-      subjects: ["Math", "Science"],
-      imageSrc: "https://edusession.live/alka.jpg",
-    },
-    {
-      name: "Abhilasha Kumari",
-      subjects: ["Math", "Science", "Chemistry, Biology, Physics"],
-      imageSrc: "https://edusession.live/abhilasha.jpg",
-    },
-  ];
-
   const sectionHeader = {
     title: (
       <>

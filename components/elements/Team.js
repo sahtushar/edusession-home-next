@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeader from "../sections/partials/SectionHeader";
-import { teamMembers } from "../../utils/AppConstant"
+import { teamMembers } from "../../utils/AppConstant";
 
 const TeamPage = () => {
   const sectionHeader = {
