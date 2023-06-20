@@ -19,6 +19,14 @@ display: none;
     justify-content: center;
     margin: auto;
     padding-bottom: 5px;
+    .dot{
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 6px;
+      cursor: pointer;
+    }
   }
   .responsive-cell-block {
     min-height: 75px;
