@@ -1,6 +1,9 @@
 .teampageslidermobile {
   padding-top: 20px;
-display: none;
+  .slider {
+    height: 660px;
+  }
+  display: none;
   .text-blk {
     margin-top: 0px;
     margin-right: 0px;
@@ -12,14 +15,14 @@ display: none;
     padding-left: 10px;
     line-height: 25px;
   }
-  .slider-dots{
+  .slider-dots {
     position: relative;
-    top: 220px;
+    top: 185px;
     display: flex;
     justify-content: center;
     margin: auto;
     padding-bottom: 5px;
-    .dot{
+    .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
