@@ -11,6 +11,49 @@ import { NEETUG } from "./data/NeetUg";
 import React from "react";
 import { SpokenEnglish } from "./data/SpokenEnglish";
 
+export const teamMembers = [
+  {
+    name: "Prerna Choudhary",
+    subjects: ["Math", "Economics", "Spoken English", "IELTS"],
+    imageSrc: "https://edusession.live/prernac.jpg",
+  },
+  {
+    name: "Prakash Kaushik",
+    subjects: ["Maths (IIT-JEE)"],
+    imageSrc: "https://edusession.live/prakash.jpg",
+  },
+  {
+    name: "Ishita Gawaskar",
+    subjects: ["Botany", "SST", "Hindi"],
+    imageSrc: "https://edusession.live/ishita.jpg",
+  },
+  {
+    name: "Prerna Trivedi",
+    subjects: ["Math", "Chemistry", "Physics (NEET)", "Zoology (NEET)"],
+    imageSrc: "https://edusession.live/prernatrivedi.jpg",
+  },
+  {
+    name: "Paramjot Kaur",
+    subjects: ["Spoken English", "IELTS"],
+    imageSrc: "https://edusession.live/paramjot.jpg",
+  },
+  {
+    name: "Alka Kumari",
+    subjects: ["Math", "Science"],
+    imageSrc: "https://edusession.live/alka.jpg",
+  },
+  {
+    name: "Ananya Jain",
+    subjects: ["Science", "Chemistry", "Biology (Zoology)", "Physics"],
+    imageSrc: "https://edusession.live/ananya.png",
+  },
+  {
+    name: "Abhilasha Kumari",
+    subjects: ["Math", "Science", "Chemistry, Biology, Physics"],
+    imageSrc: "https://edusession.live/abhilasha.jpg",
+  }
+];
+
 export const jokes = [
   "A group of flamingos is called a flamboyance.",
   "A cockroach can live for several weeks without its head.",
