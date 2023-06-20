@@ -1,4 +1,5 @@
 .teampageslidermobile {
+  padding-top: 20px;
 display: none;
   .text-blk {
     margin-top: 0px;
@@ -11,7 +12,14 @@ display: none;
     padding-left: 10px;
     line-height: 25px;
   }
-
+  .slider-dots{
+    position: relative;
+    top: 186px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 5px;
+  }
   .responsive-cell-block {
     min-height: 75px;
   }
