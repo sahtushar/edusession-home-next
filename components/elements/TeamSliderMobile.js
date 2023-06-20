@@ -133,7 +133,7 @@ const TeamPageM = () => {
                   key={index}
                   className="dot"
                   style={{
-                    backgroundColor: index === activeIndex ? "#5658dd" : "#ccc"
+                    backgroundColor: index === activeIndex ? "#5658dd" : "#ccc",
                   }}
                   onClick={() => handleDotClick(index)}
                 ></span>
