@@ -7,9 +7,9 @@ import { SectionTilesProps } from "../../utils/SectionProps";
 import bank from "./../../assets/images/bank.webp";
 import classNames from "classnames";
 import government from "./../../assets/images/government.webp";
+import { jokes } from "../../utils/AppConstant";
 import note from "./../../assets/images/note.webp";
 import rail from "./../../assets/images/rail.webp";
-import { jokes } from "../../utils/AppConstant";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -53,7 +53,7 @@ const FeaturesTiles = ({
   const sectionHeader = {
     title: (
       <>
-        <i className="fa fa-bar-chart"></i> 9000+ Sessions Conducted
+        <i className="fa fa-bar-chart"></i> 25,000+ Sessions Conducted
       </>
     ),
     paragraph:
@@ -62,7 +62,7 @@ const FeaturesTiles = ({
 
   let mapper = [
     {
-      header: "9000+",
+      header: "25,000+",
       icon: note,
       text: "Sessions Conducted & Counting",
     },
