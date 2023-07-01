@@ -7,7 +7,7 @@ const isProd = () => {
   }
 };
 let BASEURL = `https://edusession.info`;
-if (!isProd()) {
+if (false) {
   BASEURL = `http://localhost:8080`;
 }
 

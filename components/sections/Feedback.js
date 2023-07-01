@@ -1,4 +1,4 @@
-import { Button, Table } from "reactstrap";
+import { Button, Table, Toast, ToastBody, ToastHeader } from "reactstrap";
 import {
   CallActivity,
   CoursesDropdown,
@@ -250,6 +250,9 @@ const TeacherFeedback = ({
         setIsLoading(true);
         const res = await callFeedbackSubmit(body);
         console.log("res", res);
+        if (res.data.message.match(/success/i)) {
+          alert("Lead Updated successfully");
+        }
         if (!res?.data?.documentExisted && res?.data?.doc?.userdata?.email) {
           console.log("Email block");
           let user = {
