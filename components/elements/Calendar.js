@@ -1,10 +1,13 @@
-import moment from "moment";
 import React from "react";
+import moment from "moment";
 
 const Calendar = ({ events }) => {
   // Sort events by date
   // Filter out events without time
-  const filteredEvents = events.filter((event) => event.userdata.time);
+  const filteredEvents = events.filter(
+    (event) =>
+      event.userdata.time && !event.userdata.remarks.match(/not interested/i)
+  );
 
   // Sort events by date
   const sortedEvents = [...filteredEvents].sort((a, b) => {
@@ -30,15 +33,29 @@ const Calendar = ({ events }) => {
       <h3 className="text-center">Calendar View</h3>
       <div className="calendar">
         {Object.keys(eventsByDate).map((formattedDate) => (
-          <div key={formattedDate} className={`calendar-day${formattedDate === today ? ' today' : ''}`}>
-            <div className="calendar-day-header bg-primary text-white p-2">{formattedDate}</div>
+          <div
+            key={formattedDate}
+            className={`calendar-day${formattedDate === today ? " today" : ""}`}
+          >
+            <div className="calendar-day-header bg-primary text-white p-2">
+              {formattedDate}
+            </div>
             <div className="d-flex flex-wrap">
               {eventsByDate[formattedDate].map((event) => (
-                <div key={event.title} className="calendar-event bg-light p-2 mb-2 me-2">
+                <div
+                  key={event.title}
+                  className="calendar-event bg-light p-2 mb-2 me-2"
+                >
                   <div className="event-time">{event.userdata.time}</div>
-                  <div className="event-fullname userdataname">{event.userdata.fullName}</div>
-                  <div className="event-phonenumber userdata name">{event.userdata.phoneNumber}</div>
-                  <div className="event-selectedCourse userdata">{event.userdata.selectedCourse}</div>
+                  <div className="event-fullname userdataname">
+                    {event.userdata.fullName}
+                  </div>
+                  <div className="event-phonenumber userdata name">
+                    {event.userdata.phoneNumber}
+                  </div>
+                  <div className="event-selectedCourse userdata">
+                    {event.userdata.selectedCourse}
+                  </div>
                 </div>
               ))}
             </div>
