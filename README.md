@@ -1,1 +1,16 @@
-<div class="markdown prose w-full break-words dark:prose-invert light AIPRM__conversation__response"><h1>edusession.live</h1><p>Welcome to the edusession.live repository! This repository contains the source code for the edusession.live website.</p><h2>About edusession.live</h2><p>edusession.live is a web-based platform that connects students with tutors for online learning sessions. The platform allows students to search for tutors based on their subject area and availability, and book one-on-one sessions with them. Tutors can also create their own profiles and set their own rates.</p><h2>Getting Started</h2><p>To get started with edusession.live, you'll need to create an account on the website. Once you've created an account, you'll be able to search for tutors and book sessions with them.</p><h2>Contributing</h2><p>We welcome contributions to the edusession.live project! If you'd like to contribute, please see our <a href="CONTRIBUTING.md" target="_new">contributing guidelines</a> for more information.</p><h2>License</h2><p>The code and assets in this repository are the property of Edusession.live and are protected by copyright laws. Unauthorized reproduction, distribution, or use of any code or assets in this repository is strictly prohibited.</p></div>
+# Edusesson.live
+
+Welcome to Edusesson.live! This project is a Next.js application built from scratch with SEO support. Visit at https://edusession.live
+
+## Overview
+
+Edusesson.live is a platform designed to provide educational resources and live sessions for learners of all ages. With a focus on accessibility and user experience, our Next.js project incorporates cutting-edge technologies to deliver a seamless learning experience.
+
+## Features
+
+- **Next.js Framework**: Utilizing the power of Next.js, we ensure optimized performance and server-side rendering for faster page loads.
+- **SEO Support**: We understand the importance of visibility, so our project includes comprehensive SEO optimizations to enhance search engine rankings.
+- **Educational Resources**: Access a wide range of educational materials, including live sessions, video tutorials, and interactive quizzes.
+- **User Authentication**: Securely authenticate users to personalize their learning experience and track their progress.
+- **Responsive Design**: Our project is built with a responsive design approach, ensuring compatibility across various devices and screen sizes.
+
